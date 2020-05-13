@@ -1,0 +1,15 @@
+.l-page-footer-wrapper {
+  @include ho-padding;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: $white;
+  background: $gc-dark-blue;
+
+  h2, h3, h4 {
+    color: $white;
+  }
+
+  a {
+    color: $white;
+  }
+}

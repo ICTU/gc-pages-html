@@ -1,0 +1,14 @@
+{
+    "name": "tamaradehaas/gc-html",
+    "description": "Gebruiker Centraap HTML templates with twig",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Tamara de Haas",
+            "email": "info@haas-ontwerp.nl"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.0"
+    }
+}

@@ -1,0 +1,97 @@
+<header class="page-header">
+
+  <div class="l-header-top">
+
+    <div class="branding">
+      <a href="/index.php" class="branding__home-link">
+        <img src="/theme/logo.svg" alt="{{ site_name }} Logo" class="branding__logo">
+
+        <span class="branding__name">{{ site_name }}</span>
+
+        {% if site_slogan %}
+          <span class="branding__slogan">{{ site_slogan }} </span>
+        {% endif %}
+      </a>
+    </div>
+
+    <div class="widget-area header-widget-area">
+
+      <form tabindex="-1" id="zoeken" class="search-form" method="get" action="https://www.gebruikercentraal.nl/"
+            role="search">
+
+        <label class="search-form-label screen-reader-text" for="searchform-1">Voer een trefwoord in om te zoeken op de
+          site</label>
+        <input class="search-form-input" type="search" name="s" id="searchform-1" placeholder="Zoeken...">
+        <input class="search-form-submit" type="submit" value="Zoek">
+
+        <meta content="/index.php/?s={s}">
+      </form>
+    </div>
+
+    <button type="button" aria-haspopup="true" aria-controls="menu-primary" aria-expanded="false"
+            aria-label="Open menu" class="btn btn--toggle-menu">
+      <span class="btn__icon" role="img">&nbsp;</span>
+      <span class="btn__text">Menu</span>
+    </button>
+  </div>
+
+  <div class="l-header-nav" aria-hidden="true">
+
+    <nav id="menu-primary" class="main-menu" role="navigation">
+
+      <h2 class="visually-hidden">Hoofdmenu</h2>
+
+      <ul id="mainnav" class="main-menu__list">
+        <li class="main-menu__item"><a href="#" lass="main-menu__link">Home</a></li>
+        <li class="main-menu__item"><a href="#" class="main-menu__link">Blog</a></li>
+        <li class="main-menu__item"><a href="#" class="menu-link">Evenementen</a></li>
+        <li class="main-menu__item main-menu__item--with-sub">
+          <a href="#" class="menu-link">Instrumenten</a>
+          <button class="main-menu__open-sub">Open submenu Instrumenten</button>
+
+          <ul class="main-menu__sublist">
+            <li class="main-menu__item main-menu__item--sub"><a href="#" class="menu-link">Ontwerpprincipes</a></li>
+            <li class="main-menu__item main-menu__item--sub"><a href="#" class="menu-link">Manifest</a></li>
+            <li class="main-menu__item main-menu__item--sub"><a href="#" class="menu-link">Kennisbank Beeldtaal</a>
+            </li>
+            <li class="main-menu__item main-menu__item--sub"><a href="#" class="menu-link">Optimaal Digitaal</a></li>
+            <li class="main-menu__item main-menu__item--sub"><a href="#" class="menu-link">Toolkit Inclusie</a></li>
+            <li class="main-menu__item main-menu__item--sub"><a href="#" class="menu-link">NL Design System</a></li>
+            <li class="main-menu__item main-menu__item--sub"><a href="#" class="menu-link">UX Test TEam</a></li>
+            <li class="main-menu__item main-menu__item--sub"><a href="#" class="menu-link">Volwassenheidsscan</a></li>
+            <li class="main-menu__item main-menu__item--sub"><a href="#" class="menu-link">Direct Duidelijk Tour</a>
+            </li>
+            <li class="main-menu__item main-menu__item--sub"><a href="#" class="menu-link">Testlab on Tour</a></li>
+          </ul>
+        </li>
+
+        <li class="main-menu__item main-menu__item--with-sub">
+          <a href="#" class="menu-link">Instrumenten</a>
+          <button class="main-menu__open-sub">Open submenu Over Ons</button>
+
+          <ul class="main-menu__sublist">
+            <li class="main-menu__item main-menu__item--sub"><a href="#" class="menu-link">Actieteam</a></li>
+            <li class="main-menu__item main-menu__item--sub"><a href="#" class="menu-link">Ambassadeurs</a></li>
+            <li class="main-menu__item main-menu__item--sub"><a href="#" class="menu-link">Rotterdammer Centraal</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="main-menu__item"><a href="#" class="menu-link">Contact</a></li>
+
+
+        <li class="main-menu__item main-menu__item--with-sub">
+          <a href="#" class="menu-link">Templates</a>
+          <button class="main-menu__open-sub">Open submenu Templates</button>
+
+          <ul class="main-menu__sublist">
+            <li class="main-menu__item main-menu__item--sub"><a href="index.php" class="menu-link">Homepage</a></li>
+            <li class="main-menu__item main-menu__item--sub"><a href="page.php" class="menu-link">Regular page</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+
+</header>

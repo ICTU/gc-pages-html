@@ -1,0 +1,9 @@
+{
+  "base": {
+    "name": "GC BaseTheme",
+    "shortname": "gc_base",
+    "path": "./",
+    "proxy": "gctheme.localhost"
+  }
+}
+
