@@ -4,26 +4,14 @@
   margin-right: auto;
   max-width: $max-width-inner; // set default width - can be overrided for specific sections
 
-  @include bp-up(md) {
-    margin-top: 6rem;
-  }
-
   &--image-full {
     max-width: $max-width-container;
   }
-}
 
-
-// Per section
-
-.section--image {
-  &-full {
-    max-width: $max-width-container;
+  @include bp-up(md){
+    margin-top: 4rem;
   }
 
-  &-width-content {
-    max-width: $max-width-inner;
-  }
 }
 
 .section__title {
@@ -58,6 +46,8 @@
     &.grid--col-1 {
       padding-left: $gutter / 2;
       padding-right: $gutter / 2;
+      margin-left: -1.5rem;
+      margin-right: -1.5rem;
     }
   }
 
@@ -86,18 +76,73 @@
   margin-top: $gutter;
 }
 
-.section--related-content + .section--related-links {
-  .section__title {
-    border: none;
+.section--related {
+  + .section--related-links {
+    .section__title {
+      border: none;
+    }
+  }
+
+  + .section--text {
+    margin-top: 5rem;
   }
 }
 
 // TExts
 
 .section--text {
+  @include ho-container-content;
+
   .section__title {
     border: none;
     padding-top: 0;
+  }
+}
+
+// Per section
+
+.section--image {
+
+  picture {
+    display: block;
+  }
+
+  &-width-full {
+    max-width: $max-width-container;
+
+    &.l-item-count-2 {
+      margin-left: -1.5rem;
+      margin-right: -1.5rem;
+      max-width: calc(#{$max-width-container} + #{$gutter-smaller});
+    }
+  }
+
+  &-width-content {
+    max-width: $max-width-inner;
+  }
+
+  &.l-item-count-2 {
+    @include bp-up(sm) {
+      display: flex;
+
+      picture {
+        margin-left: $gutter-smaller / 2;
+        margin-right: $gutter-smaller / 2;
+        width: calc(50% - #{$gutter-smaller});
+      }
+    }
+
+    @include bp-down(sm){
+      picture + picture {
+        margin-top: $gutter-smaller;
+      }
+    }
+  }
+
+  + p, + h2 {
+    @include bp-up(md) {
+      margin-top: 5rem;
+    }
   }
 }
 
@@ -176,23 +221,6 @@
     }
   }
 }
-
-/* Tips */
-
-.section--toptips {
-  .section__title {
-    border: none;
-
-    + p {
-      margin-top: 2rem;
-    }
-  }
-
-  .l-section-content .grid {
-    max-width: calc(#{$max-width-container} + #{$gutter});
-  }
-}
-
 
 
 

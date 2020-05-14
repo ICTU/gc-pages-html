@@ -1,0 +1,39 @@
+{% if variant is empty %}
+  {% set variant = 'full' %}
+{% endif %}
+
+{% if items is empty %}
+
+  {% set items = {
+    '1': {
+      'alt': 'Optimaal Digitaal spel',
+      'url': 'img-16-9.jpg',
+    }
+  } %}
+
+  {% set extraclass = 'l-item-count-1' %}
+
+{% else %}
+
+  {% if items|length > 2 %}
+    {% set extraclass = 'l-display-grid' %}
+  {% else %}
+    {% set extraclass = 'l-item-count-'~ items|length %}
+  {% endif %}
+
+{% endif %}
+
+<div class="section section--image section--image-{{ variant }} {{ extraclass }}">
+
+  {% for item in items %}
+
+    <picture class="image">
+      <source
+          srcset="/uploads/styles/lg/{{ item.url }} 1x"
+          media="all and (min-width: 800px)" type="image/jpeg">
+
+      <img src="/uploads/{{ item.url }}" alt="{{ item.alt }}" typeof=" foaf:Image">
+    </picture>
+
+  {% endfor %}
+</div>

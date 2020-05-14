@@ -8,11 +8,15 @@
 
 @mixin text-styles() {
 
-  > h2,
-  > h3,
-  > h4 {
+  h2,
+  h3,
+  h4 {
     font-weight: $base-heading-font;
     margin-top: $gutter;
+
+    + p {
+      margin-top: 1rem;
+    }
   }
 
   p + .section--related {
@@ -34,6 +38,7 @@
   }
 }
 
+.section--text,
 .entry-body {
   @include text-styles;
 }
@@ -45,6 +50,7 @@ figure {
   img {
     display: block;
   }
+
   figcaption {
     border-bottom: .1rem solid $border-color;
     font-size: $font-small;

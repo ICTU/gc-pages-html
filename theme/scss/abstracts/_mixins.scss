@@ -82,7 +82,7 @@
   border: none;
 
   @include bp-up(lg) {
-    margin-top: 7rem;
+    margin-top: 3rem;
   }
 
   a {
@@ -116,7 +116,6 @@
   .pagination-next a {
     @include icon(after, arrow);
   }
-
 
   .pagination-previous a:before,
   .pagination-next a:after {

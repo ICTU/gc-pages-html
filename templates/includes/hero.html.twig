@@ -1,0 +1,17 @@
+{% if url is empty %}
+
+  {% set url = 'conference-1.jpg' %}
+
+{% endif %}
+
+<div class="l-hero">
+
+{% block hero %}
+  <picture class="image image--hero">
+    <source srcset="/uploads/styles/hero-md/{{ url }} 1x" media="all and (min-width: 800px)" type="image/jpeg">
+    <source srcset="/uploads/styles/hero/{{ url }} 1x" media="all and (min-width: 1200px)" type="image/jpeg">
+
+    <img src="/uploads/{{ url }}" alt="{{ alt }}" typeof=" foaf:Image">
+  </picture>
+{% endblock %}
+</div>

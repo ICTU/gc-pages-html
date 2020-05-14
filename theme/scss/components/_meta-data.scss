@@ -30,12 +30,21 @@
   a {
     color: $meta-data;
   }
-
   dl,
   dd {
     margin: 0;
     padding: 0;
-    display: inline-block;
+  }
+
+  dl {
+    display: flex;
+  }
+
+  dt {
+    margin-right: .8rem;
+    &:after {
+      content: ": ";
+    }
   }
 
   dd {

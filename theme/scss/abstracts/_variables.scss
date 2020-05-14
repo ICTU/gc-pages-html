@@ -114,8 +114,8 @@ $base-heading-font:         $font-primary-bold !default;
 $base-h1-size:              56px !default;
 $base-h1-line-height:       66px !default;
 
-$base-h2-size:              2.8rem !default;
-$base-h2-line-height:       4rem !default;
+$base-h2-size:              2.6rem !default;
+$base-h2-line-height:       3.6rem !default;
 
 $base-h3-size:              2.6rem !default;
 $base-h3-line-height:       3rem !default;
@@ -164,6 +164,7 @@ $max-width-content:       960px !default;
 $max-width-inner:         760px !default;
 
 $gutter:                  3rem !default;
+$gutter-smaller:          2rem !default;
 
 // Additional vars for components
 
