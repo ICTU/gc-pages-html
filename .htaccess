@@ -1,0 +1,7 @@
+<Directory /data/sites/web/haas-ontwerpnl/subsites/gc.haas-ontwerp.nl>
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+</Directory>
+
+DirectoryIndex index.php index.html index.htm
