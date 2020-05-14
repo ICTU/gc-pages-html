@@ -12,13 +12,40 @@ html {
 }
 
 .page-content {
+  @include ho-padding;
   background: $white;
-  padding-top: 3rem;
+  padding-top: 6rem;
   padding-bottom: 3rem;
+  position: relative;
+  z-index: 5;
+
+  &:before {
+    content: " ";
+    left: 0;
+    top: 0;
+    right: 0;
+    position: absolute;
+    height: 14rem;
+    background: $brand-color;
+    z-index: -1;
+  }
+
+  @include bp-up(sm){
+    padding-top: 9rem;
+    padding-bottom: 8rem;
+
+    &:before {
+      height: 30rem;
+    }
+  }
 
   @include bp-up(lg){
-    padding-top: 8rem;
+    padding-top: 12rem;
     padding-bottom: 8rem;
+
+    &:before {
+      height: 30rem;
+    }
   }
 }
 
@@ -30,14 +57,30 @@ html {
   @include ho-container;
 }
 
+.content {
+  position: relative;
+  background: $white;
+  max-width :$max-width-content;
+  margin: 0 auto;
+  padding-top: 3rem;
+
+  @include bp-up(md){
+    padding-top: 5rem;
+  }
+
+  @include bp-up(lg){
+    padding-top: 7rem;
+  }
+}
+
 h1 {
   font-family: $font-secondary;
   font-size: 4rem;
   line-height: 4rem;
 
-  @include bp-up(md){
-    font-size: 6rem;
-    line-height: 6rem;
+  @include bp-up(sm){
+    font-size: 5.2rem;
+    line-height: 5.2rem;
   }
 
   @include bp-up(lg){
@@ -86,3 +129,4 @@ h1 {
     }
   }
 }
+

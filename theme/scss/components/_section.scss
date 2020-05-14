@@ -1,0 +1,198 @@
+.section {
+  margin-top: $gutter;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $max-width-inner; // set default width - can be overrided for specific sections
+
+  @include bp-up(md) {
+    margin-top: 6rem;
+  }
+
+  &--image-full {
+    max-width: $max-width-container;
+  }
+}
+
+
+// Per section
+
+.section--image {
+  &-full {
+    max-width: $max-width-container;
+  }
+
+  &-width-content {
+    max-width: $max-width-inner;
+  }
+}
+
+.section__title {
+  margin: 0;
+  padding-top: 2rem;
+  border-top: .2rem solid $border_color;
+  font-family: $font_secondary;
+}
+
+.l-section-top {
+  max-width: $max-width-inner;
+  margin: 0 auto;
+
+  p {
+    margin: 1rem 0 0 0;
+
+    + p {
+      margin-top: 1.8rem;
+    }
+  }
+}
+
+.l-section-content {
+  max-width: $max-width-content;
+  margin: 0 auto;
+
+  .grid {
+    &:not(.grid--col-3) {
+      max-width: calc(#{$max-width-inner} + #{$gutter});
+    }
+
+    &.grid--col-1 {
+      padding-left: $gutter / 2;
+      padding-right: $gutter / 2;
+    }
+  }
+
+  .item-list {
+    max-width: calc(#{$max-width-inner} + #{$gutter});
+    margin: 2rem auto 0;
+  }
+}
+
+.content .section__title,
+.section__title {
+  font-family: $font_secondary;
+  font-size: 3.8rem;
+  line-height: 4rem;
+  padding: 2rem 0 0;
+
+  @include bp-up(lg) {
+    font-size: 4.8rem;
+    line-height: 4.8rem;
+  }
+}
+
+
+.l-section-links {
+  text-align: right;
+  margin-top: $gutter;
+}
+
+.section--related-content + .section--related-links {
+  .section__title {
+    border: none;
+  }
+}
+
+// TExts
+
+.section--text {
+  .section__title {
+    border: none;
+    padding-top: 0;
+  }
+}
+
+// Overviews
+
+.section--overview {
+  max-width: none;
+
+  .l-section-content {
+    max-width: $max-width-container;
+  }
+
+  .grid {
+    margin-left: auto;
+    margin-right: auto;
+
+    + p {
+      display: flex;
+    }
+  }
+
+  .btn {
+    margin-top: $gutter;
+    margin-left: auto;
+
+    @include bp-up(lg) {
+      margin-top: 4.5rem;
+    }
+  }
+}
+
+/* Actueel - events & blogs */
+
+.section--actual {
+  .section__title {
+    border: none;
+  }
+
+  .teaser--small {
+    margin-top: 2rem;
+  }
+
+  .btn {
+    margin-top: $gutter;
+  }
+
+  .grid {
+    margin-top: $gutter;
+  }
+
+  @include bp-up(md) {
+    .l-section-content {
+      display: flex;
+
+      .grid {
+        margin-left: -$gutter / 2;
+        margin-right: -$gutter / 2;
+      }
+    }
+  }
+}
+
+
+.l-section-col {
+  &.col--50-width {
+    @include bp-up(md) {
+      width: 50%;
+
+      &:nth-child(odd) {
+        margin-right: $gutter / 2;
+      }
+
+      &:nth-child(even) {
+        margin-left: $gutter / 2;
+      }
+    }
+  }
+}
+
+/* Tips */
+
+.section--toptips {
+  .section__title {
+    border: none;
+
+    + p {
+      margin-top: 2rem;
+    }
+  }
+
+  .l-section-content .grid {
+    max-width: calc(#{$max-width-container} + #{$gutter});
+  }
+}
+
+
+
+

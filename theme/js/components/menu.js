@@ -20,7 +20,8 @@ var bp = 1000;
 function doNav(width) {
 
   if (width < bp) {
-    console.log('mobile');
+
+    // Mobile
     regionNav.attr('aria-hidden', true);
 
     // Show al sublists
@@ -38,8 +39,7 @@ function doNav(width) {
     });
 
   } else if (width >= bp) {
-    console.log('desktop');
-
+    // Desktop
     regionNav.attr('aria-hidden', false);
     $('.main-menu__sublist').attr('aria-hidden', 'true');
 

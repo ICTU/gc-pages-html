@@ -9,10 +9,20 @@
 @import "base/forms";
 
 
-@import "layout/page";
 @import "layout/footer";
 @import "layout/header";
 @import "layout/entry";
+@import "layout/grid";
+
+// Pages & pagetypes
+
+@import "layout/page";
+@import "layout/page-landing";
 
 
 @import "components/btn";
+@import "components/section";
+@import "components/card";
+@import "components/link";
+@import "components/meta-data";
+@import "components/social";

@@ -1,0 +1,18 @@
+{% if day is empty %}
+  {% set day = "now"|date("d") %}
+{% endif %}
+
+{% if month is empty %}
+  {% set month = 'Mei' %}
+{% endif %}
+
+{% if year is empty %}
+  {% set year = "now"|date("Y") %}
+{% endif %}
+
+
+<span class="date-badge" itemprop="datePublished" content="{{ day }} {{ month }} {{ year }}">
+  <span class="date-badge__day">{{ day }}</span>
+  <span class="date-badge__month">{{ month }}</span>
+  <span class="date-badge__year visually-hidden">{{ year }}</span>
+</span>

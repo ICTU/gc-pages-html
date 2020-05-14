@@ -20,7 +20,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 
-  @include bp-down(sm){
+  @include bp-down(md){
     font-size: 1.6rem;
     line-height: 2.6rem;
   }

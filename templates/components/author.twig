@@ -1,0 +1,44 @@
+{% if title is empty %}
+  {% set titel = 'Gebruiker Centraal Auteur' %}
+{% endif %}
+
+{% if function is empty %}
+  {% set function = 'Adviseur online communicatie en analyse' %}
+{% endif %}
+
+<section class="author author--box l-with-image" itemprop="author" itemscope="itemscope"
+         itemtype="http://schema.org/Person">
+
+  <figure class="author__picture">
+    <img src="{{ base_url }}/doelgroep-1.svg" alt="Auteur">
+  </figure>
+
+  <div class="author__content">
+
+    <h2 class="author_title">
+      <a class="arrow-link" href="#">
+        <span class="arrow-link__text"><span class="visually-hidden">Over</span>{{ titel }}</span>
+        <span class="arrow-link__icon"></span>
+      </a>
+    </h2>
+
+    <span class="meta-data__item">{{ function }}</span>
+
+    <hr>
+
+    {% if descr %}
+      {{ descr }}
+    {% else %}
+      <p>Sinds 2006 werkzaam voor ICTU. In diverse projecten gewerkt op gebied van de digitale overheid. Ik onderzoek
+        en adviseer in het gebruiksvriendelijker en toegankelijker maken van websites, het verbeteren van de
+        kwaliteit van de content en de inzet van social media.</p>
+    {% endif %}
+
+    <div class="author__contact-info">
+      <a class="link link--contact link--phone" href="tel:0612345678">06 1234567</a>
+      <a class="link link--contact link--email" href="mailto:info@gebruikercentraal.nl">info@gebruikercentraal.nl</a>
+
+      {% include 'components/social-links.html.twig' %}
+    </div>
+  </div>
+</section>

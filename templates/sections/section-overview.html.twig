@@ -1,0 +1,52 @@
+{% if items|length > 3 %}
+  {% set count = '3' %}
+{% else %}
+  {% set count = items|length %}
+{% endif %}
+
+<section class="section section--overview l-item-count-{{ count }}">
+
+  {# Wrapper for section intro #}
+  {% if title or description %}
+    <div class="l-section-top">
+
+      {% if title %}
+        <h2 class="section__title">
+          {{ title }}
+        </h2>
+      {% endif %}
+
+      {% if description %}
+        <p class="section__description">
+          {{ descr }}
+        </p>
+      {% endif %}
+    </div>
+
+  {% endif %}
+
+  {# Wrapper for all section content #}
+  <div class="l-section-content">
+
+    {% if items %}
+      <div class="grid grid--col-{{ count }}">
+
+        {% for item in items %}
+          {% include 'components/card.html.twig' with {
+            'title' : item.title,
+            'descr' : item.descr,
+            'img' : item.img,
+            'type' : item.type
+          } %}
+        {% endfor %}
+      </div>
+
+    {% else %}
+
+      Hemmeneks!
+
+    {% endif %}
+
+  </div>
+</section>
+

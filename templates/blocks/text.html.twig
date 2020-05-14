@@ -1,0 +1,23 @@
+{% if variant %}
+  {% set extraclass = variant %}
+{% endif %}
+
+
+{% if section_text is empty %}
+  {% set section_text %}
+
+    <p>Dit is een teksblok. Deze kan je overal gebruiken. Zo kan je leuk afbeeldingen en tekst afwisselen en mooie
+      pagina's maken.</p>
+
+  {% endset %}
+{% endif %}
+
+
+<div class="section section--text {{ extraclass ? 'section--text-' ~ extraclass : '' }}">
+
+  {% if title %}
+    <h2 class="section__title">{{ title }}</h2>
+  {% endif %}
+
+  {{ section_text }}
+</div>

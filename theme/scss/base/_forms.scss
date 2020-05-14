@@ -10,26 +10,30 @@ button {
 }
 $input-size: 20px;
 
-input:not([type='submit']),
+input:not([type='submit']):not([type='checkbox']):not([type='radio']),
 select, textarea {
   box-sizing: border-box;
   background: $input-bg;
-  padding: 1.5rem;
+  padding: 1rem 1.5rem;
   font-family: $font-primary;
   font-size: $base-font-size;
   width: 100%;
   transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-  border: .1rem solid $input-border;
+  border: .2rem solid $input-border;
   outline: none;
   -webkit-appearance: none;
   color: #000;
   border-radius: 0;
-  font-weight: 100;
 
   &:focus {
+    @include gc-box-shadow($gc-green, 0.2);
     border-color: $input-focus;
     background: $input-focus-bg;
   }
+}
+
+form label {
+  font-family: $font-primary-semi;
 }
 
 select {
@@ -46,11 +50,12 @@ select {
 }
 
 
-input.form-submit {
+input[type='submit']{
+  @include gc-box-shadow();
   background: $submit-bg;
   border: none;
-  padding: 0 26px;
-  line-height: 50px;
+  padding: 0 2rem;
+  line-height: 40px;
   height: 50px;
   color: $submit-color;
   display: inline-block;
@@ -58,11 +63,16 @@ input.form-submit {
   border-radius: 0;
   cursor: pointer;
   -webkit-appearance: none;
-  font-size: $base-font-size;
-  font-weight: 700;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: $btn-font-size-sm;
+
+  @include bp-up(md){
+    font-size: $btn-font-size-lg;
+  }
 
   &:hover {
-    background-color: $input-hover-bg;
+    background-color: $submit-hover-bg;
   }
 }
 

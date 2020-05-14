@@ -1,10 +1,73 @@
-// Gebruiker Centraal - _btn.scss
+// Gebruiker Centraal - -btn.scss
 
 // $desc.     Omvat layout voor buttons
 
 
 .btn {
   display: inline-block;
+
+  &--primary,
+  &--secondary {
+    @include gc-box-shadow();
+    @include icon(after, arrow);
+    display: inline-block;
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+    padding: 1rem 4.5rem .9rem 1.5rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    width: auto;
+    border-radius: 0;
+    font-family: $font-secondary;
+    font-weight: normal;
+    text-decoration: none;
+    position: relative;
+    transition: padding .2s;
+
+    @include bp-up(md) {
+      line-height: 2.6rem;
+      font-size: $btn-font-size-lg;
+      padding-top: 1.1rem;
+      padding-bottom: 1rem;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+      padding-right: 4.6rem;
+    }
+
+    &:after {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 3rem;
+    }
+  }
+
+  &--primary {
+    background: $btn-primary-bg;
+    color: $btn-primary-color;
+
+    &:after {
+      background: $btn-primary-arrowbg;
+    }
+
+    &:hover, &:focus, &:active {
+      background: $btn-primary-hover-bg;
+      color: $btn-primary-hovercolor;
+
+      &:after {
+        background: $btn-primary-hover-arrowbg;
+      }
+    }
+  }
 }
 
 /*
@@ -24,7 +87,7 @@
   color: $white;
   border: none;
 
-  .btn__icon {
+  .btn--icon {
     @include icon(before, menu);
     @include icon(after, cross);
     display: block;
@@ -55,7 +118,7 @@
     }
   }
 
-  &.active .btn__icon {
+  &.active .btn--icon {
     &:after {
       opacity: 1;
       transform: rotate(0);
@@ -68,10 +131,10 @@
   }
 
   &:focus, &:hover {
-    background: $gc_darkest-blue;
+    background: $gc-darkest-blue;
   }
 
-  @include bp-up(nav){
+  @include bp-up(nav) {
     display: none;
   }
 }

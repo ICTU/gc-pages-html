@@ -71,7 +71,87 @@
   position: absolute;
 }
 
-@mixin gc-box-shadow($color: #000, $trans: 0.2) {
+@mixin gc-box-shadow($color: #000, $trans: 0.15) {
   box-shadow: .4rem .4rem 0 rgba($color, $trans);
 }
 
+
+@mixin gc-pagination() {
+  display: flex;
+  margin-top: $gutter;
+  border: none;
+
+  @include bp-up(lg) {
+    margin-top: 7rem;
+  }
+
+  a {
+    @include gc-box-shadow();
+    font-family: $font_primary_bold;
+    display: inline-block;
+    border: .1rem solid $gc_greyblue;
+    padding: .5rem 1.5rem;
+    text-decoration: none;
+    position: relative;
+    transition: padding .2s, background-color .2s;
+    line-height: 2.6rem;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: $white;
+      border-color: $gc-dark-blue;
+      text-decoration: underline;
+      color: $base_font_color;
+    }
+  }
+
+  .alignright {
+    margin-left: auto;
+  }
+
+  .pagination-previous a {
+    @include icon(before, arrow);
+  }
+  .pagination-next a {
+    @include icon(after, arrow);
+  }
+
+
+  .pagination-previous a:before,
+  .pagination-next a:after {
+    @include square(2rem);
+    position: absolute;
+    display: block;
+    top: 1rem;
+    font-size: 1.4rem;
+    color: $gc-dark-blue;
+    line-height: 2rem;
+  }
+
+  .pagination-previous a {
+    padding-left: 3.8rem;
+
+    &:before {
+      left: .6rem;
+      transform: rotate(180deg);
+    }
+
+    &:hover, &:focus, &:active {
+      padding-left: 3.9rem;
+    }
+  }
+
+  .pagination-next a {
+    padding-right: 3.8rem;
+
+    &:after {
+      right: .6rem;
+    }
+
+    &:hover, &:focus, &:active {
+      padding-right: 3.9rem;
+    }
+  }
+
+}

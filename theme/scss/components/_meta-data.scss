@@ -1,0 +1,134 @@
+@mixin gc-meta-data() {
+  color: $meta-data;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+}
+
+@mixin gc-meta-bolletje() {
+  &:before {
+    content: " ";
+    speak: none;
+    background: $border_color;
+    width: .4rem;
+    height: .4rem;
+    margin: 1.1rem 1rem 0 .6rem;
+    display: inline-block;
+    float: left;
+  }
+}
+
+.meta-data {
+  color: $gc_greyblue;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  margin-top: 1.5rem;
+
+  + p {
+    margin-top: 2rem;
+  }
+
+  a {
+    color: $meta-data;
+  }
+
+  dl,
+  dd {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+  }
+
+  dd {
+    @include gc-meta-bolletje;
+  }
+
+  dt:first-child + dd:before {
+    display: none;
+  }
+}
+
+.meta-data > div,
+.meta-data > span,
+.meta-data__item {
+  display: inline-block;
+
+  label {
+    font-weight: normal;
+    font-family: $font_primary_semi;
+  }
+
+  + .meta-data__item:not(.meta-data--with-icon) {
+    &:before {
+      content: " ";
+      speak: none;
+      background: $border_color;
+      width: .4rem;
+      height: .4rem;
+      margin: 1.1rem 1rem 0 .6rem;
+      display: inline-block;
+      float: left;
+    }
+  }
+
+  &.meta-data--with-icon {
+    padding-left: 1.8rem;
+    background-size: auto 13px;
+    background-position: left 5px;
+    background-repeat: no-repeat;
+    margin-right: 2rem;
+
+    /*
+    &.event-times {
+      background-image: url('../images/icon-time.png');
+    }
+
+    &.event-location {
+      background-image: url('../images/icon-pin.png');
+
+      .icon_pin_fill
+
+    ('../images/icon-pin.svg', $gc_a11y_green);
+      background-size: 10px auto;
+    }
+
+    &.event-aanmeldingen {
+      background-image: url('../images/icon-calendar.png');
+
+      .icon_pin_fill
+
+    ('../images/icon-calendar.svg', $gc_a11y_green);
+    }
+
+    &.event-pricing {
+      background-image: url('../images/icon-price.png');
+
+      .icon_pin_fill
+
+    ('../images/icon-price.svg', $gc_a11y_green);
+    }
+
+    &.speaker {
+      background-image: url('../images/icon-microphone.png');
+
+      .icon_pin_fill
+
+    ('../images/icon-microphone.svg', $gc_a11y_green);
+    }
+
+    &.level {
+      background-image: url('../images/icon-level.png');
+
+      .icon_pin_fill
+
+    ('../images/icon-level.svg', $gc_a11y_green);
+    }
+
+    &.session-type {
+      background-image: url('../images/icon-type.svg');
+    }*/
+  }
+}
+
+.entry-meta {
+  @include gc-meta-data;
+}

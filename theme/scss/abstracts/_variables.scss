@@ -114,7 +114,7 @@ $base-heading-font:         $font-primary-bold !default;
 $base-h1-size:              56px !default;
 $base-h1-line-height:       66px !default;
 
-$base-h2-size:              3rem !default;
+$base-h2-size:              2.8rem !default;
 $base-h2-line-height:       4rem !default;
 
 $base-h3-size:              2.6rem !default;
@@ -139,6 +139,7 @@ $input-hover-bg:           $white;
 // Submit
 
 $submit-bg:                $gc-a11y-green;
+$submit-hover-bg:          $gc-a11y-green-darker;
 $submit-color:             $white;
 $button-font:              $font-secondary;
 
@@ -164,3 +165,7 @@ $max-width-inner:         760px !default;
 
 $gutter:                  3rem !default;
 
+// Additional vars for components
+
+@import "vars/btn";
+@import "vars/entry";
