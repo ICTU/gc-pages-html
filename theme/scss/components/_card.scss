@@ -203,7 +203,6 @@
 }
 
 
-
 // Types
 
 .card {
@@ -219,7 +218,7 @@
       min-height: 6rem;
     }
 
-    @include bp-up(md){
+    @include bp-up(md) {
       .date-badge {
         left: 1.5rem;
         top: 1.5rem;
@@ -230,17 +229,147 @@
     }
   }
 
-  &.card--with-image.card--type-event {
+  &--type-doelgroep {
 
-    .date-badge {
+    .card__image {
+      background: $gc-a11y-green;
+    }
+
+    .card__content {
+      position: static;
+    }
+
+    .card__quote {
+      @include gc-box-shadow;
+      position: absolute;
       top: 0;
-      margin-top: -7rem;
-      left: 2rem;
+      left: 1.5rem;
+      right: 1.5rem;
 
+      padding: 2rem;
+      min-height: 120px;
+      background: white;
+      margin: -3rem 0 0;
+
+      font-size: 2.2rem;
+      line-height: 34px;
+
+      @include bp-up(md){
+        padding-left: 3rem;
+        padding-right: 3rem;
+      }
+
+      cite {
+        display: block;
+        font-size: $font-small;
+        width: 100%;
+        font-style: normal;
+        font-family: $font-primary-bold;
+        margin-top: 1rem;
+      }
+
+      &:before {
+        content: ' ';
+        display: block;
+        height: 28px;
+        width: 28px;
+        position: absolute;
+        right: 1.8rem;
+        bottom: 0;
+        background: rgba(#000, 0.2); // @wit;
+        transform: translateY(28px);
+        z-index: 450;
+        clip-path: polygon(0 0, 0 100%, 70% 0);
+        speak: none;
+      }
+
+      &:after {
+        content: ' ';
+        display: block;
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        right: 2rem;
+        bottom: 0;
+        background: $white;
+        transform: translateY(25px);
+        z-index: 450;
+        box-shadow: 3px 3px 0px rgba(#000, 0.2);
+        clip-path: polygon(0 0, 0 100%, 70% 0);
+        speak: none;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .design-for {
+      font-size: $font-small;
+      font-family: $font-primary-semi;
+      line-height: 2.6rem;
     }
 
     .card__title {
-      padding-left: 0;
+      font-family: $font-secondary;
+      font-size: 3.8rem;
+      line-height: 3.8rem;
+    }
+
+    .arrow-link__icon {
+      margin-top: 3.2rem;
+    }
+  }
+
+  // With images, by type
+  &--with-image {
+
+    &.card--type-event {
+      .date-badge {
+        top: 0;
+        margin-top: -7rem;
+        left: 2rem;
+
+      }
+
+      .card__title {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &.card--type-doelgroep {
+    overflow: visible;
+
+    .card__content:before {
+      display: none;
+    }
+
+    .card__image {
+      padding-top: 41rem;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      position: relative;
+
+      img {
+        height: 30rem;
+        width: 20rem;
+        object-fit: none;
+      }
+
+      &:after {
+        content: " ";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        height: 5rem;
+        background: $white;
+        transform: rotate(3deg);
+        margin: 0 -3rem -3rem;
+      }
     }
   }
 }

@@ -29,93 +29,168 @@
 
           <div class="page__intro">
             <header class="entry-header">
-              <h1 class="entry-title">Onze instrumenten</h1>
-              <p>Deze instrumenten helpen jou om de online dienstverlening van je organisatie te verbeteren. Voor en
-                door de community van Gebruiker Centraal. Gebruik, deel en vul aan!</p>
+              <h1 class="entry-title">{{ title ? title : 'Onze instrumenten' }}</h1>
+
+              {% if intro is empty %}
+                <p>Deze instrumenten helpen jou om de online dienstverlening van je organisatie te verbeteren. Voor en
+                  door de community van Gebruiker Centraal. Gebruik, deel en vul aan!</p>
+              {% else %}
+                {{ intro }}
+              {% endif %}
             </header>
 
-            {# default body body
-            <div class="entry-body">
-              <p>Gebruiker Centraal is onafhankelijk, non-profit en wordt voor het grootste deel gefinancierd door het
-                ministerie van Binnenlandse Zaken en Koninkrijksrelaties.</p>
-              <h2>Actieteam</h2>
-              <p>Gebruiker Centraal werkt met een actieteam&nbsp;dat bestaat uit professionals die direct voor de
-                overheid
-                werken. Dit team organiseert en faciliteert de activiteiten van de community en bepaalt grotendeels de
-                koers van de community.</p>
-              <p><a href="https://www.gebruikercentraal.nl/actieteam/" class="btn btn--primary">Bekijk alle leden van
-                  het actieteam</a></p>
-            </div> #}
+            {% if body %}
+              {# default body body #}
+
+              <div class="entry-body">
+                {{ body|raw }}
+              </div>
+
+              {# end body #}
+            {% endif %}
+
           </div>
 
-          {% set items = {
-            '1': {
-              'title' : 'Ontwerpprincipes',
-              'descr' : 'Deze 5 ontwerpprincipes helpen en inspireren om de digitale dienstverlening te verbeteren en zo gebruiksvriendelijk mogelijk te maken.',
-              'type' : 'instrument',
-            },
-            '2': {
-              'title' : 'Manifest',
-              'descr' : 'Met dit manifest creëren we draagvlak op bestuurlijk niveau: een intentieverklaring waarmee de professional de ruimte krijgt om bij het bedenken en realiseren van (digitale) dienstverlening de gebruiker centraal te zetten..',
-              'type' : 'instrument',
-            },
-            '3': {
-              'title' : 'Kennisbank Beeldtaal',
-              'descr' : 'Een kennisbank over beeldtaal in brieven, met veel minder tekst, duidelijke foto’s en uitgebreid getest.',
-              'type' : 'instrument',
-              'img' : 'brand-beeldbank.jpg',
-            },
-            '4': {
-              'title' : 'Optimaal Digitaal',
-              'descr' : 'Tips met praktijkvoorbeelden om de digitale weg naar de overheid te stimuleren onder burgers en bedrijven. Samengesteld op basis van onderzoek, interviews en gedragspyschologie.',
-              'type' : 'instrument',
-              'img' : 'brand-od.png'
-            },
-            '5': {
-              'title' : 'NL Design System',
-              'descr' : 'Een design system is een verzameling van herbruikbare componenten waarmee je als ontwerper of ontwikkelaar eenvoudig consistente, gebruiksvriendelijke en toegankelijke digitale diensten kunt ontwikkelen.',
-              'type' : 'instrument',
-              'img' : 'brand-nlds.jpg'
-            },
-            '6': {
-              'title' : 'Toolkit Inclusie',
-              'descr' : 'Ontwerpen voor inclusie is niet anders dan bestaande ontwerpaanpakken waarbij de gebruiker centraal staat. Bij ontwerpen voor inclusie schenk je speciale aandacht aan diversiteit bij gebruikers. De Tookit Inclusie helpt je bij hoe je dit kunt doen en hoe je inzichten kunt delen met anderen.',
-              'type' : 'instrument',
-              'img' : 'brand-inclusie.jpg'
-            },
-            '7': {
-              'title' : 'UX-testteam',
-              'descr' : 'Twijfel je of je prototype, website of app wel écht gebruiksvriendelijk is? Vraag dan feedback aan het UX-testteam van Gebruiker Centraal. Het testteam is een groep proefpersonen, die via remote usability testing op afroep en op afstand meekijkt naar je ontwerpen. Dit zijn mensen met én zonder UX-ervaring.',
-              'type' : 'instrument'
-            },
-            '8': {
-              'title' : 'Volwassenheidsscan',
-              'descr' : 'De Gebruiker Centraal Volwassenheidsscan is een online instrument met 15 vragen om te zien waar je organisatie staat met het centraal stellen van de gebruiker. Naast inzicht in hoe goed je organisatie het doet geeft de Volwassenheidsscan ook tips hoe je naar een volgend niveau kan komen.',
-              'type' : 'instrument'
-            }
-          } %}
+          {% if overview is empty %}
 
-          {% include 'sections/section-overview.html.twig' with {
-            'items': items
-          } %}
+            {% set items = {
+              '1': {
+                'title' : 'Ontwerpprincipes',
+                'descr' : 'Deze 5 ontwerpprincipes helpen en inspireren om de digitale dienstverlening te verbeteren en zo gebruiksvriendelijk mogelijk te maken.',
+                'type' : 'instrument',
+              },
+              '2': {
+                'title' : 'Manifest',
+                'descr' : 'Met dit manifest creëren we draagvlak op bestuurlijk niveau: een intentieverklaring waarmee de professional de ruimte krijgt om bij het bedenken en realiseren van (digitale) dienstverlening de gebruiker centraal te zetten..',
+                'type' : 'instrument',
+              },
+              '3': {
+                'title' : 'Kennisbank Beeldtaal',
+                'descr' : 'Een kennisbank over beeldtaal in brieven, met veel minder tekst, duidelijke foto’s en uitgebreid getest.',
+                'type' : 'instrument',
+                'img' : 'brand-beeldbank.jpg',
+              },
+              '4': {
+                'title' : 'Optimaal Digitaal',
+                'descr' : 'Tips met praktijkvoorbeelden om de digitale weg naar de overheid te stimuleren onder burgers en bedrijven. Samengesteld op basis van onderzoek, interviews en gedragspyschologie.',
+                'type' : 'instrument',
+                'img' : 'brand-od.png'
+              },
+              '5': {
+                'title' : 'NL Design System',
+                'descr' : 'Een design system is een verzameling van herbruikbare componenten waarmee je als ontwerper of ontwikkelaar eenvoudig consistente, gebruiksvriendelijke en toegankelijke digitale diensten kunt ontwikkelen.',
+                'type' : 'instrument',
+                'img' : 'brand-nlds.jpg'
+              },
+              '6': {
+                'title' : 'Toolkit Inclusie',
+                'descr' : 'Ontwerpen voor inclusie is niet anders dan bestaande ontwerpaanpakken waarbij de gebruiker centraal staat. Bij ontwerpen voor inclusie schenk je speciale aandacht aan diversiteit bij gebruikers. De Tookit Inclusie helpt je bij hoe je dit kunt doen en hoe je inzichten kunt delen met anderen.',
+                'type' : 'instrument',
+                'img' : 'brand-inclusie.jpg'
+              },
+              '7': {
+                'title' : 'UX-testteam',
+                'descr' : 'Twijfel je of je prototype, website of app wel écht gebruiksvriendelijk is? Vraag dan feedback aan het UX-testteam van Gebruiker Centraal. Het testteam is een groep proefpersonen, die via remote usability testing op afroep en op afstand meekijkt naar je ontwerpen. Dit zijn mensen met én zonder UX-ervaring.',
+                'type' : 'instrument'
+              },
+              '8': {
+                'title' : 'Volwassenheidsscan',
+                'descr' : 'De Gebruiker Centraal Volwassenheidsscan is een online instrument met 15 vragen om te zien waar je organisatie staat met het centraal stellen van de gebruiker. Naast inzicht in hoe goed je organisatie het doet geeft de Volwassenheidsscan ook tips hoe je naar een volgend niveau kan komen.',
+                'type' : 'instrument'
+              }
+            } %}
 
-          {% set items2 = {
-            '1': {
-              'title' : 'Direct Duidelijk Tour',
-              'descr' : 'Deze 5 ontwerpprincipes helpen en inspireren om de digitale dienstverlening te verbeteren en zo gebruiksvriendelijk mogelijk te maken.',
-              'type' : 'instrument',
-            },
-            '2': {
-              'title' : 'Design Sprint Week',
-              'descr' : 'Heb je een complex probleem dat je op een andere manier wil oplossen of wil je een dienstverlening verbetern? Deze online trainingen helpen je design thingking te gebruiken',
-              'type' : 'instrument',
-            }
-          } %}
+            {% include 'sections/section-overview.html.twig' with {
+              'items': items
+            } %}
 
-          {% include 'sections/section-overview.html.twig' with {
-            'title': 'In 2020',
-            'items': items2
-          } %}
+            {% set items2 = {
+              '1': {
+                'title' : 'Direct Duidelijk Tour',
+                'descr' : 'Deze 5 ontwerpprincipes helpen en inspireren om de digitale dienstverlening te verbeteren en zo gebruiksvriendelijk mogelijk te maken.',
+                'type' : 'instrument',
+              },
+              '2': {
+                'title' : 'Design Sprint Week',
+                'descr' : 'Heb je een complex probleem dat je op een andere manier wil oplossen of wil je een dienstverlening verbetern? Deze online trainingen helpen je design thingking te gebruiken',
+                'type' : 'instrument',
+              }
+            } %}
+
+            {% include 'sections/section-overview.html.twig' with {
+              'title': 'In 2020',
+              'items': items2
+            } %}
+
+          {% else %}
+
+            {% if overview == 'doelgroep' %}
+
+              {% set doelgroeps = {
+                '1' : {
+                  'title' : '(Licht) verstandelijke beperking',
+                  'type' : 'doelgroep',
+                  'img' : 'doelgroep-1.svg',
+                  'quote' : {
+                    'quote' : 'Het ziet er allemaal zo ongezellig uit',
+                    'name' : 'Robin, 22'
+                  },
+                },
+                '2' : {
+                  'title' : 'Autisme',
+                  'img' : 'doelgroep-2.svg',
+                  'quote' : {
+                    'quote' : 'Ik weet niet wat er gebeurt als ik een keuze maak',
+                    'name' : 'Bart, 22'
+                  },
+                  'type' : 'doelgroep',
+                },
+                '3' : {
+                  'title' : 'Dak- en thuislozen',
+                  'img' : 'doelgroep-3.svg',
+                  'quote' : {
+                    'quote' : 'Ze hoeven niet alles van me te weten',
+                    'name' : 'Maaike, 39'
+                  },
+                  'type' : 'doelgroep',
+                },
+                '4' : {
+                  'title' : 'Immigranten',
+                  'type' : 'doelgroep',
+                  'img' : 'doelgroep-3.svg',
+                  'quote' : {
+                    'quote' : 'Het gaat hier allemaal heel anders dan in mijn land van herkomst',
+                    'name' : 'Muhab, 57'
+                  },
+                },
+                '5' : {
+                  'title' : 'Autisme',
+                  'img' : 'doelgroep-1.svg',
+                  'quote' : {
+                    'quote' : 'Als ik zie dat ik iets moet typen dan begin ik er al niet aan',
+                    'name' : 'Dick, 54'
+                  },
+                  'type' : 'doelgroep',
+                },
+                '6' : {
+                  'title' : 'Mensen in gebruikksituaties van technologie',
+                  'img' : 'doelgroep-2.svg',
+                  'quote' : {
+                    'quote' : 'Wel leuk die voorleessoftware, maar iedereen kan meeluisteren',
+                    'name' : 'John, 55'
+                  },
+                  'type' : 'doelgroep',
+                }
+              } %}
+
+              {% include 'sections/section-overview.html.twig' with {
+                'items': doelgroeps,
+                'title': '',
+                'template': 'card--doelgroep'
+              } %}
+
+            {% endif %}
+          {% endif %}
 
         </div>
       </article>

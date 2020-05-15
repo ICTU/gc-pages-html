@@ -4,6 +4,10 @@
   > div,
   > section {
     margin-top: $gutter;
+
+    &.card--type-doelgroep {
+      margin-top: 5rem;
+    }
   }
 
   @include bp-up(sm) {

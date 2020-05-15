@@ -1,5 +1,10 @@
+{% if theme is empty %}
+  {% set theme = 'gc' %}
+{% endif %}
+
 <link rel="stylesheet" id="gebruiker-centraal-css" href="./theme/fonts/fonts.css" type="text/css" media="all">
-<link rel="stylesheet" id="gebruiker-centraal-css" href="./theme/dist/css/gc-theme.css" type="text/css" media="all">
+<link rel="stylesheet" id="gebruiker-centraal-css" href="./theme/dist/css/{{ theme }}-theme.css" type="text/css"
+      media="all">
 
 <script type="text/javascript" src="/theme/js/lib/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="/theme/dist/js/main-min.js"></script>

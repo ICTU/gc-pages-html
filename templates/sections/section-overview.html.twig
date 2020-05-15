@@ -4,6 +4,10 @@
   {% set count = items|length %}
 {% endif %}
 
+{% if template is empty %}
+  {% set template = 'card' %}
+{% endif %}
+
 <section class="section section--overview l-item-count-{{ count }}">
 
   {# Wrapper for section intro #}
@@ -32,11 +36,12 @@
       <div class="grid grid--col-{{ count }}">
 
         {% for item in items %}
-          {% include 'components/card.html.twig' with {
+          {% include 'components/'~ template ~'.html.twig' with {
             'title' : item.title,
             'descr' : item.descr,
             'img' : item.img,
-            'type' : item.type
+            'type' : item.type,
+            'quote' : item.quote
           } %}
         {% endfor %}
       </div>

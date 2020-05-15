@@ -805,7 +805,7 @@ html {
     right: 0;
     position: absolute;
     height: 14rem;
-    background: #25b34b;
+    background: #D94721;
     z-index: -1; }
   @media (min-width: 560px) {
     .page-content {
@@ -945,7 +945,7 @@ h1 {
 .entry--type-landingpage {
   max-width: none; }
   .entry--type-landingpage .entry-header {
-    background: #4c2974;
+    background: #148839;
     color: #fff;
     max-width: 960px;
     padding: 3rem; }
@@ -2145,7 +2145,7 @@ h1 {
     background: #fff; }
     .link--contact:hover:before, .link--contact:focus:before, .link--contact:active:before {
       margin-right: 1.1rem;
-      color: #148839; }
+      color: #D94721; }
 
 .link--phone:before {
   content: "";
@@ -2307,3 +2307,6 @@ h1 {
   padding: 0; }
   .social-links li {
     list-style: none; }
+
+.page-content {
+  background: #f2ebe4; }

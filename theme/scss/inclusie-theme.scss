@@ -1,0 +1,12 @@
+@import "abstracts/variables";
+
+$color-primary:   $inc-orange;
+$brand-color:     $inc-orange;
+
+$intro-bg:        $gc-a11y-green;
+
+@import "all";
+
+.page-content {
+  background: $gc-pantybrown-light;
+}

@@ -42,6 +42,21 @@
       }
     }
   }
+
+  &--type-landingpage {
+    .entry-header {
+      max-width: none;
+    }
+
+    .entry-body {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+
+      @include bp-up(sm){
+        padding-bottom: 5rem;
+      }
+    }
+  }
 }
 
 // components which are used in entries
