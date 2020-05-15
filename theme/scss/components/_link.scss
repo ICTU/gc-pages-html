@@ -52,6 +52,14 @@
       @include icon(before, facebook);
     }
 
+    &.slack {
+      @include icon(before, slack);
+    }
+
+    &.website {
+      @include icon(before, link);
+    }
+
     &:hover, &:focus {
       background: $white;
       border-color: $gc-dark-blue;

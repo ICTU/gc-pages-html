@@ -1,0 +1,291 @@
+<html lang="nl" dir="ltr">
+
+<head>
+  {% include 'includes/head.html.twig' %}
+</head>
+
+<body class="page page--type-event site-id-1{{ extra_classes }}">
+
+<div class="site-container">
+
+  {% include 'includes/header.html.twig' %}
+
+  {% include 'includes/breadcrumb.html.twig' with {
+    'page_title': 'Gebruiker Centraal organiseert ‘Design thinking bij de overheid’: training, design sprint en conferentie',
+    'links': ['Home', 'Blog']} %}
+
+
+  <div class="page-content" id="maincontent" tabindex="-1">
+
+    {% if hero %}
+      {% include 'includes/hero.html.twig' %}
+    {% endif %}
+
+    <main class="content">
+      <article class="entry entry--full entry--type-event">
+
+        <header class="entry-header">
+
+          {% include 'components/date-badge.html.twig' %}
+
+          <h1 class="entry-title">
+            {% if page_title is empty %}
+              Draagvlak in jouw organisatie – Direct Duidelijk Tour
+            {% else %}
+              {{ page_title }}
+            {% endif %}</h1>
+
+          <div class="meta-data">
+            <div class="meta-data">
+              <div class="meta-data__item times">
+                <span class="starttime" itemprop="startDate" content="2015-09-24T15:00:00+02:00">15:00</span> - <span
+                    class="endtime" itemprop="endDate" content="2015-09-24T16:00:00+02:00">16:00</span></div>
+              <div class="meta-data__item location">Logius</div>
+              <div class="meta-data__item pricing" itemprop="offers" itemscope=""
+                   itemtype="http://schema.org/AggregateOffer">Gratis
+                <div class="visuallyhidden" itemprop="price">0</div>
+                <div class="visuallyhidden" itemprop="availability">5</div>
+              </div>
+              <div class="meta-data__item aanmeldingen">25 Aanmeldingen</div>
+            </div>
+          </div>
+
+        </header>
+
+        <div class="entry-content wrap">
+
+          {% set text %}
+            <h2>Online bijeenkomsten over duidelijke, inclusieve en bruikbare overheidscommunicatie</h2>
+            <p><img class="alignleft wp-image-6541"
+                    src="https://www.gebruikercentraal.nl/wp-content/uploads/sites/4/2020/05/DDtour-1024x950-1-150x150.png"
+                    alt="" width="162" height="150">De Nederlandse samenleving is divers en publieke organisaties hebben
+              contact met veel verschillende mensen. Hoe zorg je voor duidelijke taal? Hoe maak je jouw
+              communicatieboodschap inclusief en dus begrijpelijk voor iedereen?</p>
+            <p>Deze – en meer – onderwerpen komen aan bod in de <a href="https://directduidelijk.gebruikercentraal.nl/"
+                                                                   data-ol-has-click-handler="">Direct Duidelijk
+                Tour</a>, georganiseerd door Gebruiker Centraal samen met Direct Duidelijk.</p>
+            <p>De Direct Duidelijk Tour is een serie online bijeenkomsten (zgn. webinars) over duidelijke, inclusieve en
+              bruikbare overheidscommunicatie. Presentatie is in handen van <a
+                  href="https://directduidelijk.gebruikercentraal.nl/author/renata/" data-ol-has-click-handler="">Renata
+                Verloop</a>.</p>
+          {% endset %}
+
+          {% include'blocks/text.html.twig' with { 'section_text' : text } %}
+
+          {% set items = {
+            '1': {
+              'alt' : 'Direct Dudelijk Tour',
+              'url' : 'dd.jpg'
+            }
+          } %}
+
+          {% include 'blocks/figures.html.twig' with { 'items' : items, 'variant' : 'width-content'} %}
+
+          {% set text %}
+
+            <h2>Voor wie?</h2>
+            <p>De webinars zijn gericht op communicatieadviseurs, redacteuren en alle andere professionals die zich
+              inzetten voor betere communicatie en dienstverlening vanuit de overheid (en dus uiteraard ook vanuit
+              uitvoeringsorganisaties).</p>
+            <h2>Webinar 20 mei 2020: hoe creëer je draagvlak</h2>
+            <p>Hoe creëer je draagvlak voor duidelijke en inclusieve communicatie en dienstverlening in jouw organisatie
+              als je tegen drempels aanloopt? Je kunt drempels in jezelf ervaren (bijvoorbeeld twijfel aan de eigen
+              competenties: kan ik het wel?) of drempels bij de leidinggevende of organisatie (als bijvoorbeeld het
+              belang van duidelijke(re) en inclusieve communicatie niet wordt gezien). Welke ervaar jij? Waar begin je?
+              Wat zijn de belangrijkste randvoorwaarden? Bij verschillende overheidsorganisaties zijn veel goede
+              voorbeelden te vinden van het overwinnen van drempels. Leer van anderen en pas deze lessen toe in jouw
+              eigen organisatie. Ook – of juist! – in deze crisistijd.</p>
+            <h2>Aanmelden</h2>
+            <p><a href="https://directduidelijk.gebruikercentraal.nl/events/draagvlak-in-jouw-organisatie/"
+                  data-ol-has-click-handler="">Aanmelden voor de webinar van 20 mei a.s. van de Direct Duidelijk
+                Tour.</a></p>
+
+          {% endset %}
+
+          {% include'blocks/text.html.twig' with { 'section_text' : text } %}
+
+          {% set cards = {
+            '1': {
+              'title': 'Handen uit de mouwen: direct duidelijke taal voor iedereen!',
+              'descr': 'In deze (digitale) werksessie ga je aan de slag met het verbeteren en verduidelijken van teksten. Dat doe je samen met andere communicatieprofessionals, in een klein groepje, onder begeleiding van een ervaren schrijfcoach. ',
+              'type' : 'event'
+            },
+            '2': {
+              'title': 'Draagvlak in jouw organisatie',
+              'img' : 'brand-dd.jpg',
+              'type' : 'event'
+            }
+          } %}
+
+          {% include 'sections/section-related.html.twig' with {
+            'cards' : cards,
+            'title' : 'Meer evenementen',
+          } %}
+
+
+          <div class="event-bookings">
+            <div class="wrap">
+
+              <div id="em-booking" class="em-booking css-booking">
+                <h2>Schrijf je in voor dit evenement</h2>
+
+                {# kan niet meer inschrijven #}
+                <p class="booking-message disabled">Er kunnen geen reserveringen meer worden geplaatst voor dit
+                  evenement.</p>
+                {# form#}
+
+                <form class="em-booking-form" name="booking-form" method="post" action="#em-booking">
+                  <input type="hidden" name="action" value="booking_add">
+                  <input type="hidden" name="event_id" value="4">
+                  <input type="hidden" name="_wpnonce" value="d7ec5d5ab6">
+
+
+                  <div class="em-booking-form-details">
+                    <input type="hidden" name="em_tickets[4][spaces]" value="1" class="em-ticket-select">
+                    <p class="input-name input-user-field">
+                      <label for="user_name">
+                        Naam <span class="em-form-required">*</span> </label>
+                      <input type="text" name="user_name" id="user_name" class="input" value="Tamara de Haas">
+                    </p>
+                    <p class="input-group input-textarea input-field-booking_comment">
+                      <label for="booking_comment">
+                        Heb je vooraf een vraag over dit onderwerp? Laat het ons weten! </label>
+                      <textarea name="booking_comment" id="booking_comment" class="input" rows="4" cols="20"></textarea>
+                    </p>
+                    <p class="input-group input-checkbox input-field-data_privacy_consent">
+                      <label>
+                        <input type="checkbox" name="data_privacy_consent" value="1">
+                        Ik ga ermee akkoord dat mijn naam en e-mailadres worden gebruikt zoals in de <a
+                            class="privacy-policy-link"
+                            href="https://directduidelijk.gebruikercentraal.nl/privacyverklaring/">Privacyverklaring</a>
+                        staat beschreven. </label>
+                      <br style="clear:both;">
+                    </p>
+
+                    <div class="em-booking-buttons">
+                      <input type="submit" class="em-booking-submit" id="em-booking-submit" value="Inschrijven">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="attendees-list" id="attendeeslist">
+              <h2>Andere aanwezigen<span class="event-aanmeldingen">4 aanmeldingen</span></h2>
+
+              {% set attendees = {
+                '1': {
+                  'name': 'Brenda Vredeveld',
+                  'organisation': 'ICTU',
+                  'social' : {
+                    '1': {
+                      'name': 'LinkedIn',
+                      'system': 'linkedin',
+                      'url': '#',
+                    },
+                    '2': {
+                      'name': 'Twitter',
+                      'system': 'twitter',
+                      'url': '#',
+                    },
+                    '3': {
+                      'name': 'Facebook',
+                      'system': 'facebook',
+                      'url': '#',
+                    },
+                    '4': {
+                      'name': 'Slack',
+                      'system': 'slack',
+                      'url': '#',
+                    },
+                    '5': {
+                      'name': 'Website',
+                      'system': 'website',
+                      'url': '#',
+                    }
+                  }
+                },
+                '2': {
+                  'name': 'Peter Teekens',
+                  'organisation': 'SSH-ICT',
+                  'social' : {
+                    '1': {
+                      'name': 'LinkedIn',
+                      'system': 'linkedin',
+                      'url': '#',
+                    },
+                    '2': {
+                      'name': 'Twitter',
+                      'system': 'twitter',
+                      'url': '#',
+                    }
+                  }
+                },
+                '3': {
+                  'name': 'Nomen Nescio',
+                  'organisation': 'WBVB Rotterdam',
+                  'social' : {
+                    '1': {
+                      'name': 'Twitter',
+                      'system': 'twitter',
+                      'url': '#',
+                    }
+                  }
+                },
+                '4': {
+                  'name': 'Elka Helmers',
+                  'organisation': 'Gebruiker Centraal',
+                  'social' : {
+                    '1': {
+                      'name': 'LinkedIn',
+                      'system': 'linkedin',
+                      'url': '#',
+                    },
+                    '2': {
+                      'name': 'Twitter',
+                      'system': 'twitter',
+                      'url': '#',
+                    }
+                  }
+                },
+                '5': {
+                  'name': 'Tamara de Haas',
+                  'organisation': 'Gebruiker Centraal',
+                  'social' : {
+                    '1': {
+                      'name': 'LinkedIn',
+                      'system': 'linkedin',
+                      'url': '#',
+                    },
+                    '2': {
+                      'name': 'Website',
+                      'system': 'website',
+                      'url': 'https://www.haas-ontwerp.nl',
+                    }
+                  }
+                },
+              } %}
+
+              {% include 'components/attendee-list.html.twig' with {'items' : attendees} %}
+
+            </div>
+
+          </div>
+
+          {% set comments = {
+            '1': {
+              'author': 'Haas Ontwerp',
+              'body': 'Hier wil ik echt heel graag heen.',
+              'time': '15 november 2020',
+            },
+          } %}
+
+        </div>
+        {% include 'components/comments.html.twig' with {'comments' : comments} %}
+
+      </article>
+
+    </main>
+  </div>
+
+  {% include 'includes/footer.html.twig' %}
+</div>

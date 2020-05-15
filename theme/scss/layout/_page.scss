@@ -161,3 +161,13 @@ h1 {
     object-fit: cover;
   }
 }
+
+// Page types
+
+.page {
+  &--type-event {
+    .page-content {
+      padding-bottom: 0;
+    }
+  }
+}

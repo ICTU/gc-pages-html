@@ -100,7 +100,6 @@ main {
 
 img {
   display: inline-block;
-  width: 100%;
   max-width: 100%;
   height: auto;
 }
@@ -109,7 +108,8 @@ img {
   display: none;
 }
 
-.visually-hidden {
+.visually-hidden,
+.visuallyhidden {
   @include visually-hidden;
 }
 

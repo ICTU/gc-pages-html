@@ -1,25 +1,31 @@
 @font-face {
   font-family: "icons";
-  src: url('/theme/fonts/iconfont/ho-iconfont-ouiz6u.eot');
-  src: url('/theme/fonts/iconfont/ho-iconfont-ouiz6u.eot?#iefix') format('eot'),
-  url('/theme/fonts/iconfont/ho-iconfont-ouiz6u.woff') format('woff'),
-  url('/theme/fonts/iconfont/ho-iconfont-ouiz6u.ttf') format('truetype'),
-  url('/theme/fonts/iconfont/ho-iconfont-ouiz6u.svg#icons') format('svg');
+  src: url('/theme/fonts/iconfont/ho-iconfont-flv2ct.eot');
+  src: url('/theme/fonts/iconfont/ho-iconfont-flv2ct.eot?#iefix') format('eot'),
+  url('/theme/fonts/iconfont/ho-iconfont-flv2ct.woff') format('woff'),
+  url('/theme/fonts/iconfont/ho-iconfont-flv2ct.ttf') format('truetype'),
+  url('/theme/fonts/iconfont/ho-iconfont-flv2ct.svg#icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 $icons: (
  arrow: "\EA01",
- cross: "\EA02",
- drupal: "\EA03",
- facebook: "\EA04",
- linkedin: "\EA05",
- mail: "\EA06",
- menu: "\EA07",
- phone: "\EA08",
- search: "\EA09",
- twitter: "\EA0A",
+ calendar: "\EA02",
+ clock: "\EA03",
+ cross: "\EA04",
+ drupal: "\EA05",
+ euro: "\EA06",
+ facebook: "\EA07",
+ link: "\EA08",
+ linkedin: "\EA09",
+ mail: "\EA0A",
+ menu: "\EA0B",
+ phone: "\EA0C",
+ pin: "\EA0D",
+ search: "\EA0E",
+ slack: "\EA0F",
+ twitter: "\EA10",
 
 );
 

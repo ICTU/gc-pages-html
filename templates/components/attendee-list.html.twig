@@ -1,0 +1,27 @@
+<ul class="attendees-list__list">
+
+  {% for item in items %}
+    <li class="person">
+       <span itemprop="attendee" itemtype="http://schema.org/Person">
+         <span itemprop="name">{{ item.name }}</span>
+         <span itemprop="memberOf" class="additionalinfo">{{ item.organisation }}</span>
+      </span>
+
+      {% if item.social %}
+        <ul class="social-links">
+          {% for link in item.social %}
+            <li class="social-links__item">
+              <a href="{{ link.url }}" class="link link--social {{ link.system }}">
+                <span class="visually-hidden">{{ link.name }} van {{ item.name }}</span>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </li>
+  {% endfor %}
+
+</ul>
+
+
+

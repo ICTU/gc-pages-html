@@ -31,7 +31,8 @@
           {% include 'components/card.html.twig' with {
             'title' : card.title,
             'descr' : card.descr,
-            'img' : card.img
+            'img' : card.img,
+            'type' : card.type
           } %}
         {% endfor %}
       </div>

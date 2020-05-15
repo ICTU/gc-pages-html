@@ -11,14 +11,16 @@
 
 @import "layout/footer";
 @import "layout/header";
-@import "layout/entry";
 @import "layout/grid";
 
-// Pages & pagetypes
+/*Pages & pagetypes*/
 
 @import "layout/page";
 @import "layout/page-landing";
 
+/* Entry types */
+@import "components/entry";
+@import "components/entry-event";
 
 @import "components/btn";
 @import "components/section";

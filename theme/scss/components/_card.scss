@@ -202,3 +202,45 @@
   }
 }
 
+
+
+// Types
+
+.card {
+  &--type-event {
+    .date-badge {
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+    }
+
+    .card__title {
+      padding-left: 5.5rem;
+      min-height: 6rem;
+    }
+
+    @include bp-up(md){
+      .date-badge {
+        left: 1.5rem;
+        top: 1.5rem;
+      }
+      .card__title {
+        padding-left: 5.5rem;
+      }
+    }
+  }
+
+  &.card--with-image.card--type-event {
+
+    .date-badge {
+      top: 0;
+      margin-top: -7rem;
+      left: 2rem;
+
+    }
+
+    .card__title {
+      padding-left: 0;
+    }
+  }
+}

@@ -66,6 +66,7 @@ input[type='submit']{
   text-transform: uppercase;
   font-weight: normal;
   font-size: $btn-font-size-sm;
+  margin-top: 3rem;
 
   @include bp-up(md){
     font-size: $btn-font-size-lg;

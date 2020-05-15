@@ -105,6 +105,10 @@
 
   picture {
     display: block;
+
+    img {
+      width: 100%;
+    }
   }
 
   &-width-full {
