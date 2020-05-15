@@ -37,7 +37,7 @@
     }
 
     .entry-content {
-      @include bp-up(sm){
+      @include bp-up(sm) {
         margin-top: 3rem;
       }
     }
@@ -52,8 +52,38 @@
       padding-top: 3rem;
       padding-bottom: 3rem;
 
-      @include bp-up(sm){
+      @include bp-up(sm) {
         padding-bottom: 5rem;
+      }
+    }
+  }
+
+  &--type-home {
+    max-width: none;
+
+    .page__intro {
+      @include ho-padding;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      background: $hp-intro-bg;
+
+      @include bp-up(sm){
+        padding-top: 7rem;
+      }
+
+      @include bp-up(sm){
+        padding-top: 10rem;
+      }
+
+      .entry-header {
+        @include ho-container-content;
+        color: $hp-intro-color;
+        position: relative;
+        z-index: +2;
+
+        h1, h2, h3, h4, a {
+          color: $hp-intro-color;
+        }
       }
     }
   }

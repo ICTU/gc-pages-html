@@ -1,0 +1,51 @@
+{% if id is empty %}
+  {% set id = '1' %}
+{% endif %}
+
+<html lang="nl" dir="ltr">
+
+<head>
+  {% include 'includes/head.html.twig' %}
+</head>
+
+<body class="page page--type-homepage site-id-{{ id }}">
+
+<div class="site-container">
+
+  {% include 'includes/header.html.twig' %}
+
+  <div class="page-content" id="maincontent" tabindex="-1">
+
+    <main class="content">
+
+      <article class="entry entry--type-home entry--full">
+
+        <div class="entry-content">
+
+          <div class="page__intro">
+            <header class="entry-header">
+              <h1 class="entry-title">{{ title ? title : 'Onze instrumenten' }}</h1>
+
+              {% if intro is empty %}
+                <p>Deze instrumenten helpen jou om de online dienstverlening van je organisatie te verbeteren. Voor en
+                  door de community van Gebruiker Centraal. Gebruik, deel en vul aan!</p>
+              {% else %}
+                {{ intro }}
+              {% endif %}
+            </header>
+
+            {% if stappenplan %}
+              {% include 'components/stepchart.html.twig' %}
+            {% endif %}
+
+          </div>
+          {# /page intro #}
+
+        </div>
+        {# /entry content #}
+      </article>
+    </main>
+  </div>
+
+  {% include 'includes/footer.html.twig' %}
+</div>

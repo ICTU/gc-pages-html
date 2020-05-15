@@ -1,0 +1,87 @@
+{% set sprite_url = 'theme/img/sprites/stepchart/defs/svg/sprite.defs.svg' %}
+
+{% if items is empty %}
+
+  {% set items = {
+    '1': {
+      'title': 'Stap 1: Identificeer inclusieve design doelen',
+      'title_short': 'Identificeer',
+      'icon': 'doc-magnify',
+      'descr': 'Identificeer gezamenlijk op welke manier je aandacht gaat besteden aan inclusie in je project en wat je wilt bereiken. Neem dit op in je projectplan.',
+    },
+    '2': {
+      'title': 'Stap 2: Verdiep je in je gebruikers',
+      'title_short': 'Verdiep',
+      'icon': 'lamp',
+      'descr': 'Verdiep je in de vaardigheden, beperkingen en omstandigheden van je gebruikers in het licht van de te ontwikkelen toepassing. Betrek hierbij je gebruikers. Breng hun behoeften en wensen in kaart.',
+    },
+    '3': {
+      'title': 'Stap 3: Ontwerp inclusieve toepassingen',
+      'title_short': 'Ontwerp',
+      'icon': 'pen-ruler',
+    },
+    '4': {
+      'title': 'Stap 4: Evalueer met je gebruikers',
+      'title_short': 'Evalueer',
+      'icon': 'doc-checklist'
+    },
+    '5': {
+      'title': 'Stap 5: Deel je Inclusive Design inzichten',
+      'title_short': 'Deel',
+      'icon': 'doc-share',
+    }
+  } %}
+
+{% endif %}
+
+<div aria-labelledby="stappen-4692" class="stepchart">
+
+  <h2 id="stappen-4692" class="visuallyhidden">Stappen</h2>
+
+  <div class="stepchart__bg">
+    <img src="/theme/img/stepcharts/{{ theme ? theme : 'inclusie' }}.svg" alt="Stepchart achtergrond">
+  </div>
+
+  <ol class="stepchart__items" role="tablist">
+
+    {% set i = 0 %}
+
+    {% for item in items %}
+
+      {% set i = i + 1 %}
+
+      <li class="stepchart__item">
+
+        <button class="stepchart__button btn btn--stepchart {{ item.icon }}" aria-selected="false" role="tab">
+
+          <svg class="btn__icon icon icon--stepchart" focusable="false">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xlink:href="{{ sprite_url }}#{{ item.icon }}"></use>
+          </svg>
+
+          <span class="btn__text">{{ item.title_short }} </span></button>
+
+        <section class="stepchart__description" aria-hidden="true" aria-labelledby="stap-{{ i }}-voorbereiding-{{ i }}"
+                 role="tabpanel">
+
+          <button type="button" class="btn btn--close" data-trigger="action-popover-close">
+            <span class="btn__icon">&nbsp;</span>
+            <span class="visually-hidden">Sluit {{ item.title_short }}</span>
+          </button>
+
+          <h3 id="stap-1-voorbereiding-1" class="stepchart__title">{{ item.title }}</h3>
+
+          {% if item.descr %}
+            <div class="description">
+              <p>{{ item.descr }}</p>
+            </div>
+          {% endif %}
+
+          <a href="#" class="btn btn--primary">Lees meer <span class="visuallyhidden">over {{ item.title }}</span></a>
+
+        </section>
+      </li>
+
+    {% endfor %}
+  </ol>
+</div>

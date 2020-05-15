@@ -68,6 +68,30 @@
       }
     }
   }
+
+  &--close {
+    padding: 0;
+    width: 3.6rem;
+    height: 4.6rem;
+    color: transparent;
+    border: .1rem solid transparent;
+    transition: border-color .2s;
+
+    .btn__icon {
+      display: block;
+      @include icon(before, cross);
+      color: $inc-a11y-orange;
+      text-align: center;
+    }
+
+    &:hover,
+    &:focus {
+      @include gc-box-shadow();
+      border-color: $border-color;
+      color: transparent;
+    }
+  }
+
 }
 
 /*

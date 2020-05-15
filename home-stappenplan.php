@@ -9,6 +9,9 @@ $loader = new FilesystemLoader(__DIR__ . '/templates');
 $twig = new Environment($loader, ['debug' => TRUE]);
 
 echo $twig->render('homepage.html.twig', [
-  'site_name' => 'Gebruiker Centraal',
-  'title' => 'Dit is de homepage :D',
+  'site_name' => 'Inclusie',
+  'site_slogan' => 'Ontwerpen voor iedereen',
+  'title' => 'Homepage met stappenplan',
+  'stappenplan' => 'true',
+  'theme' => 'inclusie'
 ]);

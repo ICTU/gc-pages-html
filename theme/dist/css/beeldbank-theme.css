@@ -15,6 +15,9 @@
  * BTN Variables
  * Can be used for buttons and overridden in subthemes
  */
+/*
+ * Extra colors
+ */
 .clearfix:after {
   content: "";
   display: table;
@@ -805,7 +808,7 @@ html {
     right: 0;
     position: absolute;
     height: 14rem;
-    background: #25b34b;
+    background: #00b4ac;
     z-index: -1; }
   @media (min-width: 560px) {
     .page-content {
@@ -1021,7 +1024,7 @@ h1 {
             box-sizing: border-box;
     padding-top: 3rem;
     padding-bottom: 3rem;
-    background: #148839; }
+    background: #00b4ac; }
     @media (min-width: 560px) {
       .entry--type-home .page__intro {
         padding-right: 3rem;
@@ -1036,11 +1039,11 @@ h1 {
       max-width: 760px;
       margin-left: auto;
       margin-right: auto;
-      color: #fff;
+      color: #004152;
       position: relative;
       z-index: +2; }
       .entry--type-home .page__intro .entry-header h1, .entry--type-home .page__intro .entry-header h2, .entry--type-home .page__intro .entry-header h3, .entry--type-home .page__intro .entry-header h4, .entry--type-home .page__intro .entry-header a {
-        color: #fff; }
+        color: #004152; }
 
 .date-badge {
   -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
@@ -2207,7 +2210,7 @@ h1 {
     background: #fff; }
     .link--contact:hover:before, .link--contact:focus:before, .link--contact:active:before {
       margin-right: 1.1rem;
-      color: #148839; }
+      color: #c42c76; }
 
 .link--phone:before {
   content: "";
@@ -2512,7 +2515,7 @@ h1 {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      background: #148839;
+      background: #c42c76;
       background-size: 30px auto;
       padding: 1rem 1.5rem;
       -webkit-box-align: center;
@@ -2533,7 +2536,7 @@ h1 {
         speak: none; }
       .btn--stepchart:hover, .btn--stepchart:focus {
         text-decoration: underline;
-        background-color: #0d5c26;
+        background-color: #9a235d;
         color: #fff;
         border: none;
         outline: none; }
@@ -2562,7 +2565,7 @@ h1 {
         position: absolute;
         width: 8rem;
         height: 8rem;
-        background: #f99d1c;
+        background: #A4E9E6;
         border-radius: 50%;
         z-index: -1;
         top: 0;
@@ -2584,7 +2587,7 @@ h1 {
     .btn--stepchart:before {
       width: 9.6rem;
       height: 9.6rem;
-      background: #f99d1c;
+      background: #A4E9E6;
       margin-left: -4.8rem; } }
 
 .icon--stepchart {
@@ -2603,7 +2606,7 @@ h1 {
     .icon--stepchart {
       width: 6rem;
       height: 5.5rem;
-      fill: #fff;
+      fill: #52757e;
       position: relative; } }
 
 @media (min-width: 560px) {
@@ -2612,8 +2615,11 @@ h1 {
             box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
     display: inline-block;
     color: white;
-    background: #148839;
+    background: #c42c76;
     margin-top: .5rem;
     padding: .8rem 1.5rem;
     font-size: 2.4rem;
     line-height: 2.4rem; } }
+
+.page-content {
+  background: #f2ebe4; }

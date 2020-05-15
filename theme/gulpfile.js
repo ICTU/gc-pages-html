@@ -7,6 +7,7 @@ const del = require('del'),
   browserSync = require('browser-sync').create(),
   notify = require('gulp-notify'),
   sourcemaps = require('gulp-sourcemaps'),
+  path = require('path'),
   svgmin = require('gulp-svgmin'),
   iconfont = require('gulp-iconfont'),
   consolidate = require('gulp-consolidate'),
@@ -73,8 +74,6 @@ function makeFont(done) {
  * Creates an SVG sprite for icons
  */
 
-// Images
-
 // Basic configuration example
 const svgSpriteConfig = {
   log: 'info',
@@ -89,14 +88,36 @@ const svgSpriteConfig = {
   }
 };
 
-function makeSprite(done) {
-  return gulp.src('img/sprite/*.svg')
-    .pipe(svgmin())
-    .pipe(svgSprite(svgSpriteConfig)).on('error', function (error) {
-      gutil.log(gutil.colors.red(error));
-    })
-    .pipe(gulp.dest('dist/img'))
-    .pipe(notify({message: 'SVG Sprite generated'}));
+function getFolders(dir) {
+  return fs.readdirSync(dir)
+    .filter(function (file) {
+      return fs.statSync(path.join(dir, file)).isDirectory();
+    });
+}
+
+function makeSprites(done) {
+  var folders = getFolders('img/sprites/');
+
+  if (folders) {
+    console.log(folders);
+
+    folders.map(function (folder) {
+
+      return gulp.src('imgs/sprites/' + folder + '/*.svg')
+        .pipe(svgmin())
+        .pipe(svgSprite(svgSpriteConfig)).on('error', function (error) {
+          gutil.log(gutil.colors.red(error));
+        })
+        .pipe(gulp.dest('../images/svg/' + folder))
+        .pipe(notify({message: folder + ' SVG Sprite generated'}));
+    });
+
+    done();
+
+  } else {
+    console.log(folders + 'not found');
+    done();
+  }
 }
 
 function js(done) {
@@ -166,15 +187,6 @@ function prod(done) {
   done();
 }
 
-/*
-const kssConfig = require('./styleguide/kss-config.json');
-
-function styleGuide(done){
-  return kss(kssConfig);
-
-  done();
-}*/
-
 function prodAll(done) {
 
   for (var obj in config) {
@@ -215,12 +227,11 @@ function watch() {
     proxy: siteConfig.proxy
   });
 
-  gulp.watch('scss/**/*.scss', gulp.series(baseStyles, styles));
+  //gulp.watch('scss/**/*.scss', gulp.series(baseStyles, styles));
   gulp.watch(siteConfig.path + 'scss/**/*.scss', styles);
   gulp.watch('js/components/*.js', js);
 
   gulp.watch('img/icons/*.svg', gulp.series(makeFont, styles));
-  gulp.watch('img/sprite/*.svg', makeSprite);
 
   //gulp.watch('styleguide/**/*.scss', styleGuide);
   //gulp.watch('styleguide/**/*.html', styleGuide);
@@ -231,7 +242,7 @@ exports.iconfont = gulp.series(makeFont, prod);
 exports.prod = prod;
 exports.styles = styles;
 exports.js = js;
-exports.sprite = makeSprite;
+exports.sprites = makeSprites;
 exports.default = watch;
 exports.all = prodAll;
 //exports.styleguide = styleGuide;
