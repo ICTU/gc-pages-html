@@ -24,8 +24,8 @@
     margin-bottom: 0;
   }
 
-  .meta-data {
-    margin-top: auto;
+  .meta-data dd:before {
+    display: none;
   }
 
   &--featured-image {
@@ -67,6 +67,15 @@
     .card__content {
       padding-top: 0;
     }
+  }
+
+  &--type-brief {
+    @include gc-card-image-pantybrown;
+  }
+
+  .meta-data {
+    margin-top: auto;
+    padding-top: 2rem;
   }
 }
 
@@ -254,7 +263,7 @@
       font-size: 2.2rem;
       line-height: 34px;
 
-      @include bp-up(md){
+      @include bp-up(md) {
         padding-left: 3rem;
         padding-right: 3rem;
       }

@@ -27,5 +27,9 @@
     <p class="card__description">
       {{ descr }}
     </p>
+
+    {% if meta %}
+      {% include 'components/meta-data.html.twig' with {'items': meta} %}
+    {% endif %}
   </div>
 </div>

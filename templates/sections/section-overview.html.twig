@@ -41,10 +41,19 @@
             'descr' : item.descr,
             'img' : item.img,
             'type' : item.type,
-            'quote' : item.quote
+            'quote' : item.quote,
+            'meta': item.meta,
           } %}
         {% endfor %}
       </div>
+
+      {% if cta %}
+
+        <p class="l-cta-wrapper">
+          <a class="btn btn--primary" href="{{ cta.url }}">{{ cta.title }}</a>
+        </p>
+
+        {% endif %}
 
     {% else %}
 

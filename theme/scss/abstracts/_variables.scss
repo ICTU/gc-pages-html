@@ -93,8 +93,9 @@ $font-secondary:            'league_gothicregular', Impact, Helvetica, Arial, sa
 // Color Definitions
 $base-font-color:          $gc-dark-blue !default;
 $base-font-size:           1.8rem !default;
-$base-font-weight:         300 !default;
 $base-line-height:         3rem !default;
+
+$base-font-weight:         300 !default;
 $base-font-family:         $font-primary !default;
 
 $font-small:               1.4rem !default;
@@ -118,8 +119,8 @@ $base-h1-line-height:       66px !default;
 $base-h2-size:              2.6rem !default;
 $base-h2-line-height:       3.6rem !default;
 
-$base-h3-size:              2.6rem !default;
-$base-h3-line-height:       3rem !default;
+$base-h3-size:              2.4rem !default;
+$base-h3-line-height:       3.4rem !default;
 
 $base-h4-size:              22px !default;
 $base-h4-line-height:       28px !default;
@@ -152,8 +153,8 @@ $button-font:              $font-secondary;
 
 $breakpoints: (
         'sm': 560px,
-        'md': 992px,
-        'lg': 1200px,
+        'md': 700px,
+        'lg': 1100px,
         'xlg': 1600px,
         'nav': 1000px,
         'cm': 1400px
@@ -172,3 +173,4 @@ $gutter-smaller:          2rem !default;
 @import "vars/btn";
 @import "vars/entry";
 @import "vars/stepchart";
+@import "vars/text-block";

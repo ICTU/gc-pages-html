@@ -8,7 +8,7 @@
     max-width: $max-width-container;
   }
 
-  @include bp-up(md){
+  @include bp-up(md) {
     margin-top: 4rem;
   }
 
@@ -136,7 +136,7 @@
       }
     }
 
-    @include bp-down(sm){
+    @include bp-down(sm) {
       picture + picture {
         margin-top: $gutter-smaller;
       }
@@ -159,12 +159,10 @@
     max-width: $max-width-container;
   }
 
-  .grid {
-    margin-left: auto;
-    margin-right: auto;
-
-    + p {
-      display: flex;
+  .grid + p {
+    display: flex;
+    @include bp-up(lg) {
+      padding: 0 $gutter / 2;
     }
   }
 
@@ -174,6 +172,21 @@
 
     @include bp-up(lg) {
       margin-top: 4.5rem;
+    }
+  }
+
+  &-list {
+    max-width: $max-width-container;
+
+    .l-section-content {
+      max-width: none;
+    }
+
+    .teaser:not(.teaser--spotlight),
+    h3 {
+      max-width: $max-width-inner;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 }

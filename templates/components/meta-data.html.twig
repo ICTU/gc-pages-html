@@ -1,0 +1,8 @@
+<div class="meta-data">
+  <dl class="meta-data__list">
+    {% for item in items %}
+      <dt class="visually-hidden">{{ item.title }}</dt>
+      <dd class="{{ item.title|lower }}">{{ item.descr }}</dd>
+    {% endfor %}
+  </dl>
+</div>

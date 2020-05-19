@@ -13,5 +13,6 @@ echo $twig->render('homepage.html.twig', [
   'site_slogan' => 'Ontwerpen voor iedereen',
   'title' => 'Homepage met stappenplan',
   'stappenplan' => 'true',
-  'theme' => 'inclusie'
+  'theme' => 'inclusie',
+  'logo' => 'img/logo/inclusie.svg',
 ]);

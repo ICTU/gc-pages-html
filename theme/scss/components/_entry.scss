@@ -43,7 +43,7 @@
     }
   }
 
-  &--type-landingpage {
+  &--type-overview {
     .entry-header {
       max-width: none;
     }
@@ -67,11 +67,11 @@
       padding-bottom: 3rem;
       background: $hp-intro-bg;
 
-      @include bp-up(sm){
+      @include bp-up(sm) {
         padding-top: 7rem;
       }
 
-      @include bp-up(sm){
+      @include bp-up(sm) {
         padding-top: 10rem;
       }
 
@@ -86,45 +86,77 @@
         }
       }
     }
+
+    .section {
+      @include ho-padding;
+      max-width: none;
+
+      .l-section-top {
+        max-width: $max-width-container;
+      }
+
+      .l-section-content {
+        max-width: calc(#{$max-width-container} + #{$gutter});
+      }
+
+      .section__title {
+        border: none;
+      }
+
+      &--text-blocks {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+
+
+        .l-section-content {
+          max-width: calc(#{$max-width-container} + #{$gutter});
+        }
+      }
+
+      &:last-child {
+        padding-bottom: 5rem;
+
+        @include bp-up(lg){
+          padding-bottom: 8rem;
+        }
+      }
+    }
   }
-}
 
-// components which are used in entries
-.date-badge {
-  @include gc-box-shadow();
-  background: $date-badge-bg;
-  color: $date-badge-color;
-  text-align: center;
-  padding-top: 1.2rem;
-  display: inline-block;
-  width: 3.5rem;
-  height: 6rem;
+  &--type-overview {
+    max-width: none;
 
-  span:not(.visually-hidden) {
-    display: block;
+    .entry-header {
+      background: $intro-bg;
+      color: $intro-color;
+      padding: 3rem;
+      max-width: none;
+
+      @include bp-up(md) {
+        padding: 4rem 5rem;
+      }
+
+      h1, h2 {
+        color: $intro-color;
+      }
+
+      a {
+        color: $intro-color;
+      }
+    }
+
+    .page__intro {
+      background: $white;
+      @include gc-box-shadow();
+      max-width: $max-width-content;
+      margin: 0 auto;
+    }
+
+    .entry-body {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
   }
-
-  @include bp-up(sm) {
-    padding-top: 1.5rem;
-    line-height: 2.4rem;
-    width: 5rem;
-    height: 6.5rem;
-  }
-}
-
-.date-badge__day {
-  font-family: $font-secondary;
-  font-size: 2.6rem;
-
-  @include bp-up(sm) {
-    font-size: 3.2rem;
-  }
-}
-
-.date-badge__month {
-  font-family: $font-primary-semi;
-  font-size: 1.1rem;
-  line-height: 1.6rem;
 }
 
 // Author

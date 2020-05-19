@@ -9,7 +9,7 @@
 
     <div class="branding">
       <a href="/index.php" class="branding__home-link">
-        <img src="/theme/logo.svg" alt="{{ site_name }} Logo" class="branding__logo">
+        <img src="/theme/{{ logo ? logo : 'logo.svg' }}" alt="{{ site_name }} Logo" class="branding__logo">
 
         <span class="branding__name">{{ site_name }}</span>
 
@@ -97,12 +97,16 @@
         </li>
 
         <li class="main-menu__item main-menu__item--with-sub">
-          <a href="#" class="menu-link">Landingpages</a>
-          <button class="main-menu__open-sub">Open submenu Templates</button>
+          <a href="#" class="menu-link">Overviews</a>
+          <button class="main-menu__open-sub">Open submenu Overviews</button>
 
           <ul class="main-menu__sublist">
-            <li class="main-menu__item main-menu__item--sub"><a href="landingpage.php" class="menu-link">Met overzicht (instrumenten)</a></li>
-            <li class="main-menu__item main-menu__item--sub"><a href="landingpage-doelgroep.php" class="menu-link">Met overzicht (Doelgroep, inclusie)</a></li>
+            <li class="main-menu__item main-menu__item--sub"><a href="overview.php" class="menu-link">Instrumenten</a></li>
+            <li class="main-menu__item main-menu__item--sub"><a href="overview-blogs.php" class="menu-link">Blogs, spotlight</a></li>
+            <li class="main-menu__item main-menu__item--sub"><a href="overview-blogs-beeldbank.php" class="menu-link">Blogs, beeldbank</a></li>
+            <li class="main-menu__item main-menu__item--sub"><a href="overview-events.php" class="menu-link">Evenementen</a></li>
+            <li class="main-menu__item main-menu__item--sub"><a href="overview-doelgroep.php" class="menu-link">Doelgroep, inclusie</a></li>
+            <li class="main-menu__item main-menu__item--sub"><a href="overview-brieven.php" class="menu-link">Brieven, beeldbank</a></li>
           </ul>
         </li>
       </ul>

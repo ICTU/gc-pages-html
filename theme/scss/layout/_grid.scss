@@ -13,22 +13,20 @@
   @include bp-up(sm) {
     display: flex;
     flex-wrap: wrap;
-    margin-left: ($gutter / -2);
-    margin-right: ($gutter / -2);
   }
 
   &--col-3 {
-
     @include bp-up(sm) {
-
       > div,
       > section {
-        width: calc(50% - #{$gutter});
-        margin-left: ($gutter / 2);
-        margin-right: ($gutter / 2);
+        width: calc(50% - #{$gutter/2});
 
         &:first-child {
           width: 100%;
+        }
+
+        &:nth-child(2) {
+          margin-right: $gutter;
         }
       }
     }
@@ -37,9 +35,14 @@
       > div,
       > section {
         width: calc(33.3333% - #{$gutter});
+        margin-left: $gutter / 2;
+        margin-right: $gutter /2;
 
-        &:first-child {
+        &:first-child,
+        &:nth-child(2) {
           width: calc(33.3333% - #{$gutter});
+          margin-left: $gutter / 2;
+          margin-right: $gutter /2;
         }
       }
     }

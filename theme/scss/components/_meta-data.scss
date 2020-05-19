@@ -5,15 +5,15 @@
 }
 
 @mixin gc-meta-bolletje() {
-  &:before {
+  &:after {
     content: " ";
     speak: none;
     background: $border_color;
     width: .4rem;
     height: .4rem;
-    margin: 1.1rem 1rem 0 .6rem;
+    margin: 1.1rem 1rem 0;
     display: inline-block;
-    float: left;
+    float: right;
   }
 }
 
@@ -51,15 +51,36 @@
 
   dd {
     @include gc-meta-bolletje;
-  }
+    display: block;
 
-  dt:first-child + dd:before {
-    display: none;
+    &:before {
+      display: inline-block;
+      color: $meta-data-icon;
+      margin-right: 1rem;
+      font-size: 1.8rem;
+      float: left;
+    }
+
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+
+    &.datum {
+      @include icon(before, calendar);
+    }
+
+    &.auteur {
+      @include icon(before, user);
+    }
+
+    &.locatie {
+      @include icon(before, pin);
+    }
   }
 }
 
-.meta-data > div,
-.meta-data > span,
 .meta-data__item {
   display: inline-block;
 
@@ -68,6 +89,7 @@
     color: $gc-green;
     margin-right: .8rem;
   }
+
   label {
     font-weight: normal;
     font-family: $font_primary_semi;
@@ -88,7 +110,8 @@
     display: none;
   }
 
-  &.times {
+  &.times,
+  &.datum {
     @include icon(before, clock);
   }
 

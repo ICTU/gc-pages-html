@@ -26,7 +26,7 @@
   margin-right: auto;
 }
 
-@mixin backstretch($background: $color-primary){
+@mixin backstretch($background: $color-primary) {
   position: relative;
   z-index: 5;
 
@@ -169,6 +169,42 @@
 
     &:hover, &:focus, &:active {
       padding-right: 3.9rem;
+    }
+  }
+
+}
+
+
+@mixin gc-section-header {
+  font-size: 3.2rem;
+  font-family: $font_secondary;
+  line-height: 36px;
+
+  @include bp-up(md) {
+    font-size: 4.2rem;
+    line-height: 44px;
+  }
+}
+
+@mixin gc-card-image-pantybrown() {
+  position: relative;
+  overflow: hidden;
+
+  &.card--with-image {
+
+    .card__image {
+      background: $gc-pantybrown-xlight;
+      padding: 2rem 3rem;
+      height: 34rem;
+
+
+      img {
+        @include gc-box-shadow();
+        width: 18rem;
+        height: auto;
+        margin: 3rem auto 5rem;
+        object-fit: contain;
+      }
     }
   }
 
