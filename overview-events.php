@@ -7,8 +7,6 @@ use Twig\Loader\FilesystemLoader;
 use Twig\Extension\DebugExtension;
 use Twig\TwigFilter;
 
-use GroupBy;
-
 $loader = new FilesystemLoader(__DIR__ . '/templates');
 
 $twig = new Environment($loader, ['debug' => TRUE]);
