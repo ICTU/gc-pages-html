@@ -1,0 +1,380 @@
+{% if id is empty %}
+  {% set id = '1' %}
+{% endif %}
+
+<html lang="nl" dir="ltr">
+
+<head>
+  {% include 'includes/head.html.twig' %}
+</head>
+
+<body class="page page--type-overview site-id-{{ id }}{{ modifier }}">
+
+<div class="site-container">
+
+  {% include 'includes/header.html.twig' %}
+
+  {% if breadcrumb is empty %}
+    {% set breadcrumb = {
+      'page_title': 'Instrumenten',
+      'links': ['Home']
+    } %}
+  {% endif %}
+
+  {% include 'includes/breadcrumb.html.twig' with {
+    'page_title': breadcrumb.page_title,
+    'links': breadcrumb.links
+  } %}
+
+
+  <div class="page-content" id="maincontent" tabindex="-1">
+
+    <main class="content">
+
+      <article class="entry entry--type-overview entry--full">
+
+        <div class="entry-content">
+
+          <div class="page__intro">
+            <header class="entry-header">
+              <h1 class="entry-title">{{ title ? title : 'Onze instrumenten' }}</h1>
+
+              {% if intro %}
+                <p>{{ intro }}</p>
+              {% endif %}
+            </header>
+
+            {% if body %}
+              {# default body body #}
+
+              <div class="entry-body">
+                {{ body|raw }}
+              </div>
+
+              {# end body #}
+            {% endif %}
+
+          </div>
+
+          {% if overview is empty %}
+
+            {% set items = {
+              '1': {
+                'title' : 'Ontwerpprincipes',
+                'descr' : 'Deze 5 ontwerpprincipes helpen en inspireren om de digitale dienstverlening te verbeteren en zo gebruiksvriendelijk mogelijk te maken.',
+                'type' : 'instrument',
+              },
+              '2': {
+                'title' : 'Manifest',
+                'descr' : 'Met dit manifest creëren we draagvlak op bestuurlijk niveau: een intentieverklaring waarmee de professional de ruimte krijgt om bij het bedenken en realiseren van (digitale) dienstverlening de gebruiker centraal te zetten..',
+                'type' : 'instrument',
+              },
+              '3': {
+                'title' : 'Kennisbank Beeldtaal',
+                'descr' : 'Een kennisbank over beeldtaal in brieven, met veel minder tekst, duidelijke foto’s en uitgebreid getest.',
+                'type' : 'instrument',
+                'img' : 'brand-beeldbank.jpg',
+              },
+              '4': {
+                'title' : 'Optimaal Digitaal',
+                'descr' : 'Tips met praktijkvoorbeelden om de digitale weg naar de overheid te stimuleren onder burgers en bedrijven. Samengesteld op basis van onderzoek, interviews en gedragspyschologie.',
+                'type' : 'instrument',
+                'img' : 'brand-od.png'
+              },
+              '5': {
+                'title' : 'NL Design System',
+                'descr' : 'Een design system is een verzameling van herbruikbare componenten waarmee je als ontwerper of ontwikkelaar eenvoudig consistente, gebruiksvriendelijke en toegankelijke digitale diensten kunt ontwikkelen.',
+                'type' : 'instrument',
+                'img' : 'brand-nlds.jpg'
+              },
+              '6': {
+                'title' : 'Toolkit Inclusie',
+                'descr' : 'Ontwerpen voor inclusie is niet anders dan bestaande ontwerpaanpakken waarbij de gebruiker centraal staat. Bij ontwerpen voor inclusie schenk je speciale aandacht aan diversiteit bij gebruikers. De Tookit Inclusie helpt je bij hoe je dit kunt doen en hoe je inzichten kunt delen met anderen.',
+                'type' : 'instrument',
+                'img' : 'brand-inclusie.jpg'
+              },
+              '7': {
+                'title' : 'UX-testteam',
+                'descr' : 'Twijfel je of je prototype, website of app wel écht gebruiksvriendelijk is? Vraag dan feedback aan het UX-testteam van Gebruiker Centraal. Het testteam is een groep proefpersonen, die via remote usability testing op afroep en op afstand meekijkt naar je ontwerpen. Dit zijn mensen met én zonder UX-ervaring.',
+                'type' : 'instrument'
+              },
+              '8': {
+                'title' : 'Volwassenheidsscan',
+                'descr' : 'De Gebruiker Centraal Volwassenheidsscan is een online instrument met 15 vragen om te zien waar je organisatie staat met het centraal stellen van de gebruiker. Naast inzicht in hoe goed je organisatie het doet geeft de Volwassenheidsscan ook tips hoe je naar een volgend niveau kan komen.',
+                'type' : 'instrument'
+              }
+            } %}
+
+            {% include 'sections/section-overview.html.twig' with {
+              'items': items
+            } %}
+
+            {% set items2 = {
+              '1': {
+                'title' : 'Direct Duidelijk Tour',
+                'descr' : 'Deze 5 ontwerpprincipes helpen en inspireren om de digitale dienstverlening te verbeteren en zo gebruiksvriendelijk mogelijk te maken.',
+                'type' : 'instrument',
+              },
+              '2': {
+                'title' : 'Design Sprint Week',
+                'descr' : 'Heb je een complex probleem dat je op een andere manier wil oplossen of wil je een dienstverlening verbetern? Deze online trainingen helpen je design thingking te gebruiken',
+                'type' : 'instrument',
+              }
+            } %}
+
+            {% include 'sections/section-overview.html.twig' with {
+              'title': 'In 2020',
+              'items': items2
+            } %}
+
+          {% else %}
+
+            {% if overview == 'doelgroep' %}
+
+              {% set doelgroeps = {
+                '1' : {
+                  'title' : '(Licht) verstandelijke beperking',
+                  'type' : 'doelgroep',
+                  'img' : 'doelgroep-1.svg',
+                  'quote' : {
+                    'quote' : 'Het ziet er allemaal zo ongezellig uit',
+                    'name' : 'Robin, 22'
+                  },
+                },
+                '2' : {
+                  'title' : 'Autisme',
+                  'img' : 'doelgroep-2.svg',
+                  'quote' : {
+                    'quote' : 'Ik weet niet wat er gebeurt als ik een keuze maak',
+                    'name' : 'Bart, 22'
+                  },
+                  'type' : 'doelgroep',
+                },
+                '3' : {
+                  'title' : 'Dak- en thuislozen',
+                  'img' : 'doelgroep-3.svg',
+                  'quote' : {
+                    'quote' : 'Ze hoeven niet alles van me te weten',
+                    'name' : 'Maaike, 39'
+                  },
+                  'type' : 'doelgroep',
+                },
+                '4' : {
+                  'title' : 'Immigranten',
+                  'type' : 'doelgroep',
+                  'img' : 'doelgroep-3.svg',
+                  'quote' : {
+                    'quote' : 'Het gaat hier allemaal heel anders dan in mijn land van herkomst',
+                    'name' : 'Muhab, 57'
+                  },
+                },
+                '5' : {
+                  'title' : 'Autisme',
+                  'img' : 'doelgroep-1.svg',
+                  'quote' : {
+                    'quote' : 'Als ik zie dat ik iets moet typen dan begin ik er al niet aan',
+                    'name' : 'Dick, 54'
+                  },
+                  'type' : 'doelgroep',
+                },
+                '6' : {
+                  'title' : 'Mensen in gebruikksituaties van technologie',
+                  'img' : 'doelgroep-2.svg',
+                  'quote' : {
+                    'quote' : 'Wel leuk die voorleessoftware, maar iedereen kan meeluisteren',
+                    'name' : 'John, 55'
+                  },
+                  'type' : 'doelgroep',
+                }
+              } %}
+
+              {% include 'sections/section-overview.html.twig' with {
+                'items': doelgroeps,
+                'title': '',
+                'template': 'card--doelgroep'
+              } %}
+
+
+            {% elseif overview == 'brieven' %}
+
+              {% set brieven = {
+                '1': {
+                  'title': 'Afwijzing kwijtschelding afvalstoffenheffing',
+                  'descr': 'Getest op 10 mei 2017 met 8 testers. Getest op 25 oktober 2017 met 10 testers Getest in samenwerking met het Burgerpanel Rotterdam, MEE Rotterdam-Rijnmond en Stichting ABC. Testers waren verspreid in opleiding, leeftijd, gender en achtergrond.',
+                  'type': 'brief',
+                  'img': 'brief-1.jpg'
+                },
+                '2': {
+                  'title': 'Eerste vestiging in Nederland',
+                  'descr': 'Getest op 10 mei 2017 met 8 testers. Getest op 25 oktober 2017 met 10 testers. Getest in samenwerking met het Burgerpanel Rotterdam, MEE Rotterdam-Rijnmond en Stichting ABC. Testers waren verspreid in opleiding, leeftijd, gender en achtergrond.',
+                  'type': 'brief',
+                  'img': 'brief-2.jpg'
+                },
+                '3': {
+                  'title': 'Informatie bij stempassen verkiezingen 2018',
+                  'descr': 'De informatie die is meegestuurd bij de stempassen voor de Verkiezingen in 2018.',
+                  'type': 'brief',
+                  'img': 'brief-3.jpg'
+                },
+              } %}
+
+              {% include 'sections/section-overview.html.twig' with {
+                'items': brieven,
+                'title': '',
+              } %}
+
+            {% elseif overview == 'events' %}
+
+              {% set events = {
+                '1': {
+                  'title' : 'Draagvlak in jouw organisatie - Direct Duidelijk Tour',
+                  'descr' : 'De coronacrisis raakt iedereen. Veel activiteiten liggen stil en we zijn steeds meer aangewezen op onlinekanalen. Daarom is inclusieve en duidelijke communicatie en dienstverlening belangrijker dan ooit. Meld je aan voor de webinar reeks van Gebruiker Centraal.',
+                  'start_date': '2020-07-20 10:00',
+                  'end_date': '2020-07-20 10:45',
+                  'type' : 'event',
+                  'img': 'styles/43-md/brand-dd.jpg',
+                  'meta' : {
+                    'locatie': {
+                      'title' : 'Locatie',
+                      'descr' : 'Utrecht, Jaarbeurs'
+                    }
+                  }
+                },
+                '2': {
+                  'title' : 'Webinar: De kracht van beeldtaal',
+                  'descr' : 'Eén beeld zegt meer dan duizend woorden. Dat is de kracht van beeldtaal. Rotterdammer Centraal en Gebruiker Centraal zetten zich gezamenlijk in om meer beeldtaal te gebruiken in brieven. Minder tekst en duidelijke foto’s.',
+                  'start_date': '2020-08-20 10:00',
+                  'end_date': '2020-08-21 10:45',
+                  'type' : 'event',
+                  'full' : 'full',
+                  'meta' : {
+                    'locatie': {
+                      'title' : 'Locatie',
+                      'descr' : 'Hoofdkantoor ICTU (Den Haag HS)'
+                    }
+                  }
+                },
+                '3': {
+                  'title' : 'International Past Design Conference',
+                  'descr' : 'Dit item heeft een plaatje. Moet kunnen!.',
+                  'start_date': '2020-08-04 10:00',
+                  'img': 'styles/43-md/img-43-4.jpg',
+                  'type' : 'event',
+                  'meta' : {
+                    'locatie': {
+                      'title' : 'Locatie',
+                      'descr' : 'De Doelen, Rotterdam'
+                    }
+                  }
+                },
+                '4': {
+                  'title' : 'Heel Ver in de Toekomst',
+                  'descr' : 'Eén beeld zegt meer dan duizend woorden. Dat is de kracht van beeldtaal. Rotterdammer Centraal en Gebruiker Centraal zetten zich gezamenlijk in om meer beeldtaal te gebruiken in brieven. Minder tekst en duidelijke foto’s.',
+                  'start_date': '2021-08-04 10:00',
+                  'end_date': '2021-09-06 17:00',
+                  'img': 'styles/43-md/img-43-2.jpg',
+                  'type' : 'event',
+                  'meta' : {
+                    'locatie': {
+                      'title' : 'Locatie',
+                      'descr' : 'Ergens In Nederland'
+                    }
+                  }
+                },
+              } %}
+
+              {% include 'sections/section-overview-list.html.twig' with {
+                'items': events,
+                'title': '',
+                'type': 'events'
+              } %}
+
+
+            {% elseif overview == 'blogs' %}
+
+              {% if theme != 'beeldbank' %}
+                {% set spotlight_item = {
+                  'title': 'Website Optimaal Digitaal Live!',
+                  'descr': 'Sed porttitor lectus nibh. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec rutrum congue leo eget malesuada.',
+                  'img': 'styles/spotlight/od.jpg',
+                  'post_date': '2020-08-01',
+                  'meta': {
+                    '1': {
+                      'title': 'Auteur',
+                      'descr': 'Ineke Graumans'
+                    }
+                  }
+                } %}
+
+              {% endif %}
+
+              {% set blogitems = {
+                '1': {
+                  'title' : 'We zijn gewoon begonnen',
+                  'descr' : 'oe kunnen we als dienstverleners in Rotterdam, de Rotterdammer écht centraal zetten in onze dienstverlening?’ Met die ambitie in het achterhoofd richtte Esmeralde Marsman samen met Victor Zuydweg in 2019 Rotterdammer Centraal op. Waar kwam de behoefte vandaan om Rotterdammer Centraal op te richten en waar begin je nu bij het opzetten van een community? Esmeralde vertelt.',
+                  'post_date': '2020-05-15',
+                  'img': 'styles/43-md/brand-rc.jpg',
+                  'type' : 'blog',
+                  'meta': {
+                    '1': {
+                      'title': 'Auteur',
+                      'descr': 'Elka Helmers'
+                    }
+                  }
+                },
+                '2': {
+                  'title' : 'Gebruiker Centraal organiseert ‘Design thinking bij de overheid’: training, design sprint en conferentie',
+                  'descr' : 'Gebruiker Centraal organiseert dit najaar een (online) training inclusief een design sprint week (op 25 verschillende plekken in het land) en een conferentie in het teken van design thinking bij de overheid.',
+                  'post_date': '2020-05-11',
+                  'type' : 'blog',
+                  'meta': {
+                    '1': {
+                      'title': 'Auteur',
+                      'descr': 'Brenda Vredeveld'
+                    }
+                  }
+                },
+                '3': {
+                  'title': 'Geen uitstel voor wettelijke verplichting digitale toegankelijkheid',
+                  'descr': 'De wettelijke verplichting ‘digitale toegankelijkheid overheid’ gaat in per 23 september 2020. Dit betekent dat alle websites van alle overheidsinstanties de toegankelijkheidsnormen vanaf die datum moeten toepassen. De genoemde datum blijft, ondanks de coronacrisis, gehandhaafd.',
+                  'post_date': '2020-05-01',
+                  'type' : 'blog',
+                  'meta': {
+                    '1': {
+                      'title': 'Auteur',
+                      'descr': 'Victor Zuydweg'
+                    }
+                  }
+                },
+                '4': {
+                  'title': 'De begripvolle ambtenaar',
+                  'descr': 'Kun je een begripvolle ambtenaar zijn als de overheid een computer is? Voelen mensen zich wel begrepen door de Digitale Overheid?',
+                  'img': 'styles/43-md/begripvolle-ambtenaar.jpg',
+                  'type': 'blog',
+                  'post_date': '2020-04-28',
+                  'meta': {
+                    '1': {
+                      'title': 'Auteur',
+                      'descr': 'Brenda Vredeveld'
+                    }
+                  }
+                }
+              } %}
+
+              {% include 'sections/section-overview-list.html.twig' with {
+                'items': blogitems,
+                'spotlight': spotlight_item,
+                'type': 'blogs'
+              } %}
+
+            {% endif %}
+
+          {% endif %}
+
+        </div>
+      </article>
+    </main>
+  </div>
+
+  {% include 'includes/footer.html.twig' %}
+</div>
