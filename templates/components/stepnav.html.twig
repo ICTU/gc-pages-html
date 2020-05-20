@@ -1,0 +1,41 @@
+{% set i  = 0 %}
+{% set sprite_url = 'theme/img/sprites/stepchart/defs/svg/sprite.defs.svg' %}
+
+{% set stepnav_bg %}
+  <svg class="stepnav__bg-img">
+    <path d="M428.7,0H29.9C19.6,0,11.3,8.3,11.3,18.6v7.9l-7.8-7.4L0,22.7l14.7,13.9l13.9-14.7l-3.6-3.4l-8.6,9.1v-9
+	C16.3,11.1,22.4,5,29.9,5h398.8c7.5,0,13.6,6.1,13.6,13.6V28h5v-9.4C447.3,8.3,438.9,0,428.7,0z"/>
+  </svg>
+{% endset %}
+
+<div class="stepnav">
+  <h2 class="visuallyhidden">Stappen</h2>
+
+  <figure class="stepnav__bg" role="figure" focusable="false">
+    <div class="left">
+      {{ stepnav_bg }}
+    </div>
+    <div class="right">
+      {{ stepnav_bg }}
+    </div>
+  </figure>
+
+  <ol class="stepnav__items l-item-count-{{ items|length }}">
+
+
+    {% for item in items %}
+      {% set i = i + 1 %}
+
+      <li id="step_{{ i }}" class="stepnav__step">
+        <a href="#/" class="stepnav__link " title="bereid je voor ">
+          <svg class="icon icon--stepnav" focusable="false">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xlink:href="{{ sprite_url }}#{{ item.icon }}"></use>
+          </svg>
+          <span class="stepnav__linktext">{{ item.title }} </span></a>
+      </li>
+
+    {% endfor %}
+
+  </ol>
+</div>

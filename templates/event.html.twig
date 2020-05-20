@@ -35,20 +35,32 @@
               {{ page_title }}
             {% endif %}</h1>
 
-          <div class="meta-data">
-            <div class="meta-data">
-              <div class="meta-data__item times">
-                <span class="starttime" itemprop="startDate" content="2015-09-24T15:00:00+02:00">15:00</span> - <span
-                    class="endtime" itemprop="endDate" content="2015-09-24T16:00:00+02:00">16:00</span></div>
-              <div class="meta-data__item location">Logius</div>
-              <div class="meta-data__item pricing" itemprop="offers" itemscope=""
-                   itemtype="http://schema.org/AggregateOffer">Gratis
-                <div class="visuallyhidden" itemprop="price">0</div>
-                <div class="visuallyhidden" itemprop="availability">5</div>
-              </div>
-              <div class="meta-data__item aanmeldingen">25 Aanmeldingen</div>
-            </div>
-          </div>
+
+          {% set meta = {
+            '1': {
+              'classname': 'time',
+              'title' : 'Tijdstip',
+              'descr' : '15:00 - 16:00',
+              'itemprop' : 'time',
+            },
+            '2': {
+              'classname': 'price',
+              'title' : 'Prijs',
+              'descr' : 'Gratis',
+            },
+            '3': {
+              'classname': 'location',
+              'title' : 'Locatie',
+              'descr' : 'Logius',
+            },
+            '4': {
+              'classname': 'registrations',
+              'title' : 'Aanmeldingen',
+              'descr' : '45 aanmeldingen',
+            },
+          } %}
+
+          {% include 'components/meta-data.html.twig' with {'items' : meta} %}
 
         </header>
 

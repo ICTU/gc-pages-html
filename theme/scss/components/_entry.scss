@@ -124,33 +124,8 @@
   }
 
   &--type-overview {
+    @include gc-page-intro();
     max-width: none;
-
-    .entry-header {
-      background: $intro-bg;
-      color: $intro-color;
-      padding: 3rem;
-      max-width: none;
-
-      @include bp-up(md) {
-        padding: 4rem 5rem;
-      }
-
-      h1, h2 {
-        color: $intro-color;
-      }
-
-      a {
-        color: $intro-color;
-      }
-    }
-
-    .page__intro {
-      background: $white;
-      @include gc-box-shadow();
-      max-width: $max-width-content;
-      margin: 0 auto;
-    }
 
     .entry-body {
       padding-left: 2rem;

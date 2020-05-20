@@ -8,6 +8,15 @@
   .content {
     @include gc-box-shadow();
     padding: 0;
+    z-index: 6;
+  }
+
+  .page-content {
+    padding-top: 3rem;
+
+    @include bp-up(md){
+      padding-top: 5rem;
+    }
   }
 }
 

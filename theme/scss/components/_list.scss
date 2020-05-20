@@ -1,3 +1,32 @@
+.item-list {
+  margin: 0;
+  padding: 0;
+}
+
+.item-list__item {
+  @include icon(before, arrow);
+  position: relative;
+  padding: 1.8rem 2rem 0 3.5rem;
+  list-style: none;
+  border-top: .1rem solid $border-color;
+
+  &:before {
+    position: absolute;
+    top: 1.8rem;
+    left: 0;
+    font-size: 1.4rem;
+  }
+
+  + .item-list__item {
+    margin-top: 1.8rem;
+  }
+}
+
+.item-list__description {
+  font-size: $font-smaller;
+  line-height: 2.6rem;
+  margin-top: .6rem;
+}
 
 .steplist {
   counter-reset: steplist;
@@ -26,11 +55,11 @@
     }
 
     &:before {
-      .font-size(22);
+      font-size: 2.2rem;
       counter-increment: steplist;
       content: counter(steplist);
-      background: @steplist_circle_bg;
-      color: @steplist_color;
+      background: $steplist_circle_bg;
+      color: $steplist_color;
       position: absolute;
       left: 0;
       top: 0;
@@ -39,9 +68,9 @@
       line-height: 4.5rem;
       border-radius: 50%;
       text-align: center;
-      font-family: @font_primary_bold;
+      font-family: $font_primary_bold;
       z-index: +1;
-      border: 1rem solid @white;
+      border: 1rem solid $white;
       margin-left: -2rem;
       margin-top: -1.8rem;
 
@@ -54,19 +83,19 @@
       width: .6rem;
       top: 2rem;
       bottom: 0;
-      background: @gc_blue_xlight;
+      background: $gc-blue-xlight;
     }
 
     &:last-child:after {
       display: none;
     }
 
-    @media @tablet {
+    @include bp-up(md){
       padding-left: 7rem;
       padding-bottom: 5rem;
 
       &:before {
-        .font-size(28);
+        font-size: 2.8rem;
         width: 6rem;
         height: 6rem;
         line-height: 6rem;

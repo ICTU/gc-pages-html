@@ -36,14 +36,15 @@
               {{ page_title }}
             {% endif %}</h1>
 
-          <div class="meta-data">
-            <dl class="meta-data__list">
-              <dt class="meta-data__label">Auteur</dt>
-              <dd class="meta-data__item">
-                <a class="link link--meta-data">{{ author ? author : 'Brenda Vredeveld' }}</a>
-              </dd>
-            </dl>
-          </div>
+          {% set meta = {
+            '1': {
+              'classname': 'author',
+              'title' : 'Auteur',
+              'descr' : 'Gebruiker Centraal Redactie',
+            }
+          } %}
+
+          {% include 'components/meta-data.html.twig' with {'items' : meta} %}
 
         </header>
 

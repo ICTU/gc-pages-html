@@ -207,5 +207,58 @@
       }
     }
   }
+}
 
+@mixin gc-page-intro($bg: $intro-bg, $color: $intro-color) {
+
+  .entry-header {
+    background: $bg;
+    color: $color;
+    padding: 3rem;
+    max-width: none;
+
+    @include bp-up(md) {
+      padding: 4rem 5rem;
+    }
+
+    h1, h2 {
+      color: $color;
+    }
+
+    a {
+      color: $color;
+    }
+  }
+
+  .page__intro {
+    background: $white;
+    @include gc-box-shadow();
+    max-width: $max-width-content;
+    margin: 0 auto;
+  }
+}
+
+@mixin gc-bg-rotated($bg: $gc-pantybrown-xlight) {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  z-index: 5;
+  padding-bottom: 5rem;
+
+  @include bp-up(md){
+    padding-bottom: 8rem;
+  }
+
+  &:before {
+    position: absolute;
+    content: " ";
+    background: $bg;
+    speak: none;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 -5rem -5rem;
+    top: 15rem;
+    transform: rotate(2deg);
+  }
 }

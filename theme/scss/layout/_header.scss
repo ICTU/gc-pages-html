@@ -66,6 +66,7 @@
     }
   }
 
+
   @include bp-down(nav) {
     span {
       @include visually-hidden;
@@ -75,16 +76,26 @@
   @include bp-up(nav) {
     min-width: 40rem;
     line-height: 2rem;
+    display: flex;
+    align-items: center;
 
     img {
       margin-right: 1.8rem;
       transition: transform .2s, margin .2s;
-      float: left;
     }
 
     span {
       display: block;
     }
+
+    &.branding--with-slogan {
+      display: block;
+
+      img {
+        float: left;
+      }
+    }
+
   }
 }
 

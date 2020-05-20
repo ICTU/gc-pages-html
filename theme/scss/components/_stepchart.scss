@@ -256,6 +256,20 @@
         fill: $stepchart_icon_color_desktop_hover;
       }
     }
+
+    .btn__text {
+      @include bp-up(sm) {
+        @include gc-box-shadow;
+        display: inline-block;
+        color: white;
+        background: $stepchart_label;
+        margin-top: .5rem;
+        padding: .8rem 1.5rem;
+        font-size: 2.4rem;
+        line-height: 2.4rem
+      }
+    }
+
   }
 
   @include bp-up(lg) {
@@ -289,16 +303,3 @@
   }
 }
 
-
-.btn__text {
-  @include bp-up(sm) {
-    @include gc-box-shadow;
-    display: inline-block;
-    color: white;
-    background: $stepchart_label;
-    margin-top: .5rem;
-    padding: .8rem 1.5rem;
-    font-size: 2.4rem;
-    line-height: 2.4rem
-  }
-}

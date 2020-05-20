@@ -12,6 +12,9 @@
     margin-top: 4rem;
   }
 
+  &--bg-option {
+    @include gc-bg-rotated();
+  }
 }
 
 .section__title {
@@ -77,14 +80,11 @@
 }
 
 .section--related {
-  + .section--related-links {
-    .section__title {
-      border: none;
-    }
-  }
+  max-width: none;
 
-  + .section--text {
-    margin-top: 5rem;
+  .grid {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -221,7 +221,6 @@
     }
   }
 }
-
 
 .l-section-col {
   &.col--50-width {

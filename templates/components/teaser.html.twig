@@ -1,11 +1,17 @@
-<section class="teaser teaser--type-{{ type ? type : 'page' }}{{ modifier ? ' teaser--' ~ modifier }}{{ img ? ' l-with-image' : ' l-without-image' }}">
+<section
+    class="teaser teaser--type-{{ type ? type : 'page' }}{{ modifier ? ' teaser--' ~ modifier }}{{ img ? ' l-with-image' : ' l-without-image' }}">
   <a class="teaser__link" href="{{ url ? url : '#' }}">
+
+    {% if full %}
+      <span class="label label--full">Zit vol</span>
+    {% endif %}
 
     {% if img %}
       <img src="/uploads/{{ img }}" alt="{{ title }}" class="teaser__image">
     {% endif %}
 
-    {% if img %}<div class="l-teaser-content">{% endif %}
+    {% if img %}
+    <div class="l-teaser-content">{% endif %}
       <header class="teaser__header">
         {% if type == 'event' %}
 

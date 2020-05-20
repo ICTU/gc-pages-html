@@ -68,6 +68,7 @@ $filter = new TwigFilter('group', function ($items) {
         'img' => $event['img'],
         'meta' => $meta_data,
         'type' => $event['type'],
+        'full' => $event['full'],
         'start_date' => $event['start_date'],
         'end_date' => $event['end_date'],
       ]);

@@ -1,30 +1,32 @@
+<section class="section section--links">
 
-<section class="section section--related">
-  <div class="l-section-top">
-    <h2 class="section__title">
-      Interessante links
-    </h2>
-    <p class="section__description">
-      Deze sectie kan gebruikt worden voor (externe) links en bronvermeldingen.
-    </p>
-  </div>
+  {% if title or section_descr %}
+    <div class="l-section-top">
+      {% if title %}
+        <h2 class="section__title">
+          Interessante links
+        </h2>
+      {% endif %}
 
+      {% if section_descr %}
+        <p class="section__description">
+          Deze sectie kan gebruikt worden voor (externe) links en bronvermeldingen.
+        </p>
+      {% endif %}
+    </div>
+  {% endif %}
 
   <div class="l-section-content">
-
     <ul class="item-list">
-      <li class="item-list__item">
-        <a href="#" class="link link--linklist">Design System Gitlab</a>
-        <p class="item-list__description">Ook bijdragen? Klik snel op de link en bekijk wat je kunt doen!</p>
-      </li>
-      <li class="item-list__item">
-        <a href="#" class="link link--linklist link--external">Google</a>
-        <p class="item-list__description">Ben je op zoek naar iets? Google helpt je verder.</p>
-      </li>
-      <li class="item-list__item">
-        <a href="#" class="link link--linklist link--external">Optimaal Digitaal</a>
-        <p class="item-list__description">Meer weten over het spel en alle workshops? Lees er alles over op de site van Optimaal Digitaal.</p>
-      </li>
+      {% for item in items %}
+        <li class="item-list__item">
+          <a href="{{ url ? url : '#' }}" class="link link--linklist">{{ item.title }}</a>
+
+          {% if item.descr %}
+            <p class="item-list__description">{{ item.descr }}</p>
+          {% endif %}
+        </li>
+      {% endfor %}
     </ul>
 
   </div>

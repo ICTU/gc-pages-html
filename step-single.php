@@ -17,6 +17,19 @@ $twig->addExtension(new DebugExtension);
 $twig->addFilter($filter);
 
 
-echo $twig->render('overview.html.twig', [
-  'site_name' =>'Gebruiker Centraal']
-);
+$intro = 'Ga in gesprek met alle (interne) belanghebbenden van de brief, folder of website die je wilt aanpakken – denk aan de proceseigenaar, communicatieadviseur, KCC’er, beleidsadviseur – over het idee van gebruik van beeldtaal.';
+
+echo $twig->render('step-single.html.twig', [
+  'site_name' => 'Beeldbank',
+  'site_slogan' => 'Maak begrijpelijke brieven',
+  'logo' => 'img/logo/beeldbank.svg',
+  'title' => 'Stap 1: Bereid voor',
+  'intro' => $intro,
+  'theme' => 'beeldbank',
+  'breadcrumb' => [
+    'page_title' => 'Stap 1: Bereid voor',
+    'links' => [
+      'Zelf maken'
+    ]
+  ]
+]);

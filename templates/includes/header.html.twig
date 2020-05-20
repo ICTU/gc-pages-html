@@ -8,7 +8,7 @@
   <div class="l-header-top">
 
     <div class="branding">
-      <a href="/index.php" class="branding__home-link">
+      <a href="/index.php" class="branding__home-link{{ site_slogan ? ' branding--with-slogan' }}">
         <img src="/theme/{{ logo ? logo : 'logo.svg' }}" alt="{{ site_name }} Logo" class="branding__logo">
 
         <span class="branding__name">{{ site_name }}</span>
@@ -78,6 +78,7 @@
           <button class="main-menu__open-sub">Open submenu Homepages</button>
 
           <ul class="main-menu__sublist">
+            <li class="main-menu__item main-menu__item--sub"><a href="index.php" class="menu-link">Homepage (GC)</a></li>
             <li class="main-menu__item main-menu__item--sub"><a href="home-stappenplan.php" class="menu-link">Met stepchart (Inclusie)</a></li>
             <li class="main-menu__item main-menu__item--sub"><a href="home-beeldbank.php" class="menu-link">Met stepchart (Beeldbank)</a></li>
           </ul>
@@ -88,11 +89,12 @@
           <button class="main-menu__open-sub">Open submenu Templates</button>
 
           <ul class="main-menu__sublist">
-            <li class="main-menu__item main-menu__item--sub"><a href="index.php" class="menu-link">Homepage</a></li>
             <li class="main-menu__item main-menu__item--sub"><a href="page.php" class="menu-link">Regular page</a></li>
             <li class="main-menu__item main-menu__item--sub"><a href="blog.php" class="menu-link">Blog page</a></li>
             <li class="main-menu__item main-menu__item--sub"><a href="blog-hero.php" class="menu-link">Blog page, hero</a></li>
             <li class="main-menu__item main-menu__item--sub"><a href="event.php" class="menu-link">Event single</a></li>
+            <li class="main-menu__item main-menu__item--sub"><a href="step-single.php" class="menu-link">Step single (Beeldbank)</a></li>
+            <li class="main-menu__item main-menu__item--sub"><a href="step-single-inc.php" class="menu-link">Step single (Inclusie)</a></li>
           </ul>
         </li>
 

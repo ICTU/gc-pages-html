@@ -1,6 +1,6 @@
 {% set base_url = '/uploads' %}
 
-<section class="section section--related{{ cards ? ' l-item-count-' ~ cards|length : '' }}">
+<section class="section section--related{{ cards ? ' l-item-count-' ~ cards|length : '' }}{{ modifier ? ' section--' ~ modifier }}">
 
   {# Wrapper for section intro #}
   {% if title or description %}
@@ -14,7 +14,7 @@
 
     {% if description %}
     <p class="section__description">
-      {{ descr }}
+      {{ description }}
     </p>
     {% endif %}
   </div>
