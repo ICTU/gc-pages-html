@@ -1,9 +1,10 @@
-.section--bg-option {
+.section--spotlight.section--bg-option {
   padding-bottom: 8rem;
 
   @include bp-up(lg){
     padding-bottom: 10rem;
   }
+
   &:before {
     background: url('../../img/b_section-bg-option.svg') 0 100% no-repeat;
     background-size: auto 500px;

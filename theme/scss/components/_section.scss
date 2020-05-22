@@ -1,15 +1,16 @@
 .section {
   margin-top: $gutter;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: $max-width-inner; // set default width - can be overrided for specific sections
 
-  &--image-full {
-    max-width: $max-width-container;
+  .l-section-inner {
+    @include ho-container-content;
   }
 
   @include bp-up(md) {
     margin-top: 4rem;
+  }
+
+  @include bp-up(lg) {
+    margin-top: 7rem;
   }
 
   &--bg-option {
@@ -42,6 +43,9 @@
   margin: 0 auto;
 
   .grid {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+
     &--col-1,
     &--col-2 {
       max-width: calc(#{$max-width-inner} + #{$gutter});
@@ -58,6 +62,15 @@
   .item-list {
     max-width: calc(#{$max-width-inner} + #{$gutter});
     margin: 2rem auto 0;
+  }
+}
+
+.section--related {
+  &.l-item-count-1,
+  &.l-item-count-2 {
+    .l-section-content {
+      @include ho-container-content;
+    }
   }
 }
 
@@ -80,19 +93,11 @@
   margin-top: $gutter;
 }
 
-.section--related {
-  max-width: none;
-
-  .grid {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
 
 // TExts
 
 .section--text {
-  @include ho-container-content;
+  @include ho-padding;
 
   .section__title {
     border: none;
@@ -103,6 +108,11 @@
 // Per section
 
 .section--image {
+
+  .l-section-inner {
+    max-width: $max-width-inner;
+    margin: 0 auto;
+  }
 
   picture {
     display: block;
@@ -122,9 +132,6 @@
     }
   }
 
-  &-width-content {
-    max-width: $max-width-inner;
-  }
 
   &.l-item-count-2 {
     @include bp-up(sm) {
@@ -239,8 +246,9 @@
 
 .l-cta-wrapper {
   .btn + .btn {
-    @include bp-up(md){
+    @include bp-up(md) {
       margin-left: 2rem;
     }
   }
 }
+

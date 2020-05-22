@@ -9,7 +9,6 @@
 
   &--type-blog,
   &--type-event {
-
     .entry-header {
       position: relative;
       padding-left: 2.5rem;
@@ -55,6 +54,24 @@
       @include bp-up(sm) {
         padding-bottom: 5rem;
       }
+    }
+  }
+
+  &--type-landing {
+    @include gc-page-intro();
+    background: none;
+
+    .page__intro {
+      box-shadow: none;
+      margin-bottom: 5rem;
+
+      @include bp-up(md){
+        margin-bottom: 8rem;
+      }
+    }
+
+    .section {
+      @include ho-padding;
     }
   }
 
