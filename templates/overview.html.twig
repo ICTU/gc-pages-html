@@ -373,6 +373,28 @@
 
         </div>
       </article>
+
+      {% if overview == 'brieven' %}
+
+        {% set spotlight = {
+          '1': {
+            'title': 'Deel je brief!',
+            'descr': 'Heeft jouw gewmeente een goede beeldbrief gemaakt? Deel hem met anderen en stuur hem in!',
+            'img': 'img-16-9-letter.jpg',
+            'cta': {
+              '1': {
+                'title': 'Stuur je brief in'
+              }
+            }
+          }
+        } %}
+
+        {% include 'sections/section-spotlight.html.twig' with {
+          'items': spotlight,
+          'modifier': 'bg-option'
+        } %}
+
+      {% endif %}
     </main>
   </div>
 

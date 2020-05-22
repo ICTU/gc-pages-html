@@ -240,12 +240,12 @@
 
 @mixin gc-bg-rotated($bg: $gc-pantybrown-xlight) {
   position: relative;
-  width: 100%;
+  //width: 100%;
   overflow: hidden;
   z-index: 5;
   padding-bottom: 5rem;
 
-  @include bp-up(md){
+  @include bp-up(md) {
     padding-bottom: 8rem;
   }
 
@@ -262,3 +262,16 @@
     transform: rotate(2deg);
   }
 }
+
+@mixin gc-section-heading() {
+  font-size: 3.2rem;
+  font-family: $font_secondary;
+  //text-transform: uppercase; :(
+  line-height: 36px;
+
+  @include bp-up(md) {
+    font-size: 4.2rem;
+    line-height: 44px;
+  }
+}
+

@@ -149,7 +149,31 @@
         }
       }
     }
+  }
 
+  &--small {
+    background: none;
+    box-shadow: none;
+
+    .teaser__image {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+
+    .teaser__title {
+      margin-top: 1.6rem;
+      font-size: 2rem;
+      line-height: 2.8rem;
+    }
+
+    .date-badge {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      box-shadow: none;
+      background: $color-secondary;
+    }
   }
 }
 

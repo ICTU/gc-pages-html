@@ -64,7 +64,7 @@
   {% endif %}
 
 
-  <span class="date-badge" itemprop="datePublished" content="{{ day }} {{ month }} {{ year }}">
+  <span class="date-badge{{ modifier? ' ' ~ modifier }}" itemprop="datePublished" content="{{ day }} {{ month }} {{ year }}">
       <span class="date-badge__day">{{ day }}</span>
       <span class="date-badge__month">{{ month }}</span>
       <span class="date-badge__year visually-hidden">{{ year }}</span>

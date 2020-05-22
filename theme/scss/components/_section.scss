@@ -42,11 +42,12 @@
   margin: 0 auto;
 
   .grid {
-    &:not(.grid--col-3) {
+    &--col-1,
+    &--col-2 {
       max-width: calc(#{$max-width-inner} + #{$gutter});
     }
 
-    &.grid--col-1 {
+    &--col-1 {
       padding-left: $gutter / 2;
       padding-right: $gutter / 2;
       margin-left: -1.5rem;
@@ -206,9 +207,6 @@
     margin-top: $gutter;
   }
 
-  .grid {
-    margin-top: $gutter;
-  }
 
   @include bp-up(md) {
     .l-section-content {
@@ -237,6 +235,7 @@
     }
   }
 }
+
 
 
 

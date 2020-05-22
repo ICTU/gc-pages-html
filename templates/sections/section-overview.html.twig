@@ -1,3 +1,5 @@
+
+
 {% if items|length > 3 %}
   {% set count = '3' %}
 {% else %}
@@ -7,6 +9,7 @@
 {% if template is empty %}
   {% set template = 'card' %}
 {% endif %}
+
 
 <section class="section section--overview l-item-count-{{ count }}">
 
@@ -33,7 +36,14 @@
   <div class="l-section-content">
 
     {% if items %}
-      <div class="grid grid--col-{{ count }}">
+
+      {% if modifier == 'l-layout-4col' %}
+        {% set extra_class = 'grid--col-4' %}
+      {% else %}
+        {% set extra_class = 'grid--col-' ~ count %}
+      {% endif %}
+
+      <div class="grid {{ extra_class }}">
 
         {% for item in items %}
           {% include 'components/'~ template ~'.html.twig' with {
@@ -43,6 +53,8 @@
             'type' : item.type,
             'quote' : item.quote,
             'meta': item.meta,
+            'nr': item.nr,
+            'category': item.category
           } %}
         {% endfor %}
       </div>
@@ -53,7 +65,7 @@
           <a class="btn btn--primary" href="{{ cta.url }}">{{ cta.title }}</a>
         </p>
 
-        {% endif %}
+      {% endif %}
 
     {% else %}
 

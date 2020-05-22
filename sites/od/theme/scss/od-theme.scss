@@ -1,0 +1,18 @@
+@import "../theme/scss/abstracts/variables";
+
+@import "abstracts/variables";
+
+
+@import "../theme/scss/all";
+
+@import "components/page-home";
+@import "components/sections";
+
+
+.page-content {
+  background: $gc-pantybrown-xlight;
+}
+
+.spotlight__content {
+  background: $brand-color;
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1601px" height="843px" viewBox="0 0 1601 843" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Top</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="00a.-Homepage" transform="translate(0.000000, -166.000000)">
+            <rect fill="#F2EBE4" x="0" y="0" width="1600" height="4209"></rect>
+            <g id="Top" transform="translate(-146.000000, -159.000000)">
+                <g id="B-intro">
+                    <g id="B-Pattern">
+                        <g id="B-Color" transform="translate(131.000000, 0.000000)">
+                            <rect id="Rectangle" fill="#A84100" x="0" y="323" width="1615" height="998"></rect>
+                            <polygon id="Fill-2" fill="#BA4F0C" points="543.641831 243.989113 168.401634 251.086853 211.140625 503 469 664 543.641831 806.95964 611.292031 898.279945 819.302781 967 942.359869 921.110999 1299.91406 712.242188 1580 177"></polygon>
+                            <g id="Streepje" transform="translate(262.000000, 0.000000)" opacity="0.15" stroke="#FFFFFE" stroke-dasharray="18,18" stroke-width="5">
+                                <path d="M783.578006,644.176827 C803.103765,624.266387 820.768385,592.061226 804.585269,546.473031 C772.728304,456.735385 591.450086,525.807435 507.365475,462.280595 C407.368586,386.735431 320.939032,386.816869 232.176109,417.526526 C16.2700508,492.227694 130.213912,1225.33562 489.059642,1131.13861 C778.010791,1055.2899 822.807768,1202.36754 950.413874,1208.66791 C1164.43101,1219.23268 1254.86989,975.551895 1186.6258,788.458417 C1143.68533,670.728193 1007.61845,564.564681 1108.47878,379.477547 C1207.59834,197.593655 1148.95624,-92.6550519 632.862753,-122" id="Stroke-3" transform="translate(666.000000, 543.500000) rotate(90.000000) translate(-666.000000, -543.500000) "></path>
+                            </g>
+                        </g>
+                        <g id="Group-3" opacity="0.2" transform="translate(121.000000, 318.000000)"></g>
+                        <polygon id="Path-2" fill="#F2EBE4" points="110.363281 1102.32812 241.558594 1072.20312 507.883672 1166.5 775.054687 1136.5 1194 1068 1366.30201 1122.54695 1677.62665 1056 1828 1095 1790.28854 1378 1274.89062 1402.08984 221.3125 1454.12109 0 1426.45271"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

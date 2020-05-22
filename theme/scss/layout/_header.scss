@@ -95,7 +95,6 @@
         float: left;
       }
     }
-
   }
 }
 
@@ -366,7 +365,7 @@
   overflow: hidden;
   margin-left: auto;
   color: transparent;
-  background: transparent url('../../img/arrow-white-down.svg') center center no-repeat;
+  background: transparent url('/theme/img/arrow-white-down.svg') center center no-repeat;
   border: none;
 
   @include bp-down(nav) {

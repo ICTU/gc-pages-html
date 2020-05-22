@@ -967,7 +967,7 @@ h1 {
   padding: 0; }
 
 .page--type-overview .content {
-  padding: 0;
+  padding-top: 0;
   background: none; }
 
 .page--type-overview .entry-content,
@@ -976,14 +976,6 @@ h1 {
 
 .page--type-overview .page-content {
   background: #f2ebe4; }
-
-.page--type-overview .section--spotlight {
-  margin: 5rem -2rem -3rem; }
-  @media (min-width: 700px) {
-    .page--type-overview .section--spotlight {
-      margin-left: -3rem;
-      margin-right: -3rem;
-      margin-bottom: -8rem; } }
 
 .page--overview-archive .entry--type-overview .page__intro {
   max-width: 760px;
@@ -1577,6 +1569,7 @@ h1 {
       margin-top: 4rem; } }
   .section--bg-option {
     position: relative;
+    width: 100%;
     overflow: hidden;
     z-index: 5;
     padding-bottom: 5rem; }
@@ -1722,6 +1715,9 @@ h1 {
   margin-top: 2rem; }
 
 .section--actual .btn {
+  margin-top: 3rem; }
+
+.section--actual .grid {
   margin-top: 3rem; }
 
 @media (min-width: 700px) {
@@ -2569,8 +2565,7 @@ h1 {
   color: #fff;
   text-align: center;
   padding: .6rem .8rem;
-  display: inline-block;
-  text-transform: lowercase; }
+  display: inline-block; }
   .date-badge span:not(.visually-hidden) {
     display: block; }
   @media (min-width: 560px) {
@@ -2729,29 +2724,6 @@ h1 {
   font-style: normal;
   font-weight: normal;
   font-family: 'icons'; }
-
-.link--arrow {
-  position: relative;
-  padding-right: 3rem;
-  display: block;
-  text-decoration: none; }
-  .link--arrow:after {
-    content: "";
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-family: 'icons'; }
-  .link--arrow:after {
-    position: absolute;
-    right: .5rem;
-    top: 0;
-    font-size: 1.6rem;
-    -webkit-transition: right .2s;
-    transition: right .2s; }
-  .link--arrow:hover, .link--arrow:focus {
-    text-decoration: underline; }
-    .link--arrow:hover:after, .link--arrow:focus:after {
-      right: 0.3rem; }
 
 .arrow-link {
   text-decoration: none;
@@ -3034,25 +3006,6 @@ h1 {
       @media (min-width: 1100px) {
         .teaser--spotlight.l-with-image .l-teaser-content {
           bottom: 8rem; } }
-  .teaser--small {
-    background: none;
-    -webkit-box-shadow: none;
-            box-shadow: none; }
-    .teaser--small .teaser__image {
-      width: 100%;
-      height: auto;
-      position: relative; }
-    .teaser--small .teaser__title {
-      margin-top: 1.6rem;
-      font-size: 2rem;
-      line-height: 2.8rem; }
-    .teaser--small .date-badge {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      -webkit-box-shadow: none;
-              box-shadow: none;
-      background: #4c2974; }
 
 .teaser__link {
   text-decoration: none;
@@ -3752,3 +3705,5 @@ h1 {
 .stepnav {
   margin-left: 0;
   margin-right: 0; }
+
+/*# sourceMappingURL=od-theme.css.map */

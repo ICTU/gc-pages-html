@@ -135,7 +135,7 @@ function js(done) {
       },
     }))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('dist/js'))
+    .pipe(gulp.dest(siteConfig.dest + 'dist/js'))
     .pipe(notify({message: 'Theme JS Task complete'}));
 
   done();
@@ -151,7 +151,7 @@ function styles(done) {
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer('last 2 version'))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(siteConfig.path + 'dist/css'))
+    .pipe(gulp.dest(siteConfig.dest + 'dist/css'))
     .pipe(notify({message: 'Theme Styles task complete'}))
     .pipe(browserSync.stream());
 
@@ -222,12 +222,16 @@ function prodAll(done) {
 // Watch files
 function watch() {
   console.log(siteConfig.path + 'scss/**/*.scss');
+  console.log(siteConfig.name);
 
   browserSync.init({
     proxy: siteConfig.proxy
   });
 
-  //gulp.watch('scss/**/*.scss', gulp.series(baseStyles, styles));
+  if(!(siteConfig.shortname === 'gcbase')){
+    gulp.watch('scss/**/*.scss', gulp.series(baseStyles, styles));
+  }
+
   gulp.watch(siteConfig.path + 'scss/**/*.scss', styles);
   gulp.watch('js/components/*.js', js);
 

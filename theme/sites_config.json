@@ -3,6 +3,14 @@
     "name": "GC BaseTheme",
     "shortname": "gc_base",
     "path": "./",
+    "proxy": "gctheme.localhost",
+    "dest": "./"
+  },
+  "od": {
+    "name": "Optimaal Digitaal",
+    "shortname": "od",
+    "path": "../sites/od/theme/",
+    "dest": "../sites/od/theme/",
     "proxy": "gctheme.localhost"
   }
 }

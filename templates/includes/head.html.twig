@@ -2,9 +2,16 @@
   {% set theme = 'gc' %}
 {% endif %}
 
-<link rel="stylesheet" id="gebruiker-centraal-css" href="./theme/fonts/fonts.css" type="text/css" media="all">
-<link rel="stylesheet" id="gebruiker-centraal-css" href="./theme/dist/css/{{ theme }}-theme.css" type="text/css"
-      media="all">
+
+{% if theme != 'od' %}
+  <link rel="stylesheet" id="gebruiker-centraal-css" href="./theme/fonts/fonts.css" type="text/css" media="all">
+  <link rel="stylesheet" id="gebruiker-centraal-css" href="./theme/dist/css/{{ theme }}-theme.css" type="text/css"
+        media="all">
+{% else %}
+  <link rel="stylesheet" id="gebruiker-centraal-css" href="../../theme/fonts/fonts.css" type="text/css" media="all">
+  <link rel="stylesheet" id="optimaal-digitaal-css" href="/sites/od/theme/dist/css/{{ theme }}-theme.css" type="text/css"
+        media="all">
+{% endif %}
 
 <script type="text/javascript" src="/theme/js/lib/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="/theme/dist/js/main-min.js"></script>
