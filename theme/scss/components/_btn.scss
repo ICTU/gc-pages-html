@@ -69,6 +69,24 @@
     }
   }
 
+  &--secondary {
+    background: $btn-secondary-bg;
+    color: $btn-secondary-color;
+
+    &:after {
+      background: $btn-secondary-arrowbg;
+    }
+
+    &:hover, &:focus, &:active {
+      background: $btn-secondary-hover-bg;
+      color: $btn-secondary-hovercolor;
+
+      &:after {
+        background: $btn-secondary-hover-arrowbg;
+      }
+    }
+  }
+
   &--close {
     padding: 0;
     width: 3.6rem;

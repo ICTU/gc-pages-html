@@ -31,7 +31,9 @@
             </header>
 
 
-            {% include 'components/video.html.twig' %}
+            {% include 'components/video.html.twig' with {
+              'title': 'Bekijk de Optimaal Digitaal Video'
+            } %}
 
           </div>
           {# /page intro #}
@@ -41,27 +43,32 @@
               'nr': '72',
               'category': 'Gebruiksgemak',
               'title': 'Test met échte gebruikers',
+              'toptip': 'ja',
               'type': 'tipkaart'
             },
             '2': {
               'nr': '99',
               'title': 'Ken de wet!',
-              'category': 'Informatieveiligheid'
+              'category': 'Informatieveiligheid',
+              'toptip': 'ja',
             },
             '3': {
               'nr': '97',
               'title': 'Bied aan daar waar de burger zoekt',
-              'category': 'Kanaalsturing'
+              'category': 'Kanaalsturing',
+              'toptip': 'ja',
             },
             '4': {
               'nr': '97',
               'title': 'Formuleer wat je wil bereiken met je dienstverlening',
-              'category': 'Procesaanpak'
+              'category': 'Procesaanpak',
+              'toptip': 'ja',
             }
           } %}
 
           {% include 'sections/section-overview.html.twig' with {
             'items': toptips,
+            'description': 'Optimaal Digitaal bestaat uit meer dan 100 tips uit de (online) dienstverlening.',
             'title': 'Onze toptips',
             'template': 'card--tipkaart',
             'modifier': 'l-layout-4col'

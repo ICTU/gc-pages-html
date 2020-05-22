@@ -242,7 +242,7 @@ function watch() {
 }
 
 
-exports.iconfont = gulp.series(makeFont, prod);
+exports.iconfont = gulp.series(makeFont, prodAll);
 exports.prod = prod;
 exports.styles = styles;
 exports.js = js;

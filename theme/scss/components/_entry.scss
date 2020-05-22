@@ -112,13 +112,13 @@
           max-width: calc(#{$max-width-container} + #{$gutter});
         }
       }
+    }
 
-      &:last-child {
-        padding-bottom: 5rem;
+    .entry-content > .section:last-child {
+      padding-bottom: 5rem;
 
-        @include bp-up(lg){
-          padding-bottom: 8rem;
-        }
+      @include bp-up(lg){
+        padding-bottom: 8rem;
       }
     }
   }

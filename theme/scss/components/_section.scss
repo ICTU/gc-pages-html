@@ -237,5 +237,10 @@
 }
 
 
-
-
+.l-cta-wrapper {
+  .btn + .btn {
+    @include bp-up(md){
+      margin-left: 2rem;
+    }
+  }
+}
