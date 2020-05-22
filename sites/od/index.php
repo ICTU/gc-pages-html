@@ -1,6 +1,12 @@
 <?php
 
+
 $directory = '/' .trim(__DIR__, 'sites/od');
+
+// Is haas ontwerp, weird
+if (strpos($directory, 'subsites/gc.haas-ontwerp.nl') !== false) {
+  $directory = '/d' .trim(__DIR__, 'sites/od');
+}
 
 require  $directory . '/vendor/autoload.php';
 
