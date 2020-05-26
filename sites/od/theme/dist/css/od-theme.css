@@ -4069,6 +4069,24 @@ h1 {
       clip: rect(0, 0, 0, 0);
       position: absolute; } }
 
+/*
+ * SCSS for pages with a frame
+ *
+ * Include this if you want the pages to be "framed" with a white background and shade
+ * (Beeldbank, Optimaal Digitaal for example
+ */
+.page--type-landing .page-content {
+  padding-bottom: 5rem; }
+  @media (min-width: 700px) {
+    .page--type-landing .page-content {
+      padding-bottom: 8rem; } }
+
+.page--type-landing .content {
+  -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
+  background: #fff;
+  padding: 0; }
+
 @-webkit-keyframes rotatin {
   0% {
     -webkit-transform: rotate(0deg);
