@@ -342,6 +342,10 @@
   background: $white;
   margin-top: 1rem;
 
+  ul {
+    @include gc-fancy-list($color: $gc-a11y-green);
+  }
+
   @include bp-up(md) {
     padding: 3rem;
   }

@@ -87,6 +87,12 @@
   }
 }
 
+.section--spotlight.section--bg-option:before {
+  @include bp-up(lg){
+    top: 20rem;
+  }
+}
+
 .content {
   @include gc-box-shadow();
 }

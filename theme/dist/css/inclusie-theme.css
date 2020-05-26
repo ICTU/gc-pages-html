@@ -173,6 +173,12 @@ cite {
 .manual-item__content p + ul {
   margin-top: 1.6rem; }
 
+.section--text p.arrow,
+.entry-body p.arrow,
+.manual-item__content p.arrow {
+  background: url("../../img/i_pijltje.svg") 0 0.8rem no-repeat;
+  padding-left: 6rem; }
+
 .section--text .media--image img,
 .entry-body .media--image img,
 .manual-item__content .media--image img {

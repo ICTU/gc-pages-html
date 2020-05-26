@@ -27,6 +27,11 @@
     + ul {
       margin-top: 1.6rem;
     }
+
+    &.arrow {
+      background: url('../../img/i_pijltje.svg') 0 .8rem no-repeat;
+      padding-left: 6rem;
+    }
   }
 
   .media--image {

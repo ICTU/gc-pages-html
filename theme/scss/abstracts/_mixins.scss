@@ -275,3 +275,23 @@
   }
 }
 
+@mixin gc-fancy-list($color: $color-primary) {
+  margin: 0;
+  padding: 0;
+
+  li {
+    @include icon(before, arrow);
+    list-style: none;
+    position: relative;
+    padding-left: 2.5rem;
+
+    &:before {
+      position: absolute;
+      left: 0;
+      top: .1rem;
+      color: $color;
+      font-size: 1.2rem;
+    }
+  }
+}
+

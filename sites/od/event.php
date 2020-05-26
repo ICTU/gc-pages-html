@@ -1,10 +1,9 @@
 <?php
 
-$dir = $_SERVER['DOCUMENT_ROOT'];
+$directory = $_SERVER['DOCUMENT_ROOT'];
 
-dump($dir);
+require  $directory . '/vendor/autoload.php';
 
-require $directory . '/vendor/autoload.php';
 
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
