@@ -25,8 +25,8 @@
 
 @font-face {
   font-family: "icons";
-  src: url("/theme/fonts/iconfont/ho-iconfont-nwu89y.eot");
-  src: url("/theme/fonts/iconfont/ho-iconfont-nwu89y.eot?#iefix") format("eot"), url("/theme/fonts/iconfont/ho-iconfont-nwu89y.woff") format("woff"), url("/theme/fonts/iconfont/ho-iconfont-nwu89y.ttf") format("truetype"), url("/theme/fonts/iconfont/ho-iconfont-nwu89y.svg#icons") format("svg");
+  src: url("/theme/fonts/iconfont/ho-iconfont-bdyid.eot");
+  src: url("/theme/fonts/iconfont/ho-iconfont-bdyid.eot?#iefix") format("eot"), url("/theme/fonts/iconfont/ho-iconfont-bdyid.woff") format("woff"), url("/theme/fonts/iconfont/ho-iconfont-bdyid.ttf") format("truetype"), url("/theme/fonts/iconfont/ho-iconfont-bdyid.svg#icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -303,40 +303,56 @@ input[type='submit'] {
   input[type='submit']:hover {
     background-color: #0b732c; }
 
-.form-type-checkbox {
-  position: relative;
-  padding-left: 40px; }
-  .form-type-checkbox input[type=checkbox] {
-    display: none; }
-  .form-type-checkbox input:checked + label {
-    color: #004152; }
-    .form-type-checkbox input:checked + label:before {
-      content: "";
+.form-item--checkbox {
+  position: relative; }
+  .form-item--checkbox input {
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
+    position: absolute; }
+  .form-item--checkbox label {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    .form-item--checkbox label:after {
+      content: "";
       speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
-  .form-type-checkbox label:before {
-    content: "";
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-family: 'icons'; }
-  .form-type-checkbox label:before {
-    position: absolute;
-    left: 0;
-    width: 30px;
-    height: 30px;
-    line-height: 1.7rem;
-    font-size: 1.2rem;
-    padding-left: 2px;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    content: " ";
-    margin-top: 3px;
-    -webkit-transition: border 0.2s ease-in-out;
-    transition: border 0.2s ease-in-out;
-    border: 2px solid #ccc; }
+    .form-item--checkbox label:before {
+      content: " ";
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      border: 0.2rem solid #D1DFE3;
+      margin-right: 1.5rem;
+      -webkit-transition: border-color .2s;
+      transition: border-color .2s;
+      margin-top: .3rem; }
+    .form-item--checkbox label:after {
+      position: absolute;
+      left: 1.6rem;
+      top: .8rem;
+      font-size: 1.4rem;
+      display: none;
+      color: #004152; }
+    .form-item--checkbox label:hover, .form-item--checkbox label:focus {
+      text-decoration: underline; }
+      .form-item--checkbox label:hover:before, .form-item--checkbox label:focus:before {
+        border-color: #004152; }
+  .form-item--checkbox input:checked + label:before {
+    border-color: #25b34b;
+    -webkit-box-shadow: 0.3rem 0.3rem 0 rgba(37, 179, 75, 0.3);
+            box-shadow: 0.3rem 0.3rem 0 rgba(37, 179, 75, 0.3);
+    background: #fff url("../images/ico-check.svg") center center no-repeat;
+    background-size: 1.2rem auto; }
+  .form-item--checkbox input:checked + label:after {
+    display: block; }
 
 .l-page-footer-wrapper {
   padding-left: 2rem;
@@ -559,7 +575,7 @@ input[type='submit'] {
 .search-form {
   position: relative; }
   .search-form:after {
-    content: "";
+    content: "";
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -1056,6 +1072,61 @@ h1 {
 
 .overview__item-wrapper + h3 {
   margin-top: 5rem; }
+
+/*
+ * Filters
+ */
+.form--filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 960px;
+  margin: 3rem auto 0; }
+  @media (min-width: 700px) {
+    .form--filters {
+      margin-top: 5rem; } }
+
+.form-item--filter {
+  margin: 1.4rem .7rem 0; }
+  .form-item--filter label {
+    border: 0.2rem solid #e8d8c7;
+    padding: .7rem 1.8rem .5rem 1rem;
+    -webkit-transition: background .2s, border-color .2s;
+    transition: background .2s, border-color .2s; }
+    .form-item--filter label:before {
+      border-color: #004152;
+      border-width: .1rem; }
+  .form-item--filter.is-active input + label {
+    color: #fff; }
+    .form-item--filter.is-active input + label:before {
+      border-color: #fff; }
+  .form-item--filter.is-active label[for='commitment'] {
+    background: #148839;
+    border-color: #25b34b; }
+  .form-item--filter.is-active label[for='gebruiksgemak'] {
+    background: #4c2974;
+    border-color: #2D114E; }
+  .form-item--filter.is-active label[for='informatieveiligheid'] {
+    background: #c42c76;
+    border-color: #A20E56; }
+  .form-item--filter.is-active label[for='kanaalsturing'] {
+    background: #f99d1c;
+    border-color: #D77D00;
+    color: #004152; }
+  .form-item--filter.is-active label[for='procesaanpak'] {
+    background: #009C95;
+    border-color: #00b4ac; }
+  .form-item--filter.is-active label[for='inclusie'] {
+    background: #c73d19;
+    border-color: #D94721; }
+  .form-item--filter.is-active label[for='samenwerking'] {
+    background: #007BB0;
+    border-color: #0095da; }
 
 /* Entry types */
 .entry .entry-intro {
@@ -2202,7 +2273,7 @@ h1 {
       color: #c73d19;
       text-align: center; }
       .btn--close .btn__icon:before {
-        content: "";
+        content: "";
         speak: none;
         font-style: normal;
         font-weight: normal;
@@ -2223,7 +2294,7 @@ h1 {
     text-transform: uppercase;
     background: #c42c76; }
     .btn--download:before {
-      content: "";
+      content: "";
       speak: none;
       font-style: normal;
       font-weight: normal;
@@ -2292,13 +2363,13 @@ h1 {
     position: relative;
     margin-right: 1.5rem; }
     .btn--toggle-menu .btn--icon:before {
-      content: "";
+      content: "";
       speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
     .btn--toggle-menu .btn--icon:after {
-      content: "";
+      content: "";
       speak: none;
       font-style: normal;
       font-weight: normal;
@@ -2922,31 +2993,31 @@ h1 {
     transition: transform .2s;
     transition: transform .2s, -webkit-transform .2s; }
   .link--social.linkedin:before {
-    content: "";
+    content: "";
     speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .link--social.twitter:before {
-    content: "";
+    content: "";
     speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .link--social.facebook:before {
-    content: "";
+    content: "";
     speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .link--social.slack:before {
-    content: "";
+    content: "";
     speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .link--social.website:before {
-    content: "";
+    content: "";
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -2980,14 +3051,14 @@ h1 {
       color: #c42c76; }
 
 .link--phone:before {
-  content: "";
+  content: "";
   speak: none;
   font-style: normal;
   font-weight: normal;
   font-family: 'icons'; }
 
 .link--email:before {
-  content: "";
+  content: "";
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -3103,25 +3174,25 @@ h1 {
       font-weight: normal;
       font-family: 'icons'; }
     .meta-data dd.price:before {
-      content: "";
+      content: "";
       speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
     .meta-data dd.tijdstip:before, .meta-data dd.time:before {
-      content: "";
+      content: "";
       speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
     .meta-data dd.auteur:before, .meta-data dd.author:before {
-      content: "";
+      content: "";
       speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
     .meta-data dd.locatie:before, .meta-data dd.location:before {
-      content: "";
+      content: "";
       speak: none;
       font-style: normal;
       font-weight: normal;
@@ -3154,19 +3225,19 @@ h1 {
   .meta-data__item:last-child:after {
     display: none; }
   .meta-data__item.times:before, .meta-data__item.datum:before {
-    content: "";
+    content: "";
     speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .meta-data__item.location:before {
-    content: "";
+    content: "";
     speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .meta-data__item.pricing:before {
-    content: "";
+    content: "";
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -3549,7 +3620,7 @@ h1 {
   font-size: 4rem;
   padding-left: .5rem; }
   .play:before {
-    content: "";
+    content: "";
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -3564,7 +3635,7 @@ h1 {
   font-family: "montserratsemibold", Helvetica, Arial, sans-serif;
   text-decoration: underline; }
   .video__transcription:before {
-    content: "";
+    content: "";
     speak: none;
     font-style: normal;
     font-weight: normal;

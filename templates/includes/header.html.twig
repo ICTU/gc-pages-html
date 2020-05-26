@@ -11,7 +11,7 @@
       <a href="index.php" class="branding__home-link{{ site_slogan ? ' branding--with-slogan' }}">
         <img src="/theme/{{ logo ? logo : 'logo.svg' }}" alt="{{ site_name }} Logo" class="branding__logo">
 
-        <span class="branding__name">{{ site_name }}</span>
+        <span class="branding__name">{{ site_name ? site_name : 'Gebruiker Centraal'}}</span>
 
         {% if site_slogan %}
           <span class="branding__slogan">{{ site_slogan }} </span>

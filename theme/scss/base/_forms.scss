@@ -77,35 +77,56 @@ input[type='submit']{
   }
 }
 
-.form-type-checkbox {
+.form-item--checkbox {
   position: relative;
-  padding-left: 40px;
 
-  input[type=checkbox] {
-    display: none;
-  }
-
-  input:checked + label {
-    @include icon(before, check);
-    color: $link;
+  input {
+    @include visually-hidden;
   }
 
   label {
-    @include icon(before, check);
+    @include icon(after, check);
+    display: flex;
+
+    &:before {
+      content: " ";
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      border: .2rem solid $border_color;
+      margin-right: 1.5rem;
+      transition: border-color .2s;
+      margin-top: .3rem;
+    }
+
+    &:after {
+      position: absolute;
+      left: 1.6rem;
+      top: .8rem;
+      font-size: 1.4rem;
+      display: none;
+      color: $gc-dark-blue;
+    }
+
+    &:hover, &:focus {
+      text-decoration: underline;
+
+      &:before {
+        border-color: $gc-dark-blue;
+      }
+    }
   }
 
-  label:before {
-    position: absolute;
-    left: 0;
-    @include square(30px);
-    line-height: 1.7rem;
-    font-size: 1.2rem;
-    padding-left: 2px;
-    box-sizing: border-box;
-    content: " ";
-    margin-top: 3px;
-    transition: border 0.2s ease-in-out;
-    border: 2px solid #ccc;
+  input:checked + label {
+    &:before {
+      border-color: $gc_green;
+      box-shadow: .3rem .3rem 0 rgba($gc_green, 0.3);
+      background: $white url('../images/ico-check.svg') center center no-repeat;
+      background-size: 1.2rem auto;
+    }
+
+    &:after {
+      display: block;
+    }
   }
 }
-

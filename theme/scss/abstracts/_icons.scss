@@ -1,10 +1,10 @@
 @font-face {
   font-family: "icons";
-  src: url('/theme/fonts/iconfont/ho-iconfont-nwu89y.eot');
-  src: url('/theme/fonts/iconfont/ho-iconfont-nwu89y.eot?#iefix') format('eot'),
-  url('/theme/fonts/iconfont/ho-iconfont-nwu89y.woff') format('woff'),
-  url('/theme/fonts/iconfont/ho-iconfont-nwu89y.ttf') format('truetype'),
-  url('/theme/fonts/iconfont/ho-iconfont-nwu89y.svg#icons') format('svg');
+  src: url('/theme/fonts/iconfont/ho-iconfont-bdyid.eot');
+  src: url('/theme/fonts/iconfont/ho-iconfont-bdyid.eot?#iefix') format('eot'),
+  url('/theme/fonts/iconfont/ho-iconfont-bdyid.woff') format('woff'),
+  url('/theme/fonts/iconfont/ho-iconfont-bdyid.ttf') format('truetype'),
+  url('/theme/fonts/iconfont/ho-iconfont-bdyid.svg#icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -12,22 +12,23 @@
 $icons: (
  arrow: "\EA01",
  calendar: "\EA02",
- clock: "\EA03",
- cross: "\EA04",
- download: "\EA05",
- euro: "\EA06",
- facebook: "\EA07",
- link: "\EA08",
- linkedin: "\EA09",
- mail: "\EA0A",
- menu: "\EA0B",
- phone: "\EA0C",
- pin: "\EA0D",
- play: "\EA0E",
- search: "\EA0F",
- slack: "\EA10",
- twitter: "\EA11",
- user: "\EA12",
+ check: "\EA03",
+ clock: "\EA04",
+ cross: "\EA05",
+ download: "\EA06",
+ euro: "\EA07",
+ facebook: "\EA08",
+ link: "\EA09",
+ linkedin: "\EA0A",
+ mail: "\EA0B",
+ menu: "\EA0C",
+ phone: "\EA0D",
+ pin: "\EA0E",
+ play: "\EA0F",
+ search: "\EA10",
+ slack: "\EA11",
+ twitter: "\EA12",
+ user: "\EA13",
 
 );
 
