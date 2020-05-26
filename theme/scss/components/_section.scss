@@ -220,6 +220,10 @@
       margin-right: auto;
     }
   }
+
+  + .section--brands .section__title {
+    border: none;
+  }
 }
 
 /* Actueel - events & blogs */
@@ -275,3 +279,21 @@
   }
 }
 
+// Brands
+
+.brand__image {
+  @include gc-box-shadow();
+  display: flex;
+  padding: 1rem 3rem;
+  min-height: 12rem;
+  justify-content: center;
+  align-items: center;
+  border: .1rem solid $border-color;
+
+  img {
+    display: block;
+    object-fit: contain;
+    width: 15rem;
+    height: 9rem;
+  }
+}

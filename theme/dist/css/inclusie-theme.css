@@ -1142,6 +1142,8 @@ h1 {
   .entry--full .entry-header {
     max-width: 760px;
     margin: 0 auto; }
+  .entry--full .entry-content > .section:first-child.section--text {
+    margin-top: 3rem; }
 
 .entry--type-page .section--bg-option {
   padding-left: 2rem;
@@ -1920,6 +1922,8 @@ h1 {
       max-width: 760px;
       margin-left: auto;
       margin-right: auto; }
+  .section--overview + .section--brands .section__title {
+    border: none; }
 
 /* Actueel - events & blogs */
 .section--actual .section__title {
@@ -1951,6 +1955,28 @@ h1 {
 @media (min-width: 700px) {
   .l-cta-wrapper .btn + .btn {
     margin-left: 2rem; } }
+
+.brand__image {
+  -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem 3rem;
+  min-height: 12rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 0.1rem solid #D1DFE3; }
+  .brand__image img {
+    display: block;
+    -o-object-fit: contain;
+       object-fit: contain;
+    width: 15rem;
+    height: 9rem; }
 
 .section--spotlight {
   padding-left: 2rem;
@@ -3083,6 +3109,33 @@ h1 {
     text-decoration: underline; }
     .link--arrow:hover:after, .link--arrow:focus:after {
       right: 0.3rem; }
+
+.link--arrow-icon {
+  margin-top: 1.4rem;
+  text-decoration: none;
+  font-size: 1.6rem;
+  position: relative;
+  padding-left: 2rem;
+  display: block;
+  font-family: "montserratsemibold", Helvetica, Arial, sans-serif;
+  line-height: 2.2rem;
+  -webkit-transition: padding .3s;
+  transition: padding .3s; }
+  .link--arrow-icon:before {
+    content: "";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'icons'; }
+  .link--arrow-icon:hover, .link--arrow-icon:focus {
+    padding-left: 2.1rem;
+    text-decoration: underline; }
+  .link--arrow-icon:before {
+    color: #D94721;
+    font-size: 1rem;
+    position: absolute;
+    left: 0;
+    top: 0; }
 
 .arrow-link {
   text-decoration: none;

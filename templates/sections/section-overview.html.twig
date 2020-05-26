@@ -45,7 +45,14 @@
 
       <div class="grid {{ extra_class }}">
 
-        {% for item in items %}
+        {% for key, item in items %}
+
+          {% if item.nr is empty and item.category %}
+            {% set nr = key %}
+            {% else %}
+              {% set nr = item.nr %}
+          {% endif %}
+
           {% include 'components/'~ template ~'.html.twig' with {
             'title' : item.title,
             'descr' : item.descr,
@@ -53,9 +60,10 @@
             'type' : item.type,
             'quote' : item.quote,
             'meta': item.meta,
-            'nr': item.nr,
+            'nr': nr,
             'category': item.category,
-            'toptip': item.toptip
+            'toptip': item.toptip,
+            'url': item.url
           } %}
         {% endfor %}
       </div>

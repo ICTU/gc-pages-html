@@ -130,6 +130,32 @@
       }
     }
   }
+
+  &--arrow-icon {
+    @include icon(before, arrow);
+    margin-top: 1.4rem;
+    text-decoration: none;
+    font-size: $font-smaller;
+    position: relative;
+    padding-left: 2rem;
+    display: block;
+    font-family: $font-primary-semi;
+    line-height: 2.2rem;
+    transition: padding .3s;
+
+    &:hover, &:focus {
+      padding-left: 2.1rem;
+      text-decoration: underline;
+    }
+
+    &:before {
+      color: $color-primary;
+      font-size: 1rem;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
 }
 
 

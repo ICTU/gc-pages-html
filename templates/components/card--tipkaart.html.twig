@@ -1,7 +1,7 @@
 {% set sprite_url = '/theme/img/sprites/optimaal-digitaal/defs/svg/sprite.defs.svg' %}
 
 <div class="tipkaart tipkaart--{{ category|lower }}">
-  <a class="tipkaart__link" class=tipkaart__link" title="Neem als bestuurder verant­woordelijkheid voor informatie­veiligheid" href="#">
+  <a class="tipkaart__link" title="Neem als bestuurder verant­woordelijkheid voor informatie­veiligheid" href="{{ url ? url : '#' }}">
 
     {% if toptip %}
       <span class="tipkaart__toptip">
