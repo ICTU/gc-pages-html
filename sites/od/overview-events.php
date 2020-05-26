@@ -1,11 +1,6 @@
 <?php
 
-$directory = '/' .trim(__DIR__, 'sites/od');
-
-// Is haas ontwerp, weird
-if (strpos($directory, 'subsites/gc.haas-ontwerp.nl') !== false) {
-  $directory = '/d' .trim(__DIR__, 'sites/od');
-}
+$directory = $_SERVER['DOCUMENT_ROOT'];
 
 require  $directory . '/vendor/autoload.php';
 
