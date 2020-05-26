@@ -1,0 +1,31 @@
+{% if text is empty %}
+  {% set section_text %}
+
+    <p>Dit is een tekst en image. Deze kan je overal gebruiken. Zo kan je leuk afbeeldingen en tekst afwisselen en mooie
+      pagina's maken.</p>
+
+  {% endset %}
+{% endif %}
+
+{% set tiClasses = [
+  'section',
+  'section--text-image',
+  bg ? 'l-has-background bg-color--' ~ bg,
+  modifier ? 'section--' ~ modifier,
+  align ? 'align--' ~ align,
+] %}
+
+
+<div class="{{ tiClasses|classlist }}">
+  <div class="l-section-content">
+
+    <figure class="text-image__image">
+      <img src="/uploads/styles/square/{{ img.url }}" alt="{{ img.alt }}">
+    </figure>
+
+    <div class="text-image__text">
+      {{ text|raw }}
+    </div>
+
+  </div>
+</div>

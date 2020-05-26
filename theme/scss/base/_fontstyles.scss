@@ -19,8 +19,14 @@
     }
   }
 
-  p + .section--related {
-    margin-top: 1rem;
+  p {
+    + .section--related {
+      margin-top: 1rem;
+    }
+
+    + ul {
+      margin-top: 1.6rem;
+    }
   }
 
   .media--image {
@@ -54,7 +60,8 @@
 }
 
 .section--text,
-.entry-body {
+.entry-body,
+.manual-item__content {
   @include text-styles;
 }
 

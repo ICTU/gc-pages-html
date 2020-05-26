@@ -105,11 +105,11 @@
   }
 
   a {
-    @include gc-box-shadow();
+    //@include gc-box-shadow();
+    //border: .1rem solid $gc_greyblue;
     font-family: $font_primary_bold;
     display: inline-block;
-    border: .1rem solid $gc_greyblue;
-    padding: .5rem 1.5rem;
+    padding: .5rem 0;
     text-decoration: none;
     position: relative;
     transition: padding .2s, background-color .2s;

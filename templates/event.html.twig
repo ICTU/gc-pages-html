@@ -1,3 +1,7 @@
+{% if page_title is empty %}
+  {% set page_title = 'Draagvlak in jouw organisatie – Direct Duidelijk Tour' %}
+{% endif %}
+
 <html lang="nl" dir="ltr">
 
 <head>
@@ -10,9 +14,17 @@
 
   {% include 'includes/header.html.twig' %}
 
+  {% if breadcrumb is empty %}
+    {% set breadcrumb = {
+      'page_title': page_title,
+      'links': ['Home', 'Evenementen']
+    } %}
+  {% endif %}
+
   {% include 'includes/breadcrumb.html.twig' with {
-    'page_title': 'Draagvlak in jouw organisatie – Direct Duidelijk Tour',
-    'links': ['Home', 'Evenementen']} %}
+    'page_title': page_title,
+    'links': breadcrumb.links
+  } %}
 
 
   <div class="page-content" id="maincontent" tabindex="-1">
@@ -28,12 +40,7 @@
 
           {% include 'components/date-badge.html.twig' %}
 
-          <h1 class="entry-title">
-            {% if page_title is empty %}
-              Draagvlak in jouw organisatie – Direct Duidelijk Tour
-            {% else %}
-              {{ page_title }}
-            {% endif %}</h1>
+          <h1 class="entry-title">{{ page_title }}</h1>
 
 
           {% set meta = {
@@ -120,12 +127,26 @@
             '1': {
               'title': 'Handen uit de mouwen: direct duidelijke taal voor iedereen!',
               'descr': 'In deze (digitale) werksessie ga je aan de slag met het verbeteren en verduidelijken van teksten. Dat doe je samen met andere communicatieprofessionals, in een klein groepje, onder begeleiding van een ervaren schrijfcoach. ',
-              'type' : 'event'
+              'type' : 'event',
+              'meta': {
+                '1': {
+                  'title': 'Locatie',
+                  'descr': 'Uw kot (thuis)',
+                  'classname': 'location'
+                }
+              }
             },
             '2': {
               'title': 'Draagvlak in jouw organisatie',
               'img' : 'brand-dd.jpg',
-              'type' : 'event'
+              'type' : 'event',
+              'meta': {
+                '1': {
+                  'title': 'Locatie',
+                  'descr': 'Utrecht',
+                  'classname': 'location'
+                }
+              }
             }
           } %}
 

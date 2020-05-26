@@ -24,7 +24,13 @@
 {% endif %}
 
 <div class="section section--image section--image-{{ variant }} {{ extraclass }}">
-  <div class="l-section-inner">
+
+  {% if title %}
+    <div class="l-section-top">
+      <h2>{{ title }}</h2>
+    </div>
+  {% endif %}
+  <div class="l-section-content">
 
     {% for item in items %}
 

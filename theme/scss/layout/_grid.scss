@@ -19,7 +19,7 @@
     @include bp-up(sm) {
       > div,
       > section {
-        width: calc(50% - #{$gutter/2});
+        width: calc(50% - #{$gutter});
 
         &:first-child {
           width: 100%;
@@ -52,7 +52,9 @@
     @include bp-up(sm) {
       > div,
       > section {
-        width: calc(50% - #{$gutter/2});
+        width: calc(50% - #{$gutter});
+        margin-left: $gutter / 2;
+        margin-right: $gutter /2;
       }
     }
 
@@ -60,8 +62,6 @@
       > div,
       > section {
         width: calc(25% - #{$gutter});
-        margin-left: $gutter / 2;
-        margin-right: $gutter /2;
       }
     }
   }

@@ -1,9 +1,39 @@
 .entry {
+
+  .entry-intro {
+    font-family: $font-primary-semi;
+
+    @include bp-up(md) {
+      font-size: 2.2rem;
+      line-height: 3.4rem;
+    }
+  }
+
   &--full {
+    padding-bottom: 5rem;
+
+    @include bp-up(lg) {
+      padding-bottom: 8rem;
+    }
+
     .entry-body,
     .entry-header {
       max-width: $max-width-inner;
       margin: 0 auto;
+    }
+  }
+
+  &--type-page {
+
+    .section--bg-option {
+      @include ho-padding;
+      margin-left: -1.5rem;
+      margin-right: -1.5rem;
+
+      @include bp-up(sm) {
+        margin-left: -3rem;
+        margin-right: -3rem;
+      }
     }
   }
 
@@ -47,6 +77,11 @@
       max-width: none;
     }
 
+    .page__intro {
+      position: relative;
+      z-index: +2;
+    }
+
     .entry-body {
       padding-top: 3rem;
       padding-bottom: 3rem;
@@ -60,18 +95,27 @@
   &--type-landing {
     @include gc-page-intro();
     background: none;
+    padding-bottom: 0;
 
     .page__intro {
       box-shadow: none;
       margin-bottom: 5rem;
 
-      @include bp-up(md){
+      @include bp-up(md) {
         margin-bottom: 8rem;
       }
     }
 
     .section {
       @include ho-padding;
+
+      &:last-child {
+        padding-bottom: 5rem;
+
+        @include bp-up(md) {
+          padding-bottom: 8rem;
+        }
+      }
     }
   }
 
@@ -134,7 +178,7 @@
     .entry-content > .section:last-child {
       padding-bottom: 5rem;
 
-      @include bp-up(lg){
+      @include bp-up(lg) {
         padding-bottom: 8rem;
       }
     }
@@ -339,22 +383,12 @@
   border: .1rem solid $border_color;
   padding: 2rem;
 
+  margin-top: $gutter;
+  font-size: $font-smaller;
   @include bp-up(md) {
     padding: 2.5rem 3rem 3rem;
   }
-}
 
-@include bp-up(lg) {
-  padding-left: 4rem;
-  padding-right: 4rem;
-}
-
-.comment {
-  @include gc-box-shadow();
-  border-top: .2rem solid $border_color;
-  padding: 2rem;
-  margin-top: $gutter;
-  font-size: $font-smaller;
 
   @include bp-up(lg) {
     padding-left: 3rem;
@@ -378,7 +412,10 @@
 .comment-author {
   color: $meta-data;
   font-size: $font_small;
-  font-family: $font_primary_semi;
+
+  cite {
+    font-family: $font_primary_semi;
+  }
 }
 
 .comment-content {
@@ -423,7 +460,7 @@
 }
 
 .children .comment {
-  border-top-color: $gc-a11y-green;
+  border-top-color: $color-primary;
   border-top-width: .3rem;
 }
 

@@ -24,7 +24,7 @@
   &.l-item-count-2 {
     max-width: $max-width-container;
 
-    @include bp-up(md) {
+    @include bp-up(lg) {
       display: flex;
 
       .spotlight:nth-child(odd) {

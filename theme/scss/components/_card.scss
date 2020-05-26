@@ -24,7 +24,7 @@
     margin-bottom: 0;
   }
 
-  .meta-data dd:before {
+  .meta-data dd:not(.location):before {
     display: none;
   }
 

@@ -17,12 +17,13 @@
 
           {% include 'components/date-badge.html.twig' with {
             'start_date': start_date,
-            'end_date': end_date
+            'end_date': end_date,
           } %}
 
         {% elseif post_date %}
           {% include 'components/date-badge.html.twig' with {
             'post_date': post_date,
+            'modifier': '',
           } %}
 
         {% endif %}

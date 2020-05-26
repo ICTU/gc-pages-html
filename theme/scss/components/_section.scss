@@ -1,7 +1,7 @@
 .section {
   margin-top: $gutter;
 
-  .l-section-inner {
+  .l-section-content {
     @include ho-container-content;
   }
 
@@ -15,6 +15,28 @@
 
   &--bg-option {
     @include gc-bg-rotated();
+
+    + .section--links .section__title {
+      border: none;
+      padding-top: 0;
+    }
+  }
+
+  &.bg-color--light {
+    background: $gc-pantybrown-xlight;
+    border: .1rem solid $gc-pantybrown;
+  }
+
+  &--fullwidth {
+    max-width: none;
+
+    .l-section-content {
+      max-width: none;
+    }
+
+    + .section--fullwidth {
+      margin-top: 0;
+    }
   }
 }
 
@@ -109,7 +131,7 @@
 
 .section--image {
 
-  .l-section-inner {
+  .l-section-content {
     max-width: $max-width-inner;
     margin: 0 auto;
   }
@@ -125,15 +147,16 @@
   &-width-full {
     max-width: $max-width-container;
 
-    &.l-item-count-2 {
-      margin-left: -1.5rem;
-      margin-right: -1.5rem;
-      max-width: calc(#{$max-width-container} + #{$gutter-smaller});
+    .l-section-content {
+      max-width: none;
     }
   }
 
+  .l-section-top + .l-section-content {
+    margin-top: 2rem;
+  }
 
-  &.l-item-count-2 {
+  &.l-item-count-2 .l-section-content {
     @include bp-up(sm) {
       display: flex;
 
@@ -184,7 +207,7 @@
   }
 
   &-list {
-    max-width: $max-width-container;
+    @include ho-container;
 
     .l-section-content {
       max-width: none;

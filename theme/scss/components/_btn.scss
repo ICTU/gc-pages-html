@@ -5,6 +5,7 @@
 
 .btn {
   display: inline-block;
+  margin-top: 2rem;
 
   &--primary,
   &--secondary {
@@ -107,6 +108,61 @@
       @include gc-box-shadow();
       border-color: $border-color;
       color: transparent;
+    }
+  }
+
+  &--download {
+    @include icon(before, download);
+    @include gc-box-shadow();
+    text-decoration: none;
+    padding: 1rem 1.5rem 1rem 1rem;
+    font-family: $font-secondary;
+    font-size: $btn-font-size-sm;
+    color: $btn-primary-color;
+    text-transform: uppercase;
+    background: $btn-primary-bg;
+
+    &:before {
+      float: left;
+      margin-right: 1.2rem;
+      display: inline-block;
+      transition: margin .3s;
+    }
+
+    &:hover, &:focus {
+      text-decoration: underline;
+      color: $btn-primary-hovercolor;
+      background: $btn-primary-hover-bg;
+
+      &:before {
+        margin-right: 1.3rem;
+      }
+    }
+
+    @include bp-up(lg){
+      font-size: $btn-font-size-lg;
+      padding: 1rem 1.5rem 1rem 1rem;
+    }
+  }
+
+  &--read-more {
+    @include icon(before, arrow);
+    font-family: $font-primary-semi;
+
+    &:before {
+      float: left;
+      display: inline-block;
+      font-size: 1.2rem;
+      margin-right: 1rem;
+      transition: margin .3s;
+    }
+
+    &:hover, &:focus {
+      text-decoration: none;
+
+      &:before {
+        margin-right: 1.1rem;
+      }
     }
   }
 
