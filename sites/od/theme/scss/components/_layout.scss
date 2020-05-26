@@ -36,14 +36,14 @@
     background: $brand-color url('../../img/b_page-top-line.svg') top left repeat-x;
   }
 
-  @include bp-up(md){
+  @include bp-up(md) {
     &:before,
     &:after {
       height: 28rem;
     }
   }
 
-  @include bp-up(lg){
+  @include bp-up(lg) {
     padding-top: 16rem;
 
     &:before,
@@ -54,7 +54,7 @@
 }
 
 .l-hero {
-  @include bp-up(lg){
+  @include bp-up(lg) {
     margin-top: -16rem;
   }
 }
@@ -76,6 +76,7 @@
   }
 
 }
+
 .spotlight__content {
   background: $brand-color;
 }
@@ -88,6 +89,25 @@
 
 .content {
   @include gc-box-shadow();
+}
+
+
+.page--type-event {
+  .content {
+    overflow: hidden;
+  }
+
+  .page-content {
+    padding-bottom: 5rem;
+
+    @include bp-up(md){
+      padding-bottom: 12rem;
+    }
+  }
+
+  .comment-respond {
+    padding-bottom: 0;
+  }
 }
 
 .date-badge--multiple .date-badge__till:before {
