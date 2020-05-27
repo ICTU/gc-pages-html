@@ -31,6 +31,7 @@
   "bob": {
     "firstname" : "Bob",
     "lastname" : "Corporaal",
-    "function" : "UX manager Coolblue"
+    "function" : "UX manager Coolblue",
+    "img" : "person-3.jpg"
   }
 }

@@ -16,7 +16,7 @@
 
   &:before,
   &:after {
-    height: 20rem;
+    height: 18rem;
   }
 
   &:before {
@@ -31,7 +31,6 @@
     left: 0;
     right: 0;
     top: 0;
-    height: 24rem;
     z-index: -1;
     background: $brand-color url('../../img/b_page-top-line.svg') top left repeat-x;
   }
@@ -88,7 +87,7 @@
 }
 
 .section--spotlight.section--bg-option:before {
-  @include bp-up(lg){
+  @include bp-up(lg) {
     top: 20rem;
   }
 }
@@ -106,7 +105,7 @@
   .page-content {
     padding-bottom: 5rem;
 
-    @include bp-up(md){
+    @include bp-up(md) {
       padding-bottom: 12rem;
     }
   }

@@ -21,6 +21,7 @@
 /* Entry types */
 @import "components/entry";
 @import "components/entry-event";
+@import "components/entry-tipkaart";
 
 /* Sections */
 @import "components/section";
@@ -29,6 +30,7 @@
 @import "components/text-image";
 
 /* Components */
+@import "components/author";
 @import "components/btn";
 @import "components/card";
 @import "components/card-tipkaart";

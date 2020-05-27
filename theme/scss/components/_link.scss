@@ -206,3 +206,27 @@ $btn_width: 3.2rem;
   top: 0;
   margin: -.5rem -1rem 0 0;
 }
+
+
+// Double, apparently
+.btn--read-more,
+.link--read-more {
+  @include icon(before, arrow);
+  font-family: $font-primary-semi;
+
+  &:before {
+    float: left;
+    display: inline-block;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    transition: margin .3s;
+  }
+
+  &:hover, &:focus {
+    text-decoration: none;
+
+    &:before {
+      margin-right: 1.1rem;
+    }
+  }
+}

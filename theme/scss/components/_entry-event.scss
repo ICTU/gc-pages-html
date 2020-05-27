@@ -53,6 +53,12 @@
   }
 }
 
+.event-program {
+  li {
+    display: flex;
+  }
+}
+
 .em-booking-form-details {
 
   @include bp-up(md) {

@@ -144,28 +144,6 @@
       padding: 1rem 1.5rem 1rem 1rem;
     }
   }
-
-  &--read-more {
-    @include icon(before, arrow);
-    font-family: $font-primary-semi;
-
-    &:before {
-      float: left;
-      display: inline-block;
-      font-size: 1.2rem;
-      margin-right: 1rem;
-      transition: margin .3s;
-    }
-
-    &:hover, &:focus {
-      text-decoration: none;
-
-      &:before {
-        margin-right: 1.1rem;
-      }
-    }
-  }
-
 }
 
 /*

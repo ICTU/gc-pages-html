@@ -84,8 +84,7 @@ $cards_by_theme = array_filter($cards, function ($var) {
   return ($var['category'] == 'Gebruiksgemak');
 });
 
-$related_cards = array_slice($cards_by_theme, 3);
-
+$related_cards = array_slice($cards_by_theme, 2);
 
 echo $twig->render('single-tipkaart.html.twig', [
   'site_name' => 'Optimaal Digitaal',

@@ -12,7 +12,6 @@
   h3,
   h4 {
     font-weight: $base-heading-font;
-    margin-top: $gutter;
 
     + p {
       margin-top: 1rem;
@@ -26,6 +25,10 @@
 
     + ul {
       margin-top: 1.6rem;
+    }
+
+    + h2, + h3, + h4 {
+      margin-top: $gutter;
     }
 
     &.arrow {
@@ -66,7 +69,8 @@
 
 .section--text,
 .entry-body,
-.manual-item__content {
+.manual-item__content,
+.example__content {
   @include text-styles;
 }
 

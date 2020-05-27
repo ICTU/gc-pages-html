@@ -91,7 +91,8 @@
 
           <div class="research">
 
-            {% if why %}
+
+            <div class="l-why-wrapper">
               <div class="research__why">
                 <h2 class="research__title">Waarom werkt dit?</h2>
                 {% if why %}
@@ -103,27 +104,36 @@
                     een belang of domeinkennis – is te zien of iets wel of niet werkt.</p>
                 {% endif %}
               </div>
-            {% endif %}
-
-            <div class="l-research-content">
-              <h2 class="research__title">Onderzoek</h2>
-              <p>KING heeft een catalogus gebruikersperspectief ontwikkeld waarmee je op basis van criteria een passend
-                gebruikersonderzoek kunt vinden. Dit is gebaseerd op het onderzoek ‘Digitaal en Gebruikersperspectief’
-                (PDF – 1,5 Mb) van het ministerie van BZK, uitgevoerd door Dialogic.</p>
-
-              <hr>
-              <p>Onderzoek <a href="#">‘Digitaal en Gebruikersperspectief’</a> (PDF – 1,5 Mb) van het ministerie van
-                BZK, uitgevoerd door Dialogic.</p>
             </div>
 
-            <div class="l-research-blocks">
-              {% for block in rblocks %}
-                <div class="research-block">
-                  <span class="research-block__title">{{ block.title }}</span>
-                  <span class="research-block__nr">{{ block.nr }}</span>
-                  <span class="research-block__descr">{{ block.descr }}</span>
+
+            <div class="research__content">
+
+              <div class="l-inner">
+                <h2 class="research__title">Onderzoek</h2>
+                <p>KING heeft een catalogus gebruikersperspectief ontwikkeld waarmee je op basis van criteria een
+                  passend
+                  gebruikersonderzoek kunt vinden. Dit is gebaseerd op het onderzoek ‘Digitaal en Gebruikersperspectief’
+                  (PDF – 1,5 Mb) van het ministerie van BZK, uitgevoerd door Dialogic.</p>
+
+                <hr>
+                <p>Onderzoek <a href="#">‘Digitaal en Gebruikersperspectief’</a> (PDF – 1,5 Mb) van het ministerie van
+                  BZK, uitgevoerd door Dialogic.</p>
+
+
+                <div class="l-research-blocks">
+                  {% for block in rblocks %}
+                    <div class="research-block">
+                      <span class="research-block__title">{{ block.title }}</span>
+                      <span class="research-block__nr">{{ block.nr }}</span>
+                      <span class="research-block__descr">{{ block.descr }}</span>
+                    </div>
+                  {% endfor %}
                 </div>
-              {% endfor %}
+              </div>
+
+              {# /inner #}
+
             </div>
           </div>
 
@@ -157,8 +167,9 @@
       'items': related,
       'title': 'Meer ' ~ category ~ ' tips',
       'template': 'card--tipkaart',
+      'modifier': 'bg-option',
       'cta': {
-        'title': 'Meer gebruiksgemak tips'
+        'title': 'Alle gebruiksgemak tips'
       }
     } %}
   </div>

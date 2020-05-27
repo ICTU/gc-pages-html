@@ -1,17 +1,17 @@
-
-
-{% if items|length > 3 %}
-  {% set count = '3' %}
-{% else %}
-  {% set count = items|length %}
-{% endif %}
-
 {% if template is empty %}
   {% set template = 'card' %}
 {% endif %}
 
 
-<section class="section section--overview l-item-count-{{ count }}">
+{% set sectionClasses = [
+'section',
+'section--overview',
+  items|length < 3 ? ' l-item-count-' ~items|length,
+  modifier ? 'section--' ~ modifier,
+] %}
+
+
+<section class="{{ sectionClasses|classlist }}">
 
   {# Wrapper for section intro #}
   {% if title or description %}
@@ -35,22 +35,23 @@
   {# Wrapper for all section content #}
   <div class="l-section-content">
 
+    {% if items|length < 4 %}
+      {% set extra_class = 'grid--col-' ~ items|length %}
+    {% elseif items|length == 4 or modifier == '4col' %}
+      {% set extra_class = 'grid--col-4' %}
+    {% elseif items|length > 4 and modifier != '4col '%}
+      {% set extra_class = 'grid--col-3' %}
+    {% endif %}
+
     {% if items %}
-
-      {% if modifier == 'l-layout-4col' %}
-        {% set extra_class = 'grid--col-4' %}
-      {% else %}
-        {% set extra_class = 'grid--col-' ~ count %}
-      {% endif %}
-
       <div class="grid {{ extra_class }}">
 
         {% for key, item in items %}
 
           {% if item.nr is empty and item.category %}
             {% set nr = key %}
-            {% else %}
-              {% set nr = item.nr %}
+          {% else %}
+            {% set nr = item.nr %}
           {% endif %}
 
           {% include 'components/'~ template ~'.html.twig' with {

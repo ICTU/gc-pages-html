@@ -185,16 +185,17 @@ h1 {
 
   &--type-landing {
     .page-content {
-      padding-bottom: 0;
 
-      // Under content
+      // Under content, negate default margins / paddings
       > .section--spotlight {
         margin-left: -2rem;
         margin-right: -2rem;
+        margin-bottom: -5rem;
 
         @include bp-up(md){
           margin-left: -3rem;
           margin-right: -3rem;
+          margin-bottom: -8rem;
         }
       }
     }
@@ -203,7 +204,5 @@ h1 {
       @include gc-box-shadow;
       padding: 0;
     }
-
-
   }
 }
