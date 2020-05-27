@@ -2,21 +2,18 @@
 
 $directory = $_SERVER['DOCUMENT_ROOT'];
 
-require  $directory . '/vendor/autoload.php';
+require $directory . '/vendor/autoload.php';
 
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 use Twig\Extension\DebugExtension;
 
-use App\Twig\GroupByMonth;
 use App\Twig\ClassList;
 
 $loader = new FilesystemLoader([$directory . '/templates', 'templates']);
-
 $twig = new Environment($loader, ['debug' => TRUE]);
 
 $twig->addExtension(new DebugExtension);
-$twig->addExtension(new GroupByMonth);
 $twig->addExtension(new ClassList);
 
 

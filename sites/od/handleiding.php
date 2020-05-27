@@ -1,17 +1,17 @@
 <?php
 
+$directory = $_SERVER['DOCUMENT_ROOT'];
 
-$directory = '/' .trim(__DIR__, 'sites/od');
-
-// Is haas ontwerp, weird
-if (strpos($directory, 'subsites/gc.haas-ontwerp.nl') !== false) {
-  $directory = '/d' .trim(__DIR__, 'sites/od');
-}
-
-require  $directory . '/vendor/autoload.php';
+require $directory . '/vendor/autoload.php';
 
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
+use Twig\Extension\DebugExtension;
+
+$loader = new FilesystemLoader([$directory . '/templates', 'templates']);
+$twig = new Environment($loader, ['debug' => TRUE]);
+
+$twig->addExtension(new DebugExtension);
 
 $loader = new FilesystemLoader([$directory . '/templates', 'templates']);
 $twig = new Environment($loader, ['debug' => TRUE]);

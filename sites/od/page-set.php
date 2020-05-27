@@ -9,14 +9,13 @@ use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 use Twig\Extension\DebugExtension;
 
-$loader = new FilesystemLoader([
-  $directory . '/templates',
-  'data',
-  'templates',
-]);
+use App\Twig\ClassList;
+
+$loader = new FilesystemLoader([$directory . '/templates', 'templates']);
 $twig = new Environment($loader, ['debug' => TRUE]);
 
 $twig->addExtension(new DebugExtension);
+$twig->addExtension(new ClassList);
 
 // Cards ov
 

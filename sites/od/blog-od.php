@@ -1,25 +1,23 @@
 <?php
 
 
-$directory = '/' .trim(__DIR__, 'sites/od');
+$directory = $_SERVER['DOCUMENT_ROOT'];
 
-// Is haas ontwerp, weird
-if (strpos($directory, 'subsites/gc.haas-ontwerp.nl') !== false) {
-  $directory = '/d' .trim(__DIR__, 'sites/od');
-}
-
-require  $directory . '/vendor/autoload.php';
+require $directory . '/vendor/autoload.php';
 
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
-use Twig\TwigFilter;
+use Twig\Extension\DebugExtension;
+
+use App\Twig\ClassList;
+use App\Twig\GroupByMonth;
 
 $loader = new FilesystemLoader([$directory . '/templates', 'templates']);
 $twig = new Environment($loader, ['debug' => TRUE]);
 
-$filter = new TwigFilter('group', 'group');
-$twig->addFilter($filter);
-
+$twig->addExtension(new DebugExtension);
+$twig->addExtension(new ClassList);
+$twig->addExtension(new GroupByMonth);
 
 echo $twig->render('overview.html.twig', [
   'site_name' => 'Optimaal Digitaal',
