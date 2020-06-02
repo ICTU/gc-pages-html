@@ -48,7 +48,7 @@ $examples = [
   ],
   '3' => [
     'title' => 'Focus op usability',
-    'descr' => 'We hebben onlangs een aantal van onze diensten die al wat langer bestonden vernieuwd. We kijken hoe intensief gebruikers er mee bezig zijn, we proberen aan te sluiten bij het proces en we halen er een usability-expert bij. '.
+    'descr' => 'We hebben onlangs een aantal van onze diensten die al wat langer bestonden vernieuwd. We kijken hoe intensief gebruikers er mee bezig zijn, we proberen aan te sluiten bij het proces en we halen er een usability-expert bij. ' .
       'Wij werken met werkgroepen, met een tiental bedrijven, die elk vanuit hun eigen segment naar het product kijken. Maar als de dienst af is en we zetten het in de markt, dan merken we toch dat er nog best veel te halen is door wat breder en op basis van echt gebruik usability snel te verbeteren. Ik denk dat een grote focus op usability, met name in de periode na livegang, dus bij de eerste introductie, belangrijk is. Houd daar ruimte om die usability steeds te optimaliseren. Zodat de acceptatie gewoon een stuk beter gaat.',
     'author' => $authors['iwan'],
   ],
@@ -64,16 +64,18 @@ $examples = [
 ];
 
 $rblocks = [
-  '1' => [
-    'title'=> 'Onderzoeken',
-    'nr' => 'Geen',
-    'descr' => 'gedaan voor deze tip'
+  'items' => [
+    '1' => [
+      'title' => 'Onderzoeken',
+      'nr' => 'Geen',
+      'descr' => 'gedaan voor deze tip',
+    ],
+    '2' => [
+      'title' => 'Onderzoeksblok',
+      'nr' => '2000',
+      'descr' => 'doorgegeven',
+    ],
   ],
-  '2' => [
-    'title'=> 'Onderzoeksblok',
-    'nr' => '2000',
-    'descr' => 'doorgegeven'
-  ]
 ];
 
 $cards_data = file_get_contents("data/cards.json");

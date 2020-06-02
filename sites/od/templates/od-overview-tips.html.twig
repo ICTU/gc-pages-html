@@ -22,7 +22,7 @@
   {% endif %}
 
   {% include 'includes/breadcrumb.html.twig' with {
-    'page_title': breadcrumb.page_title,
+    'page_title': title,
     'links': breadcrumb.links
   } %}
 
@@ -65,90 +65,6 @@
 
           </form>
         </div>
-
-        {% set tipkaarts = {
-          '1': {
-            'nr': '112',
-            'title': 'Verdiep je eerst in één doelgroep',
-            'category': 'Inclusie',
-          },
-          '2': {
-            'nr': '111',
-            'title': 'Leg uitgangspunten inclusieve dienstverlening vast',
-            'category': 'Inclusie',
-          },
-          '3': {
-            'nr': '110',
-            'title': 'Houd Europa in de gaten',
-            'category': 'Procesaanpak',
-          },
-          '4': {
-            'nr': '109',
-            'title': 'Richt je op werk én privé',
-            'category': 'Informatieveiligheid',
-          },
-          '5': {
-            'nr': '108',
-            'title': 'Spreek de taal van alle betrokkenen',
-            'category': 'Commitment',
-          },
-          '6': {
-            'nr' : '107',
-            'title': 'Breng informatie-veiligheid dichtbij',
-            'category': 'Informatieveiligheid',
-          },
-          '7': {
-            'nr' : '106',
-            'title': 'Maak ‘bondjes’',
-            'category': 'Samenwerking'
-          },
-          '8': {
-            'nr' : '105',
-            'title': 'Voel zelf eens wat de klant voelt',
-            'category': 'Procesaanpak',
-          },
-          '9': {
-            'nr' : '104',
-            'title': 'Gebruik het juiste kanaal op het juiste moment',
-            'category': 'Kanaalsturing'
-          },
-          '10': {
-            'nr' : '103',
-            'title': 'Laat je leiden door data',
-            'category': 'Procesaanpak',
-          },
-          '11': {
-            'nr' : '102',
-            'title': 'Wees alert met persoons-gegevens!',
-            'category': 'Informatieveiligheid',
-          },
-          '12': {
-            'nr' : '101',
-            'title': 'Stel je coulanter op bij fouten',
-            'category': 'Procesaanpak',
-          },
-          '13': {
-            'nr' : '100',
-            'title': 'Maak je aanpak inclusief',
-            'category': 'Inclusie',
-          },
-          '14': {
-            'nr' : '99',
-            'title': 'Ken de wet!',
-            'category': 'Informatieveiligheid',
-          },
-          '15': {
-            'nr' : '98',
-            'title': 'Maak het makkelijk voor iedereen',
-            'category': 'Gebruiksgemak',
-            'url': 'tip-gebruiksgemak.php'
-          },
-          '16': {
-            'nr' : '97',
-            'title': 'Bied aan daar waar de burger zoekt',
-            'category': 'Kanaalsturing'
-          }
-        } %}
 
         {% include 'sections/section-overview.html.twig' with {
           'items': tipkaarts,
