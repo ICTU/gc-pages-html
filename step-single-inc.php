@@ -16,7 +16,7 @@ $twig->addExtension(new DebugExtension);
 
 $intro = 'Identificeer gezamenlijk op welke manier je aandacht gaat besteden aan inclusie in je project en wat je wilt bereiken. Neem dit op in je projectplan.';
 
-echo $twig->render('step-single.html.twig', [
+echo $twig->render('single-step.html.twig', [
   'site_name' => 'Inclusie',
   'site_slogan' => 'Ontwerp voor iedereen',
   'logo' => 'img/logo/inclusie.svg',

@@ -90,6 +90,27 @@
   "erwin": {
     "firstname" : "Erwin",
     "lastname" : "Koster",
+    "function": "Productmanager DigID",
     "img" : "author-2.jpg"
+  },
+  "ed": {
+    "firstname" : "Ed",
+    "lastname" : "Sabel",
+    "function" : "Projectleider Mobiel Media Lab, Politie",
+    "img" : "person-4.jpg",
+    "contact": {
+      "email": "ed.sabel@politie.nl",
+      "tel": "0627020844"
+    }
+  },
+  "charlotte": {
+    "firstname" : "Charlotte",
+    "lastname" : "Holst",
+    "function" : "Adviseur dienstverlening & online media, Gemeente Haarlemmermeer",
+    "img" : "person-4.jpg",
+    "contact": {
+      "email": "ed.sabel@politie.nl",
+      "tel": "0627020844"
+    }
   }
 }

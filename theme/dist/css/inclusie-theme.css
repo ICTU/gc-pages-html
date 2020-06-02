@@ -1887,6 +1887,34 @@ h1 {
 .tip--procesaanpak hr {
   border-color: #00b4ac; }
 
+.tip--commitment .entry-header {
+  background: #148839; }
+  .tip--commitment .entry-header:after {
+    background: #148839; }
+
+.tip--commitment .research {
+  background: #148839;
+  color: #fff; }
+  .tip--commitment .research h2, .tip--commitment .research h3, .tip--commitment .research a {
+    color: #fff; }
+
+.tip--commitment .research__why {
+  background: #004152 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
+  position: relative; }
+
+.tip--commitment .l-why-wrapper:before {
+  background: #148839; }
+
+.tip--commitment .research-block,
+.tip--commitment .research__conclusion {
+  border: 0.1rem solid #25b34b; }
+
+.tip--commitment .research-block__title {
+  border-bottom: 0.1rem solid #25b34b; }
+
+.tip--commitment hr {
+  border-color: #25b34b; }
+
 .section--examples {
   padding-left: 2rem;
   padding-right: 2rem;

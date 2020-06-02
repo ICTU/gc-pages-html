@@ -125,9 +125,8 @@
 
               <div class="l-inner">
                 <h2 class="research__title">Onderzoek</h2>
-
                 {% if research.text %}
-                  {{ research.text }}
+                  {{ research.text|raw }}
                 {% else %}
                   <p>KING heeft een catalogus gebruikersperspectief ontwikkeld waarmee je op basis van criteria een
                     passend
@@ -204,7 +203,7 @@
       'template': 'card--tipkaart',
       'modifier': 'bg-option',
       'cta': {
-        'title': 'Alle gebruiksgemak tips'
+        'title': 'Alle ' ~ category ~ ' tips'
       }
     } %}
   </div>

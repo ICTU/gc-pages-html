@@ -19,6 +19,21 @@
     "category": "Gebruiksgemak",
     "url": "tip-gebruiksgemak.php"
   },
+  "16": {
+    "title": "Geef afdelings-overstijgend mandaat",
+    "category": "Commitment",
+    "url": "tip-commitment.php"
+  },
+  "17": {
+    "title": "Creëer bestuurlijke dekking en mandaat",
+    "category": "Commitment",
+    "url": "tip-commitment.php"
+  },
+  "18": {
+    "title": "Draag dezelfde boodschap uit",
+    "category": "Commitment",
+    "url": "tip-commitment.php"
+  },
   "20": {
     "title": "Stem kanaal af op complexiteit van de fase",
     "category": "Procesaanpak",
@@ -69,9 +84,24 @@
     "category": "Gebruiksgemak",
     "url": "tip-gebruiksgemak.php"
   },
+  "38": {
+    "title": "Overtuig met feiten",
+    "category": "Commitment",
+    "url": "tip-commitment.php"
+  },
+  "88": {
+    "title": "Kom uit je ivoren toren",
+    "category": "Commitment",
+    "url": "tip-commitment.php"
+  },
   "100": {
     "title": "Maak je aanpak inclusief",
     "category": "Inclusie"
+  },
+  "108": {
+    "title": "Spreek de taal van alle betrokkenen",
+    "category": "Commitment",
+    "url": "tip-commitment.php"
   },
   "111": {
     "title": "Leg uitgangspunten inclusieve dienstverlening vast",

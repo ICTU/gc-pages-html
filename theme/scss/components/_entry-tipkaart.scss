@@ -244,12 +244,15 @@
   }
 
   // Set colors for each category
-  // @gc-tipkaart-full (#(Color for heading / top), $(color for "Why block, $(Research block background), $(Border color for research block))
+  // @gc-tipkaart-full ({$Color for heading / top}, {$color for "Why block, $(Research block background}, ${Border color for research blocks})
   &--gebruiksgemak {
     @include gc-tipkaart-full($gc-dark-purple, $gc-a11y-green, $gc-dark-purple, $gc-dark-purple-lighter);
   }
   &--procesaanpak {
     @include gc-tipkaart-full($gc-a11y-cyan-lg, $gc-dark-blue, $gc-a11y-cyan, $gc-cyan);
+  }
+  &--commitment {
+    @include gc-tipkaart-full($gc-a11y-green, $gc-dark-blue, $gc-a11y-green, $gc-green);
   }
 }
 
