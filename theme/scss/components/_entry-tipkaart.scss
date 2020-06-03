@@ -49,7 +49,7 @@
   }
 }
 
-@mixin gc-tipkaart-full($tip-color: $gc-a11y-green, $tip-secondary: $gc-a11y-green, $research-bg: $gc-a11y-green, $rblock-border: $gc-a11y-green) {
+@mixin gc-tipkaart-full($tip-color: $gc-a11y-green, $tip-secondary: $gc-a11y-green, $research-bg: $gc-a11y-green, $rblock-border: $gc-a11y-green, $toptip-bg: $gc-a11y-green-darker) {
 
   .entry-header {
     background: $tip-color;
@@ -57,6 +57,10 @@
     &:after {
       background: $tip-color;
     }
+  }
+
+  .tipkaart__toptip:before {
+    background: $toptip-bg;
   }
 
   .research {
@@ -244,12 +248,15 @@
   }
 
   // Set colors for each category
-  // @gc-tipkaart-full ({$Color for heading / top}, {$color for "Why block, $(Research block background}, ${Border color for research blocks})
+
+  /* @gc-tipkaart-full
+   * ({$Color for heading / top}, {$color for "Why block, $(Research block background}, ${Border color for research blocks}, ${Background for toptips})
+   */
   &--gebruiksgemak {
-    @include gc-tipkaart-full($gc-dark-purple, $gc-a11y-green, $gc-dark-purple, $gc-dark-purple-lighter);
+    @include gc-tipkaart-full($gc-dark-purple, $gc-a11y-green, $gc-dark-purple, $gc-dark-purple-lighter, $gc-dark-purple-darker);
   }
   &--procesaanpak {
-    @include gc-tipkaart-full($gc-a11y-cyan-lg, $gc-dark-blue, $gc-a11y-cyan, $gc-cyan);
+    @include gc-tipkaart-full($gc-a11y-cyan-lg, $gc-dark-blue, $gc-a11y-cyan, $gc-cyan, $gc-a11y-cyan);
   }
   &--commitment {
     @include gc-tipkaart-full($gc-a11y-green, $gc-dark-blue, $gc-a11y-green, $gc-green);

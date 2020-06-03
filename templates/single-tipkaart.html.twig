@@ -42,6 +42,11 @@
       <article class="tip tip--full tip--{{ category }}">
 
         <header class="entry-header">
+
+          {% if toptip %}
+            <span class="tipkaart__toptip">Is toptip</span>
+          {% endif %}
+
           <div class="tip__nr">Tip {{ nr }}</div>
           <h1 class="entry-title">{{ title }}</h1>
 
@@ -157,12 +162,12 @@
                 </div>
 
                 {% if rblocks.conclusion %}
-                <div class="research__conclusion">
+                  <div class="research__conclusion">
 
-                  <h3>Conclusie</h3>
-                  {{ rblocks.conclusion|raw }}
+                    <h3>Conclusie</h3>
+                    {{ rblocks.conclusion|raw }}
 
-                </div>
+                  </div>
                 {% endif %}
               </div>
 

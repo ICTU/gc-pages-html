@@ -52,18 +52,12 @@ $examples = [
   '4' => [
     'title' => 'Voortdurend ophalen van signalen en deze inbrengen in de organisatie',
     'descr' => '<p>Ons DNA-team is voortdurend bezig met ‘klantsignaalmanagement’: het ophalen van signalen. Door gebruikersgesprekken, usabilitytesten, door in gesprek te gaan met een participatieraad, of bijvoorbeeld met belangengroepen van gehandicapten. We hebben ook wat we ‘de Gideonsbende’ noemen: een participatie instrument. Deze groep inwoners, ondernemers en ambtenaren komen eens in de twee maanden bij elkaar om over van alles en nog wat rondom dienstverlening van de gemeente te praten.  Dat brengen we dan weer terug in de organisatie, in de vorm van een ongevraagd, en soms een gevraagd advies. Daardoor merken we dat we langzaam de cultuuromslag realiseren die er nodig is. Wij werken eigenlijk als een soort ambassadeurs.</p>',
-    'author' => $authors['erwin'],
+    'author' => $authors['charlotte'],
   ],
 ];
 
 $rblocks = [
-  'items' => [
-    '1' => [
-      'title' => 'Geen onderzoek',
-      'nr' => '0',
-      'descr' => 'gedaan',
-    ],
-  ]
+  'conclusion' => 'Die is er dus niet.'
 ];
 
 /*
@@ -112,6 +106,7 @@ echo $twig->render('single-tipkaart.html.twig', [
   'category' => 'commitment',
   'links' => $links,
   'research' => $research,
+  'rblocks' => $rblocks,
   'related' => $related_cards,
   'sprite_url' => '/theme/img/sprites/optimaal-digitaal/defs/svg/sprite.defs.svg',
   'nr' => '78',

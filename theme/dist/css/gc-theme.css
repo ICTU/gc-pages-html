@@ -1347,6 +1347,17 @@ h1 {
     padding-left: 2rem;
     padding-right: 2rem; }
 
+.entry.l-with-stepchart .page__intro {
+  padding-bottom: 5rem; }
+  .entry.l-with-stepchart .page__intro + .section--text-blocks {
+    margin-top: 0;
+    padding-top: 0; }
+    .entry.l-with-stepchart .page__intro + .section--text-blocks .l-section-content {
+      margin-top: -5rem; }
+      @media (min-width: 700px) {
+        .entry.l-with-stepchart .page__intro + .section--text-blocks .l-section-content {
+          margin-top: -8rem; } }
+
 /*
  * Pagination
  */
@@ -1714,206 +1725,194 @@ h1 {
       .page--type-tipkaart .page-content > .section--overview.section--bg-option:before {
         display: none; }
 
-.tip--full {
-  overflow: hidden; }
-  .tip--full .entry-header {
-    text-align: center;
-    position: relative;
-    padding: 3rem 2rem;
-    color: #fff;
-    z-index: 5; }
-    @media (min-width: 700px) {
-      .tip--full .entry-header {
-        padding: 5rem 5rem 2rem; } }
-    .tip--full .entry-header:after {
-      content: " ";
-      position: absolute;
-      display: block;
-      left: 0;
-      bottom: 0;
-      width: 110%;
-      height: 5rem;
-      -webkit-transform: rotate(2deg);
-              transform: rotate(2deg);
-      margin-bottom: -2rem;
-      z-index: -1; }
-  .tip--full .entry-title {
-    color: #fff;
-    font-family: "montserratbold", Helvetica, Arial, sans-serif;
-    font-size: 2.8rem;
-    line-height: 4rem;
-    max-width: 90%;
-    margin: 2rem auto; }
-    @media (min-width: 560px) {
-      .tip--full .entry-title {
-        font-size: 4rem;
-        line-height: 5.4rem; } }
-    @media (min-width: 1100px) {
-      .tip--full .entry-title {
-        font-size: 5.2rem;
-        line-height: 7rem;
-        margin-top: 4rem; } }
-  .tip--full .tipkaart__categorie {
-    margin-top: 3rem; }
-    @media (min-width: 700px) {
-      .tip--full .tipkaart__categorie {
-        margin-top: 5rem; } }
-  .tip--full .tip__nr {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    font-family: "league_gothicregular", Impact, Helvetica, Arial, sans-serif;
-    text-transform: uppercase;
-    font-size: 2rem; }
-    .tip--full .tip__nr:before, .tip--full .tip__nr:after {
-      content: " ";
-      height: .2rem;
-      background: #fff;
-      display: inline-block;
-      width: 3rem; }
-    .tip--full .tip__nr:before {
-      margin-right: 2rem; }
-    .tip--full .tip__nr:after {
-      margin-left: 2rem; }
-    @media (min-width: 700px) {
-      .tip--full .tip__nr {
-        font-size: 2.6rem; }
-        .tip--full .tip__nr:before, .tip--full .tip__nr:after {
-          width: 4.5rem; }
-        .tip--full .tip__nr:before {
-          margin-right: 5rem; }
-        .tip--full .tip__nr:after {
-          margin-left: 5rem; } }
-  .tip--full .tipkaart__categorie span {
-    margin-top: .6rem; }
-  .tip--full .icon--tipkaart {
-    height: 6.5rem;
-    width: auto; }
-  @media (max-width: 559px) {
+.tip {
+  /* @gc-tipkaart-full
+   * ({$Color for heading / top}, {$color for "Why block, $(Research block background}, ${Border color for research blocks}, ${Background for toptips})
+   */ }
+  .tip--full {
+    overflow: hidden; }
+    .tip--full .entry-header {
+      text-align: center;
+      position: relative;
+      padding: 3rem 2rem;
+      color: #fff;
+      z-index: 5; }
+      @media (min-width: 700px) {
+        .tip--full .entry-header {
+          padding: 5rem 5rem 2rem; } }
+      .tip--full .entry-header:after {
+        content: " ";
+        position: absolute;
+        display: block;
+        left: 0;
+        bottom: 0;
+        width: 110%;
+        height: 5rem;
+        -webkit-transform: rotate(2deg);
+                transform: rotate(2deg);
+        margin-bottom: -2rem;
+        z-index: -1; }
+    .tip--full .entry-title {
+      color: #fff;
+      font-family: "montserratbold", Helvetica, Arial, sans-serif;
+      font-size: 2.8rem;
+      line-height: 4rem;
+      max-width: 90%;
+      margin: 2rem auto; }
+      @media (min-width: 560px) {
+        .tip--full .entry-title {
+          font-size: 4rem;
+          line-height: 5.4rem; } }
+      @media (min-width: 1100px) {
+        .tip--full .entry-title {
+          font-size: 5.2rem;
+          line-height: 7rem;
+          margin-top: 4rem; } }
+    .tip--full .tipkaart__categorie {
+      margin-top: 3rem; }
+      @media (min-width: 700px) {
+        .tip--full .tipkaart__categorie {
+          margin-top: 5rem; } }
+    .tip--full .tip__nr {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      font-family: "league_gothicregular", Impact, Helvetica, Arial, sans-serif;
+      text-transform: uppercase;
+      font-size: 2rem; }
+      .tip--full .tip__nr:before, .tip--full .tip__nr:after {
+        content: " ";
+        height: .2rem;
+        background: #fff;
+        display: inline-block;
+        width: 3rem; }
+      .tip--full .tip__nr:before {
+        margin-right: 2rem; }
+      .tip--full .tip__nr:after {
+        margin-left: 2rem; }
+      @media (min-width: 700px) {
+        .tip--full .tip__nr {
+          font-size: 2.6rem; }
+          .tip--full .tip__nr:before, .tip--full .tip__nr:after {
+            width: 4.5rem; }
+          .tip--full .tip__nr:before {
+            margin-right: 5rem; }
+          .tip--full .tip__nr:after {
+            margin-left: 5rem; } }
+    .tip--full .tipkaart__categorie span {
+      margin-top: .6rem; }
     .tip--full .icon--tipkaart {
-      height: 6rem;
-      width: 5rem; }
-    .tip--full .tipkaart__categorie .name {
-      font-size: 1.8rem; } }
-  .tip--full .section--links {
-    padding-left: 2rem;
-    padding-right: 2rem;
+      height: 6.5rem;
+      width: auto; }
+    @media (max-width: 559px) {
+      .tip--full .icon--tipkaart {
+        height: 6rem;
+        width: 5rem; }
+      .tip--full .tipkaart__categorie .name {
+        font-size: 1.8rem; } }
+    .tip--full .section--links {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      padding-bottom: 5rem; }
+      @media (min-width: 560px) {
+        .tip--full .section--links {
+          padding-right: 3rem;
+          padding-left: 3rem; } }
+      .tip--full .section--links .section__title {
+        border: none;
+        padding-top: 0; }
+      @media (min-width: 1100px) {
+        .tip--full .section--links {
+          padding-bottom: 8rem; } }
+  .tip .entry-body {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    padding-bottom: 5rem; }
+    max-width: calc(760px + 4rem);
+    padding: 3rem 2rem;
+    margin: 0 auto; }
     @media (min-width: 560px) {
-      .tip--full .section--links {
-        padding-right: 3rem;
-        padding-left: 3rem; } }
-    .tip--full .section--links .section__title {
-      border: none;
-      padding-top: 0; }
-    @media (min-width: 1100px) {
-      .tip--full .section--links {
-        padding-bottom: 8rem; } }
-
-.tip .entry-body {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  max-width: calc(760px + 4rem);
-  padding: 3rem 2rem;
-  margin: 0 auto; }
-  @media (min-width: 560px) {
-    .tip .entry-body {
-      width: 90%; } }
-  @media (min-width: 700px) {
-    .tip .entry-body {
-      padding-top: 6rem; } }
-
-.tip--gebruiksgemak .entry-header {
-  background: #4c2974; }
-  .tip--gebruiksgemak .entry-header:after {
+      .tip .entry-body {
+        width: 90%; } }
+    @media (min-width: 700px) {
+      .tip .entry-body {
+        padding-top: 6rem; } }
+  .tip--gebruiksgemak .entry-header {
     background: #4c2974; }
-
-.tip--gebruiksgemak .research {
-  background: #4c2974;
-  color: #fff; }
-  .tip--gebruiksgemak .research h2, .tip--gebruiksgemak .research h3, .tip--gebruiksgemak .research a {
+    .tip--gebruiksgemak .entry-header:after {
+      background: #4c2974; }
+  .tip--gebruiksgemak .tipkaart__toptip:before {
+    background: #2D114E; }
+  .tip--gebruiksgemak .research {
+    background: #4c2974;
     color: #fff; }
-
-.tip--gebruiksgemak .research__why {
-  background: #148839 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
-  position: relative; }
-
-.tip--gebruiksgemak .l-why-wrapper:before {
-  background: #4c2974; }
-
-.tip--gebruiksgemak .research-block,
-.tip--gebruiksgemak .research__conclusion {
-  border: 0.1rem solid #9267C3; }
-
-.tip--gebruiksgemak .research-block__title {
-  border-bottom: 0.1rem solid #9267C3; }
-
-.tip--gebruiksgemak hr {
-  border-color: #9267C3; }
-
-.tip--procesaanpak .entry-header {
-  background: #009C95; }
-  .tip--procesaanpak .entry-header:after {
+    .tip--gebruiksgemak .research h2, .tip--gebruiksgemak .research h3, .tip--gebruiksgemak .research a {
+      color: #fff; }
+  .tip--gebruiksgemak .research__why {
+    background: #148839 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
+    position: relative; }
+  .tip--gebruiksgemak .l-why-wrapper:before {
+    background: #4c2974; }
+  .tip--gebruiksgemak .research-block,
+  .tip--gebruiksgemak .research__conclusion {
+    border: 0.1rem solid #9267C3; }
+  .tip--gebruiksgemak .research-block__title {
+    border-bottom: 0.1rem solid #9267C3; }
+  .tip--gebruiksgemak hr {
+    border-color: #9267C3; }
+  .tip--procesaanpak .entry-header {
     background: #009C95; }
-
-.tip--procesaanpak .research {
-  background: #00837E;
-  color: #fff; }
-  .tip--procesaanpak .research h2, .tip--procesaanpak .research h3, .tip--procesaanpak .research a {
+    .tip--procesaanpak .entry-header:after {
+      background: #009C95; }
+  .tip--procesaanpak .tipkaart__toptip:before {
+    background: #00837E; }
+  .tip--procesaanpak .research {
+    background: #00837E;
     color: #fff; }
-
-.tip--procesaanpak .research__why {
-  background: #004152 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
-  position: relative; }
-
-.tip--procesaanpak .l-why-wrapper:before {
-  background: #00837E; }
-
-.tip--procesaanpak .research-block,
-.tip--procesaanpak .research__conclusion {
-  border: 0.1rem solid #00b4ac; }
-
-.tip--procesaanpak .research-block__title {
-  border-bottom: 0.1rem solid #00b4ac; }
-
-.tip--procesaanpak hr {
-  border-color: #00b4ac; }
-
-.tip--commitment .entry-header {
-  background: #148839; }
-  .tip--commitment .entry-header:after {
+    .tip--procesaanpak .research h2, .tip--procesaanpak .research h3, .tip--procesaanpak .research a {
+      color: #fff; }
+  .tip--procesaanpak .research__why {
+    background: #004152 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
+    position: relative; }
+  .tip--procesaanpak .l-why-wrapper:before {
+    background: #00837E; }
+  .tip--procesaanpak .research-block,
+  .tip--procesaanpak .research__conclusion {
+    border: 0.1rem solid #00b4ac; }
+  .tip--procesaanpak .research-block__title {
+    border-bottom: 0.1rem solid #00b4ac; }
+  .tip--procesaanpak hr {
+    border-color: #00b4ac; }
+  .tip--commitment .entry-header {
     background: #148839; }
-
-.tip--commitment .research {
-  background: #148839;
-  color: #fff; }
-  .tip--commitment .research h2, .tip--commitment .research h3, .tip--commitment .research a {
+    .tip--commitment .entry-header:after {
+      background: #148839; }
+  .tip--commitment .tipkaart__toptip:before {
+    background: #0b732c; }
+  .tip--commitment .research {
+    background: #148839;
     color: #fff; }
-
-.tip--commitment .research__why {
-  background: #004152 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
-  position: relative; }
-
-.tip--commitment .l-why-wrapper:before {
-  background: #148839; }
-
-.tip--commitment .research-block,
-.tip--commitment .research__conclusion {
-  border: 0.1rem solid #25b34b; }
-
-.tip--commitment .research-block__title {
-  border-bottom: 0.1rem solid #25b34b; }
-
-.tip--commitment hr {
-  border-color: #25b34b; }
+    .tip--commitment .research h2, .tip--commitment .research h3, .tip--commitment .research a {
+      color: #fff; }
+  .tip--commitment .research__why {
+    background: #004152 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
+    position: relative; }
+  .tip--commitment .l-why-wrapper:before {
+    background: #148839; }
+  .tip--commitment .research-block,
+  .tip--commitment .research__conclusion {
+    border: 0.1rem solid #25b34b; }
+  .tip--commitment .research-block__title {
+    border-bottom: 0.1rem solid #25b34b; }
+  .tip--commitment hr {
+    border-color: #25b34b; }
 
 .section--examples {
   padding-left: 2rem;

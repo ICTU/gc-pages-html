@@ -52,7 +52,8 @@
   "23": {
     "title": "Ga gewoon van start, verbeter gaandeweg",
     "category": "Procesaanpak",
-    "url": "tip-procesaanpak.php"
+    "url": "tip-procesaanpak.php",
+    "toptip": "ja"
   },
   "24": {
     "title": "Begin met inventariseren kanaalgebruik",
@@ -67,7 +68,8 @@
   "26": {
     "title": "Meet en verbeter continu",
     "category": "Procesaanpak",
-    "url": "tip-procesaanpak.php"
+    "url": "tip-procesaanpak.php",
+    "toptip": "ja"
   },
   "30": {
     "title": "Betrek alle partijen bij ontwikkeling",
@@ -88,6 +90,24 @@
     "title": "Overtuig met feiten",
     "category": "Commitment",
     "url": "tip-commitment.php"
+  },
+  "41": {
+    "title": "Maak ook de 'medewerkersreis'",
+    "category": "Commitment",
+    "url": "tip-commitment.php",
+    "toptip": "ja"
+  },
+  "57": {
+    "title": "Spreek de taal van de gebruiker",
+    "category": "Gebruiksgemak",
+    "url": "tip-gebruiksgemak.php",
+    "toptip": "ja"
+  },
+  "72": {
+    "title": "Test met échte gebruikers",
+    "category": "Gebruiksgemak",
+    "url": "tip-gebruiksgemak.php",
+    "toptip": "ja"
   },
   "88": {
     "title": "Kom uit je ivoren toren",
