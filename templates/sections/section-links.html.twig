@@ -20,7 +20,8 @@
     <ul class="item-list">
       {% for item in items %}
         <li class="item-list__item">
-          <a href="{{ url ? url : '#' }}" class="link link--linklist">{{ item.title }}</a>
+          <a href="{{ url ? url : '#' }}"
+             class="link link--linklist{{ item.external ? ' link--external' }}">{{ item.title }}</a>
 
           {% if item.descr %}
             <p class="item-list__description">{{ item.descr }}</p>

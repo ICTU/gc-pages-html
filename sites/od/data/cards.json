@@ -1,4 +1,24 @@
 {
+  "1": {
+    "title": "Laat weten dat digitaal bestaat",
+    "category": "Kanaalsturing",
+    "url": "tip-kanaalsturing.php"
+  },
+  "2": {
+    "title": "Belicht voordelen van digitaal",
+    "category": "Kanaalsturing",
+    "url": "tip-kanaalsturing.php"
+  },
+  "3": {
+    "title": "Belicht voordelen van digitaal",
+    "category": "Kanaalsturing",
+    "url": "tip-kanaalsturing.php"
+  },
+  "5": {
+    "title": "Bied vast contactpersoon voor bedrijven",
+    "category": "Kanaalsturing",
+    "url": "tip-kanaalsturing.php"
+  },
   "9": {
     "title": "Maak digitaal aantrekkelijker",
     "category": "Gebruiksgemak",
@@ -18,6 +38,16 @@
     "title": "Varieer in vorm persoonlijk contact",
     "category": "Gebruiksgemak",
     "url": "tip-gebruiksgemak.php"
+  },
+  "13": {
+    "title": "Herken als digitaal niet voldoet",
+    "category": "Kanaalsturing",
+    "url": "tip-kanaalsturing.php"
+  },
+  "14": {
+    "title": "Bied hulp",
+    "category": "Kanaalsturing",
+    "url": "tip-kanaalsturing.php"
   },
   "16": {
     "title": "Geef afdelings-overstijgend mandaat",
@@ -81,6 +111,12 @@
     "category": "Gebruiksgemak",
     "url": "tip-gebruiksgemak.php"
   },
+  "34": {
+    "title": "Werk aan informatie-veiligheid",
+    "category": "Informatieveiligheid",
+    "url": "tip-informatieveiligheid.php",
+    "toptip": "ja"
+  },
   "35": {
     "title": "Simpel voor de grootste groep",
     "category": "Gebruiksgemak",
@@ -103,6 +139,21 @@
     "url": "tip-gebruiksgemak.php",
     "toptip": "ja"
   },
+  "63": {
+    "title": "Gebruik en deel persoons-gegevens alleen als het mag",
+    "category": "Informatieveiligheid",
+    "url": "tip-informatieveiligheid.php"
+  },
+  "64": {
+    "title": "Ga 'binnen' veilig om met persoons-gegevens",
+    "category": "Informatieveiligheid",
+    "url": "tip-informatieveiligheid.php"
+  },
+  "65": {
+    "title": "Ga 'buiten' veilig om met persoons-gegevens",
+    "category": "Informatieveiligheid",
+    "url": "tip-informatieveiligheid.php"
+  },
   "72": {
     "title": "Test met échte gebruikers",
     "category": "Gebruiksgemak",
@@ -113,6 +164,11 @@
     "title": "Kom uit je ivoren toren",
     "category": "Commitment",
     "url": "tip-commitment.php"
+  },
+  "94": {
+    "title": "Sta als bestuurder voor informatie-veiligheid",
+    "category": "Informatieveiligheid",
+    "url": "tip-informatieveiligheid.php"
   },
   "100": {
     "title": "Maak je aanpak inclusief",

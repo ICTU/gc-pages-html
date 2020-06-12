@@ -147,7 +147,7 @@
                     BZK, uitgevoerd door Dialogic.</p>
                 {% else %}
                   <hr>
-                  {{ research.source }}
+                  {{ research.source|raw }}
                 {% endif %}
 
 
@@ -175,6 +175,13 @@
 
             </div>
           </div>
+
+          {% if downloads %}
+            {% include 'sections/section-downloads.html.twig' with {
+              'title': 'Downloads',
+              'items': downloads
+            } %}
+          {% endif %}
 
           {% if links is empty %}
             {% set links = {

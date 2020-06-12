@@ -25,7 +25,7 @@ $twig->addExtension(new ClassList);
 $author_data = file_get_contents("data/authors.json");
 $authors = json_decode($author_data, TRUE);
 
-$title = 'We laten ons leiden door data';
+$title = 'Laat je leiden door data';
 
 $body = '<p>Ontwikkel op basis van data. Baseer beslissingen over de inrichting van je dienstverlening op feitelijke constateringen, niet op wat je denkt dat goed is. Dat geldt zowel voor de ontwerpfase als de doorontwikkeling. Monitor wat er gebeurt op je kanalen en blijf dit doen. Laat innovaties testen door gebruikers en onderzoek wat hun wensen zijn. Data gaat niet alleen over cijfers, maar ook over kijken en luisteren naar gebruikers. Verzamel dus zowel kwantitatieve als kwalitatieve data voor een zo compleet mogelijk begrip van de gebruiker en van zijn ervaring met je dienstverlening.</p>';
 $examples = [

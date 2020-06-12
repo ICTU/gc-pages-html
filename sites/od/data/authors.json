@@ -112,5 +112,35 @@
       "email": "C.Holst@Haarlemmermeer.nl",
       "tel": "06-12966132"
     }
+  },
+  "annet": {
+    "firstname" : "Annet",
+    "lastname" : "van Veen",
+    "function" : "Adviseur, Ministerie van Binnenlandse Zaken en Koninkrijksrelaties",
+    "img" : "person-2.jpg"
+  },
+  "rein": {
+    "firstname" : "Rein",
+    "lastname" : "Zijlstra",
+    "function" : "Wethouder gemeente Zeewolde",
+    "img" : "author-3.jpg",
+    "contact": {
+      "contact": {
+        "email": "r.zijlstra@zeewolde.nl",
+        "tel": "036-5229522"
+      }
+    }
+  },
+  "joab": {
+    "firstname" : "Joab",
+    "lastname" : "de Lang",
+    "function" : "Concern Information Security Officer, Gemeente Rotterdam",
+    "img" : "person-4.jpg",
+    "contact": {
+      "contact": {
+        "email": "r.zijlstra@zeewolde.nl",
+        "tel": "036-5229522"
+      }
+    }
   }
 }
