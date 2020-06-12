@@ -142,5 +142,20 @@
         "tel": "036-5229522"
       }
     }
+  },
+  "luc": {
+    "firstname" : "Luc",
+    "lastname" : "Boss",
+    "function" : "Relatiemanager Externe Betrekkingen, Sociale Verzekeringsbank",
+    "img" : "person-4.jpg"
+  },
+  "leonie": {
+    "firstname" : "Leonie",
+    "lastname" : "Brouwer",
+    "function" : "Relatiemanager Externe Betrekkingen, Sociale Verzekeringsbank",
+    "img" : "author-1.jpg",
+    "contact": {
+      "email": "Leonie.Brouwer@kinggemeenten.nl"
+    }
   }
 }

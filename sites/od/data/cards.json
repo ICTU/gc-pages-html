@@ -5,14 +5,16 @@
     "url": "tip-kanaalsturing.php"
   },
   "2": {
-    "title": "Belicht voordelen van digitaal",
+    "title": "Laat weten wat wel en niet digitaal kan",
     "category": "Kanaalsturing",
-    "url": "tip-kanaalsturing.php"
+    "url": "tip-kanaalsturing.php",
+    "toptip": "ja"
   },
   "3": {
     "title": "Belicht voordelen van digitaal",
     "category": "Kanaalsturing",
-    "url": "tip-kanaalsturing.php"
+    "url": "tip-kanaalsturing.php",
+    "toptip": "ja"
   },
   "5": {
     "title": "Bied vast contactpersoon voor bedrijven",
@@ -47,7 +49,8 @@
   "14": {
     "title": "Bied hulp",
     "category": "Kanaalsturing",
-    "url": "tip-kanaalsturing.php"
+    "url": "tip-kanaalsturing.php",
+    "toptip": "ja"
   },
   "16": {
     "title": "Geef afdelings-overstijgend mandaat",
@@ -63,6 +66,11 @@
     "title": "Draag dezelfde boodschap uit",
     "category": "Commitment",
     "url": "tip-commitment.php"
+  },
+  "19": {
+    "title": "Onderzoek wat digitaal wenselijk is",
+    "category": "Kanaalsturing",
+    "url": "tip-kanaalsturing.php"
   },
   "20": {
     "title": "Stem kanaal af op complexiteit van de fase",
@@ -100,6 +108,11 @@
     "category": "Procesaanpak",
     "url": "tip-procesaanpak.php",
     "toptip": "ja"
+  },
+  "29": {
+    "title": "Gebruik Sociaal Bewijs",
+    "category": "Kanaalsturing",
+    "url": "tip-kanaalsturing.php"
   },
   "30": {
     "title": "Betrek alle partijen bij ontwikkeling",

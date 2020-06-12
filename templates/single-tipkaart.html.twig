@@ -141,11 +141,7 @@
 
                 {% endif %}
 
-                {% if research.source is empty %}
-                  <hr>
-                  <p>Onderzoek <a href="#">‘Digitaal en Gebruikersperspectief’</a> (PDF – 1,5 Mb) van het ministerie van
-                    BZK, uitgevoerd door Dialogic.</p>
-                {% else %}
+                {% if research.source  %}
                   <hr>
                   {{ research.source|raw }}
                 {% endif %}

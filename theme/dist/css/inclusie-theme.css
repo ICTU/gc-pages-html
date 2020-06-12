@@ -1870,7 +1870,8 @@ h1 {
   .tip--gebruiksgemak .research-block__title {
     border-bottom: 0.1rem solid #9267C3; }
   .tip--gebruiksgemak hr {
-    border-color: #9267C3; }
+    border: none;
+    border-top: 0.1rem solid #9267C3; }
   .tip--procesaanpak .entry-header {
     background: #009C95; }
     .tip--procesaanpak .entry-header:after {
@@ -1893,7 +1894,8 @@ h1 {
   .tip--procesaanpak .research-block__title {
     border-bottom: 0.1rem solid #00b4ac; }
   .tip--procesaanpak hr {
-    border-color: #00b4ac; }
+    border: none;
+    border-top: 0.1rem solid #00b4ac; }
   .tip--commitment .entry-header {
     background: #148839; }
     .tip--commitment .entry-header:after {
@@ -1916,7 +1918,8 @@ h1 {
   .tip--commitment .research-block__title {
     border-bottom: 0.1rem solid #25b34b; }
   .tip--commitment hr {
-    border-color: #25b34b; }
+    border: none;
+    border-top: 0.1rem solid #25b34b; }
   .tip--informatieveiligheid .entry-header {
     background: #c42c76; }
     .tip--informatieveiligheid .entry-header:after {
@@ -1939,7 +1942,36 @@ h1 {
   .tip--informatieveiligheid .research-block__title {
     border-bottom: 0.1rem solid #E86CA8; }
   .tip--informatieveiligheid hr {
-    border-color: #E86CA8; }
+    border: none;
+    border-top: 0.1rem solid #E86CA8; }
+  .tip--kanaalsturing .entry-header {
+    background: #D77D00; }
+    .tip--kanaalsturing .entry-header:after {
+      background: #D77D00; }
+  .tip--kanaalsturing .tipkaart__toptip:before {
+    background: #f99d1c; }
+  .tip--kanaalsturing .research {
+    background: #f99d1c;
+    color: #fff; }
+    .tip--kanaalsturing .research h2, .tip--kanaalsturing .research h3, .tip--kanaalsturing .research a {
+      color: #fff; }
+  .tip--kanaalsturing .research__why {
+    background: #004152 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
+    position: relative; }
+  .tip--kanaalsturing .l-why-wrapper:before {
+    background: #f99d1c; }
+  .tip--kanaalsturing .research-block,
+  .tip--kanaalsturing .research__conclusion {
+    border: 0.1rem solid #D77D00; }
+  .tip--kanaalsturing .research-block__title {
+    border-bottom: 0.1rem solid #D77D00; }
+  .tip--kanaalsturing hr {
+    border: none;
+    border-top: 0.1rem solid #D77D00; }
+  .tip--kanaalsturing .research__content {
+    color: #004152; }
+    .tip--kanaalsturing .research__content a, .tip--kanaalsturing .research__content h2, .tip--kanaalsturing .research__content h3 {
+      color: #004152; }
 
 .section--examples {
   padding-left: 2rem;
@@ -4895,5 +4927,3 @@ h1 {
 
 .section--related .l-section-content {
   max-width: 1280px; }
-
-/*# sourceMappingURL=inclusie-theme.css.map */
