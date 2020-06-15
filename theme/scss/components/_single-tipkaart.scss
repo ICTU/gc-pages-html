@@ -279,6 +279,10 @@
       }
     }
   }
+
+  &--inclusie {
+    @include gc-tipkaart-full($inc-orange, $gc-dark-blue, $inc-a11y-orange, lighten($inc-orange, 10%), $inc-orange);
+  }
 }
 
 .section--examples {

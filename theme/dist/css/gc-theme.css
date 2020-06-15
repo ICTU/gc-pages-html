@@ -1972,6 +1972,30 @@ h1 {
     color: #004152; }
     .tip--kanaalsturing .research__content a, .tip--kanaalsturing .research__content h2, .tip--kanaalsturing .research__content h3 {
       color: #004152; }
+  .tip--inclusie .entry-header {
+    background: #D94721; }
+    .tip--inclusie .entry-header:after {
+      background: #D94721; }
+  .tip--inclusie .tipkaart__toptip:before {
+    background: #D94721; }
+  .tip--inclusie .research {
+    background: #c73d19;
+    color: #fff; }
+    .tip--inclusie .research h2, .tip--inclusie .research h3, .tip--inclusie .research a {
+      color: #fff; }
+  .tip--inclusie .research__why {
+    background: #004152 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
+    position: relative; }
+  .tip--inclusie .l-why-wrapper:before {
+    background: #c73d19; }
+  .tip--inclusie .research-block,
+  .tip--inclusie .research__conclusion {
+    border: 0.1rem solid #e3694a; }
+  .tip--inclusie .research-block__title {
+    border-bottom: 0.1rem solid #e3694a; }
+  .tip--inclusie hr {
+    border: none;
+    border-top: 0.1rem solid #e3694a; }
 
 .section--examples {
   padding-left: 2rem;
@@ -4876,3 +4900,5 @@ h1 {
       clip: rect(0 0 0 0);
       clip: rect(0, 0, 0, 0);
       position: absolute; } }
+
+/*# sourceMappingURL=gc-theme.css.map */
