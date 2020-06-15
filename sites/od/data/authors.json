@@ -1,4 +1,14 @@
 {
+  "arjen": {
+    "firstname" : "Arjen",
+    "lastname" : "van de Dool",
+    "img" : "author-3.jpg",
+    "function" : " Teamleider Kennis, Projecten en Domeinen, Koninklijke Horeca Nederland (KHN)",
+    "social": {
+      "twitter": "#",
+      "linkedin": "#"
+    }
+  },
   "wolfgang": {
     "firstname" : "Wolfgang",
     "lastname" : "Ebbers",
@@ -22,6 +32,12 @@
       "tel": "078 - 7704577",
       "email": "nee@nee.nl"
     }
+  },
+  "luc": {
+    "firstname" : "Luc",
+    "lastname" : "Boss",
+    "img" : "author-4.jpg",
+    "function" : "Relatiemanager Externe Betrekkingen, Sociale Verzekeringsbank"
   },
   "iwan": {
     "firstname" : "Iwan",
@@ -143,19 +159,10 @@
       }
     }
   },
-  "luc": {
-    "firstname" : "Luc",
-    "lastname" : "Boss",
-    "function" : "Relatiemanager Externe Betrekkingen, Sociale Verzekeringsbank",
+  "roy": {
+    "firstname" : "Roy",
+    "lastname" : "Tomeij",
+    "function" : "Aanjager digitale overheid",
     "img" : "person-4.jpg"
-  },
-  "leonie": {
-    "firstname" : "Leonie",
-    "lastname" : "Brouwer",
-    "function" : "Relatiemanager Externe Betrekkingen, Sociale Verzekeringsbank",
-    "img" : "author-1.jpg",
-    "contact": {
-      "email": "Leonie.Brouwer@kinggemeenten.nl"
-    }
   }
 }

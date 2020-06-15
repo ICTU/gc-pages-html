@@ -1996,6 +1996,30 @@ h1 {
   .tip--inclusie hr {
     border: none;
     border-top: 0.1rem solid #e3694a; }
+  .tip--samenwerking .entry-header {
+    background: #0095da; }
+    .tip--samenwerking .entry-header:after {
+      background: #0095da; }
+  .tip--samenwerking .tipkaart__toptip:before {
+    background: #007BB0; }
+  .tip--samenwerking .research {
+    background: #007BB0;
+    color: #fff; }
+    .tip--samenwerking .research h2, .tip--samenwerking .research h3, .tip--samenwerking .research a {
+      color: #fff; }
+  .tip--samenwerking .research__why {
+    background: #004152 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
+    position: relative; }
+  .tip--samenwerking .l-why-wrapper:before {
+    background: #007BB0; }
+  .tip--samenwerking .research-block,
+  .tip--samenwerking .research__conclusion {
+    border: 0.1rem solid #0095da; }
+  .tip--samenwerking .research-block__title {
+    border-bottom: 0.1rem solid #0095da; }
+  .tip--samenwerking hr {
+    border: none;
+    border-top: 0.1rem solid #0095da; }
 
 .section--examples {
   padding-left: 2rem;
@@ -4951,5 +4975,3 @@ h1 {
 
 .section--related .l-section-content {
   max-width: 1280px; }
-
-/*# sourceMappingURL=inclusie-theme.css.map */
