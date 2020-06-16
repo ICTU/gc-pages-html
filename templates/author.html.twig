@@ -1,0 +1,150 @@
+{% if id is empty %}
+  {% set id = '1' %}
+{% endif %}
+
+<html lang="nl" dir="ltr">
+
+<head>
+  {% include 'includes/head.html.twig' %}
+</head>
+
+<body class="page page--type-landing site-id-{{ id }}{{ modifier }}">
+
+<div class="site-container">
+
+  {% include 'includes/header.html.twig' %}
+
+  {% if breadcrumb is empty %}
+    {% set breadcrumb = {
+      'page_title': 'Instrumenten',
+      'links': ['Home']
+    } %}
+  {% endif %}
+
+  {% include 'includes/breadcrumb.html.twig' with {
+    'page_title': breadcrumb.page_title,
+    'links': breadcrumb.links
+  } %}
+
+
+  <div class="page-content" id="maincontent" tabindex="-1">
+
+    <main class="content">
+
+      <article class="entry entry--type-landing entry--full">
+
+        <div class="entry-content">
+
+          <div class="page__intro">
+            <header class="entry-header">
+              <h1 class="entry-title">{{ title ? title : 'Onze instrumenten' }}</h1>
+
+              {% if intro %}
+                <p>{{ intro }}</p>
+              {% endif %}
+            </header>
+
+            {% if body %}
+              {# default body body #}
+
+              <div class="entry-body">
+                {{ body|raw }}
+              </div>
+
+              {# end body #}
+            {% endif %}
+
+          </div>
+
+          {% if theme == 'od' %}
+
+            {% set text %}
+              <p>Het Optimaal Digitaal spel is een workshop in spelvorm. Je speelt het met je team of met betrokkenen
+                bij een project. Spelenderwijs wordt scherp waar jullie op gaan focussen om je (digitale)
+                dienstverlening te verbeteren. Het spel wordt gespeeld met kaarten van de tips van Optimaal Digitaal.
+                Daarmee gaan jullie ongeveer twee uur aan de slag. De ervaring is dat er verrassend snel wordt
+                doorgedrongen tot de kern. Op een prettige, actieve en positieve manier.</p>
+
+              <p>Het spel eindigt met concrete acties die de volgende dag kunnen worden opgepakt. Het verbeteren van je
+                (digitale) dienstverlening start dus meteen. De bijvangst is een beter inzicht in wat je collega
+                belangrijk vindt en de bereidheid elkaar te helpen.</p>
+            {% endset %}
+
+            {% include 'blocks/text.html.twig' with {
+              'title': 'Verbeter spelenderwijs je (digitale) dienstverlening',
+              'section_text' : text
+            } %}
+
+            {% include 'blocks/figures.html.twig' %}
+
+            {% set text %}
+              <p>Het spel eindigt met concrete acties die de volgende dag kunnen worden opgepakt. Het verbeteren van je
+                (digitale) dienstverlening start dus meteen. De bijvangst is een beter inzicht in wat je collega
+                belangrijk vindt en de bereidheid elkaar te helpen.</p>
+
+              <a href="#" class="btn btn--primary">Bekijk de handleiding</a>
+            {% endset %}
+
+            {% include 'blocks/text.html.twig' with {
+              'title': 'Hoe kan je het spelen?',
+              'section_text' : text
+            } %}
+
+            {% set cards = {
+              '1': {
+                'title': 'Over het spel',
+                'descr': 'Wat is het spel eigenlijk, en hoe is het ontstaan? Wat levert het op als je het speelt? Lees er alles over.',
+              },
+              '2': {
+                'title': 'De handleiding',
+                'descr': 'Met de handleiding loop je stap voor stap het hele spel door. Je eindigt met een aantal concrete acties mét eigenaar.',
+                'url': 'handleiding.php',
+              }
+            } %}
+
+            {% include 'sections/section-related.html.twig' with {
+              'items': cards,
+              'modifier': 'bg-option'
+            } %}
+
+
+            {# endif od #}
+          {% endif %}
+
+        </div>
+
+      </article>
+    </main>
+
+    {% if spotlight %}
+
+      {% if theme == 'od' %}
+        {% set spotlight = {
+          '1': {
+            'title': 'Ook het spel spelen?',
+            'descr': 'Met het spel wordt verassend snel doorgedrongen tot de kern. Het spel eindigt met concrete acties die de volgende dag kunnen worden opgepakt. Het verbeteren van je (digitale) dienstverlening start dus meteen.',
+            'img': 'img-16-9-od.jpg',
+            'cta': {
+              '1': {
+                'title': 'Bestellen'
+              },
+              '2': {
+                'title': 'Print & play',
+              }
+            }
+          }
+        } %}
+
+      {% endif %}
+
+      {% include 'sections/section-spotlight.html.twig' with {
+        'items': spotlight,
+        'modifier': 'bg-option'
+      } %}
+
+    {% endif %}
+
+  </div>
+
+  {% include 'includes/footer.html.twig' %}
+</div>
