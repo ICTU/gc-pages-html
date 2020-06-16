@@ -6,31 +6,28 @@
   {% set descr = 'Dit is de omschrijving van het kaartje. Hier kan de samenvatting in of de eerste tekst van de detailpagina.' %}
 {% endif %}
 
-<div class="card{{ img ? ' card--with-image' : '' }}{{ type ? ' card--type-' ~ type : '' }}">
-  {% if img is not empty %}
-    <div class="card__image">
-      <img src="/theme/img/doelgroepen/{{ img }}" alt="{{ title }}" class="image image--doelgroep">
-    </div>
-  {% endif %}
-  <div class="card__content">
+{% set styles = [
+  'author',
+  'author--card',
+  img ? 'author--with-image' : 'author--no-image'
+
+] %}
+
+<div class="{{ styles|classlist }}">
+  <div class="card__image">
+    {% if img is not empty %}
+      <img src="/uploads/styles/author/{{ img }}" alt="{{ title }}" class="image image--doelgroep">
+    {% endif %}
+  </div>
+  <div class="author__content">
     {% if type == 'event' %}
       {% include 'components/date-badge.html.twig' %}
     {% endif %}
-    <h2 class="card__title">
-      <a class="arrow-link" href="#">
-        <span class="arrow-link__text">
-          <span class="design-for">Ontwerpen voor:</span>
-          {{ title }}
-        </span>
-        <span class="arrow-link__icon"></span>
-      </a>
-    </h2>
+    <h3 class="author__title">
+      <a href="{{ url ? url : '#' }}">{{ title }}</a>
+    </h3>
 
-    {% if quote %}
-      <blockquote class="card__quote">
-        "{{ quote.quote }}"
-        <cite>- {{ quote.name }}</cite>
-      </blockquote>
-    {% endif %}
+    <span class="author__function">{{ function }}</span>
+
   </div>
 </div>

@@ -229,6 +229,10 @@
   + .section--brands .section__title {
     border: none;
   }
+
+  .grid--col-2 {
+    @include ho-container-content;
+  }
 }
 
 /* Actueel - events & blogs */

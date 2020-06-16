@@ -6,7 +6,7 @@
 {% set sectionClasses = [
 'section',
 'section--overview',
-  items|length < 3 ? ' l-item-count-' ~items|length,
+  items|length < 3 ? 'l-item-count-' ~items|length,
   modifier ? 'section--' ~ modifier,
 ] %}
 
@@ -37,9 +37,9 @@
 
     {% if items|length < 4 %}
       {% set extra_class = 'grid--col-' ~ items|length %}
-    {% elseif items|length == 4 or modifier == '4col' %}
+    {% elseif items|length == 4 or grid_modifier == '4col' %}
       {% set extra_class = 'grid--col-4' %}
-    {% elseif items|length > 4 and modifier != '4col '%}
+    {% elseif items|length > 4 and grid_modifier != '4col '%}
       {% set extra_class = 'grid--col-3' %}
     {% endif %}
 

@@ -831,31 +831,27 @@ input[type='submit'] {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap; } }
+        flex-wrap: wrap;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem; } }
 
 @media (min-width: 560px) {
   .grid--col-3 > div,
   .grid--col-3 > section {
-    width: calc(50% - 3rem); }
-    .grid--col-3 > div:first-child,
-    .grid--col-3 > section:first-child {
-      width: 100%; }
-    .grid--col-3 > div:nth-child(2),
-    .grid--col-3 > section:nth-child(2) {
-      margin-right: 3rem; } }
-
-@media (min-width: 1100px) {
-  .grid--col-3 > div,
-  .grid--col-3 > section {
-    width: calc(33.3333% - 3rem);
+    width: calc(50% - 3rem);
     margin-left: 1.5rem;
     margin-right: 1.5rem; }
-    .grid--col-3 > div:first-child, .grid--col-3 > div:nth-child(2),
-    .grid--col-3 > section:first-child,
-    .grid--col-3 > section:nth-child(2) {
-      width: calc(33.3333% - 3rem);
-      margin-left: 1.5rem;
-      margin-right: 1.5rem; } }
+    .grid--col-3 > div:first-child,
+    .grid--col-3 > section:first-child {
+      width: 100%; } }
+
+@media (min-width: 700px) {
+  .grid--col-3 > div,
+  .grid--col-3 > section {
+    width: calc(33.333% - 3rem); }
+    .grid--col-3 > div:first-child,
+    .grid--col-3 > section:first-child {
+      width: calc(33.333% - 3rem); } }
 
 @media (min-width: 560px) {
   .grid--col-4 > div,
@@ -875,6 +871,12 @@ input[type='submit'] {
     width: calc(50% - 3rem);
     margin-left: 1.5rem;
     margin-right: 1.5rem; } }
+
+@media (min-width: 700px) {
+  .grid--gutter-wide > div,
+  .grid--gutter-wide > section {
+    padding-left: 3%;
+    padding-right: 3%; } }
 
 /*Pages & pagetypes*/
 body,
@@ -1080,6 +1082,13 @@ h1 {
       margin-left: -3rem;
       margin-right: -3rem;
       margin-bottom: -8rem; } }
+
+.page--type-overview .grid {
+  max-width: calc(1280px + 3rem);
+  margin: 3rem auto 0; }
+  @media (min-width: 700px) {
+    .page--type-overview .grid {
+      margin-top: 8rem; } }
 
 .page--overview-archive .entry--type-overview .page__intro {
   max-width: 760px;
@@ -2459,6 +2468,10 @@ h1 {
       margin-right: auto; }
   .section--overview + .section--brands .section__title {
     border: none; }
+  .section--overview .grid--col-2 {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto; }
 
 /* Actueel - events & blogs */
 .section--actual .section__title {
@@ -2881,6 +2894,130 @@ h1 {
     margin-top: .5rem; }
     .author--small .link:before {
       color: #148839; }
+
+.author--card {
+  text-align: center; }
+  .author--card .card__image {
+    margin-bottom: -11rem; }
+  .author--card .author__content {
+    -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
+            box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+    padding-bottom: 5rem;
+    background: #f9f6f3;
+    padding: 13rem 3rem 2rem;
+    position: relative;
+    z-index: -1; }
+    @media (min-width: 700px) {
+      .author--card .author__content {
+        padding-bottom: 8rem; } }
+    .author--card .author__content:before {
+      position: absolute;
+      content: " ";
+      background: #fff;
+      speak: none;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0 -5rem -5rem;
+      top: 15rem;
+      -webkit-transform: rotate(2deg);
+              transform: rotate(2deg); }
+    @media (min-width: 700px) {
+      .author--card .author__content {
+        padding: 13rem 3rem 2rem; } }
+    .author--card .author__content:before {
+      top: 9rem;
+      z-index: -2; }
+  .author--card h3 a {
+    text-decoration: underline; }
+    .author--card h3 a:hover, .author--card h3 a:focus {
+      text-decoration: none; }
+  .author--card .author__function {
+    color: #52757e;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    margin-top: 1rem;
+    display: block; }
+  .author--card.author--with-image {
+    position: relative;
+    z-index: 5; }
+    .author--card.author--with-image img {
+      -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
+              box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
+      width: 13rem;
+      height: auto;
+      margin: 0 auto;
+      position: relative; }
+  .author--card.author--no-image .card__image:before {
+    -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
+            box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
+    content: " ";
+    display: block;
+    width: 14rem;
+    height: 15.4rem;
+    background: url("/theme/img/author-default.jpg") center center no-repeat;
+    background-size: 100% auto;
+    margin: 0 auto; }
+
+/*
+ * Author page
+ * For displaying an author
+ */
+.page--type-author .page-content {
+  padding-bottom: 0;
+  background: #f9f6f3; }
+
+.page--type-author .content {
+  padding: 0;
+  background: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  max-width: none; }
+  .page--type-author .content > .section--bg-option {
+    margin-left: -2rem;
+    margin-right: -2rem; }
+    @media (min-width: 560px) {
+      .page--type-author .content > .section--bg-option {
+        margin-left: -3rem;
+        margin-right: -3rem; } }
+    .page--type-author .content > .section--bg-option:before {
+      background: #f2ebe4; }
+    .page--type-author .content > .section--bg-option .section__title {
+      text-align: center;
+      border: none; }
+
+.page--type-author .author--full {
+  -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
+  max-width: 960px;
+  margin: 0 auto;
+  background: #148839;
+  color: #fff;
+  padding: 2rem; }
+  .page--type-author .author--full a, .page--type-author .author--full h1, .page--type-author .author--full h2, .page--type-author .author--full h3 {
+    color: #fff; }
+  @media (min-width: 700px) {
+    .page--type-author .author--full {
+      padding: 4rem; } }
+  .page--type-author .author--full .meta-data {
+    color: #fff;
+    font-size: 1.6rem;
+    margin-top: .5rem; }
+
+.page--type-author .author__contact-info a:hover, .page--type-author .author__contact-info a:focus {
+  color: #004152; }
+
+.author-items {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem; }
+  @media (min-width: 700px) {
+    .author-items {
+      margin-top: 8rem; } }
 
 .btn {
   display: inline-block;

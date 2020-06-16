@@ -2,7 +2,7 @@
   "arjen": {
     "firstname" : "Arjen",
     "lastname" : "van de Dool",
-    "img" : "author-3.jpg",
+    "img" : "person-1.jpg",
     "function" : " Teamleider Kennis, Projecten en Domeinen, Koninklijke Horeca Nederland (KHN)",
     "social": {
       "twitter": "#",
@@ -36,7 +36,7 @@
   "luc": {
     "firstname" : "Luc",
     "lastname" : "Boss",
-    "img" : "author-4.jpg",
+    "img" : "author-3.jpg",
     "function" : "Relatiemanager Externe Betrekkingen, Sociale Verzekeringsbank"
   },
   "iwan": {
@@ -97,7 +97,7 @@
     "firstname" : "Esmeralde",
     "lastname" : "Marsman",
     "function" : "Gemeente Rotterdam",
-    "img" : "author-2.jpg",
+    "img" : "author-4.jpg",
     "contact": {
       "email": "egm.marsman@rotterdam.nl",
       "tel": "06-52672088"
@@ -107,7 +107,7 @@
     "firstname" : "Erwin",
     "lastname" : "Koster",
     "function": "Productmanager DigID",
-    "img" : "author-2.jpg"
+    "img" : "author-3.jpg"
   },
   "ed": {
     "firstname" : "Ed",
@@ -133,7 +133,7 @@
     "firstname" : "Annet",
     "lastname" : "van Veen",
     "function" : "Adviseur, Ministerie van Binnenlandse Zaken en Koninkrijksrelaties",
-    "img" : "person-2.jpg"
+    "img" : "person-3.jpg"
   },
   "rein": {
     "firstname" : "Rein",
@@ -163,6 +163,6 @@
     "firstname" : "Roy",
     "lastname" : "Tomeij",
     "function" : "Aanjager digitale overheid",
-    "img" : "person-4.jpg"
+    "img" : "author-2.jpg"
   }
 }

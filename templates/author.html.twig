@@ -8,7 +8,7 @@
   {% include 'includes/head.html.twig' %}
 </head>
 
-<body class="page page--type-landing site-id-{{ id }}{{ modifier }}">
+<body class="page page--type-author site-id-{{ id }}{{ modifier }}">
 
 <div class="site-container">
 
@@ -22,7 +22,7 @@
   {% endif %}
 
   {% include 'includes/breadcrumb.html.twig' with {
-    'page_title': breadcrumb.page_title,
+    'page_title': title,
     'links': breadcrumb.links
   } %}
 
@@ -30,119 +30,84 @@
   <div class="page-content" id="maincontent" tabindex="-1">
 
     <main class="content">
+      <section class="author author--full l-with-image" itemprop="author" itemtype="http://schema.org/Person">
 
-      <article class="entry entry--type-landing entry--full">
+        <figure class="author__image">
+          <img src="/uploads/styles/author/author-1.jpg" class="author-photo photo avatar"
+               alt="Gebruiker Centraal Auteur">
+        </figure>
 
-        <div class="entry-content">
+        <div class="author__content">
+          <div class="l-author-header">
+            <h1 class="page__title">{{ title ? title : 'Gebruiker Centraal auteur' }}</h1>
 
-          <div class="page__intro">
-            <header class="entry-header">
-              <h1 class="entry-title">{{ title ? title : 'Onze instrumenten' }}</h1>
-
-              {% if intro %}
-                <p>{{ intro }}</p>
-              {% endif %}
-            </header>
-
-            {% if body %}
-              {# default body body #}
-
-              <div class="entry-body">
-                {{ body|raw }}
-              </div>
-
-              {# end body #}
-            {% endif %}
-
+            {% include 'components/meta-data.html.twig' with {
+              'items': {
+                '1': {
+                  'title': 'Functie',
+                  'descr': 'Adviseur online communicatie en analyse'
+                }
+              }
+            } %}
           </div>
 
-          {% if theme == 'od' %}
+          {% if descr %}
+            {{ descr }}
+          {% else %}
+            <p>Sinds 2006 werkzaam voor ICTU. In diverse projecten gewerkt op gebied van de digitale overheid. Ik
+              onderzoek en adviseer in het gebruiksvriendelijker en toegankelijker maken van websites, het verbeteren
+              van de kwaliteit van de content en de inzet van social media.
+            </p>
 
-            {% set text %}
-              <p>Het Optimaal Digitaal spel is een workshop in spelvorm. Je speelt het met je team of met betrokkenen
-                bij een project. Spelenderwijs wordt scherp waar jullie op gaan focussen om je (digitale)
-                dienstverlening te verbeteren. Het spel wordt gespeeld met kaarten van de tips van Optimaal Digitaal.
-                Daarmee gaan jullie ongeveer twee uur aan de slag. De ervaring is dat er verrassend snel wordt
-                doorgedrongen tot de kern. Op een prettige, actieve en positieve manier.</p>
-
-              <p>Het spel eindigt met concrete acties die de volgende dag kunnen worden opgepakt. Het verbeteren van je
-                (digitale) dienstverlening start dus meteen. De bijvangst is een beter inzicht in wat je collega
-                belangrijk vindt en de bereidheid elkaar te helpen.</p>
-            {% endset %}
-
-            {% include 'blocks/text.html.twig' with {
-              'title': 'Verbeter spelenderwijs je (digitale) dienstverlening',
-              'section_text' : text
-            } %}
-
-            {% include 'blocks/figures.html.twig' %}
-
-            {% set text %}
-              <p>Het spel eindigt met concrete acties die de volgende dag kunnen worden opgepakt. Het verbeteren van je
-                (digitale) dienstverlening start dus meteen. De bijvangst is een beter inzicht in wat je collega
-                belangrijk vindt en de bereidheid elkaar te helpen.</p>
-
-              <a href="#" class="btn btn--primary">Bekijk de handleiding</a>
-            {% endset %}
-
-            {% include 'blocks/text.html.twig' with {
-              'title': 'Hoe kan je het spelen?',
-              'section_text' : text
-            } %}
-
-            {% set cards = {
-              '1': {
-                'title': 'Over het spel',
-                'descr': 'Wat is het spel eigenlijk, en hoe is het ontstaan? Wat levert het op als je het speelt? Lees er alles over.',
-              },
-              '2': {
-                'title': 'De handleiding',
-                'descr': 'Met de handleiding loop je stap voor stap het hele spel door. Je eindigt met een aantal concrete acties mét eigenaar.',
-                'url': 'handleiding.php',
-              }
-            } %}
-
-            {% include 'sections/section-related.html.twig' with {
-              'items': cards,
-              'modifier': 'bg-option'
-            } %}
-
-
-            {# endif od #}
           {% endif %}
 
+          <div class="author__contact-info">
+            <a href="tel:123456789" class="link link--contact link--phone" title="Phone number van {{ title }}"
+               itemprop="phone">06-12345678</a>
+            <a href="mailto:info@gebruikercentraal.nl" class="link link--contact link--email"
+               title="E-mail adres van Mariska Woudenberg" itemprop="email">info@gebruikercentraal.nl</a>
+
+            <ul class="social-links">
+              <li class="social-links__item">
+                <a href="#" class="link link--social linkedin" title="Linked-In profiel van {{ title }}">Linked-In
+                  profiel van {{ title }}</a></li>
+              <li class="social-links__item">
+                <a href="#" class="link link--social twitter" title="Twitter van {{ title }}">Twitter
+                  van {{ title }}</a></li>
+              <li class="social-links__item">
+                <a href="#" class="link link--social facebook" title="Facebook van {{ title }}">Facebook
+                  van {{ title }}</a></li>
+            </ul>
+          </div>
         </div>
+      </section>
 
-      </article>
-    </main>
-
-    {% if spotlight %}
-
-      {% if theme == 'od' %}
-        {% set spotlight = {
-          '1': {
-            'title': 'Ook het spel spelen?',
-            'descr': 'Met het spel wordt verassend snel doorgedrongen tot de kern. Het spel eindigt met concrete acties die de volgende dag kunnen worden opgepakt. Het verbeteren van je (digitale) dienstverlening start dus meteen.',
-            'img': 'img-16-9-od.jpg',
-            'cta': {
-              '1': {
-                'title': 'Bestellen'
-              },
-              '2': {
-                'title': 'Print & play',
-              }
-            }
-          }
-        } %}
-
+      {% if body %}
+        <div class="author-content">
+          {{ body }}
+        </div>
       {% endif %}
 
-      {% include 'sections/section-spotlight.html.twig' with {
-        'items': spotlight,
-        'modifier': 'bg-option'
-      } %}
 
-    {% endif %}
+
+      {% if data and theme is empty %}
+        {% include 'sections/section-overview.html.twig' with {
+          'title' : 'Artikelen van Gebruiker Centraal',
+          'items' : data,
+          'modifier': 'bg-option'
+        } %}
+      {% elseif data and theme == 'od' %}
+        {% include 'sections/section-overview.html.twig' with {
+          'title' : 'Meer tips van Gebruiker Centraal',
+          'items' : data,
+          'template': 'card--tipkaart',
+          'grid_modifier': '4col',
+          'modifier': 'bg-option'
+        } %}
+      {% endif %}
+
+
+    </main>
 
   </div>
 

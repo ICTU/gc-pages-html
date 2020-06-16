@@ -367,7 +367,24 @@
                 'type': 'blogs'
               } %}
 
+            {% elseif overview == 'tipgevers' %}
+
+              {# data from authors.json #}
+                <div class="grid grid--col-3 grid--gutter-wide">
+                  {% for author in items %}
+                    {% include 'components/card--author.html.twig' with {
+                      'type': 'author',
+                      'title': author.firstname ~' '~ author.lastname,
+                      'img': author.img,
+                      'function': author.function,
+                      'url': 'tipgever.php'
+                    } %}
+                  {% endfor %}
+              </div>
+
             {% endif %}
+
+
 
           {% endif %}
 
