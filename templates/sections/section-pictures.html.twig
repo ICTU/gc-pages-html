@@ -1,4 +1,4 @@
-{% if variant is empty %}
+{% if modifier is empty %}
   {% set variant = 'full' %}
 {% endif %}
 
@@ -11,8 +11,6 @@
     }
   } %}
 
-  {% set extraclass = 'l-item-count-1' %}
-
 {% else %}
 
   {% if items|length > 2 %}
@@ -23,7 +21,15 @@
 
 {% endif %}
 
-<div class="section section--image section--image-{{ variant }} {{ extraclass }}">
+
+{% set classes = [
+  'section',
+  'section--image',
+  extraclass ? extraclass,
+  modifier ? modifier
+] %}
+
+<div class="{{ classes|classlist }}">
 
   {% if title %}
     <div class="l-section-top">

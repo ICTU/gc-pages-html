@@ -287,8 +287,21 @@ $ac-margin: 30rem;
     color: $intro-color;
     padding: 2rem;
 
-    a, h1, h2, h3 {
+    h1, h2, h3 {
       color: $intro-color;
+    }
+
+    a {
+      color: $intro-color;
+
+      &:hover, &:focus {
+        color: $intro-color;
+      }
+    }
+
+    .author__contact-info {
+      border-top: .1rem solid  darken($intro-bg, 6%);
+      padding-top: 1.5rem;
     }
 
     @include bp-up(md) {

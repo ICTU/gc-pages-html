@@ -62,29 +62,28 @@
   }
 
   &--contact {
-    border: .1rem solid $border_color;
     display: inline-flex;
-    padding: .2rem 1rem;
     transition: border-color .2s;
-    text-decoration: none;
 
     &:before {
       float: left;
       margin-right: 1rem;
       display: inline-block;
+
     }
 
     &:hover,
     &:focus,
     &:active {
-      border-color: $gc-dark-blue;
-      text-decoration: underline;
-      background: $white;
+      text-decoration: none;
 
       &:before {
         margin-right: 1.1rem;
-        color: $color-primary;
       }
+    }
+
+    + .link--contact {
+      margin-left: 2rem;
     }
   }
 

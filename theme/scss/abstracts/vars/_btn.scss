@@ -7,8 +7,8 @@
 
 $btn-primary-bg:                $gc-a11y-green !default;
 $btn-primary-hover-bg:          $gc-a11y-green-darker !default;
-$btn-primary-color:             $white;
-$btn-primary-hovercolor:        $white;
+$btn-primary-color:             $white !default;
+$btn-primary-hovercolor:        $white !default;
 
 $btn-primary-arrowbg:           $gc-a11y-green-darker !default;
 $btn-primary-hover-arrowbg:     $gc-a11y-green-dark !default;
@@ -17,8 +17,8 @@ $btn-primary-hover-arrowbg:     $gc-a11y-green-dark !default;
 
 $btn-secondary-bg:                $color-secondary !default;
 $btn-secondary-hover-bg:          darken($color-secondary, 10%) !default;
-$btn-secondary-color:             $white;
-$btn-secondary-hovercolor:        $white;
+$btn-secondary-color:             $white !default;
+$btn-secondary-hovercolor:        $white !default;
 
 $btn-secondary-arrowbg:           darken($color-secondary, 10%) !default;
 $btn-secondary-hover-arrowbg:     darken($color-secondary, 20%) !default;

@@ -36,7 +36,7 @@
 
         <div class="entry-content">
 
-          {% if content is empty %}
+          {% if page is empty %}
 
             {# blocks #}
 
@@ -64,7 +64,7 @@
               'section_text': text
             } %}
 
-            {% include 'blocks/figures.html.twig' with {
+            {% include 'sections/section-pictures.html.twig' with {
               'title' : '4 tot 6 personen, maximaal 2 uur',
               'items': {
                 '1': {
@@ -182,7 +182,57 @@
               'descr': 'Deze set is ontwikkeld met een aantal partners.',
             } %}
 
+          {% elseif page == 'word_spelleider' %}
+
+            {# word spelleider pagina#}
+
+            {% set text %}
+              <p>Door een Train-de-trainer Spelleider sessie te volgen kan je officieel spelleider Optimaal Digitaal
+                worden. Je ontvangt hiervoor ook een certificaat. De mensen in de lijst op deze pagina hebben de
+                Train-de trainer Spelleider sessie gevolgd en kunnen jou begeleiden bij het spelen van het Optimaal
+                Digitaal spel.</p>
+            {% endset %}
+
+            {% include 'blocks/text.html.twig' with {
+              'section_text': text,
+              'title': '',
+            } %}
+
+
+            {% if form %}
+
+              {% include 'sections/section-form.html.twig' with {
+                'title': '',
+                'form': form
+              } %}
+
+              {% endif %}
           {% endif %}
+
+
+          {% include 'sections/section-pictures.html.twig' with {
+            'title': 'Zij gingen u voor!',
+            'items': album,
+            'modifier': 'l-picture-grid'
+          } %}
+
+
+          {% set items = {
+            '1': {
+              'title': 'Alle spelleiders',
+              'descr': 'Er zijn al heel veel mensen die de cursus hebben gevolgd. Misschien wel iemand binnen jouw organisatie. Op deze pagina vind je iedereen die die spelleidercursus heeft gevolgd.'
+            },
+            '2': {
+              'title': 'Alle spelleiders',
+              'descr': 'Er zijn al heel veel mensen die de cursus hebben gevolgd. Misschien wel iemand binnen jouw organisatie. Op deze pagina vind je iedereen die die spelleidercursus heeft gevolgd.'
+            }
+          } %}
+
+          {% include 'sections/section-related.html.twig' with {
+            'items': items,
+            'modifier': 'bg-option'
+          }%}
+
         </div>
       </article>
     </main>

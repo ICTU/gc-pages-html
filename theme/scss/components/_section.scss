@@ -126,61 +126,6 @@
     padding-top: 0;
   }
 }
-
-// Per section
-
-.section--image {
-
-  .l-section-content {
-    max-width: $max-width-inner;
-    margin: 0 auto;
-  }
-
-  picture {
-    display: block;
-
-    img {
-      width: 100%;
-    }
-  }
-
-  &-width-full {
-    max-width: $max-width-container;
-
-    .l-section-content {
-      max-width: none;
-    }
-  }
-
-  .l-section-top + .l-section-content {
-    margin-top: 2rem;
-  }
-
-  &.l-item-count-2 .l-section-content {
-    @include bp-up(sm) {
-      display: flex;
-
-      picture {
-        margin-left: $gutter-smaller / 2;
-        margin-right: $gutter-smaller / 2;
-        width: calc(50% - #{$gutter-smaller});
-      }
-    }
-
-    @include bp-down(sm) {
-      picture + picture {
-        margin-top: $gutter-smaller;
-      }
-    }
-  }
-
-  + p, + h2 {
-    @include bp-up(md) {
-      margin-top: 5rem;
-    }
-  }
-}
-
 // Overviews
 
 .section--overview {

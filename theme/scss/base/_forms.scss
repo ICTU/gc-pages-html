@@ -10,7 +10,7 @@ button {
 }
 $input-size: 20px;
 
-input:not([type='submit']):not([type='checkbox']):not([type='radio']),
+input,
 select, textarea {
   box-sizing: border-box;
   background: $input-bg;
@@ -49,6 +49,10 @@ select {
   }
 }
 
+textarea {
+  min-height: 16rem;
+}
+
 
 input[type='submit']{
   @include gc-box-shadow();
@@ -67,6 +71,7 @@ input[type='submit']{
   font-weight: normal;
   font-size: $btn-font-size-sm;
   margin-top: 3rem;
+  width: auto;
 
   @include bp-up(md){
     font-size: $btn-font-size-lg;
@@ -128,5 +133,81 @@ input[type='submit']{
     &:after {
       display: block;
     }
+  }
+}
+
+// LAyout
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+
+  + fieldset {
+    border-top: .2rem solid $border-color;
+    margin-top: 3rem;
+    padding-top: 3rem
+  }
+}
+
+legend {
+  margin-top: 0;
+  float: left;
+  width: 100%;
+  font-family: $font-primary-bold;
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+
+  + div {
+    clear: both;
+    padding-top: 2rem;
+  }
+}
+
+.form-item {
+  margin-top: 2rem;
+
+  label {
+    line-height: 2.6rem;
+  }
+
+  @include bp-up(md){
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: $gutter;
+
+    label {
+      width: 30%;
+      padding-right: $gutter;
+      text-align: right;
+    }
+
+    input,
+    textarea,
+    .form-description {
+      width: 70%;
+      margin-left: auto;
+    }
+  }
+}
+
+.form-description {
+  font-size: $font-small;
+  line-height: 2.2rem;
+  color: $meta-data;
+  margin-top: 1rem;
+}
+
+.form-optional {
+  font-size: $font-small;
+  font-style: italic;
+  color: $meta-data;
+  font-family: $font-primary;
+}
+
+.form-actions {
+  @include bp-up(md){
+    padding-left: 30%;
   }
 }

@@ -118,3 +118,23 @@
 .date-badge--multiple .date-badge__till:before {
   background: $gc-a11y-green-dark;
 }
+
+.page--type-author {
+  .page-content {
+    background: $gc-pantybrown-light;
+  }
+
+  .content > .section--bg-option {
+    &:before {
+      background: url('../../img/b_section-bg-option.svg') 0 100% no-repeat;
+
+      @include bp-up(xlg){
+        background-size: 120% auto;
+      }
+    }
+
+    &:after {
+      display: none;
+    }
+  }
+}

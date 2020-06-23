@@ -37,7 +37,7 @@ $cards_data = json_decode($cards, TRUE);
 
 // Set up data for overview
 shuffle($cards_data);
-$data = array_slice($cards_data, 0, 9);
+$data = array_slice($cards_data, 0, 8);
 
 
 echo $twig->render('author.html.twig', [
