@@ -10,14 +10,19 @@
 
         {% for event in items.events.items %}
 
-          <div class="teaser teaser--event teaser--small">
+          <div class="teaser teaser--event teaser--small{{ event.img ? ' l-with-image' : ' l-without-image' }}">
+
             <div class="teaser__image">
-              <img src="/uploads/{{ event.img ? event.img : 'od-default.jpg' }}"/>
+
+              {% if event.img %}
+                <img src="{{ event.img }}" class="img img--teaser-small">
+              {% endif %}
 
               {% include 'components/date-badge.html.twig' with {
                 'post_date': event.date,
                 'modifier': 'date-badge--small'
               } %}
+
 
             </div>
             <h3 class="teaser__title">

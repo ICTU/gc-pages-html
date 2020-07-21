@@ -136,6 +136,11 @@
       padding-top: 3rem;
       padding-bottom: 3rem;
       background: $hp-intro-bg;
+      color: $hp-intro-color;
+
+      h1, h2, h3 {
+        color: $hp-intro-color;
+      }
 
       @include bp-up(sm) {
         padding-top: 7rem;

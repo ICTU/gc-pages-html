@@ -1,0 +1,30 @@
+{% set type = 'microstories' %}
+
+{% extends 'sections/section.html.twig' %}
+
+
+{% block content %}
+  {% if items %}
+
+    {% for item in items %}
+
+      <div class="microstory">
+
+        {% if not item.img is empty %}
+          <figure class="microstory__image">
+
+            <img src="{{ item.img }}" alt="{{ item.title }}">
+
+          </figure>
+        {% endif %}
+        <h3>{{ item.title }}</h3>
+
+        {% if item.descr %}
+          <p>{{ item.descr }}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+
+  {% endif %}
+
+{% endblock %}

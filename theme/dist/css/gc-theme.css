@@ -1352,11 +1352,14 @@ h1 {
             box-sizing: border-box;
     padding-top: 3rem;
     padding-bottom: 3rem;
-    background: #148839; }
+    background: #148839;
+    color: #fff; }
     @media (min-width: 560px) {
       .entry--type-home .page__intro {
         padding-right: 3rem;
         padding-left: 3rem; } }
+    .entry--type-home .page__intro h1, .entry--type-home .page__intro h2, .entry--type-home .page__intro h3 {
+      color: #fff; }
     @media (min-width: 560px) {
       .entry--type-home .page__intro {
         padding-top: 7rem; } }
@@ -2785,6 +2788,30 @@ h1 {
     margin-right: 0.25rem; }
     .section--image.l-picture-grid .image:nth-child(3n+1) {
       width: calc(100% - 0.5rem); } }
+
+@media (min-width: 700px) {
+  .section--microstories .l-section-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; } }
+
+.entry--type-home .section--microstories {
+  padding: 0;
+  max-width: 1280px;
+  margin: 5rem auto 0; }
+  .entry--type-home .section--microstories .l-section-content {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem; }
+
+.microstory {
+  margin-top: 3rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem; }
+  @media (min-width: 700px) {
+    .microstory {
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1; } }
 
 .section--text-image {
   max-width: 760px;
@@ -5146,5 +5173,3 @@ h1 {
       clip: rect(0 0 0 0);
       clip: rect(0, 0, 0, 0);
       position: absolute; } }
-
-/*# sourceMappingURL=gc-theme.css.map */

@@ -1,0 +1,56 @@
+{% set sectionClasses = [
+  'section',
+  type ? 'section--' ~ type,
+  items|length < 4 ? 'l-item-count-' ~items|length : 'display-grid',
+  modifier ? 'section--' ~ modifier,
+] %}
+
+
+<section class="{{ sectionClasses|classlist }}">
+
+  {% block top %}
+
+    {# Wrapper for section intro #}
+    {% if section_title or description %}
+      <div class="l-section-top">
+
+        {% if section_title %}
+          <h2 class="section__title">
+            {{ section_title }}
+          </h2>
+        {% endif %}
+
+        {% if description %}
+          <p class="section__description">
+            {{ description }}
+          </p>
+        {% endif %}
+      </div>
+
+    {% endif %}
+
+  {% endblock %}
+
+  {# Wrapper for all section content #}
+  <div class="l-section-content">
+
+    {% block content %}
+
+      {% if items %}
+
+        {% for item in items.links %}
+
+          <div class="link-block">
+
+            <h2 class="linkblock__title">{{ item.title }}</h2>
+
+          </div>
+        {% endfor %}
+
+      {% endif %}
+
+    {% endblock %}
+
+  </div>
+</section>
+

@@ -16,7 +16,7 @@
  * Can be used for buttons and overridden in subthemes
  */
 /*
- * Extra colors
+ * General
  */
 .clearfix:after {
   content: "";
@@ -979,7 +979,7 @@ html {
     right: 0;
     position: absolute;
     height: 14rem;
-    background: #00b4ac;
+    background: #74295f;
     z-index: -1; }
   @media (min-width: 560px) {
     .page-content {
@@ -1355,14 +1355,14 @@ h1 {
             box-sizing: border-box;
     padding-top: 3rem;
     padding-bottom: 3rem;
-    background: #00b4ac;
-    color: #004152; }
+    background: #74295f;
+    color: #fff; }
     @media (min-width: 560px) {
       .entry--type-home .page__intro {
         padding-right: 3rem;
         padding-left: 3rem; } }
     .entry--type-home .page__intro h1, .entry--type-home .page__intro h2, .entry--type-home .page__intro h3 {
-      color: #004152; }
+      color: #fff; }
     @media (min-width: 560px) {
       .entry--type-home .page__intro {
         padding-top: 7rem; } }
@@ -1373,11 +1373,11 @@ h1 {
       max-width: 760px;
       margin-left: auto;
       margin-right: auto;
-      color: #004152;
+      color: #fff;
       position: relative;
       z-index: +2; }
       .entry--type-home .page__intro .entry-header h1, .entry--type-home .page__intro .entry-header h2, .entry--type-home .page__intro .entry-header h3, .entry--type-home .page__intro .entry-header h4, .entry--type-home .page__intro .entry-header a {
-        color: #004152; }
+        color: #fff; }
   .entry--type-home .section {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -1591,7 +1591,7 @@ h1 {
     font-size: 2.2rem; }
 
 .children .comment {
-  border-top-color: #c42c76;
+  border-top-color: #74295f;
   border-top-width: .3rem; }
 
 .comment-form label + input,
@@ -3190,10 +3190,10 @@ h1 {
               align-items: center;
       width: 3rem; }
   .btn--primary {
-    background: #c42c76;
+    background: #148839;
     color: #fff; }
     .btn--primary:after {
-      background: #A20E56; }
+      background: #0b732c; }
     .btn--primary:hover, .btn--primary:focus, .btn--primary:active {
       background: #0b732c;
       color: #fff; }
@@ -3241,7 +3241,7 @@ h1 {
     font-size: 2.2rem;
     color: #fff;
     text-transform: uppercase;
-    background: #c42c76; }
+    background: #148839; }
     .btn--download:before {
       content: "";
       speak: none;
@@ -3829,7 +3829,7 @@ h1 {
 .date-badge {
   -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
           box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
-  background: #c42c76;
+  background: #4c2974;
   color: #fff;
   text-align: center;
   padding: .6rem .8rem;
@@ -4075,7 +4075,7 @@ h1 {
     padding-left: 2.1rem;
     text-decoration: underline; }
   .link--arrow-icon:before {
-    color: #c42c76;
+    color: #74295f;
     font-size: 1rem;
     position: absolute;
     left: 0;
@@ -4154,7 +4154,7 @@ h1 {
     margin-right: 1rem;
     -webkit-transition: margin .3s;
     transition: margin .3s;
-    color: #4c2974; }
+    color: #25b34b; }
   .btn--read-more:hover, .btn--read-more:focus,
   .link--read-more:hover,
   .link--read-more:focus {
@@ -4198,7 +4198,7 @@ h1 {
       float: right; }
     .meta-data dd:before {
       display: inline-block;
-      color: #4c2974;
+      color: #25b34b;
       margin-right: 1rem;
       font-size: 1.6rem;
       float: left; }
@@ -4348,7 +4348,7 @@ h1 {
       .teaser--spotlight {
         -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
                 box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
-        background: #c42c76; }
+        background: #4c2974; }
         .teaser--spotlight .teaser__link {
           height: 40rem;
           overflow: hidden; }
@@ -4380,7 +4380,7 @@ h1 {
       padding: 0;
       display: block;
       position: relative;
-      background: #c42c76; }
+      background: #4c2974; }
       .teaser--spotlight.l-with-image .teaser__link:focus .teaser__image, .teaser--spotlight.l-with-image .teaser__link:hover .teaser__image {
         opacity: 0.8; }
       .teaser--spotlight.l-with-image .teaser__link:focus .l-teaser-content, .teaser--spotlight.l-with-image .teaser__link:hover .l-teaser-content {
@@ -4423,7 +4423,7 @@ h1 {
       bottom: 0;
       -webkit-box-shadow: none;
               box-shadow: none;
-      background: #c42c76; }
+      background: #4c2974; }
 
 .teaser__link {
   text-decoration: none;
@@ -4495,7 +4495,7 @@ h1 {
   top: 0;
   margin-top: 1rem;
   margin-right: -3rem;
-  background: #c42c76;
+  background: #74295f;
   width: 12rem;
   text-align: center;
   padding: .3rem 0 .2rem;
@@ -4555,7 +4555,7 @@ h1 {
       font-size: 2.2rem;
       counter-increment: steplist;
       content: counter(steplist);
-      background: #c42c76;
+      background: #148839;
       color: #fff;
       position: absolute;
       left: 0;
@@ -4831,7 +4831,7 @@ h1 {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      background: #c42c76;
+      background: #148839;
       background-size: 30px auto;
       padding: 1rem 1.5rem;
       -webkit-box-align: center;
@@ -4852,7 +4852,7 @@ h1 {
         speak: none; }
       .btn--stepchart:hover, .btn--stepchart:focus {
         text-decoration: underline;
-        background-color: #9a235d;
+        background-color: #0d5c26;
         color: #fff;
         border: none;
         outline: none; }
@@ -4881,7 +4881,7 @@ h1 {
         position: absolute;
         width: 8rem;
         height: 8rem;
-        background: #A4E9E6;
+        background: #f99d1c;
         border-radius: 50%;
         z-index: -1;
         top: 0;
@@ -4905,7 +4905,7 @@ h1 {
               box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
       display: inline-block;
       color: white;
-      background: #c42c76;
+      background: #148839;
       margin-top: .5rem;
       padding: .8rem 1.5rem;
       font-size: 2.4rem;
@@ -4914,7 +4914,7 @@ h1 {
     .btn--stepchart:before {
       width: 9.6rem;
       height: 9.6rem;
-      background: #A4E9E6;
+      background: #f99d1c;
       margin-left: -4.8rem; } }
 
 .icon--stepchart {
@@ -4933,7 +4933,7 @@ h1 {
     .icon--stepchart {
       width: 6rem;
       height: 5.5rem;
-      fill: #52757e;
+      fill: #fff;
       position: relative; } }
 
 /*
@@ -4994,7 +4994,7 @@ h1 {
           box-sizing: border-box;
   padding-bottom: 7rem;
   position: relative;
-  background: #00b4ac;
+  background: #74295f;
   margin: 0 -2rem -3rem;
   z-index: 1; }
   @media (min-width: 560px) {
@@ -5116,19 +5116,19 @@ h1 {
     top: 0;
     left: 50%;
     margin-left: -2.75rem;
-    background: #A4E9E6;
+    background: #f99d1c;
     z-index: -1;
     border-radius: 50%;
     -webkit-transition: background .2s, -webkit-transform .2s;
     transition: background .2s, -webkit-transform .2s;
     transition: background .2s, transform .2s;
     transition: background .2s, transform .2s, -webkit-transform .2s;
-    outline: 1rem solid #00b4ac; }
+    outline: 1rem solid #74295f; }
   .stepnav__link span {
     position: relative;
     z-index: +1; }
   .stepnav__link:hover:before, .stepnav__link:focus:before, .stepnav__link.is-active:before {
-    background: #fff;
+    background: #f99d1c;
     -webkit-transform: scale(1.05);
             transform: scale(1.05); }
   .stepnav__link:hover .icon--stepnav, .stepnav__link:focus .icon--stepnav, .stepnav__link.is-active .icon--stepnav {
@@ -5143,7 +5143,7 @@ h1 {
         width: 8.4rem;
         height: 8.4rem;
         margin-left: -4.2rem;
-        outline: 1.5rem solid #00b4ac; } }
+        outline: 1.5rem solid #74295f; } }
 
 .icon--stepnav {
   display: inline-block;
@@ -5153,7 +5153,7 @@ h1 {
   transition: background-color .2s, -webkit-transform .2s;
   transition: background-color .2s, transform .2s;
   transition: background-color .2s, transform .2s, -webkit-transform .2s;
-  fill: #52757e; }
+  fill: #fff; }
   .is-active .icon--stepnav {
     color: #fff; }
   @media (min-width: 700px) {
@@ -5177,8 +5177,8 @@ h1 {
       clip: rect(0, 0, 0, 0);
       position: absolute; } }
 
-.page-content {
-  background: #f2ebe4; }
+.page__intro {
+  text-align: center; }
 
-.section--bg-option:before {
-  background: #e8d8c7; }
+.gc-site-footer-widget {
+  background-image: url("/theme/logo.svg"); }

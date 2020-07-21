@@ -8,13 +8,19 @@
 
 <title>GC Frontend | {{ title }}</title>
 
-{% if theme != 'od' %}
-  <link rel="stylesheet" id="gebruiker-centraal-css" href="./theme/fonts/fonts.css" type="text/css" media="all">
-  <link rel="stylesheet" id="gebruiker-centraal-css" href="./theme/dist/css/{{ theme }}-theme.css" type="text/css"
+{% if theme == 'od' %}
+  <link rel="stylesheet" id="gebruiker-centraal-css" href="../../theme/fonts/fonts.css" type="text/css" media="all">
+  <link rel="stylesheet" id="optimaal-digitaal-css" href="/sites/od/theme/dist/css/{{ theme }}-theme.css"
+        type="text/css"
+        media="all">
+{% elseif theme == 'nlds' %}
+  <link rel="stylesheet" id="gebruiker-centraal-css" href="../../theme/fonts/fonts.css" type="text/css" media="all">
+  <link rel="stylesheet" id="optimaal-digitaal-css" href="/sites/nlds/theme/dist/css/{{ theme }}-theme.css"
+        type="text/css"
         media="all">
 {% else %}
-  <link rel="stylesheet" id="gebruiker-centraal-css" href="../../theme/fonts/fonts.css" type="text/css" media="all">
-  <link rel="stylesheet" id="optimaal-digitaal-css" href="/sites/od/theme/dist/css/{{ theme }}-theme.css" type="text/css"
+  <link rel="stylesheet" id="gebruiker-centraal-css" href="./theme/fonts/fonts.css" type="text/css" media="all">
+  <link rel="stylesheet" id="gebruiker-centraal-css" href="./theme/dist/css/{{ theme }}-theme.css" type="text/css"
         media="all">
 {% endif %}
 

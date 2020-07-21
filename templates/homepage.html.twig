@@ -21,118 +21,125 @@
       <article class="entry entry--type-home entry--full{{ stappenplan ? ' l-with-stepchart' }}">
 
         <div class="entry-content">
-
           <div class="page__intro">
-            <header class="entry-header">
-              <h1 class="entry-title">{{ title ? title : 'Onze instrumenten' }}</h1>
+            {% block intro %}
 
-              {% if intro is empty %}
-                <p>Deze instrumenten helpen jou om de online dienstverlening van je organisatie te verbeteren. Voor en
-                  door de community van Gebruiker Centraal. Gebruik, deel en vul aan!</p>
-              {% else %}
-                {{ intro }}
+
+              <header class="entry-header">
+                <h1 class="entry-title">{{ title ? title : 'Onze instrumenten' }}</h1>
+
+                {% if intro is empty %}
+                  <p>Deze instrumenten helpen jou om de online dienstverlening van je organisatie te verbeteren. Voor en
+                    door de community van Gebruiker Centraal. Gebruik, deel en vul aan!</p>
+                {% else %}
+                  {{ intro }}
+                {% endif %}
+              </header>
+
+              {% if stappenplan %}
+                {% include 'components/stepchart.html.twig' %}
               {% endif %}
-            </header>
 
-            {% if stappenplan %}
-              {% include 'components/stepchart.html.twig' %}
-            {% endif %}
 
+              {# /page intro #}
+
+            {% endblock %}
           </div>
-          {# /page intro #}
 
-          {% if theme == 'beeldbank' %}
+          {% block content %}
 
-            {% set tb_items = {
-              '1': {
-                'title': 'Wat is een beeldbrief?',
-                'descr': 'Een beeldbrief is een brief die in een korte, duidelijke tekst en door middel van ondersteunend beeld de inhoud van de brief aan een lezer overbrengt.',
-                'link_primary': 'Meer over beeldbrieven',
-              } ,
-              '2': {
-                'title': 'Hoe ziet een beeldbrief eruit?',
-                'descr': 'Een beeldbrief heeft een vaste opbouw.',
-                'link_primary': 'Bekijk de richtlijnen',
-              }
-            } %}
+            {% if theme == 'beeldbank' %}
 
-            {% include 'sections/section-text-block.html.twig' with { 'items': tb_items, 'modifier': 'l-bg-primary' } %}
+              {% set tb_items = {
+                '1': {
+                  'title': 'Wat is een beeldbrief?',
+                  'descr': 'Een beeldbrief is een brief die in een korte, duidelijke tekst en door middel van ondersteunend beeld de inhoud van de brief aan een lezer overbrengt.',
+                  'link_primary': 'Meer over beeldbrieven',
+                } ,
+                '2': {
+                  'title': 'Hoe ziet een beeldbrief eruit?',
+                  'descr': 'Een beeldbrief heeft een vaste opbouw.',
+                  'link_primary': 'Bekijk de richtlijnen',
+                }
+              } %}
 
-            {%  set latest = {
-              '1': {
-                'title': 'Ook Eindhoven aan de slag met beeldbrieven',
-                'descr': 'Supertof dit',
-                'type': 'news',
-                'img': 'brand-beeldbank.jpg',
-                'meta': {
-                  '1': {
-                    'title': 'Datum geplaatst',
-                    'descr': '20 jan 2019',
-                  },
-                  '2': {
-                    'title': 'Auteur',
-                    'descr': 'Mariska Woudenberg'
+              {% include 'sections/section-text-block.html.twig' with { 'items': tb_items, 'modifier': 'l-bg-primary' } %}
+
+              {% set latest = {
+                '1': {
+                  'title': 'Ook Eindhoven aan de slag met beeldbrieven',
+                  'descr': 'Supertof dit',
+                  'type': 'news',
+                  'img': 'brand-beeldbank.jpg',
+                  'meta': {
+                    '1': {
+                      'title': 'Datum geplaatst',
+                      'descr': '20 jan 2019',
+                    },
+                    '2': {
+                      'title': 'Auteur',
+                      'descr': 'Mariska Woudenberg'
+                    }
+                  }
+                },
+                '2': {
+                  'title': 'Dit was ook voor mijzelf een eyeopener',
+                  'descr': 'Als je je teksten op niveau B1 schrijft, dan begrijpt 80 procent van de Nederlanders wat er staat. Maar daarmee sluit je 20 procent van de Nederlanders uit. Dat had ik me nog nooit gerealiseerd. Dit was ook voor mijzelf een eyeopener.',
+                  'type': 'news',
+                  'img': 'img-16-9.jpg',
+                  'meta': {
+                    '1': {
+                      'title': 'Datum geplaatst',
+                      'descr': '20 jan 2019',
+                    },
+                    '2': {
+                      'title': 'Auteur',
+                      'descr': 'Mariska Woudenberg'
+                    }
+                  }
+                },
+                '3': {
+                  'title': 'Rotterdam was de eerste',
+                  'descr': 'Als je je teksten op niveau B1 schrijft, dan begrijpt 80 procent van de Nederlanders wat er staat. Maar daarmee sluit je 20 procent van de Nederlanders uit. Dat had ik me nog nooit gerealiseerd. Dit was ook voor mijzelf een eyeopener.',
+                  'type': 'news',
+                  'img': 'styles/43-md/brand-rc.jpg',
+                  'meta': {
+                    '1': {
+                      'title': 'Datum geplaatst',
+                      'descr': '20 jan 2019',
+                    },
+                    '2': {
+                      'title': 'Auteur',
+                      'descr': 'Mariska Woudenberg'
+                    }
                   }
                 }
-              },
-              '2': {
-                'title': 'Dit was ook voor mijzelf een eyeopener',
-                'descr': 'Als je je teksten op niveau B1 schrijft, dan begrijpt 80 procent van de Nederlanders wat er staat. Maar daarmee sluit je 20 procent van de Nederlanders uit. Dat had ik me nog nooit gerealiseerd. Dit was ook voor mijzelf een eyeopener.',
-                'type': 'news',
-                'img': 'img-16-9.jpg',
-                'meta': {
-                  '1': {
-                    'title': 'Datum geplaatst',
-                    'descr': '20 jan 2019',
-                  },
-                  '2': {
-                    'title': 'Auteur',
-                    'descr': 'Mariska Woudenberg'
-                  }
+              } %}
+
+              {% include 'sections/section-overview.html.twig' with {
+                'items': latest,
+                'title' : 'Laatste nieuws en blogs',
+
+                'cta': {
+                  'url': '#',
+                  'title' : 'Meer nieuws en blogs'
                 }
-              },
-              '3': {
-                'title': 'Rotterdam was de eerste',
-                'descr': 'Als je je teksten op niveau B1 schrijft, dan begrijpt 80 procent van de Nederlanders wat er staat. Maar daarmee sluit je 20 procent van de Nederlanders uit. Dat had ik me nog nooit gerealiseerd. Dit was ook voor mijzelf een eyeopener.',
-                'type': 'news',
-                'img': 'styles/43-md/brand-rc.jpg',
-                'meta': {
-                  '1': {
-                    'title': 'Datum geplaatst',
-                    'descr': '20 jan 2019',
-                  },
-                  '2': {
-                    'title': 'Auteur',
-                    'descr': 'Mariska Woudenberg'
-                  }
+              } %}
+
+              {% set tb_items = {
+                '1': {
+                  'title': 'Richtlijnen',
+                  'descr': 'Bij het maken van een beeldbrief speelt de balans tussen vormgeving, tekst en beeld een belangrijke rol. Uit verschillende tests kwamen een aantal richtlijnen voort waarmee effectieve beeldbrieven gemaakt kunnen worden.',
+                  'link_primary': 'Meer over beeldbrieven',
+                } ,
+                '2': {
+                  'title': 'Over de Beeldbank',
+                  'descr': 'De gemeente Rotterdam maakt sinds enkele jaren gebruik van goed geteste beeldbrieven. Geïnspireerd door het succes van Rotterdam zijn VNG Realisatie en Gebruiker Centraal in samenwerking met de gemeente Rotterdam gestart met deze kennisbank.',
+                  'link_primary': 'Meer over de beeldbank',
                 }
-              }
-            } %}
+              } %}
 
-            {% include 'sections/section-overview.html.twig' with {
-              'items': latest,
-              'title' : 'Laatste nieuws en blogs',
-
-              'cta': {
-                'url': '#',
-                'title' : 'Meer nieuws en blogs'
-              }
-            } %}
-
-            {% set tb_items = {
-              '1': {
-                'title': 'Richtlijnen',
-                'descr': 'Bij het maken van een beeldbrief speelt de balans tussen vormgeving, tekst en beeld een belangrijke rol. Uit verschillende tests kwamen een aantal richtlijnen voort waarmee effectieve beeldbrieven gemaakt kunnen worden.',
-                'link_primary': 'Meer over beeldbrieven',
-              } ,
-              '2': {
-                'title': 'Over de Beeldbank',
-                'descr': 'De gemeente Rotterdam maakt sinds enkele jaren gebruik van goed geteste beeldbrieven. Geïnspireerd door het succes van Rotterdam zijn VNG Realisatie en Gebruiker Centraal in samenwerking met de gemeente Rotterdam gestart met deze kennisbank.',
-                'link_primary': 'Meer over de beeldbank',
-              }
-            } %}
-
-            {% include 'sections/section-text-block.html.twig' with { 'items': tb_items, 'modifier': 'l-bg-white' } %}
+              {% include 'sections/section-text-block.html.twig' with { 'items': tb_items, 'modifier': 'l-bg-white' } %}
 
             {% else %}
 
@@ -152,7 +159,9 @@
 
               {% include 'sections/section-text-block.html.twig' with { 'items': tb_items, 'modifier': 'l-bg-primary' } %}
 
-          {% endif %}
+            {% endif %}
+
+          {% endblock %}
 
         </div>
         {# /entry content #}
