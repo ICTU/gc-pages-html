@@ -22,9 +22,28 @@
     }
   }
 
-  &.bg-color--light {
-    background: $gc-pantybrown-xlight;
-    border: .1rem solid $gc-pantybrown;
+  &.bg-color {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    @include bp-up(md) {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    @include bp-up(lg) {
+      padding-top: 6rem;
+      padding-bottom: 8rem;
+    }
+
+    &--pantybrown-light {
+      background: $gc-pantybrown-xlight;
+    }
+
+    &--light {
+      background: $gc-pantybrown-xlight;
+      border: .1rem solid $gc-pantybrown;
+    }
   }
 
   &--fullwidth {
@@ -37,6 +56,10 @@
     + .section--fullwidth {
       margin-top: 0;
     }
+  }
+
+  &--text-centered {
+    text-align: center;
   }
 }
 
@@ -126,6 +149,7 @@
     padding-top: 0;
   }
 }
+
 // Overviews
 
 .section--overview {
@@ -180,33 +204,7 @@
   }
 }
 
-/* Actueel - events & blogs */
 
-.section--actual {
-  .section__title {
-    border: none;
-  }
-
-  .teaser--small {
-    margin-top: 2rem;
-  }
-
-  .btn {
-    margin-top: $gutter;
-  }
-
-
-  @include bp-up(md) {
-    .l-section-content {
-      display: flex;
-
-      .grid {
-        margin-left: -$gutter / 2;
-        margin-right: -$gutter / 2;
-      }
-    }
-  }
-}
 
 .l-section-col {
   &.col--50-width {

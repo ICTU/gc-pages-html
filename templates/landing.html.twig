@@ -35,26 +35,32 @@
 
         <div class="entry-content">
 
-          <div class="page__intro">
-            <header class="entry-header">
-              <h1 class="entry-title">{{ title ? title : 'Onze instrumenten' }}</h1>
+          {% block intro %}
 
-              {% if intro %}
-                <p>{{ intro }}</p>
+            <div class="page__intro">
+              <header class="entry-header">
+                <h1 class="entry-title">{{ title ? title : 'Onze instrumenten' }}</h1>
+
+                {% if intro %}
+                  <p>{{ intro }}</p>
+                {% endif %}
+              </header>
+
+              {% if body %}
+                {# default body body #}
+
+                <div class="entry-body">
+                  {{ body|raw }}
+                </div>
+
+                {# end body #}
               {% endif %}
-            </header>
 
-            {% if body %}
-              {# default body body #}
+            </div>
 
-              <div class="entry-body">
-                {{ body|raw }}
-              </div>
+          {% endblock %}
 
-              {# end body #}
-            {% endif %}
-
-          </div>
+          {% block content %}
 
           {# landingpages for optimaal digitaal#}
 
@@ -170,49 +176,55 @@
           {% endif %}
         </div>
 
+        {% endblock %}
+
       </article>
     </main>
 
-    {% if spotlight %}
+    {% block spotlight %}
 
-      {% if theme == 'od' %}
+      {% if spotlight %}
 
-        {% if page is empty %}
+        {% if theme == 'od' %}
 
-          {% set spotlight_item = {
-            '1': {
-              'title': 'Ook het spel spelen?',
-              'descr': 'Met het spel wordt verassend snel doorgedrongen tot de kern. Het spel eindigt met concrete acties die de volgende dag kunnen worden opgepakt. Het verbeteren van je (digitale) dienstverlening start dus meteen.',
-              'img': 'img-16-9-od.jpg',
-              'cta': {
-                '1': {
-                  'title': 'Bestellen'
-                },
-                '2': {
-                  'title': 'Print & play',
+          {% if page is empty %}
+
+            {% set spotlight_item = {
+              '1': {
+                'title': 'Ook het spel spelen?',
+                'descr': 'Met het spel wordt verassend snel doorgedrongen tot de kern. Het spel eindigt met concrete acties die de volgende dag kunnen worden opgepakt. Het verbeteren van je (digitale) dienstverlening start dus meteen.',
+                'img': 'img-16-9-od.jpg',
+                'cta': {
+                  '1': {
+                    'title': 'Bestellen'
+                  },
+                  '2': {
+                    'title': 'Print & play',
+                  }
                 }
               }
-            }
-          } %}
+            } %}
 
-          {% include 'sections/section-spotlight.html.twig' with {
-            'items': spotlight_item,
-            'modifier': 'bg-option'
-          } %}
+            {% include 'sections/section-spotlight.html.twig' with {
+              'items': spotlight_item,
+              'modifier': 'bg-option'
+            } %}
 
-        {% elseif page == 'spelleider' %}
+          {% elseif page == 'spelleider' %}
 
-          {# data from spelleider.php #}
-          {% include 'sections/section-spotlight.html.twig' with {
-            'items': spotlight,
-            'modifier': 'bg-option'
-          } %}
+            {# data from spelleider.php #}
+            {% include 'sections/section-spotlight.html.twig' with {
+              'items': spotlight,
+              'modifier': 'bg-option'
+            } %}
+
+          {% endif %}
 
         {% endif %}
 
       {% endif %}
 
-    {% endif %}
+    {% endblock %}
 
   </div>
 

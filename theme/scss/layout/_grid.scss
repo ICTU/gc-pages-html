@@ -1,20 +1,22 @@
 
 .grid {
 
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -$gutter/2;
+  margin-right: -$gutter/2;
+
+
   > div,
   > section {
     margin-top: $gutter;
+    width: calc(100% - #{$gutter});
+    margin-left: $gutter / 2;
+    margin-right: $gutter /2;
 
     &.card--type-doelgroep {
       margin-top: 5rem;
     }
-  }
-
-  @include bp-up(sm) {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -$gutter/2;
-    margin-right: -$gutter/2;
   }
 
   &--col-3 {
@@ -22,8 +24,6 @@
       > div,
       > section {
         width: calc(50% - #{$gutter});
-        margin-left: $gutter / 2;
-        margin-right: $gutter /2;
 
         &:first-child {
           width: 100%;

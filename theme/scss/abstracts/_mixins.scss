@@ -79,6 +79,25 @@
   }
 }
 
+@mixin bp-between($start, $end) {
+
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $start) and map-has-key($breakpoints, $end)  {
+    $bpstart: map-get($breakpoints, $start);
+    $bpend: map-get($breakpoints, $end) - 1px;
+
+    // Prints a media query based on the value
+    @media (min-width: $bpstart) and (max-width: $bpend) {
+      @content;
+    }
+  }
+    // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$start}` or `#{$end}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
 @mixin visually-hidden() {
   margin: -1px;
   padding: 0;
@@ -291,6 +310,46 @@
       top: .1rem;
       color: $color;
       font-size: 1.2rem;
+    }
+  }
+}
+
+
+@mixin gc-linklist($color: $link, $hover: $link-hover, $icon-color: $link) {
+  margin: 1.6rem 0 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+
+    a {
+      @include icon(before, arrow);
+      list-style: none;
+      position: relative;
+      padding-left: 2.5rem;
+      color: $color;
+      transition: padding .2s;
+      text-decoration: none;
+      display: block;
+
+      &:hover, &:focus {
+        color: $hover;
+        padding-left: 2.7rem;
+        text-decoration: underline;
+
+        &:before {
+          color: $hover;
+        }
+      }
+
+      &:before {
+        position: absolute;
+        left: 0;
+        top: .1rem;
+        color: $icon-color;
+        font-size: 1.2rem;
+        transition: color .2s;
+      }
     }
   }
 }

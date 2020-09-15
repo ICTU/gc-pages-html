@@ -17,3 +17,4 @@ $twig->addExtension(new ClassList);
 echo $twig->render('overview.html.twig', [
   'site_name' =>'Gebruiker Centraal']
 );
+

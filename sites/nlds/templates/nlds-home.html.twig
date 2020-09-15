@@ -37,8 +37,8 @@
 
   {% set blocks = {
     '1': {
-      'url': '#',
       'title': 'Wat is het?',
+      'url': 'wat-is-het.php',
       'links': {
         '1': {'url': '#', 'title': 'Waarom zou je het gebruiken?'},
         '2': {'url': '#', 'title': 'Wanneer zet ik het in?'},
@@ -47,7 +47,7 @@
       }
     },
     '2': {
-      'url': '#',
+      'url': 'index.php',
       'title': 'Voor wie?',
       'links': {
         '1': {'url': '#', 'title': 'Overheidsinstanties'},
@@ -56,7 +56,6 @@
       }
     },
     '3': {
-      'url': '#',
       'title': 'Kwaliteit en testen',
       'links': {
         '1': {'url': '#', 'title': 'Kwaliteitseisen voor componenten'},
@@ -66,13 +65,13 @@
     }
   } %}
 
-  {% include 'sections/section-linkblocks.html.twig' with { 'section_title': '', 'items': blocks } %}
+  {% include 'sections/section-linkblocks.html.twig' with { 'type': 'link-blocks', 'section_title': '', 'items': blocks, 'bg': 'pantybrown-light' } %}
 
   {% set text %}
     <p>De Agenda Digitale Overheid stelt dat de overheid toegankelijk en begrijpelijk moet zijn voor iedereen. Mensen kunnen makkelijker gebruik maken van diensten en websites van de overheid als die consistent ontworpen zijn. Daarom gaan we tussen overheidsorganisaties principes, interactiepatronen, ontwerpen en code delen via een gezamenlijk design system.</p>
   {% endset %}
 
-  {% include 'blocks/text.html.twig' with { 'title': 'Toegankelijk & begrijpelijk' ,'section_text': text } %}
+  {% include 'blocks/text.html.twig' with { 'title': 'Toegankelijk & begrijpelijk' ,'section_text': text, 'modifier': 'text-centered' } %}
 
   {#actueel#}
 

@@ -22,6 +22,13 @@
   margin-left: $gutter / 2;
   margin-right: $gutter / 2;
 
+  p {
+    max-width: 80%;
+    margin: 1.6rem auto 0;
+    font-size: $font-smaller;
+    line-height: 2.6rem;
+  }
+
   @include bp-up(md){
     flex: 1;
   }

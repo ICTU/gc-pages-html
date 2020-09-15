@@ -1,0 +1,27 @@
+/* Actueel - events & blogs */
+
+.section--actual {
+  .section__title {
+    border: none;
+  }
+
+  .teaser--small {
+    margin-top: 2rem;
+  }
+
+  .btn {
+    margin-top: $gutter;
+  }
+
+
+  @include bp-up(md) {
+    .l-section-content {
+      display: flex;
+
+      .grid {
+        margin-left: -$gutter / 2;
+        margin-right: -$gutter / 2;
+      }
+    }
+  }
+}
