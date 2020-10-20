@@ -20,7 +20,22 @@ $twig->addExtension(new ClassList);
 
 $title = 'Alle spelleiders';
 
+
 $intro = 'Door een Train-de-trainer Spelleider sessie te volgen kan je officieel spelleider Optimaal Digitaal worden.';
+
+$breadcrumb = [
+  'page_title' => 'Alle spelleiders',
+  'links' => [
+    '1' => [
+      'url' => 'index.php',
+      'title' => 'Home',
+    ],
+    '2' => [
+      'url' => 'spelleiders.php',
+      'title' => 'Voor spelleiders',
+    ],
+  ],
+];
 
 echo $twig->render('od-spelleiders.html.twig', [
   'site_name' => 'Optimaal Digitaal',
@@ -29,5 +44,6 @@ echo $twig->render('od-spelleiders.html.twig', [
   'page' => 'spelleider',
   'page_title' => $title,
   'intro' => $intro,
+  'breadcrumb' => $breadcrumb,
   'logo' => 'img/logo/od.svg',
 ]);

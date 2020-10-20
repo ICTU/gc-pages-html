@@ -10,9 +10,25 @@
 
   {% include 'includes/header.html.twig' %}
 
+  {% if breadcrumb is empty %}
+
+    {% set breadcrumb = {
+      'page_title': page_title,
+      'links': {
+        '1': {
+          'url': 'index.php',
+          'title': 'Home'
+        }
+      }
+    } %}
+
+  {% endif %}
+
   {% include 'includes/breadcrumb.html.twig' with {
-    'page_title': 'Over ons',
-    'links': ['Home']} %}
+    'title': breadcrumb.page_title,
+    'links': breadcrumb.links
+  } %}
+
 
 
   <div class="page-content" id="maincontent" tabindex="-1">
@@ -43,16 +59,16 @@
           {% block entry_block %}
 
           {% set text %}
-            <p>Gebruiker Centraal is onafhankelijk, non-profit en wordt voor het grootste deel gefinancierd door het
-              ministerie van Binnenlandse Zaken en Koninkrijksrelaties.</p>
-            <h2>Actieteam</h2>
-            <p>Gebruiker Centraal werkt met een actieteam&nbsp;dat bestaat uit professionals die direct voor de overheid
-              werken. Dit team organiseert en faciliteert de activiteiten van de community en bepaalt grotendeels de
-              koers van de community.</p>
-            <p>
+          <p>Gebruiker Centraal is onafhankelijk, non-profit en wordt voor het grootste deel gefinancierd door het
+            ministerie van Binnenlandse Zaken en Koninkrijksrelaties.</p>
+          <h2>Actieteam</h2>
+          <p>Gebruiker Centraal werkt met een actieteam&nbsp;dat bestaat uit professionals die direct voor de overheid
+            werken. Dit team organiseert en faciliteert de activiteiten van de community en bepaalt grotendeels de
+            koers van de community.</p>
+          <p>
 
-              <a href="https://www.gebruikercentraal.nl/actieteam/" class="btn btn--primary">Bekijk alle leden van
-                het actieteam</a></p>
+            <a href="https://www.gebruikercentraal.nl/actieteam/" class="btn btn--primary">Bekijk alle leden van
+              het actieteam</a></p>
 
           {% endset %}
 
@@ -76,9 +92,9 @@
 
           {% set textimage_text %}
 
-            <h2>Dit is een tekst en image</h2>
-            <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada
-              feugiat. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Proin eget tortor risus.</p>
+          <h2>Dit is een tekst en image</h2>
+          <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada
+            feugiat. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Proin eget tortor risus.</p>
           {% endset %}
 
           {% include 'blocks/text-image.html.twig' with {
@@ -91,9 +107,9 @@
 
           {% set textimage_text %}
 
-            <h2>Dit is een tekst en image, met achtergrond, uitlijning rechts</h2>
-            <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada
-              feugiat. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Proin eget tortor risus.</p>
+          <h2>Dit is een tekst en image, met achtergrond, uitlijning rechts</h2>
+          <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada
+            feugiat. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Proin eget tortor risus.</p>
           {% endset %}
 
           {% include 'blocks/text-image.html.twig' with {
@@ -108,9 +124,9 @@
 
           {% set textimage_text %}
 
-            <h2>Dit is een tekst en image, option fullwidth</h2>
-            <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada
-              feugiat. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Proin eget tortor risus.</p>
+          <h2>Dit is een tekst en image, option fullwidth</h2>
+          <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada
+            feugiat. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Proin eget tortor risus.</p>
           {% endset %}
 
           {% set tiClasses = ['nee'] %}
@@ -126,7 +142,7 @@
 
 
           {% set textimage_text %}
-            Twee text images acher elkaar, allebei fulldwith komen tegen elkaar aan.
+          Twee text images acher elkaar, allebei fulldwith komen tegen elkaar aan.
           {% endset %}
 
           {% set tiClasses = ['nee'] %}
