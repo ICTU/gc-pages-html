@@ -150,6 +150,12 @@
   }
 }
 
+.section--paragraph {
+  max-width: $max-width-inner;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 // Overviews
 
 .section--overview {

@@ -25,7 +25,8 @@
     .entry-content {
       > .section:first-child {
         // Make margin smaller if first section is a text one
-        &.section--text {
+        &.section--text,
+        &.section--paragraph {
           margin-top: $gutter;
         }
       }
