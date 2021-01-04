@@ -30,6 +30,7 @@ echo $twig->render('od-overview-tips.html.twig', [
   'overview' => 'tips',
   'modifier' => ' page--overview-archive',
   'tipkaarts' => json_decode($cards_data, TRUE),
+  'type' => 'overview',
   'breadcrumb' => [
     'page_title' => 'Alle tips',
     'links' => [

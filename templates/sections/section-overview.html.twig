@@ -4,17 +4,18 @@
 
 
 {% set sectionClasses = [
-'section',
-'section--overview',
+  'section',
+  'section--overview',
   items|length < 3 ? 'l-item-count-' ~items|length,
   modifier ? 'section--' ~ modifier,
+  filters ? 'l-has-filter'
 ] %}
 
 
 <section class="{{ sectionClasses|classlist }}">
 
   {# Wrapper for section intro #}
-  {% if title or description %}
+  {% if title or description or filters %}
     <div class="l-section-top">
 
       {% if title %}
@@ -28,6 +29,30 @@
           {{ description }}
         </p>
       {% endif %}
+
+      {% if filters %}
+        <div class="filter filter--tipcards">
+
+          <form class="filter__form">
+            {% for filter in filters %}
+
+              {% set filterMachineName = filter|lower %}
+              <div class="filter__item filter__item--{{ filterMachineName }}">
+
+                <input type="checkbox"
+                       class="filter__input filter__input--{{ filterMachineName }}"
+                       data-category="{{ filterMachineName }}"
+                       data-count="18" data-filter="tipkaart--{{ filterMachineName }}" id="{{ filterMachineName }}">
+
+                <label for="{{ filterMachineName }}">{{ filter }} <span
+                      class="filter__count">({{ random(1, 24) }})</span>
+                </label>
+              </div>
+            {% endfor %}
+
+          </form>
+        </div>
+      {% endif %}
     </div>
 
   {% endif %}
@@ -39,8 +64,15 @@
       {% set extra_class = 'grid--col-' ~ items|length %}
     {% elseif items|length == 4 or grid_modifier == '4col' %}
       {% set extra_class = 'grid--col-4' %}
-    {% elseif items|length > 4 and grid_modifier != '4col '%}
+    {% elseif items|length > 4 and grid_modifier != '4col ' %}
       {% set extra_class = 'grid--col-3' %}
+    {% endif %}
+
+
+    {% if filters %}
+      <p class="text--filter-results" aria-live="polite">In totaal <strong>45</strong> tipkaarten geselecteerd van
+        thema's Gebruiksgemak,
+        Samenwerking en Kanaalsturing</p>
     {% endif %}
 
     {% if items %}

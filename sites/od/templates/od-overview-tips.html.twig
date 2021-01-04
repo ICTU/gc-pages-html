@@ -1,82 +1,38 @@
-{% if id is empty %}
-  {% set id = '1' %}
-{% endif %}
+{% extends 'od-page.html.twig' %}
 
-<html lang="nl" dir="ltr">
 
-<head>
-  {% include 'includes/head.html.twig' %}
-</head>
+{% block entry_header %}
+  <header class="entry-header">
+    <h1 class="entry-title">Alle tips</h1>
+  </header>
+{% endblock %}
 
-<body class="page page--type-overview site-id-{{ id }}{{ modifier }}">
 
-<div class="site-container">
+{% block entry_content %}
 
-  {% include 'includes/header.html.twig' %}
+  {# filters#}
 
-  {% if breadcrumb is empty %}
-    {% set breadcrumb = {
-      'page_title': 'Instrumenten',
-      'links': ['Home']
+  {% set filters = [
+    'Alle',
+    'Gebruiksgemak',
+    'Informatieveiligheid',
+    'Kanaalsturing',
+    'Procesaanpak',
+    'Samenwerking',
+    'Inclusie'
+  ] %}
+
+
+  <div class="entry-content">
+    {% include 'sections/section-overview.html.twig' with {
+      'items': tipkaarts,
+      'title': '',
+      'filters': filters,
+      'template': 'card--tipkaart',
+      'descr': 'Hoi',
+      'modifier': '',
+      'grid_modifier': '4col'
     } %}
-  {% endif %}
 
-  {% include 'includes/breadcrumb.html.twig' with {
-    'page_title': title,
-    'links': breadcrumb.links
-  } %}
-
-
-  <div class="page-content" id="maincontent" tabindex="-1">
-
-    <main class="content">
-
-      <article class="entry entry--type-overview entry--full">
-
-        <div class="entry-content">
-
-          <div class="page__intro">
-            <header class="entry-header">
-              <h1 class="entry-title">{{ title ? title : 'Onze instrumenten' }}</h1>
-
-              {% if intro %}
-                <p>{{ intro }}</p>
-              {% endif %}
-            </header>
-          </div>
-
-        </div>
-
-        <div class="l-filter-wrapper">
-
-          {% set filters = ['Commitment', 'Gebruiksgemak', 'Informatieveiligheid', 'Kanaalsturing', 'Procesaanpak', 'Samenwerking', 'Inclusie']
-          %}
-
-          <form id="tp-filters" class="form form--filters">
-
-            {% for item in filters %}
-
-              <div class="form-item form-item--checkbox form-item--filter">
-                <input type="checkbox" id="{{ item|lower }}">
-                <label for="{{ item|lower }}">{{ item }}</label>
-              </div>
-
-            {% endfor %}
-
-          </form>
-        </div>
-
-        {% include 'sections/section-overview.html.twig' with {
-          'items': tipkaarts,
-          'title': '',
-          'template': 'card--tipkaart',
-          'grid_modifier': '4col'
-        } %}
-
-      </article>
-
-    </main>
   </div>
-
-  {% include 'includes/footer.html.twig' %}
-</div>
+{% endblock %}

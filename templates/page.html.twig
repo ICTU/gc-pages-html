@@ -34,7 +34,7 @@
   <div class="page-content" id="maincontent" tabindex="-1">
     <main class="content">
 
-
+      {% block entry %}
       <article class="entry entry--type-page entry--full">
         {% block entry_header %}
         <header class="entry-header">
@@ -183,6 +183,8 @@
 
         </div>
       </article>
+
+      {% endblock %}
     </main>
   </div>
 
