@@ -84,7 +84,21 @@
 
   &--type-overview {
     .entry-header {
-      max-width: none;
+      @include ho-make-container($max-width-content);
+      @include gc-box-shadow();
+
+      padding: 2rem;
+
+      @include bp-up(md){
+        padding: 4rem 5rem;
+      }
+
+      background: $intro-bg;
+      color: $intro-color;
+
+      h1, a {
+        color: $intro-color;
+      }
     }
 
     .page__intro {
@@ -129,15 +143,6 @@
     }
   }
 
-  &--type-overview {
-    @include gc-page-intro();
-    max-width: none;
-
-    .entry-body {
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-  }
 
   &.l-with-stepchart {
     .page__intro {

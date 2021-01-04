@@ -41,18 +41,19 @@ function doNav(width) {
   } else if (width >= bp) {
     // Desktop
     regionNav.attr('aria-hidden', false);
-    $('.main-menu__sublist').attr('aria-hidden', 'true');
+
+    $('.main-menu__sublist').attr('aria-expanded', 'false');
 
     // Add class on mouse enter
     $('.main-menu__item--with-sub').on('mouseenter', function () {
+
       if (!($(this).hasClass('open'))) {
         // Unset other active if there
         mainMenu.find('.open').removeClass('open');
-        mainMenu.find('ul[aria-hidden="false"]').attr('aria-hidden', 'true');
+        mainMenu.find('ul[aria-expanded="true"]').attr('aria-expanded', 'false');
 
         // Add attributes to current menu
-        $(this).addClass('open').find('.main-menu__sublist').attr('aria-hidden', 'false');
-        $(this).find('a:first-child').attr('aria-expanded', 'true');
+        $(this).addClass('open').find('.main-menu__sublist').attr('aria-expanded', 'true');
       }
     });
 
@@ -73,17 +74,18 @@ function doNav(width) {
         //Submenu is closed, has to open
         if (currentActive.length) {
           //If there is another item open remove it
-          currentActive.removeClass('open').find('.main-menu__sublist').attr('aria-hidden', true);
+          currentActive.removeClass('open').find('.main-menu__sublist').attr('aria-expanded', false);
+
           currentActive.find('button').attr('aria-expanded', false);
         }
 
         $(this).attr('aria-expanded', true).find('span').text('Open ' + menuItem.find('a:first span').text());
-        menuItem.addClass('open').find('.main-menu__sublist').attr('aria-hidden', false);
+        menuItem.addClass('open').find('.main-menu__sublist').attr('aria-expanded', true);
 
       } else if (menuItem.hasClass('open')) {
         // Submenu is open, has to close
         $(this).attr('aria-expanded', false).find('span').text('Sluit ' + menuItem.find('a:first span').text());
-        menuItem.removeClass('open').find('.main-menu__sublist').attr('aria-hidden', true);
+        menuItem.removeClass('open').find('.main-menu__sublist').attr('aria-expanded', false);
       }
     });
 

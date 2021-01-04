@@ -156,62 +156,6 @@
   margin-right: auto;
 }
 
-// Overviews
-
-.section--overview {
-  max-width: none;
-
-  .l-section-content {
-    max-width: $max-width-container;
-
-    @include bp-down(sm) {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
-  }
-
-  .grid + p {
-    display: flex;
-    @include bp-up(lg) {
-      padding: 0 $gutter / 2;
-    }
-  }
-
-  .btn {
-    margin-top: $gutter;
-    margin-left: auto;
-
-    @include bp-up(lg) {
-      margin-top: 4.5rem;
-    }
-  }
-
-  &-list {
-    @include ho-container;
-
-    .l-section-content {
-      max-width: none;
-    }
-
-    .teaser:not(.teaser--spotlight),
-    h3 {
-      max-width: $max-width-inner;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-
-  + .section--brands .section__title {
-    border: none;
-  }
-
-  .grid--col-2 {
-    @include ho-container-content;
-  }
-}
-
-
-
 .l-section-col {
   &.col--50-width {
     @include bp-up(md) {
