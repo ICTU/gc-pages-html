@@ -1,0 +1,111 @@
+{% if author is empty %}
+  {% set author = 'Gebruiker Centraal Auteur' %}
+{% endif %}
+
+{% if comments is empty %}
+
+  {% set comments = {
+    '1': {
+      'author': 'Haas Ontwerp',
+      'body': 'Dit is een standaard comment.',
+      'time': '7 november 2019',
+      'sub': {
+        '1': {
+          'author': 'Haas Ontwerp',
+          'body': 'Dit is een standaard reactie op een comment.',
+          'time': '12 november 2019',
+        },
+        '2': {
+          'author': 'Pieter',
+          'body': 'Donec sollicitudin molestie malesuada. Cras ultricies ligula sed magna dictum porta.',
+          'time': '12 november 2019',
+        }
+      }
+    },
+    '2': {
+      'author': 'Wendy',
+      'body': 'Helaas hebben we het spel niet ontvangen en hebben we niet mee kunnen doen aan de challenge.',
+      'time': '7 november 2019',
+      'sub': {
+        '1': {
+          'author': 'Gebruiker Centraal',
+          'body': 'Weet je het zeker, heb je je mailbox gecheckt?',
+          'time': '12 november 2019',
+        },
+      }
+    },
+    '3': {
+      'author': 'Mr Pink',
+      'body': 'Helaas hebben we het spel niet ontvangen en hebben we niet mee kunnen doen aan de challenge.',
+      'time': '7 november 2019',
+    }
+  } %}
+
+{% endif %}
+
+{% set i = 0 %}
+
+  {% for comment in comments %}
+    {% for child in comment.sub %}
+      {% set i = i + 1 %}
+    {% endfor %}
+  {% endfor %}
+
+<div class="comments">
+  <h2 class="comments__title">Reacties ({{ i + comments|length }})</h2>
+
+  <ul class="comments__list">
+
+    {% for comment in comments %}
+
+      <li class="comment">
+
+        <div class="comment__body">
+
+          <div class="comment-author vcard">
+            <cite class="fn">{{ comment.author }}</cite>
+            <span class="says">schreef:</span>
+          </div>
+
+          <div class="comment__content">
+            {{ comment.body }}
+          </div>
+
+
+          <div class="comment_footer">
+            <time datetime="2018-07-07">{{ comment.time }}</time>
+
+            <a rel="nofollow" class="comment-reply-link" href="#" data-commentid="#" data-postid="#"
+                data-belowelement="#" data-respondelement="respond"
+                aria-label="Antwoord {{ comment.author }}">Beantwoorden</a>
+          </div>
+
+        </div>
+
+
+        {% if comment.sub %}
+
+          <ul class="comment__children">
+
+            {% for child in comment.sub %}
+
+              <li class="comment">
+                <div class="comment-author vcard"><cite class="fn">{{ child.author }}</cite> schreef:</div>
+
+                <div class="comment-content">
+                  {{ child.body|raw }}
+                </div>
+
+                <div class="comment-meta commentmetadata"><a href="#">{{ child.time }}</a></div>
+              </li>
+
+            {% endfor %}
+
+          </ul>
+
+        {% endif %}
+      </li><!-- #comment-## -->
+    {% endfor %}
+
+  </ul>
+</div>

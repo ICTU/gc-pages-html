@@ -18,11 +18,13 @@
 @import "layout/page";
 @import "layout/page-overview";
 
-/* Entry types */
+/* Entry types, post */
 @import "components/single";
 @import "components/single-event";
 @import "components/single-home";
 @import "components/single-tipkaart";
+
+@import "post/post";
 
 /* Sections */
 @import "components/section";

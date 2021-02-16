@@ -1,77 +1,23 @@
-
-// Per section
-
 .section--image {
-  .l-section-content {
-    max-width: $max-width-inner;
-    margin: 0 auto;
-  }
-
-  picture {
-    display: block;
-
-    img {
-      width: 100%;
-    }
-  }
-
-  + p, + h2 {
-    @include bp-up(md) {
-      margin-top: 5rem;
-    }
-  }
-
-  &--fullwidth {
-    max-width: $max-width-container;
-
-    .l-section-content {
-      max-width: none;
-    }
-  }
-
-  .l-section-top + .l-section-content {
-    margin-top: 2rem;
-  }
-
-  &.l-item-count-2 .l-section-content {
-    @include bp-up(sm) {
-      display: flex;
-
-      picture {
-        margin-left: $gutter-smaller / 2;
-        margin-right: $gutter-smaller / 2;
-        width: calc(50% - #{$gutter-smaller});
+  &:not(.l-item-count-1),
+  &:not(.l-display-grid){
+    @include bp-down(sm){
+      figure + figure {
+        margin-top: $gutter;
       }
     }
 
-    @include bp-down(sm) {
-      picture + picture {
-        margin-top: $gutter-smaller;
-      }
-    }
-  }
-
-  &.l-picture-grid {
-    .image {
-      margin-top: $gutter-xsmall;
-    }
-
-    @include bp-up(sm) {
+    @include bp-up(sm){
       .l-section-content {
-        max-width: calc(#{$max-width-inner} + #{$gutter-xsmall});
+        margin-left: -$gutter / 2;
+        margin-right: -$gutter / 2;
         display: flex;
-        flex-wrap: wrap;
       }
 
-      .image {
-        margin-top: $gutter-xsmall;
-        width: calc(50% - #{$gutter-xsmall});
-        margin-left: $gutter-xsmall / 2;
-        margin-right: $gutter-xsmall / 2;
-
-        &:nth-child(3n+1) {
-          width: calc(100% - #{$gutter-xsmall});
-        }
+      figure {
+        margin-left: $gutter / 2;
+        margin-right: $gutter / 2;
+        flex: 1;
       }
     }
   }
