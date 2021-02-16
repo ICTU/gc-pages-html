@@ -11,6 +11,7 @@ $twig = new Environment($loader, ['debug' => TRUE]);
 echo $twig->render('homepage.html.twig', [
   'site_name' => 'Gebruiker Centraal',
   'title' => 'Dit is de homepage :D',
+  'type' => 'front'
 ]);
 
 

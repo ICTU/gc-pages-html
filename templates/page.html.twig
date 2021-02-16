@@ -4,188 +4,49 @@
   {% include 'includes/head.html.twig' %}
 </head>
 
-<body class="page page--type-page site-id-1">
+<body class="page page--type-{{ type ? type : 'page' }} site-id-{{ siteid ? siteid : '1' }}">
 
 <div class="site-container">
-
   {% include 'includes/header.html.twig' %}
 
-  {% if breadcrumb is empty %}
+  {% block breadcrumb %}
+    {% if breadcrumb is empty %}
 
-    {% set breadcrumb = {
-      'page_title': page_title,
-      'links': {
-        '1': {
-          'url': 'index.php',
-          'title': 'Home'
+      {% set breadcrumb = {
+        'page_title': page_title,
+        'links': {
+          '1': {
+            'url': 'index.php',
+            'title': 'Home'
+          }
         }
-      }
+      } %}
+    {% endif %}
+
+    {% include 'includes/breadcrumb.html.twig' with {
+      'title': breadcrumb.page_title,
+      'links': breadcrumb.links
     } %}
-
-  {% endif %}
-
-  {% include 'includes/breadcrumb.html.twig' with {
-    'title': breadcrumb.page_title,
-    'links': breadcrumb.links
-  } %}
-
+  {% endblock %}
 
 
   <div class="page-content" id="maincontent" tabindex="-1">
-    <main class="content">
+    {% block content %}
+      <main class="content">
+        {# Filled out by other twig templates #}
+        {% block header %}
+          <header class="post__header">
+            <h1 class="post__title">{{ title ? title : 'Over Gebruiker Centraal' }}</h1>
 
-      {% block entry %}
-      <article class="entry entry--type-page entry--full">
-        {% block entry_header %}
-        <header class="entry-header">
-          <h1 class="entry-title">Over Gebruiker Centraal</h1>
+            {% if intro %}
+              <p class="text text--intro">{{ intro }}</p>
+            {% endif %}
 
-          <p class="entry-intro">Gebruiker Centraal is een community voor professionals die bezig zijn met de
-            (online) dienstverlening van de overheid. Samen willen wij de (online) dienstverlening van de overheid naar
-            een hoger plan tillen, zodat meer burgers van digitale diensten gebruik kunnen en willen maken. In de
-            community delen we ervaringen en lessen tijdens <a href="https://www.gebruikercentraal.nl/evenementen/"
-                                                               data-ol-has-click-handler="">bijeenkomsten</a>&nbsp;en op
-            ons <a href="https://www.gebruikercentraal.nl/blog" data-ol-has-click-handler="">blog</a>.&nbsp;Samen met de
-            community ontwikkelen we <a href="https://www.gebruikercentraal.nl/instrumenten/"
-                                        data-ol-has-click-handler="">instrumenten</a> om de professionals te
-            ondersteunen in het centraal stellen van de eindgebruiker.</p>
-          </p>
+          </header>
 
-        </header>
         {% endblock %}
-
-
-        <div class="entry-content">
-          {% block entry_block %}
-
-          {% set text %}
-          <p>Gebruiker Centraal is onafhankelijk, non-profit en wordt voor het grootste deel gefinancierd door het
-            ministerie van Binnenlandse Zaken en Koninkrijksrelaties.</p>
-          <h2>Actieteam</h2>
-          <p>Gebruiker Centraal werkt met een actieteam&nbsp;dat bestaat uit professionals die direct voor de overheid
-            werken. Dit team organiseert en faciliteert de activiteiten van de community en bepaalt grotendeels de
-            koers van de community.</p>
-          <p>
-
-            <a href="https://www.gebruikercentraal.nl/actieteam/" class="btn btn--primary">Bekijk alle leden van
-              het actieteam</a></p>
-
-          {% endset %}
-
-          {% include 'blocks/text.html.twig' with { 'section_text' : text } %}
-
-          {% include 'sections/section-pictures.html.twig' with { 'variant' : 'width-content'} %}
-
-          {% include 'blocks/text.html.twig' with { 'title' : 'Dit is een tekstblok'} %}
-
-          {% set cards = {
-            '1': {
-              'title' : 'Superleuke pagina',
-            },
-            '2': {
-              'title' : 'Optimaal Digitaal Workshopspel',
-              'descr' : 'Kaartje met een afbeelding. Wanneer de pagina waarnaar verwezen ook een platje heeft.',
-              'img' : 'img-16-9.jpg'
-            }
-          } %}
-
-
-          {% set textimage_text %}
-
-          <h2>Dit is een tekst en image</h2>
-          <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada
-            feugiat. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Proin eget tortor risus.</p>
-          {% endset %}
-
-          {% include 'blocks/text-image.html.twig' with {
-            'img': {
-              'url': 'od-1.jpg',
-              'alt': 'Ben je met meer dan 6 personen?'
-            },
-            'text': textimage_text,
-          } %}
-
-          {% set textimage_text %}
-
-          <h2>Dit is een tekst en image, met achtergrond, uitlijning rechts</h2>
-          <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada
-            feugiat. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Proin eget tortor risus.</p>
-          {% endset %}
-
-          {% include 'blocks/text-image.html.twig' with {
-            'img': {
-              'url': 'od-1.jpg',
-              'alt': 'Ben je met meer dan 6 personen?'
-            },
-            'text': textimage_text,
-            'align': 'right',
-            'bg': 'light'
-          } %}
-
-          {% set textimage_text %}
-
-          <h2>Dit is een tekst en image, option fullwidth</h2>
-          <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada
-            feugiat. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Proin eget tortor risus.</p>
-          {% endset %}
-
-          {% set tiClasses = ['nee'] %}
-
-          {% include 'blocks/text-image.html.twig' with {
-            'text': textimage_text,
-            'img': {
-              'url': 'od-1.jpg',
-              'alt': 'Ben je met meer dan 6 personen?'
-            },
-            'modifier': 'fullwidth',
-          } %}
-
-
-          {% set textimage_text %}
-          Twee text images acher elkaar, allebei fulldwith komen tegen elkaar aan.
-          {% endset %}
-
-          {% set tiClasses = ['nee'] %}
-
-          {% include 'blocks/text-image.html.twig' with {
-            'text': textimage_text,
-            'img': {
-              'url': 'random.jpg',
-              'alt': 'Ben je met meer dan 6 personen?'
-            },
-            'modifier': 'fullwidth',
-            'align': 'right',
-          } %}
-
-          {% include 'sections/section-related.html.twig' with {
-            'title' : 'Kijk ook bij...',
-            'cards': cards
-          } %}
-
-          {% set links = {
-            '1': {
-              'title': 'Donec sollicitudin molestie malesuada',
-              'descr': 'Cras ultricies ligula sed magna dictum porta.',
-              'url': '#',
-            },
-            '2': {
-              'title': 'Vivamus suscipit tortor eget felis porttitor volutpat',
-              'descr': 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.',
-              'url': '#',
-            }
-          } %}
-
-          {% include 'sections/section-links.html.twig' with {
-            'title' : 'Kijk ook bij...',
-            'items' : links
-          } %}
-          {% endblock %}
-
-        </div>
-      </article>
-
-      {% endblock %}
-    </main>
+      </main>
+    {% endblock %}
   </div>
 
   {% include 'includes/footer.html.twig' %}

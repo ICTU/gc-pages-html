@@ -20,10 +20,10 @@ $twig->addExtension(new ClassList);
 $twig->addExtension(new GroupByMonth);
 
 
-echo $twig->render('od-home.html.twig', [
-  'site_name' => 'Optimaal Digitaal',
-  'site_slogan' => 'Verbeter spelenderwijs je (online) dienstverlening',
-  'title' => 'Optimaal Digitaal',
-  'theme' => 'od',
-  'logo' => 'img/logo/od.svg',
+echo $twig->render('inc-home.html.twig', [
+  'site_name' => 'Inclusie',
+  'site_slogan' => 'Ontwerp voor iedereen',
+  'title' => 'Inclusie',
+  'theme' => 'inclusie',
+  'logo' => 'img/logo/inclusie.svg',
 ]);

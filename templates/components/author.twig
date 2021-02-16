@@ -1,37 +1,36 @@
-{% if title is empty %}
-  {% set titel = 'Gebruiker Centraal Auteur' %}
+{% if name is empty %}
+  {% set name = 'Gebruiker Centraal Auteur' %}
 {% endif %}
 
-{% if function is empty %}
-  {% set function = 'Adviseur online communicatie en analyse' %}
-{% endif %}
+<section class="author author--box {{ img ? 'l-with-image' }}" itemprop="author" itemscope="itemscope"
+    itemtype="http://schema.org/Person">
 
-<section class="author author--box l-with-image" itemprop="author" itemscope="itemscope"
-         itemtype="http://schema.org/Person">
-
+  {% if img %}
   <figure class="author__picture">
-    <img src="{{ base_url }}/doelgroep-1.svg" alt="Auteur">
+    <img src="/uploads/{{ img }}" alt="Auteur">
   </figure>
 
   <div class="author__content">
+    {% endif %}
 
     <h2 class="author_title">
       <a class="arrow-link" href="#">
-        <span class="arrow-link__text"><span class="visually-hidden">Over</span>{{ titel }}</span>
+        <span class="arrow-link__text"><span class="visually-hidden">Over</span>{{ name }}</span>
         <span class="arrow-link__icon"></span>
       </a>
     </h2>
 
-    <span class="meta-data__item">{{ function }}</span>
-
-    <hr>
+    {% include "components/meta-data.html.twig" with {
+      "items":{
+        "1": {
+          "title": "Functie",
+          "descr": function ? function : "Adviseur online communicatie en analyse"
+        }
+      }
+    } %}
 
     {% if descr %}
-      {{ descr }}
-    {% else %}
-      <p>Sinds 2006 werkzaam voor ICTU. In diverse projecten gewerkt op gebied van de digitale overheid. Ik onderzoek
-        en adviseer in het gebruiksvriendelijker en toegankelijker maken van websites, het verbeteren van de
-        kwaliteit van de content en de inzet van social media.</p>
+      <p>{{ descr }}</p>
     {% endif %}
 
     <div class="author__contact-info">
@@ -40,5 +39,6 @@
 
       {% include 'components/social-links.html.twig' %}
     </div>
-  </div>
+    {% if img %}</div>{% endif %}
+
 </section>

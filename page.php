@@ -15,6 +15,6 @@ $twig = new Environment($loader, ['debug' => TRUE]);
 $twig->addExtension(new DebugExtension);
 $twig->addExtension(new ClassList);
 
-echo $twig->render('page.html.twig', [
+echo $twig->render('posts/post.html.twig', [
     'site_name' => 'Gebruiker Centraal',
 ]);

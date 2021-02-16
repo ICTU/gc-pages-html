@@ -1,53 +1,15 @@
-{% if modifier is empty %}
-  {% set variant = 'full' %}
-{% endif %}
+{% extends 'sections/section.html.twig' %}
 
-{% if items is empty %}
+{% block content %}
 
-  {% set items = {
-    '1': {
-      'alt': 'Optimaal Digitaal spel',
-      'url': 'img-16-9.jpg',
-    }
-  } %}
+  {% for item in items %}
+    <figure class="image">
+      <img class="image__image" src="/uploads/{{ item.url }}" alt="{{ item.alt }}">
 
-{% else %}
+      {% if item.caption %}
+        <figcaption class="image__caption">{{ item.caption }}</figcaption>
+      {% endif %}
+    </figure>
 
-  {% if items|length > 2 %}
-    {% set extraclass = 'l-display-grid' %}
-  {% else %}
-    {% set extraclass = 'l-item-count-'~ items|length %}
-  {% endif %}
-
-{% endif %}
-
-
-{% set classes = [
-  'section',
-  'section--image',
-  extraclass ? extraclass,
-  modifier ? modifier
-] %}
-
-<div class="{{ classes|classlist }}">
-
-  {% if title %}
-    <div class="l-section-top">
-      <h2>{{ title }}</h2>
-    </div>
-  {% endif %}
-  <div class="l-section-content">
-
-    {% for item in items %}
-
-      <picture class="image">
-        <source
-            srcset="/uploads/styles/lg/{{ item.url }} 1x"
-            media="all and (min-width: 800px)" type="image/jpeg">
-
-        <img src="/uploads/{{ item.url }}" alt="{{ item.alt }}" typeof=" foaf:Image">
-      </picture>
-
-    {% endfor %}
-  </div>
-</div>
+  {% endfor %}
+{% endblock %}

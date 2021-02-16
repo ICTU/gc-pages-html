@@ -1,93 +1,178 @@
-{% extends "page.html.twig" %}
-
-{% block content %}
-  <article class="post post-type--{{ type ? type : 'post' }} post--full">
+{% extends "posts/post.html.twig" %}
 
     {% block header %}
       <header class="post__header">
+        {% include 'components/date-badge.html.twig' %}
         <h1 class="post__title">{{ title ? title : 'Over Gebruiker Centraal' }}</h1>
 
-        {% if intro %}
-          <p class="text text--intro">{{ intro }}</p>
-        {% endif %}
+        {% include 'components/meta-data.html.twig' with {
+          "items": {
+            "1": {"title": "Datum", "descr": "20 oktober 2020"},
+            "2": {"title": "Auteur", "descr": "Jessica Straetemans"}
+          }
+        } %}
 
       </header>
 
     {% endblock %}
 
-    {% block post_content %}
-      <div class="post__content">
+{% block post_content %}
+  <div class="post__content">
 
-        {% set text %}
-          <p>Gebruiker Centraal is onafhankelijk, non-profit en wordt voor het grootste deel gefinancierd door het
-            ministerie van Binnenlandse Zaken en Koninkrijksrelaties.
-          </p>
-          <h2>Actieteam</h2>
-          <p>Gebruiker Centraal werkt met een actieteam&nbsp;dat bestaat uit professionals die direct voor de overheid
-            werken. Dit team organiseert en faciliteert de activiteiten van de community en bepaalt grotendeels de koers
-            van de community.
-          </p>
-          <p><a href="#" class="btn btn--primary">Bekijk alle leden van het actieteam</a></p>
-        {% endset %}
+    <div class="section section--text">
+      <p class="text text--intro">In het webinar in de Direct Duidelijk Tour over inclusieve Tweede Kamerverkiezingen
+        (21 januari 2021) is Kirsten Wilde (communicatieadviseur en taalcoach bij de gemeente Enschede) te gast.
+      </p>
 
-        {% include 'blocks/text.html.twig' with { 'section_text' : text } %}
+      <p>Ze helpt collega’s hun teksten te schrijven volgens de richtlijnen van Direct Duidelijk.Samen met haar collega
+        Talissa Oude Bennink
+        (projectleider Direct Duidelijk Enschede, gedetacheerd sinds november 2020 als Direct Duidelijk
+        Brigademedewerker)
+        zetten ze
+        zich in voor voor duidelijke taal in de gemeente Enschede. Waar begin je met Direct Duidelijk in je organisatie?
+      </p>
 
-        {% include 'sections/section-pictures.html.twig' with { 'variant' : 'width-content'} %}
+      <p>Kirstin: “En zo loopt mijn deelname aan de Direct Duidelijk Tour uit op een blog. Wat leuk! De aanleiding is
+        natuurlijk communicatie tijdens de Tweede Kamerverkiezing. Maar we kunnen ons voorstellen dat je ook meer wilt
+        weten
+        over Direct Duidelijk in jouw organisatie. Want echt: het is het leukste dat er is, maar tegelijkertijd ook een
+        van
+        de grotere uitdagingen in ons werk tot nu toe.”
+      </p>
 
-        {% set textimage_text %}
+      <h2>Waar begin je eigenlijk met Direct Duidelijk in je organisatie?</h2>
+      <p>“Voor een communicatieadviseur ligt taal altijd onder een vergrootglas.”, vervolgt Kirstin. “Taal is binnen een
+        gemeente een uitdaging. Er is veel jargon, er zijn veel experts en specialisten. Direct Duidelijk Enschede liet
+        mij inzien dat het wegnemen van het jargon geen belemmering is, maar juist een voordeel. Want hoe fijn is het
+        dat
+        iemand begrijpt wat je zegt? Dat is voor zowel de zender als de ontvanger heel fijn.”
+      </p>
 
-          <h2>Dit is een tekst en image</h2>
-          <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada
-            feugiat. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Proin eget tortor risus.
-          </p>
-        {% endset %}
+      <p>Talissa vult aan: “Binnen de gemeente hebben we al een tijd het besef dat duidelijker moeten communiceren. Maar
+        hoe zorg je ervoor dat je hele organisatie duidelijk communiceert met inwoners? Dat vraagt om een flinke dosis
+        geduld,
+        steun van het management en bestuur en de juiste mensen aan boord.”
+      </p>
 
-        {% include 'blocks/text-image.html.twig' with {
-          'img': {
-            'url': 'od-1.jpg',
-            'alt': 'Ben je met meer dan 6 personen?'
-          },
-          'text': textimage_text,
-        } %}
+      <h3>Het houdt niet op bij een schrijftraining voor iedereen</h3>
+      <p>Ze vervolgt: ‘In 2018 ondersteunde ik een van de trekkers van duidelijke taal binnen de gemeente Enschede. Deze
+        collega deed dit naast haar gewone werk, en dat is meteen een belangrijk punt. Helder schrijven doe je er niet
+        ‘even bij’.”
+      </p>
+
+      <p>Kirstin bevestigt dit: “Veel collega’s die voor het eerst op schrijfcursus gaan hebben het gevoel er een taak
+        bij te krijgen. Terwijl dat juist niet zo is. Duidelijke communicatie helpt je bij het beter en makkelijker
+        uitvoeren van je taken. En het zorgt ervoor dat je doelen behaalt met de teksten die je maakt.”
+      </p>
+
+      <p>Talissa: “Je ervaart het door te doen. Toch verdwijnt de kennis van een schrijftraining snel naar de
+        achtergrond.
+        Met als gevolg dat je je niet meer aan je eigen schrijfregels houdt. Veel herhalen dus!”
+      </p>
+
+      <p>Kirstin: “Onze schrijfafspraken staan in de Enschedese Schrijfwijzer. Maar het is een utopie dat alle
+        briefschrijvers die uitgebreid lezen voordat ze aan de slag gaan. Je hebt dus meer structurele aandacht nodig
+        bij
+        alle collega’s, van alle afdelingen.”
+      </p>
+
+      <p>Talissa: “Schrijfafspraken blijven veranderen. Die kun je niet op een bepaald moment vaststellen en er daarna
+        nooit
+        meer naar kijken. Er zit dus geen einddatum aan duidelijke communicatie. Het is eerder een cultuurverandering,
+        we
+        willen voor altijd begrijpelijk en duidelijk communiceren. In oktober 2018 ondertekende wethouder Niels van den
+        Berg als eerste de Direct Duidelijk-deal namens de gemeente Enschede! En zo trapten we 2019 af met Direct
+        Duidelijk
+        Enschede.”
+      </p>
+    </div>
+
+    {% include 'sections/section-pictures.html.twig' with {
+      'type': 'image',
+      'items': {
+        "1": {
+          "url": "uploads/stembiljet-1.png",
+          "alt": "Oud stembiljet gemeente Enschede",
+          "caption": "Oud stembiljet gemeente Enschede"
+        },
+        "2": {
+          "url": "uploads/stembiljet-2.png",
+          "alt": "Het vernieuwde stembiljet van de gemeente Enschede",
+          "caption": "Het vernieuwde stembiljet van de gemeente Enschede"
+        }
+      }
+    } %}
+
+    <div class="section section--text">
+      <h2>Betrek inwoners waar het kan bij het (her)schrijven van je teksten</h2>
+      <p>Kirstin: “Bij het nieuwe stembiljet hebben we bijvoorbeeld eerst zelf een flinke verbeterslag gemaakt. Die
+        verbeterde versie hebben we laten zien tijdens de Direct Duidelijk Tour. Daarna is het ons nog gelukt om
+        laaggeletterden naar de tekst te laten kijken. Die waren heel blij met de verbeteringen. Ze hadden nog een
+        aantal suggesties die we ook allemaal konden overnemen. Bijvoorbeeld door de informatie te verdelen in “wat u
+        moet
+        weten voordat u gaat stemmen” en “wat u moet weten op de dag dat u gaat stemmen”. Anders werd het te
+        onoverzichtelijk
+        en overweldigend. Dat zijn fantastische aanpassingen toch? Heel simpel eigenlijk, maar voor de ontvanger veel
+        duidelijker.”
+      </p>
+    </div>
+
+    <figure class="section section--quote">
+      <blockquote class="wp-blockquote quote__text">
+        <p> “Voel je vrij om ons stembiljet als voorbeeld te gebruiken!”
+        </p>
+      </blockquote>
+      <cite class="quote__quotee">– Kirstin Wilde, communicatieadviseur</cite>
+    </figure>
 
 
-        {% set cards = {
-          '1': {
-            'title' : 'Superleuke pagina',
-          },
-          '2': {
-            'title' : 'Optimaal Digitaal Workshopspel',
-            'descr' : 'Kaartje met een afbeelding. Wanneer de pagina waarnaar verwezen ook een platje heeft.',
-            'img' : 'img-16-9.jpg'
-          }
-        } %}
+    <div class="section section--text section--info">
+      <h2>Wil je meedoen aan of meer weten over Direct Duidelijk?</h2>
+      <p>Kijk op www.directduidelijk.nl! Hier vind je:</p>
 
-        {% include 'sections/section-related.html.twig' with {
-          'title' : 'Kijk ook bij...',
-          'cards': cards,
-          'modifier': 'bg-option'
-        } %}
+      <ul>
+        <li>Schrijftips en schrijfwijzers</li>
+        <li>Informatie over de Direct Duidelijk Brigade</li>
+        <li>Informatie over de Direct Duidelijk-deal</li>
+        <li>Hulpmiddelen voor begrijpelijke taal zoals trainingen en een taalapplicatie</li>
+      </ul>
 
-        {% set links = {
-          '1': {
-            'title': 'Donec sollicitudin molestie malesuada',
-            'descr': 'Cras ultricies ligula sed magna dictum porta.',
-            'url': '#',
-          },
-          '2': {
-            'title': 'Vivamus suscipit tortor eget felis porttitor volutpat',
-            'descr': 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.',
-            'url': '#',
-          }
-        } %}
+      <a href="#" class="btn btn--primary">Naar de Direct Duidelijk website</a>
+    </div>
 
-        {% include 'sections/section-links.html.twig' with {
-          'title' : 'Kijk ook bij...',
-          'items' : links
-        } %}
+    <div class="section section--text section--info">
+      <h2>Hulp nodig bij het schrijven van duidelijke teksten?</h2>
+      <p>Heb je hulp nodig bij het maken van een duidelijke tekst of heb je een andere taalvraag? Neem dan contact op
+        met
+        de Direct Duidelijk Hulplijn op telefoonnummer 085 – 4000 111. Onze taalexperts staan klaar voor jouw taalvragen
+        op werkdagen van 9.00 tot 17.00 uur. Chatten kan zelfs tot 20.00 uur.
+      </p>
+      <a href="#" class="btn btn--primary">Naar de Direct Duidelijk hulplijn</a>
+    </div>
 
-      </div>
-    {% endblock %}
+    <div class="section section--text section--info">
+      <h2>Direct Duidelijk Tour</h2>
+      <p>Na het succes van vorig jaar trapten we op donderdag 21 januari af met de eerste Direct Duidelijk Tour
+        aflevering
+        van 2021. De Direct Duidelijk tour is een serie online bijeenkomsten over duidelijke, inclusieve en bruikbare
+        overheidscommunicatie. De eerste aflevering ging over duidelijke communicatie over Tweede Kamerverkiezingen.
+        Andere onderwerpen zijn duidelijke communicatie over corona, op social media en online burgerparticipatie. Alle
+        webinars zijn terug te kijken.
+      </p>
 
-  </article>
+      <a href="#" class="btn btn--primary">Bekijk de webinars</a>
+    </div>
+
+    {% include "components/author.twig" with {
+      "name": "Jessica Streatemans"
+    } %}
+
+  </div>
+
+  {% include "components/comment-list.html.twig" %}
+{% endblock %}
+
+{% block post_footer %}
+
+
 {% endblock %}

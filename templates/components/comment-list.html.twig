@@ -2,6 +2,8 @@
   {% set author = 'Gebruiker Centraal Auteur' %}
 {% endif %}
 
+
+
 {% if comments is empty %}
 
   {% set comments = {
@@ -38,6 +40,11 @@
       'author': 'Mr Pink',
       'body': 'Helaas hebben we het spel niet ontvangen en hebben we niet mee kunnen doen aan de challenge.',
       'time': '7 november 2019',
+    },
+    '4': {
+      'author': 'Mr. Brown',
+      'body': 'Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Cras ultricies ligula sed magna dictum porta.',
+      'time': '2 februari 2021'
     }
   } %}
 
@@ -51,58 +58,61 @@
     {% endfor %}
   {% endfor %}
 
-<h2 class="comments-title">Reacties ({{ i + comments|length }})</h2>
+<section class="comments">
+  <h2 class="comments__title">Reacties ({{ i + comments|length }})</h2>
 
-<ul class="comment-list">
+  <ul class="comments__list">
 
-  {% for comment in comments %}
+    {% for comment in comments %}
 
-    <li class="comment">
+      <li class="comment">
 
-      <div class="comment-body">
+        {% include "components/comment.html.twig" with {
+          'author': comment.author,
+          'descr': comment.body,
+          'date': comment.time
+        } %}
 
-        <div class="comment-author vcard">
-          <cite class="fn">{{ comment.author }}</cite>
-          <span class="says">schreef:</span>
-        </div>
+        {% if comment.sub %}
+          <ul class="comment__children">
 
-        <div class="comment-content">
-          {{ comment.body }}
-        </div>
+            {% for child in comment.sub %}
+              <li class="comment">
+                {% include "components/comment.html.twig" with {
+                  'author': child.author,
+                  'descr': child.body|raw,
+                  'date': '20 juli 2020'
+                } %}
+              </li>
 
-        <div class="comment-meta commentmetadata"><a href="#">{{ comment.time }}</a>
-          <div class="reply">
-            <a rel="nofollow" class="comment-reply-link" href="#" data-commentid="#" data-postid="#"
-               data-belowelement="#" data-respondelement="respond"
-               aria-label="Antwoord {{ comment.author }}">Beantwoorden</a>
-          </div>
+            {% endfor %}
+          </ul>
 
-        </div>
+        {% endif %}
+      </li><!-- #comment-## -->
+    {% endfor %}
 
-      </div>
+  </ul>
 
-      {% if comment.sub %}
 
-        <ul class="children">
+  <div id="respond" class="comment-respond">
+    <h3 id="reply-title" class="comment-reply-title">Reageer <small></small></h3>
+    <form action="https://www.gebruikercentraal.nl/wp-comments-post.php" method="post" id="commentform"
+        class="comment-form">
+      <p class="comment-form-comment"><label for="comment">Jouw reactie</label><textarea id="comment" name="comment"
+            cols="45" rows="8" required="" aria-required="true"></textarea></p>
+      <p class="comment-form author"><label for="author">Je naam</label> <input id="author" name="author" type="text"
+            value="" size="30" required="" aria-required="true"></p>
+      <p class="comment-form email"><label for="email">Je mailadres</label> <input id="email" name="email" type="text"
+            value="" size="30" required="" aria-required="true"></p>
+      <p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Reageer"> <input
+            type="hidden" name="comment_post_ID" value="6514" id="comment_post_ID">
+        <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+      </p>
+      <p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce"
+            value="978a457e25"></p>
+      <p style="display: none;"></p>
+      <input type="hidden" id="ak_js" name="ak_js" value="1589446681459"></form>
+  </div>
 
-          {% for child in comment.sub %}
-
-            <li class="comment">
-              <div class="comment-author vcard"><cite class="fn">{{ child.author }}</cite> schreef:</div>
-
-              <div class="comment-content">
-                {{ child.body|raw }}
-              </div>
-
-              <div class="comment-meta commentmetadata"><a href="#">{{ child.time }}</a></div>
-            </li>
-
-          {% endfor %}
-
-        </ul>
-
-      {% endif %}
-    </li><!-- #comment-## -->
-  {% endfor %}
-
-</ul>
+</section>

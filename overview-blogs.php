@@ -24,6 +24,7 @@ echo $twig->render('overview.html.twig', [
   'title' => 'Blog',
   'overview' => 'blogs',
   'modifier' => ' page--overview-archive',
+  'type' => 'archive',
   'breadcrumb' => [
     'page_title' => 'Blogs',
     'links' => [

@@ -15,6 +15,8 @@ $twig = new Environment($loader, ['debug' => TRUE]);
 $twig->addExtension(new DebugExtension);
 $twig->addExtension(new ClassList);
 
-echo $twig->render('blog.html.twig', [
-    'site_name' =>'Gebruiker Centraal']
-);
+echo $twig->render('posts/blog.html.twig', [
+  'site_name' => 'Gebruiker Centraal',
+  'type' => 'post',
+  'title' => 'Direct Duidelijk en een inclusief stembiljet bij de gemeente Enschede'
+]);
