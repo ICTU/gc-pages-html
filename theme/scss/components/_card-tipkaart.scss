@@ -59,7 +59,7 @@
     background: $gc_a11y_cyan_lg;
 
     &:before {
-      background: $gc_cyan;
+      background: $gc-a11y-cyan;
     }
 
     > a:hover, > a:focus, > a:active {
@@ -72,7 +72,7 @@
     background: $gc_a11y_orange_lg;
 
     &:before {
-      background: $gc_a11y_orange_lg;
+      background: $gc_a11y_orange;
     }
 
     > a:hover, > a:focus, > a:active {
@@ -168,7 +168,7 @@
     }
 
     .tipkaart--procesaanpak & {
-      background: $gc_cyan;
+      background: $gc-a11y-cyan;
     }
 
     .tipkaart--gebruiksgemak & {
@@ -176,7 +176,7 @@
     }
 
     .tipkaart--kanaalsturing & {
-      background: $gc_orange;
+      background: $gc_a11y-orange;
     }
 
     .tipkaart--inclusie & {
@@ -247,16 +247,3 @@
   height: 7rem;
 }
 
-// a11y override
-
-.section--od-a11y {
-  .tipkaart--procesaanpak:before,
-  .tipkaart--procesaanpak .tipkaart__toptip:before {
-    background :$gc-a11y-cyan;
-  }
-
-  .tipkaart--kanaalsturing:before,
-  .tipkaart--kanaalsturing .tipkaart__toptip:before {
-    background: $gc-a11y-orange;
-  }
-}
