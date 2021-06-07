@@ -1,17 +1,48 @@
 {% extends 'page.html.twig' %}
 
-        {# Filled out by other twig templates #}
-        {% block header %}
-          <header class="page__intro">
-            <h1 class="page__title">{{ title ? title : 'Over Gebruiker Centraal' }}</h1>
+{# Filled out by other twig templates #}
+{% block header %}
+  <header class="page__intro">
+    <h1 class="page__title">{{ title ? title : 'Over Gebruiker Centraal' }}</h1>
 
-            {% if intro %}
-              <p class="text text--intro">{{ intro }}</p>
-            {% endif %}
+    {% if intro %}
+      <p class="text text--intro">{{ intro }}</p>
+    {% endif %}
 
-          </header>
+  </header>
 
-        {% endblock %}
+{% endblock %}
 
+{% block content %}
 
+  {% include 'components/spotlight.html.twig' with {
+    'title': 'Direct Duidelijk Tour',
+    'descr': 'Online bijeenkomsten over duidelijke, inclusieve en bruikbare overheidscommunicatie',
+    'img': '/uploads/styles/spotlight/direct_duidelijk.png',
+    'cta': {
+      'title': 'Naar Direct Duidelijk Tour'
+    },
+    'modifier': 'instrument'
+  }%}
 
+  {% include 'components/spotlight.html.twig' with {
+    'title': 'NL Design System',
+    'descr': 'Overheidsdiensten van betere kwaliteit door principes, interactiepatronen en code te delen.',
+    'img': '/uploads/styles/spotlight/nl_design_system.png',
+    'cta': {
+      'title': 'Naar NL Design System'
+    },
+    'modifier': 'instrument'
+  }%}
+
+  {% include 'components/spotlight.html.twig' with {
+    'title': 'Optimaal Digitaal',
+    'descr': 'Verbeter spelenderwijs je dienstverlening..',
+    'img': '/uploads/styles/spotlight/od_kaartjes.png',
+    'cta': {
+      'title': 'Naar Optimaal Digitaal'
+    },
+    'modifier': 'instrument'
+  }%}
+
+{% endblock %}

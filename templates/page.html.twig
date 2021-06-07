@@ -31,7 +31,7 @@
 
 
   <div class="page-content" id="maincontent" tabindex="-1">
-    {% block content %}
+    {% block main %}
       <main class="content">
         {# Filled out by other twig templates #}
         {% block header %}
@@ -45,9 +45,15 @@
           </header>
 
         {% endblock %}
+
+        {% block content %}
+
+        {% endblock %}
       </main>
     {% endblock %}
   </div>
 
-  {% include 'includes/footer.html.twig' %}
+  {% block footer %}
+    {% include 'includes/footer.html.twig' %}
+  {% endblock %}
 </div>

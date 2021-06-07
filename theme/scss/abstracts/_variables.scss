@@ -39,10 +39,11 @@ $gc-pink-lighter:           #E86CA8;
 
 $gc-orange:					#f99d1c;
 $gc-a11y-orange-lg:			#D77D00;
+$gc-a11y-orange:            #AD6500;
 
 $gc-cyan:					#00b4ac;
 $gc-a11y-cyan-lg:			#009C95; // Ok for large texts
-$gc-a11y-cyan:              #00837E;
+$gc-a11y-cyan:              #00857E;
 
 
 /* Inclusie */
@@ -161,10 +162,10 @@ $breakpoints: (
         'cm': 1400px
 ) !default;
 
-$max-width-large:         1900px !default;
-$max-width-container:     1280px !default;
-$max-width-content:       960px !default;
-$max-width-inner:         760px !default;
+$max-width-large:         190rem !default;
+$max-width-container:     128rem !default;
+$max-width-content:       96rem!default;
+$max-width-inner:         76rem !default;
 
 $gutter:                  3rem !default;
 $gutter-smaller:          2rem !default;

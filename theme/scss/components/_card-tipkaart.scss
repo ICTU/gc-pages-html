@@ -72,7 +72,7 @@
     background: $gc_a11y_orange_lg;
 
     &:before {
-      background: $gc_orange;
+      background: $gc_a11y_orange_lg;
     }
 
     > a:hover, > a:focus, > a:active {
@@ -245,4 +245,18 @@
   fill: $white;
   width: 8rem;
   height: 7rem;
+}
+
+// a11y override
+
+.section--od-a11y {
+  .tipkaart--procesaanpak:before,
+  .tipkaart--procesaanpak .tipkaart__toptip:before {
+    background :$gc-a11y-cyan;
+  }
+
+  .tipkaart--kanaalsturing:before,
+  .tipkaart--kanaalsturing .tipkaart__toptip:before {
+    background: $gc-a11y-orange;
+  }
 }
