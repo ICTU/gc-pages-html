@@ -1858,9 +1858,9 @@ h1 {
     border: none;
     border-top: 0.1rem solid #9267C3; }
   .tip--procesaanpak .entry-header {
-    background: #009C95; }
+    background: #00857E; }
     .tip--procesaanpak .entry-header:after {
-      background: #009C95; }
+      background: #00857E; }
   .tip--procesaanpak .tipkaart__toptip:before {
     background: #00857E; }
   .tip--procesaanpak .research {
@@ -5497,3 +5497,5 @@ h1 {
       clip: rect(0 0 0 0);
       clip: rect(0, 0, 0, 0);
       position: absolute; } }
+
+/*# sourceMappingURL=gc-theme.css.map */

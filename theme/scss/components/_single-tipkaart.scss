@@ -257,7 +257,7 @@
   }
 
   &--procesaanpak {
-    @include gc-tipkaart-full($gc-a11y-cyan-lg, $gc-dark-blue, $gc-a11y-cyan, $gc-cyan, $gc-a11y-cyan);
+    @include gc-tipkaart-full($gc-a11y-cyan, $gc-dark-blue, $gc-a11y-cyan, $gc-cyan, $gc-a11y-cyan);
   }
 
   &--commitment {
