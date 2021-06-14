@@ -58,7 +58,7 @@ function makeFont(done) {
 
   const handleFont = function (cb) {
     iconStream
-      .pipe(gulp.dest('fonts/iconfont/'))
+      .pipe(gulp.dest('dist/fonts/iconfont/'))
     cb();
   };
 

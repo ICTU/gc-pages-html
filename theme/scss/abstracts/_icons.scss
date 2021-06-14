@@ -1,10 +1,10 @@
 @font-face {
   font-family: "icons";
-  src: url('/theme/fonts/iconfont/ho-iconfont-u1fs0o.eot');
-  src: url('/theme/fonts/iconfont/ho-iconfont-u1fs0o.eot?#iefix') format('eot'),
-  url('/theme/fonts/iconfont/ho-iconfont-u1fs0o.woff') format('woff'),
-  url('/theme/fonts/iconfont/ho-iconfont-u1fs0o.ttf') format('truetype'),
-  url('/theme/fonts/iconfont/ho-iconfont-u1fs0o.svg#icons') format('svg');
+  src: url('/theme/dist/fonts/iconfont/ho-iconfont-7ob8md.eot');
+  src: url('/theme/dist/fonts/iconfont/ho-iconfont-7ob8md.eot?#iefix') format('eot'),
+  url('/theme/dist/fonts/iconfont/ho-iconfont-7ob8md.woff') format('woff'),
+  url('/theme/dist/fonts/iconfont/ho-iconfont-7ob8md.ttf') format('truetype'),
+  url('/theme/dist/fonts/iconfont/ho-iconfont-7ob8md.svg#icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -26,11 +26,12 @@ $icons: (
  phone: "\EA0E",
  pin: "\EA0F",
  play: "\EA10",
- search: "\EA11",
- slack: "\EA12",
- square-arrow: "\EA13",
- twitter: "\EA14",
- user: "\EA15",
+ quote: "\EA11",
+ search: "\EA12",
+ slack: "\EA13",
+ square-arrow: "\EA14",
+ twitter: "\EA15",
+ user: "\EA16",
 
 );
 

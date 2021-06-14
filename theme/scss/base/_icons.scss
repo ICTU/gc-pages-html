@@ -1,10 +1,10 @@
 @font-face {
   font-family: "icons";
-  src: url('/theme/fonts/iconfont/<%= fontName %>.eot');
-  src: url('/theme/fonts/iconfont/<%= fontName %>.eot?#iefix') format('eot'),
-  url('/theme/fonts/iconfont/<%= fontName %>.woff') format('woff'),
-  url('/theme/fonts/iconfont/<%= fontName %>.ttf') format('truetype'),
-  url('/theme/fonts/iconfont/<%= fontName %>.svg#icons') format('svg');
+  src: url('/theme/dist/fonts/iconfont/<%= fontName %>.eot');
+  src: url('/theme/dist/fonts/iconfont/<%= fontName %>.eot?#iefix') format('eot'),
+  url('/theme/dist/fonts/iconfont/<%= fontName %>.woff') format('woff'),
+  url('/theme/dist/fonts/iconfont/<%= fontName %>.ttf') format('truetype'),
+  url('/theme/dist/fonts/iconfont/<%= fontName %>.svg#icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }

@@ -28,8 +28,8 @@
 
 @font-face {
   font-family: "icons";
-  src: url("/theme/fonts/iconfont/ho-iconfont-u1fs0o.eot");
-  src: url("/theme/fonts/iconfont/ho-iconfont-u1fs0o.eot?#iefix") format("eot"), url("/theme/fonts/iconfont/ho-iconfont-u1fs0o.woff") format("woff"), url("/theme/fonts/iconfont/ho-iconfont-u1fs0o.ttf") format("truetype"), url("/theme/fonts/iconfont/ho-iconfont-u1fs0o.svg#icons") format("svg");
+  src: url("/theme/dist/fonts/iconfont/ho-iconfont-7ob8md.eot");
+  src: url("/theme/dist/fonts/iconfont/ho-iconfont-7ob8md.eot?#iefix") format("eot"), url("/theme/dist/fonts/iconfont/ho-iconfont-7ob8md.woff") format("woff"), url("/theme/dist/fonts/iconfont/ho-iconfont-7ob8md.ttf") format("truetype"), url("/theme/dist/fonts/iconfont/ho-iconfont-7ob8md.svg#icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -673,7 +673,7 @@ legend {
 .search-form {
   position: relative; }
   .search-form:after {
-    content: "";
+    content: "";
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -1861,9 +1861,9 @@ h1 {
     border: none;
     border-top: 0.1rem solid #9267C3; }
   .tip--procesaanpak .entry-header {
-    background: #009C95; }
+    background: #00857E; }
     .tip--procesaanpak .entry-header:after {
-      background: #009C95; }
+      background: #00857E; }
   .tip--procesaanpak .tipkaart__toptip:before {
     background: #00857E; }
   .tip--procesaanpak .research {
@@ -2907,6 +2907,114 @@ h1 {
     margin-right: auto; }
   .section--overview.l-has-filter .l-section-top {
     max-width: 96rem; }
+
+.quote .quote__quotee {
+  border: none; }
+
+.quote__quote, .section--text > blockquote {
+  position: relative;
+  font-size: 2.2rem;
+  line-height: 3.8rem;
+  font-family: "montserratsemibold", Helvetica, Arial, sans-serif;
+  font-style: normal; }
+  .quote__quote:after, .section--text > blockquote:after {
+    content: "";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'icons'; }
+  .quote__quote:after, .section--text > blockquote:after {
+    font-size: 1.9rem;
+    color: #74295f;
+    position: absolute;
+    top: 2rem;
+    left: 2rem; }
+
+.quote__quote {
+  -webkit-box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.15);
+  margin: 0;
+  padding: 2rem 2rem 2.5rem 6rem;
+  border: 0.1rem solid #D1DFE3;
+  position: relative;
+  z-index: 5; }
+  .quote__quote:before {
+    width: 4rem;
+    height: 4rem;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: -39px;
+    left: 20px;
+    background: url("../../img/b_example.svg") top left no-repeat;
+    background-size: 100% auto;
+    border: none; }
+  @media (max-width: 559px) {
+    .quote__quote:before {
+      -webkit-transform: scaleX(-1);
+              transform: scaleX(-1);
+      left: auto;
+      right: 20px; } }
+  @media (min-width: 700px) {
+    .quote__quote {
+      padding-right: 3rem; } }
+
+.l-author-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  @media (max-width: 559px) {
+    .l-author-wrapper {
+      margin: 4rem 0 0 0; } }
+  @media (min-width: 560px) {
+    .l-author-wrapper {
+      margin: 2rem 0 0 8rem; } }
+
+.quote__image {
+  max-width: 6rem;
+  height: auto;
+  margin-right: 3rem;
+  -webkit-box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.15); }
+
+.quote__quotee {
+  font-size: 2.2rem;
+  line-height: 2.8rem;
+  font-family: "montserratsemibold", Helvetica, Arial, sans-serif;
+  padding: 0; }
+
+.quote__instance {
+  display: block;
+  font-size: 1.4rem;
+  color: #52757e;
+  font-family: "montserratregular", Helvetica, Arial, sans-serif; }
+
+.section--text > blockquote {
+  padding-left: 4.2rem;
+  margin: 0; }
+  .section--text > blockquote p:first-child {
+    margin-top: 0; }
+  .section--text > blockquote:after {
+    left: 0; }
+  .section--text > blockquote cite {
+    font-size: 1.4rem;
+    color: #52757e;
+    font-family: "montserratregular", Helvetica, Arial, sans-serif;
+    position: relative;
+    padding-left: 3.6rem;
+    margin-top: 1rem;
+    display: block; }
+    .section--text > blockquote cite:before {
+      content: " ";
+      display: block;
+      height: 0.2rem;
+      background: #74295f;
+      width: 2rem;
+      float: left;
+      position: absolute;
+      left: 0;
+      top: 1.5rem; }
 
 .section--text-image {
   max-width: 76rem;
@@ -4382,7 +4490,7 @@ h1 {
     font-weight: normal;
     font-family: 'icons'; }
   .link--social.twitter:before {
-    content: "";
+    content: "";
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -4394,7 +4502,7 @@ h1 {
     font-weight: normal;
     font-family: 'icons'; }
   .link--social.slack:before {
-    content: "";
+    content: "";
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -4496,7 +4604,7 @@ h1 {
 .link--external {
   display: inline-block; }
   .link--external:after {
-    content: "";
+    content: "";
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -4635,7 +4743,7 @@ h1 {
       font-weight: normal;
       font-family: 'icons'; }
     .meta-data dd.auteur:before, .meta-data dd.author:before {
-      content: "";
+      content: "";
       speak: none;
       font-style: normal;
       font-weight: normal;

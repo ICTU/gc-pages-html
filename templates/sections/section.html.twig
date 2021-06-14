@@ -1,7 +1,7 @@
 {% set sectionClasses = [
   'section',
   type ? 'section--' ~ type,
-  items|length < 4 ? 'l-item-count-' ~items|length : 'display-grid',
+  items and items|length < 4 ? 'l-item-count-' ~items|length : 'display-grid',
   bg ? 'bg-color bg-color--' ~ bg,
   modifier ? 'section--' ~ modifier,
 ] %}
