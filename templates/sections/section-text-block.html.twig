@@ -2,7 +2,7 @@
   'section',
   'section--text-blocks',
   'item-count-' ~ items|length,
-  modifier ? 'text-block--bg ' ~ modifier ] %}
+  modifier ? 'section--' ~ modifier ] %}
 
 <div class="section section--text-blocks l-item-count-{{ items|length }}{{ modifier? ' text-block--bg ' ~ modifier }}">
   <div class="l-section-content">

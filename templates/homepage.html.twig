@@ -15,34 +15,275 @@
 
 {% block content %}
 
-  {% include 'components/spotlight.html.twig' with {
-    'title': 'Direct Duidelijk Tour',
-    'descr': 'Online bijeenkomsten over duidelijke, inclusieve en bruikbare overheidscommunicatie',
-    'img': '/uploads/styles/spotlight/direct_duidelijk.png',
-    'cta': {
-      'title': 'Naar Direct Duidelijk Tour'
-    },
-    'modifier': 'instrument'
-  }%}
 
-  {% include 'components/spotlight.html.twig' with {
-    'title': 'NL Design System',
-    'descr': 'Overheidsdiensten van betere kwaliteit door principes, interactiepatronen en code te delen.',
-    'img': '/uploads/styles/spotlight/nl_design_system.png',
-    'cta': {
-      'title': 'Naar NL Design System'
-    },
-    'modifier': 'instrument'
-  }%}
+  <div class="section section--spotlight section--main-instruments">
+    <div class="l-section-content">
+      {% include 'components/spotlight.html.twig' with {
+        'title': 'Direct Duidelijk Tour',
+        'descr': 'Online bijeenkomsten over duidelijke, inclusieve en bruikbare overheidscommunicatie',
+        'img': '/uploads/styles/spotlight/direct_duidelijk.png',
+        'cta': {
+          'title': 'Naar Direct Duidelijk Tour'
+        },
+        'modifier': 'instrument'
+      } %}
 
-  {% include 'components/spotlight.html.twig' with {
-    'title': 'Optimaal Digitaal',
-    'descr': 'Verbeter spelenderwijs je dienstverlening..',
-    'img': '/uploads/styles/spotlight/od_kaartjes.png',
-    'cta': {
-      'title': 'Naar Optimaal Digitaal'
+      {% include 'components/spotlight.html.twig' with {
+        'title': 'NL Design System',
+        'descr': 'Overheidsdiensten van betere kwaliteit door principes, interactiepatronen en code te delen.',
+        'img': '/uploads/styles/spotlight/nl_design_system.png',
+        'cta': {
+          'title': 'Naar NL Design System'
+        },
+        'modifier': 'instrument'
+      } %}
+
+      {% include 'components/spotlight.html.twig' with {
+        'title': 'Optimaal Digitaal',
+        'descr': 'Verbeter spelenderwijs je dienstverlening..',
+        'img': '/uploads/styles/spotlight/od_kaartjes.png',
+        'cta': {
+          'title': 'Naar Optimaal Digitaal'
+        },
+        'modifier': 'instrument'
+      } %}
+
+      <div class="l-instrument-wrapper">
+        <h2>Kijk ook bij....</h2>
+
+        {% set list = {
+          '1': {
+            'title': 'Expertpanel Gebruiksvriendelijkheid',
+            'descr': 'Test je product op gebruiksvriendelijkheid',
+            'url': 'https://expertpanel.gebruikercentraal.nl/'
+          },
+          '2': {
+            'title': 'Inclusie',
+            'descr': 'Ontwerp voor iedereen',
+            'url': 'https://inclusie.gebruikercentraal.nl/'
+          },
+          '3': {
+            'title': 'Kennisbank Beeldtaal',
+            'descr': 'Duidelijke, leesbare beeldbrieven',
+            'url': 'https://beeldbank.gebruikercentraal.nl/'
+          },
+          '4': {
+            'title': 'Volwassenheidsscan',
+            'descr': 'Hoe goed betrekt je organisatie gebruikers bij de ontwikkeling van je dienstverlening?',
+          }
+        } %}
+
+        <ul class="item-list">
+          {% for item in list %}
+            <div class="item-list__item">
+              <a href="{{ item.url ? item.url : '#' }}" class="item-list__link">{{ item.title }}</a>
+              <p class="item-list__description">{{ item.descr }}</p>
+            </div>
+          {% endfor %}
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  {# 2x basic spotlight #}
+
+  <div class="section section--spotlight l-item-count-2">
+    <div class="l-section-content">
+      {% include 'components/spotlight.html.twig' with {
+        'title': 'Design Thinking bij de Overheid',
+        'descr': 'Op vrijdag 20 november vond de conferentie Design thinking bij de overheid plaats. Gemist of terugkijken?',
+        'img': '/uploads/styles/spotlight/design_thinking.jpg',
+        'cta': {
+          'title': 'Alles over de conferentie'
+        },
+        'modifier': 'white'
+      } %}
+
+      {% include 'components/spotlight.html.twig' with {
+        'title': 'Gebruiker Centraal Pubquiz',
+        'descr': 'Denk jij alles te weten over gebruiksvriendelijke dienstverlening? Toets je kennis en doe mee aan de Gebruiker Centraal Pubquiz!',
+        'img': '/uploads/styles/spotlight/pubquiz.jpg',
+        'cta': {
+          'title': 'Ik doe mee!'
+        },
+        'modifier': 'white'
+      } %}
+    </div>
+  </div>
+
+  {# 2x basic spotlight #}
+
+  <div class="section section--actual">
+    <div class="l-section-content">
+      <div class="col col--33-width col--descr">
+        <h2 class="section__title">Agenda</h2>
+
+        <p>We organiseren diverse evenementen die je helpenbij het verbeteren van je dienstverlening. Zowel online als
+          offline.
+        </p>
+
+        <a href="/overview-events.php" class="btn btn--primary">Naar de agenda</a>
+      </div>
+
+      {% set events = {
+        '1': {
+          'title': 'Inspiratiesessie begrijpelijke overheidscommunicatie',
+          'meta': {
+            '1': {
+              'title': 'Locatie',
+              'descr': 'Regio Gelderland'
+            },
+            '2': {
+              'title': 'Begin- en eindtijd',
+              'descr': '10:00 - 12:00'
+            }
+          }
+        },
+        '2': {
+          'title': 'Optimaal Digitaal Online Training',
+          'meta': {
+            '1': {
+              'title': 'Kanaal',
+              'classname': 'meta-data-item__channel meta-data-item__optimaal-digitaal',
+              'descr': 'Optimaal Digitaal'
+            },
+            '2': {
+              'title': 'Locatie',
+              'descr': 'Regio Gelderland'
+            },
+            '3': {
+              'title': 'Begin- en eindtijd',
+              'descr': '10:00 - 12:00'
+            }
+          },
+          'start_date': '24 September 2021'
+        },
+        '3': {
+          'title': 'Update NL Design System',
+          'meta': {
+            '1': {
+              'title': 'Kanaal',
+              'classname': 'meta-data-item__channel meta-data-item__nl-design-system',
+              'descr': 'NL Design System'
+            },
+            '2': {
+              'title': 'Locatie',
+              'descr': 'Online'
+            },
+            '3': {
+              'title': 'Begin- en eindtijd',
+              'descr': '10:00 - 12:00'
+            }
+          },
+          'start_date': '01 October 2021'
+        },
+        '4': {
+          'title': 'Inspiratiesessie begrijpelijke overheidscommunicatie',
+          'meta': {
+            '1': {
+              'title': 'Locatie',
+              'descr': 'Regio Gelderland'
+            },
+            '2': {
+              'title': 'Begin- en eindtijd',
+              'descr': '10:00 - 12:00'
+            }
+          },
+          'start_date': '08 October 2021'
+        },
+        '5': {
+          'title': 'Update NL Design System',
+          'meta': {
+            '1': {
+              'title': 'Kanaal',
+              'classname': 'meta-data-item__channel meta-data-item__nl-design-system',
+              'descr': 'NL Design System'
+            },
+            '2': {
+              'title': 'Locatie',
+              'descr': 'Online'
+            },
+            '3': {
+              'title': 'Begin- en eindtijd',
+              'descr': '10:00 - 12:00'
+            }
+          },
+          'start_date': '01 October 2021'
+        },
+      } %}
+
+      <div class="col col--66-width">
+        <ul class="item-list item-list--small">
+          {% for event in events %}
+            <li class="item-list__item">
+              {% include 'components/teaser-small.html.twig' with {
+                'title': event.title,
+                'start_date': event.start_date,
+                'end_date': event.end_date,
+                'meta': event.meta,
+                'type': 'event'
+              } %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  {% set blogs = {
+    '1': {
+      'title': 'Interessante weetjes uit de pubquiz',
+      'descr': 'Een verslag van de Winter Pubquiz van Gebruiker Centraal. Met een overzicht van links naar interessante weetjes over begrijpelijkheid en toegankelijkheid van informatie.',
+      'img': 'styles/spotlight/pubquiz.jpg',
     },
-    'modifier': 'instrument'
-  }%}
+    '2': {
+      'title': 'Direct Duidelijk en een inclusief stembiljet bij de gemeente Enschede',
+      'descr': 'Waar begin je met Direct Duidelijk in je organisatie? Kirsten Wilde en Talissa Oude Bennink leggen het uit..',
+      'img': 'styles/43-md/img-43-1.jpg',
+      'meta': {
+        '1': {
+          'title': 'Kanaal',
+          'classname': 'meta-data-item__channel meta-data-item__nl-design-system',
+          'descr': 'NL Design System'
+        },
+      },
+    },
+    '3': {
+      'title': 'Optimaal Digitaal: van conversation starter tot waardevolle inzichten en concrete acties',
+      'descr': 'Ineke Graumans en Carolien Nicolai kijken terug op de ontwikkeling van Optimaal Digitaal.',
+      'img': 'styles/43-md/img-43-2.jpg',
+      'meta': {
+        '1': {
+          'title': 'Kanaal',
+          'classname': 'meta-data-item__channel meta-data-item__optimaal-digitaal',
+          'descr': 'Optimaal Digitaal'
+        },
+      },
+    }
+  } %}
+
+  {# blogs #}
+  {% include 'sections/section-overview.html.twig' with {
+    'items': blogs
+  } %}
+
+  {% set text_blocks = {
+    '1': {
+      'title': 'Nieuw - Handige lijstjes',
+      'descr': 'Op zoek naar ervaringsdeskundigen, handige apps en tools die jou helpen om duidelijker te communiceren of lees- en boekentips over content design? We hebben deze voor je verzameld in handige lijstjes en overzichten!'
+    },
+    '2': {
+      'title': 'Podcasts',
+      'descr': 'Beluister podcasts over onderwerpen als inclusiviteit, gebruiksvriendelijkheid, het ontwerpen van je overheidsdienstverlening en toegankelijkheid.',
+      'link_primary': 'Beluister podcasts'
+    }
+  } %}
+
+  {# text-blocks #}
+  {% include 'sections/section-text-block.html.twig' with {
+    'items': text_blocks,
+    'modifier': 'bg-option'
+  } %}
 
 {% endblock %}
