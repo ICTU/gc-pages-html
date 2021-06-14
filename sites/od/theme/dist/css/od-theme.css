@@ -2996,7 +2996,8 @@ h1 {
   .section--text > blockquote p:first-child {
     margin-top: 0; }
   .section--text > blockquote:after {
-    left: 0; }
+    left: 0;
+    top: 0; }
   .section--text > blockquote cite {
     font-size: 1.4rem;
     color: #52757e;
