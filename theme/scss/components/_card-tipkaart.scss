@@ -72,7 +72,15 @@
     background: $gc_a11y_orange_lg;
 
     &:before {
-      background: $gc_a11y_orange;
+      background: $gc_orange;
+    }
+
+    .tipkaart__categorie {
+      color: $base-font-color;
+    }
+
+    .icon--tipkaart {
+      fill: $base-font-color;
     }
 
     > a:hover, > a:focus, > a:active {
@@ -176,7 +184,7 @@
     }
 
     .tipkaart--kanaalsturing & {
-      background: $gc_a11y-orange;
+      background: $gc_orange;
     }
 
     .tipkaart--inclusie & {
@@ -184,19 +192,23 @@
     }
   }
 
-  &:after {
-    width: 3.8rem;
-    height: 3.8rem;
-    top: 0;
-    right: 0;
-    background: url('/theme/img/ico-star.svg') center center no-repeat;
+  .tipkaart__ster {
+    fill: $white;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    @include square(19px);
+
+    .tipkaart--kanaalsturing & {
+      fill: $base-font-color;
+    }
   }
 }
 
 .tipkaart__nummer {
   font-family: $font_secondary;
   text-transform: uppercase;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
 
