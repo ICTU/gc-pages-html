@@ -1,44 +1,143 @@
-.section--spotlight {
-  @include ho-padding;
-  margin-top: 5rem;
-  max-width: none;
-
-  @include bp-up(lg) {
-    margin-top: 8rem;
-  }
-
-  @include bp-up(xlg) {
-    margin-top: 10rem;
-  }
-
-
-  .l-spotlight-wrapper {
-    position: relative;
-  }
-}
-
-.l-spotlight-wrapper {
-  max-width: $max-width-content;
-  margin: 0 auto;
-
-  &.l-item-count-2 {
-    max-width: $max-width-container;
+.section {
+  &--spotlight {
+    @include ho-padding;
+    margin-top: 5rem;
+    max-width: none;
 
     @include bp-up(lg) {
-      display: flex;
+      margin-top: 8rem;
+    }
 
-      .spotlight:nth-child(odd) {
-        margin-right: $gutter / 2;
+    @include bp-up(xlg) {
+      margin-top: 10rem;
+    }
+
+
+    .l-spotlight-wrapper {
+      position: relative;
+    }
+  }
+
+  .l-spotlight-wrapper {
+    max-width: $max-width-content;
+    margin: 0 auto;
+
+    &.l-item-count-2 {
+      max-width: $max-width-container;
+
+      @include bp-up(lg) {
+        display: flex;
+
+        .spotlight:nth-child(odd) {
+          margin-right: $gutter / 2;
+        }
+
+        .spotlight:nth-child(even) {
+          margin-left: $gutter / 2;
+        }
       }
 
-      .spotlight:nth-child(even) {
+      @include bp-up(lg) {
+        .spotlight__content {
+          margin-top: -8rem;
+        }
+      }
+    }
+  }
+
+  // GC frontpage
+
+  &--main-instruments {
+    margin-top: 0;
+    position: relative;
+    z-index: auto;
+    background: none;
+    padding-bottom: 5rem;
+
+    &:before {
+      content: " ";
+      background: $gc-pantybrown;
+      position: absolute;
+      display: block;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+
+    .l-instrument-wrapper {
+      margin-top: $gutter;
+
+      .item-list__item {
+        border-color: darken($gc-pantybrown, 10%);
+      }
+    }
+
+    @include bp-down(sm){
+      .spotlight:nth-child(1) {
+        margin-top: -4rem;
+      }
+    }
+
+    @include bp-between(sm, md) {
+      .l-section-content {
+        margin-top: 0;
+      }
+
+      .spotlight {
+        margin-top: $gutter;
+        max-width: 80%;
+
+        &:nth-child(even) {
+          margin-left: auto;
+        }
+
+        &:first-child {
+          margin-top: -4rem;
+        }
+      }
+    }
+
+    @include bp-up(md) {
+      padding-bottom: 8rem;
+
+      .l-section-content {
+        margin-top: -4rem;
+        max-width: calc(#{$max-width-container} + #{$gutter});
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .spotlight {
+        margin-top: 0;
         margin-left: $gutter / 2;
+        margin-right: $gutter / 2;
+        width: calc(50% - #{$gutter});
+
+        &:nth-child(n+3) {
+          margin-top: $gutter;
+          margin-left: 0;
+        }
+      }
+
+      .l-instrument-wrapper {
+        width: calc(50% - #{$gutter});
+        margin-left: auto;
+        padding-right: $gutter / 2;
+        margin-top: 6rem;
       }
     }
 
     @include bp-up(lg) {
-      .spotlight__content {
-        margin-top: -8rem;
+      .spotlight {
+        &:nth-child(3) {
+          margin-left: 9rem;
+        }
+      }
+
+      .l-instrument-wrapper {
+        width: calc(50% - 11rem);
       }
     }
   }
@@ -56,6 +155,10 @@
   margin: -2rem 2rem 0;
   padding: 2rem;
   max-width: 72rem;
+
+  @include bp-down(sm) {
+    margin-left: 0;
+  }
 
   @include bp-up(md) {
     padding: 3rem;
@@ -85,8 +188,8 @@
     margin-right: 6rem;
     margin-top: -10rem;
   }
+  
   @include bp-up(lg) {
-    margin-top: -18rem;
     padding: 3.5rem 4rem;
   }
 }

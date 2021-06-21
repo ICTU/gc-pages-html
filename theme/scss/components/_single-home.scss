@@ -40,13 +40,13 @@
       padding-top: 0;
       position: relative;
 
-      @include bp-between(sm, lg){
+      @include bp-between(sm, lg) {
         .link-block:first-child {
           margin-top: -5rem;
         }
       }
 
-      @include bp-up(lg){
+      @include bp-up(lg) {
         .link-block {
           margin-top: -7rem;
         }
@@ -79,7 +79,7 @@
       padding-left: .5rem;
       padding-right: .5rem;
 
-      @include bp-up(sm){
+      @include bp-up(sm) {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
       }
@@ -92,6 +92,64 @@
 
     @include bp-up(lg) {
       padding-bottom: 8rem;
+    }
+  }
+}
+
+.page--type-front {
+  .content {
+    max-width: none;
+    padding: 0;
+    background: none;
+  }
+
+  .page-content {
+    padding: 0;
+  }
+
+
+  .page__intro {
+    @include ho-padding;
+    @include gc-bg-rotated();
+
+    padding-top: 5rem;
+    padding-bottom: 8rem;
+    background: $gc-a11y-green-lg;
+    color: $white;
+    z-index: auto;
+
+    @include bp-up(md){
+      padding-top: 7rem;
+      padding-bottom: 12rem;
+    }
+
+    @include bp-up(lg){
+      padding-top: 10rem;
+      padding-bottom: 14rem;
+    }
+
+    @include bp-up(xlg){
+      padding-top: 12rem;
+      padding-bottom: 16rem;
+    }
+
+    .l-inner {
+      @include ho-make-container($max-width-inner);
+      text-align: center;
+      position: relative;
+    }
+
+    h1 {
+      color: $white;
+    }
+
+    &:before {
+      background: $gc-a11y-green;
+      top: 70%;
+
+      @include bp-down(md){
+        top: 45%;
+      }
     }
   }
 }

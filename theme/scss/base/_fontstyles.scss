@@ -5,6 +5,11 @@
     font-size: 2.4rem;
     line-height: 3.8rem;
     font-family: $font-primary-semi;
+
+    @include bp-down(md){
+      font-size: 2rem;
+      line-height: 3.2rem;
+    }
   }
 }
 
