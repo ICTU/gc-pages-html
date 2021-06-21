@@ -3,14 +3,16 @@
 {# Filled out by other twig templates #}
 {% block header %}
   <header class="page__intro">
-    <h1 class="page__title">{{ title ? title : 'Over Gebruiker Centraal' }}</h1>
+    <div class="l-inner">
+      <h1 class="page__title">{{ title ? title : 'Over Gebruiker Centraal' }}</h1>
 
-    {% if intro %}
-      <p class="text text--intro">{{ intro }}</p>
-    {% endif %}
+      {% if intro %}
+        <p class="text text--intro">{{ intro }}</p>
+        <a class="btn btn--white" href="#">Meer over Gebruiker Centraal</a>
+      {% endif %}
+    </div>
 
   </header>
-
 {% endblock %}
 
 {% block content %}
