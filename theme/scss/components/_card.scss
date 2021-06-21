@@ -77,6 +77,41 @@
     margin-top: auto;
     padding-top: 2rem;
   }
+
+  &--small {
+    background: none;
+    box-shadow: none;
+    border: none;
+    display: block;
+
+    .teaser__image {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+
+    .teaser__title {
+      margin-top: 1.6rem;
+      font-size: 2rem;
+      line-height: 2.8rem;
+    }
+
+    .date-badge {
+      box-shadow: none;
+    }
+
+    &.l-with-image {
+      .card__image {
+        position: relative;
+      }
+
+      .date-badge {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+    }
+  }
 }
 
 // Atomic design, componentjes

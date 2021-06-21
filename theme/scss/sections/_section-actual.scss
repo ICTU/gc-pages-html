@@ -1,12 +1,10 @@
 /* Actueel - events & blogs */
 
 .section--actual {
+  @include ho-padding;
+
   .section__title {
     border: none;
-  }
-
-  .teaser--small {
-    margin-top: 2rem;
   }
 
   .btn {

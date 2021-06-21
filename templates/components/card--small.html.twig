@@ -1,0 +1,32 @@
+<div class="card card--small card-type--{{ type ? type : 'page' }} {{ img ? 'l-with-image' : 'l-without-image' }}">
+
+  {% if img %}
+  <div class="card__image">
+    <img class="img img--card-small" src="/uploads/{{ img }}">
+    {% endif %}
+
+    {% if start_date and end_date %}
+      {% include 'components/date-badge.html.twig' with {
+        'start_date': start_date,
+        'end_date': end_date,
+      } %}
+    {% elseif post_date %}
+      {% include 'components/date-badge.html.twig' with {
+        'post_date': post_date,
+        'modifier': '',
+      } %}
+    {% endif %}
+
+    {% if img %}
+  </div>
+  {% endif %}
+
+  <h3 class="teaser__title">
+    <a class="link link--arrow" href="{{ url ? url : '#' }}">{{ title }}</a>
+  </h3>
+
+  {% if meta %}
+    {% include 'components/meta-data.html.twig' with {'items': meta} %}
+  {% endif %}
+
+</div>

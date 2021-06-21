@@ -31,14 +31,9 @@
     color: $meta-data;
   }
 
-  dl,
-  dd {
-    margin: 0;
-    padding: 0;
-  }
-
   dl {
     display: flex;
+    flex-wrap: wrap;
   }
 
   dt {
@@ -48,53 +43,17 @@
       content: ": ";
     }
   }
+}
 
-  dd {
-    @include gc-meta-bolletje;
-    display: block;
-
-    &:before {
-      display: inline-block;
-      color: $meta-data-icon;
-      margin-right: 1rem;
-      font-size: 1.6rem;
-      float: left;
-    }
-
-    &:last-child {
-      &:after {
-        display: none;
-      }
-    }
-
-    &.datum {
-      @include icon(before, calendar);
-    }
-
-    &.price {
-      @include icon(before, euro);
-    }
-
-    &.tijdstip, &.time {
-      @include icon(before, clock);
-    }
-
-    &.auteur, &.author {
-      @include icon(before, user);
-    }
-
-    &.locatie, &.location {
-      @include icon(before, pin);
-    }
-
-    &.registrations {
-      @include icon(before, calendar);
-    }
-  }
+.meta-data__list {
+  margin: 0;
+  padding: 0;
 }
 
 .meta-data__item {
   display: inline-block;
+  margin: 0;
+  padding: 0;
 
   &:before {
     float: left;
@@ -137,6 +96,29 @@
 
   &.aanmeldingen {
     @include icon(before, calendar);
+  }
+
+  &--channel {
+    @include gc-box-shadow();
+
+    background: $gc-a11y-green;
+    color: $white;
+    padding: 0 0.8rem;
+    margin-right: 1.5rem;
+    font-family: $font-primary-bold;
+    font-size: 1.2rem;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  &--nl-design-system {
+    background: $gc-a11y-blue;
+  }
+
+  &--optimaal-digitaal {
+    background: $gc-a11y-orange;
   }
 }
 

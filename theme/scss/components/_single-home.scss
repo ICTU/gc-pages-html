@@ -31,7 +31,6 @@
       }
     }
 
-
     + .section.bg-color {
       margin-top: 0;
     }
@@ -60,10 +59,6 @@
 
     .l-section-top {
       max-width: $max-width-container;
-    }
-
-    .l-section-content {
-      max-width: calc(#{$max-width-container} + #{$gutter});
     }
 
     .section__title {
@@ -107,7 +102,6 @@
     padding: 0;
   }
 
-
   .page__intro {
     @include ho-padding;
     @include gc-bg-rotated();
@@ -150,6 +144,14 @@
       @include bp-down(md){
         top: 45%;
       }
+    }
+  }
+
+  .content > .section {
+    @include ho-section-padding;
+
+    .l-section-content {
+      @include ho-make-container($max-width-container);
     }
   }
 }

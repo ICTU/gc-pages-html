@@ -1,6 +1,5 @@
 .section {
   &--spotlight {
-    @include ho-padding;
     margin-top: 5rem;
     max-width: none;
 
@@ -12,20 +11,19 @@
       margin-top: 10rem;
     }
 
-
-    .l-spotlight-wrapper {
+    .l-spotlight-wrapper,
+    .l-section-content {
       position: relative;
     }
   }
 
   &.l-item-count-2 {
-
     .l-spotlight-wrapper,
     .l-section-content {
       max-width: $max-width-container;
       margin: 0 auto;
 
-      @include bp-up(lg) {
+      @include bp-up(md) {
         display: flex;
 
         .spotlight:nth-child(odd) {
@@ -72,6 +70,10 @@
       .item-list__item {
         border-color: darken($gc-pantybrown, 10%);
       }
+
+      a {
+        font-family: $font-primary-bold;
+      }
     }
 
     @include bp-down(sm) {
@@ -117,7 +119,6 @@
 
         &:nth-child(n+3) {
           margin-top: $gutter;
-          margin-left: 0;
         }
       }
 

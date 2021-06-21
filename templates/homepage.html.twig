@@ -115,8 +115,8 @@
   </div>
 
   {# 2x basic spotlight #}
+  <div class="section section--upcoming">
 
-  <div class="section section--actual">
     <div class="l-section-content">
       <div class="col col--33-width col--descr">
         <h2 class="section__title">Agenda</h2>
@@ -131,6 +131,8 @@
       {% set events = {
         '1': {
           'title': 'Inspiratiesessie begrijpelijke overheidscommunicatie',
+          'start_date': '24 September 2021',
+          'end_date': '28 September 2021',
           'meta': {
             '1': {
               'title': 'Locatie',
@@ -147,7 +149,7 @@
           'meta': {
             '1': {
               'title': 'Kanaal',
-              'classname': 'meta-data-item__channel meta-data-item__optimaal-digitaal',
+              'classname': 'meta-data__item--channel meta-data__item--nl-optimaal-digitaal',
               'descr': 'Optimaal Digitaal'
             },
             '2': {
@@ -159,14 +161,14 @@
               'descr': '10:00 - 12:00'
             }
           },
-          'start_date': '24 September 2021'
+          'date': '24 September 2021',
         },
         '3': {
           'title': 'Update NL Design System',
           'meta': {
             '1': {
               'title': 'Kanaal',
-              'classname': 'meta-data-item__channel meta-data-item__nl-design-system',
+              'classname': 'meta-data__item--channel meta-data__item--nl-design-system',
               'descr': 'NL Design System'
             },
             '2': {
@@ -178,7 +180,7 @@
               'descr': '10:00 - 12:00'
             }
           },
-          'start_date': '01 October 2021'
+          'date': '01 October 2021'
         },
         '4': {
           'title': 'Inspiratiesessie begrijpelijke overheidscommunicatie',
@@ -192,14 +194,14 @@
               'descr': '10:00 - 12:00'
             }
           },
-          'start_date': '08 October 2021'
+          'date': '08 October 2021'
         },
         '5': {
           'title': 'Update NL Design System',
           'meta': {
             '1': {
               'title': 'Kanaal',
-              'classname': 'meta-data-item__channel meta-data-item__nl-design-system',
+              'classname': 'meta-data__item--channel meta-data__item--nl-design-system',
               'descr': 'NL Design System'
             },
             '2': {
@@ -211,7 +213,7 @@
               'descr': '10:00 - 12:00'
             }
           },
-          'start_date': '01 October 2021'
+          'date': '01 October 2021'
         },
       } %}
 
@@ -219,10 +221,11 @@
         <ul class="item-list item-list--small">
           {% for event in events %}
             <li class="item-list__item">
-              {% include 'components/teaser-small.html.twig' with {
+              {% include 'components/list-item.html.twig' with {
                 'title': event.title,
                 'start_date': event.start_date,
                 'end_date': event.end_date,
+                'post_date': event.date,
                 'meta': event.meta,
                 'type': 'event'
               } %}

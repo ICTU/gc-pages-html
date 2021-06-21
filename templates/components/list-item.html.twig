@@ -1,11 +1,9 @@
-<div class="card card--small card-type--{{ type ? type : 'page' }}">
-  {% if type == 'event' %}
-
+<div class="list-item list-item--{{ type ? type : 'page' }} {{ img ? 'l-has-image' ? 'l-without-image' }}">
+  {% if start_date and end_date %}
     {% include 'components/date-badge.html.twig' with {
       'start_date': start_date,
       'end_date': end_date,
     } %}
-
   {% elseif post_date %}
     {% include 'components/date-badge.html.twig' with {
       'post_date': post_date,
@@ -13,13 +11,16 @@
     } %}
   {% endif %}
 
-  <h3 class="teaser__title">
-    <a class="link link--arrow" href="{{ url ? url : '#' }}">{{ title }}</a>
+  {% if type == 'event' %} <div class="l-content-wrapper">{% endif %}
+
+  <h3 class="list-item__title">
+    <a href="{{ url ? url : '#' }}" class="list-item__link">{{ title }}</a>
   </h3>
 
   {% if meta %}
     {% include 'components/meta-data.html.twig' with {'items': meta} %}
-
   {% endif %}
+
+    {% if type == 'event' %} </div>{% endif %}
 
 </div>
