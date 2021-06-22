@@ -112,17 +112,17 @@
     color: $white;
     z-index: auto;
 
-    @include bp-up(md){
+    @include bp-up(md) {
       padding-top: 7rem;
       padding-bottom: 12rem;
     }
 
-    @include bp-up(lg){
+    @include bp-up(lg) {
       padding-top: 10rem;
       padding-bottom: 14rem;
     }
 
-    @include bp-up(xlg){
+    @include bp-up(xlg) {
       padding-top: 12rem;
       padding-bottom: 16rem;
     }
@@ -141,17 +141,27 @@
       background: $gc-a11y-green;
       top: 70%;
 
-      @include bp-down(md){
+      @include bp-down(md) {
         top: 45%;
       }
     }
   }
 
-  .content > .section {
-    @include ho-section-padding;
+  .l-section-top {
+    max-width: $max-width-container;
+  }
 
-    .l-section-content {
-      @include ho-make-container($max-width-container);
+  .content {
+    > .section:not(.section--overview):not(.section--spotlight) {
+      @include ho-section-padding;
+
+      .l-section-content {
+        @include ho-make-container($max-width-container);
+      }
+    }
+
+    > .section--overview {
+      @include ho-padding;
     }
   }
 }

@@ -1,9 +1,9 @@
 // Section
+
 .section--text-blocks {
-  max-width :$max-width-container;
 
   .l-section-content {
-    max-width: none;
+    position: relative;
 
     @include bp-up(sm) {
       display: flex;
@@ -13,10 +13,6 @@
         margin-right: 1.5rem;
         flex: 1;
       }
-    }
-
-    @include bp-up(lg) {
-      margin: 5rem auto 0;
     }
   }
 }
@@ -38,7 +34,7 @@
     margin-right: 2rem;
   }
 
-  .text-block--bg & { // If it's within a section with a bg option specifiekd
+  .section--text-block-bg & { // If it's within a section with a bg option specifiekd
     @include gc-box-shadow();
     padding: 2rem;
 
@@ -47,7 +43,7 @@
     }
   }
 
-  .l-bg-white & { // if secti bg is set to white
+  .section--text-block-bg-white & { // if secti bg is set to white
     background: $white;
   }
 

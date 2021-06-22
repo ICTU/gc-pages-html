@@ -15,11 +15,11 @@
 }
 
 @mixin ho-section-padding() {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   box-sizing: border-box;
 
-  @include bp-up(lg) {
+  @include bp-up(xlg) {
     padding-right: 3rem;
     padding-left: 3rem;
   }

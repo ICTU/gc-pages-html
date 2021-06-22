@@ -3,15 +3,6 @@
 .section--overview {
   max-width: none;
 
-  .l-section-content {
-    max-width: $max-width-container;
-
-    @include bp-down(sm) {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
-  }
-
   .grid + p {
     display: flex;
     @include bp-up(lg) {
@@ -54,6 +45,27 @@
   &.l-has-filter {
     .l-section-top {
       max-width: $max-width-content;
+    }
+  }
+
+  &.l-has-cta {
+
+    @include bp-up(md) {
+      .l-section-content {
+        position: relative;
+      }
+
+      .l-cta-wrapper {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin-top: -4rem;
+        padding: 0;
+
+        .btn {
+          margin: 0;
+        }
+      }
     }
   }
 }

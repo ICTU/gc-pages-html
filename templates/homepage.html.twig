@@ -249,7 +249,7 @@
       'meta': {
         '1': {
           'title': 'Kanaal',
-          'classname': 'meta-data-item__channel meta-data-item__nl-design-system',
+          'classname': 'meta-data__item--channel meta-data__item--nl-design-system',
           'descr': 'NL Design System'
         },
       },
@@ -261,7 +261,7 @@
       'meta': {
         '1': {
           'title': 'Kanaal',
-          'classname': 'meta-data-item__channel meta-data-item__optimaal-digitaal',
+          'classname': 'meta-data__item--channel meta-data__item--nl-optimaal-digitaal',
           'descr': 'Optimaal Digitaal'
         },
       },
@@ -270,7 +270,12 @@
 
   {# blogs #}
   {% include 'sections/section-overview.html.twig' with {
-    'items': blogs
+    'items': blogs,
+    'title': 'Blogs',
+    'cta': {
+      'url': 'overview-blogs.php',
+      'title': 'Alle blogs'
+    }
   } %}
 
   {% set text_blocks = {
@@ -288,7 +293,8 @@
   {# text-blocks #}
   {% include 'sections/section-text-block.html.twig' with {
     'items': text_blocks,
-    'modifier': 'bg-option'
+    'modifier': 'bg-option',
+    'bg': 'white',
   } %}
 
 {% endblock %}
