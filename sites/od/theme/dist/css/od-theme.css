@@ -4218,10 +4218,13 @@ h1 {
       background: #009b94;
       border-color: #00b4ac; }
   .tipkaart--kanaalsturing {
-    background: #D77D00; }
+    background: #f99d1c;
+    color: #004152; }
     .tipkaart--kanaalsturing:before {
-      background: #f99d1c; }
-    .tipkaart--kanaalsturing .tipkaart__categorie {
+      background: #D77D00; }
+    .tipkaart--kanaalsturing .tipkaart__categorie,
+    .tipkaart--kanaalsturing h3,
+    .tipkaart--kanaalsturing .tipkaart__link {
       color: #004152; }
     .tipkaart--kanaalsturing .icon--tipkaart {
       fill: #004152; }
@@ -4289,7 +4292,8 @@ h1 {
     height: 5rem;
     top: 0;
     left: 0;
-    margin: -1rem 0 0 1rem; }
+    margin: -1rem 0 0 1rem;
+    border: 0.1rem solid #e8d8c7; }
     .tipkaart--informatieveiligheid .tipkaart__toptip:before {
       background: #A20E56; }
     .tipkaart--samenwerking .tipkaart__toptip:before {
@@ -4299,18 +4303,16 @@ h1 {
     .tipkaart--gebruiksgemak .tipkaart__toptip:before {
       background: #2D114E; }
     .tipkaart--kanaalsturing .tipkaart__toptip:before {
-      background: #f99d1c; }
+      background: #D77D00; }
     .tipkaart--inclusie .tipkaart__toptip:before {
       background: #c73d19; }
   .tipkaart__toptip .tipkaart__ster {
-    fill: #fff;
+    fill: #f4fa3e;
     position: absolute;
     right: 1rem;
     top: 1rem;
     width: 19px;
     height: 19px; }
-    .tipkaart--kanaalsturing .tipkaart__toptip .tipkaart__ster {
-      fill: #004152; }
 
 .tipkaart__nummer {
   font-family: "league_gothicregular", Impact, Helvetica, Arial, sans-serif;

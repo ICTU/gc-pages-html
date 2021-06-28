@@ -69,13 +69,16 @@
   }
 
   &--kanaalsturing {
-    background: $gc_a11y_orange_lg;
+    background: $gc_orange;
+    color: $base-font-color;
 
     &:before {
-      background: $gc_orange;
+      background: $gc_a11y-orange-lg;
     }
 
-    .tipkaart__categorie {
+    .tipkaart__categorie,
+    h3,
+    .tipkaart__link {
       color: $base-font-color;
     }
 
@@ -166,6 +169,7 @@
     top: 0;
     left: 0;
     margin: -1rem 0 0 1rem;
+    border: .1rem solid $gc-pantybrown;
 
     .tipkaart--informatieveiligheid & {
       background: $gc_pink_darker;
@@ -184,7 +188,7 @@
     }
 
     .tipkaart--kanaalsturing & {
-      background: $gc_orange;
+      background: $gc_a11y-orange-lg;
     }
 
     .tipkaart--inclusie & {
@@ -193,15 +197,11 @@
   }
 
   .tipkaart__ster {
-    fill: $white;
+    fill: #f4fa3e; // Yellow
     position: absolute;
     right: 1rem;
     top: 1rem;
     @include square(19px);
-
-    .tipkaart--kanaalsturing & {
-      fill: $base-font-color;
-    }
   }
 }
 
