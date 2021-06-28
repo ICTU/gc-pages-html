@@ -2669,8 +2669,16 @@ h1 {
         margin-right: -1.5rem; } }
 
 .section--spotlight {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin-top: 5rem;
   max-width: none; }
+  @media (min-width: 560px) {
+    .section--spotlight {
+      padding-right: 3rem;
+      padding-left: 3rem; } }
   @media (min-width: 1100px) {
     .section--spotlight {
       margin-top: 8rem; } }
@@ -2719,7 +2727,8 @@ h1 {
     bottom: 0;
     z-index: -1; }
   .section--main-instruments .l-instrument-wrapper {
-    margin-top: 3rem; }
+    margin-top: 3rem;
+    padding: 0; }
     .section--main-instruments .l-instrument-wrapper .item-list__item {
       border-color: #d9bfa3; }
     .section--main-instruments .l-instrument-wrapper a {
