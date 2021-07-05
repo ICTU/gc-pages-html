@@ -5,3 +5,6 @@
 
 .htaccess
 .htpasswd
+.idea/*
+composer.phar
+
