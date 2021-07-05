@@ -1,0 +1,11 @@
+/**
+ * Colors for link block section
+ */
+
+$link-block-bg:           $color-secondary !default;
+$link-block-color:        $white !default;
+$link-block-hover:        $white !default;
+
+$link-block-title-color:  $white !default;
+$link-block-icon-color:   lighten($color-secondary, 10%) !default;
+$link-block-border:       darken($link-block-bg, 10%) !default;

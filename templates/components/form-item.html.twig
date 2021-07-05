@@ -1,0 +1,28 @@
+{% set item_id = id|makeid %}
+
+<div class="form-item{{ type ? ' form-item--' ~ formitem.type }}">
+
+  <label class="form-item__label" for="{{ item_id }}">
+    {{ label }}
+
+    {% if not required %}
+      <span class="form-optional">(Optioneel)</span>
+    {% endif %}
+  </label>
+
+  {% if type != 'textarea' %}
+    <input type="{{ formitem.type }}" id="{{ item_id }}"
+           class="form-type-{{ formitem.type }}"{{ placeholder ? ' placeholder="' ~ placeholder~ '"' }} name="{{ item_id }}">
+
+  {% elseif type == 'textarea' %}
+
+    <textarea id="{{ item_id }}" class="form-type-{{ formitem.type }}"
+              name="{{ item_id }}">{{ placeholder ? placeholder }}</textarea>
+
+  {% endif %}
+
+  {% if formitem.descr %}
+    <p class="form-description">{{ formitem.descr }}</p>
+  {% endif %}
+
+</div>

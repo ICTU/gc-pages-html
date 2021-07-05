@@ -6,19 +6,17 @@
   {% set section_text %}
 
     <p>Dit is een teksblok. Deze kan je overal gebruiken. Zo kan je leuk afbeeldingen en tekst afwisselen en mooie
-      pagina's maken.</p>
+      pagina's maken.
+    </p>
 
   {% endset %}
 {% endif %}
 
 
-<div class="section section--text {{ extraclass ? 'section--text-' ~ extraclass : '' }}">
-  <div class="l-section-content">
-    {% if title %}
-      <h2>{{ title }}</h2>
-    {% endif %}
+<div class="section section--text {{ modifier ? 'section--' ~ modifier : '' }}">
+  {% if title %}
+    <h2 class="section__title">{{ title }}</h2>
+  {% endif %}
 
-    {{ section_text }}
-
-  </div>
+  {{ section_text }}
 </div>

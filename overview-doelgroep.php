@@ -5,11 +5,13 @@ require __DIR__ . '/vendor/autoload.php';
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 use Twig\Extension\DebugExtension;
+use App\Twig\ClassList;
 
 $loader = new FilesystemLoader(__DIR__ . '/templates');
 
 $twig = new Environment($loader, ['debug' => TRUE]);
 $twig->addExtension(new DebugExtension);
+$twig->addExtension(new ClassList);
 
 $body =
   '<p>Ondanks het feit dat elk individu een unieke combinatie van vaardigheden en kenmerken heeft, is het toch mogelijk om mensen in te delen in doelgroepen. Elke doelgroep heeft een specifieke combinatie van kenmerken en vaardigheden. Vaardigheden kunnen uniek zijn voor de doelgroep, maar er is ook veel overlap tussen doelgroepen. Binnen doelgroepen bestaat tevens een een grote diversiteit aan kenmerken, de aard en het niveau van vaardigheden.</p>'.

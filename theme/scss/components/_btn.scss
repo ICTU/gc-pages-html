@@ -8,7 +8,8 @@
   margin-top: 2rem;
 
   &--primary,
-  &--secondary {
+  &--secondary,
+  &--white {
     @include gc-box-shadow();
     @include icon(after, arrow);
     display: inline-block;
@@ -84,6 +85,25 @@
 
       &:after {
         background: $btn-secondary-hover-arrowbg;
+      }
+    }
+  }
+
+  &--white {
+    background: $white;
+    color: $base-font-color;
+
+    &:after {
+      background: lighten($gc-blue-xlight, 5%);
+    }
+
+    &:hover, &:focus, &:active {
+      background: $grey-x-light;
+      color: $base-font-color;
+      text-decoration: underline;
+
+      &:after {
+        background: $gc-blue-xlight;
       }
     }
   }

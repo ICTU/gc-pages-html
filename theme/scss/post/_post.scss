@@ -1,0 +1,130 @@
+// page overrides for post
+
+.page--type-page {
+  .page-content > .content {
+    @include gc-box-shadow();
+  }
+}
+
+.post {
+  @include ho-make-container($max-width-content);
+  @include gc-box-shadow();
+  @include ho-padding;
+
+  padding-right: 2rem;
+  padding-top: 2rem;
+  background: $white;
+
+  @include bp-up(md){
+    padding-top: 7rem;
+  }
+
+  .author {
+    @include ho-make-container($max-width-inner);
+  }
+
+  .comments {
+    @include ho-make-container($max-width-inner);
+
+    margin-top: 3rem;
+
+    @include bp-up(md){
+      margin-top: 6rem;
+    }
+  }
+}
+
+.post__header {
+  @include ho-make-container($max-width-inner);
+}
+
+// Gutenberg blocks
+.post__content > .section {
+  @include ho-make-container($max-width-inner);
+
+  &--related {
+    max-width: none;
+  }
+
+  &--bg-option {
+    @include negate-padding;
+    @include ho-padding;
+  }
+
+  &:first-child {
+    margin-top: $gutter;
+  }
+
+  &:last-child {
+    padding-bottom: 5rem;
+
+    @include bp-up(md){
+      padding-bottom: 8rem;
+    }
+  }
+}
+
+/* Comments */
+
+.comments {
+  margin-top: 3rem;
+
+  @include bp-up(md){
+    margin-top: 6rem;
+  }
+}
+
+.comments__list {
+  margin: 3rem 0 0;
+  padding: 0;
+
+  > .comment + .comment {
+    margin-top: 5rem;
+  }
+}
+.comment {
+  @include gc-box-shadow();
+  list-style: none;
+  margin: 0;
+  padding: 2rem;
+  border: .1rem solid $border-color;
+
+  @include bp-up(md){
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .comment {
+    border: none;
+    border-top: .1rem solid $border-color;
+    box-shadow: none;
+  }
+
+  footer {
+    margin-top: 1.2rem;
+    color: $meta-data;
+    font-size: $font-small;
+
+    a {
+      padding-left: 2rem;
+    }
+  }
+}
+
+.comment__children {
+  padding-left: 0;
+  margin: 3rem 0 0;
+}
+
+.comment__content {
+  margin-top: .5rem;
+}
+
+.comment__author {
+  //color: $meta-data;
+  font-size: $font-small;
+
+  cite {
+    font-family: $font-primary-semi;
+  }
+}

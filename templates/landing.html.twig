@@ -35,114 +35,196 @@
 
         <div class="entry-content">
 
-          <div class="page__intro">
-            <header class="entry-header">
-              <h1 class="entry-title">{{ title ? title : 'Onze instrumenten' }}</h1>
+          {% block intro %}
 
-              {% if intro %}
-                <p>{{ intro }}</p>
+            <div class="page__intro">
+              <header class="entry-header">
+                <h1 class="entry-title">{{ title ? title : 'Onze instrumenten' }}</h1>
+
+                {% if intro %}
+                  <p>{{ intro }}</p>
+                {% endif %}
+              </header>
+
+              {% if body %}
+                {# default body body #}
+
+                <div class="entry-body">
+                  {{ body|raw }}
+                </div>
+
+                {# end body #}
               {% endif %}
-            </header>
 
-            {% if body %}
-              {# default body body #}
+            </div>
 
-              <div class="entry-body">
-                {{ body|raw }}
-              </div>
+          {% endblock %}
 
-              {# end body #}
-            {% endif %}
+          {% block content %}
 
-          </div>
+          {# landingpages for optimaal digitaal#}
 
           {% if theme == 'od' %}
 
-            {% set text %}
-              <p>Het Optimaal Digitaal spel is een workshop in spelvorm. Je speelt het met je team of met betrokkenen
-                bij een project. Spelenderwijs wordt scherp waar jullie op gaan focussen om je (digitale)
-                dienstverlening te verbeteren. Het spel wordt gespeeld met kaarten van de tips van Optimaal Digitaal.
-                Daarmee gaan jullie ongeveer twee uur aan de slag. De ervaring is dat er verrassend snel wordt
-                doorgedrongen tot de kern. Op een prettige, actieve en positieve manier.</p>
+            {% if page is empty %}
 
-              <p>Het spel eindigt met concrete acties die de volgende dag kunnen worden opgepakt. Het verbeteren van je
-                (digitale) dienstverlening start dus meteen. De bijvangst is een beter inzicht in wat je collega
-                belangrijk vindt en de bereidheid elkaar te helpen.</p>
-            {% endset %}
+              {% set text %}
+                <p>Het Optimaal Digitaal spel is een workshop in spelvorm. Je speelt het met je team of met betrokkenen
+                  bij een project. Spelenderwijs wordt scherp waar jullie op gaan focussen om je (digitale)
+                  dienstverlening te verbeteren. Het spel wordt gespeeld met kaarten van de tips van Optimaal Digitaal.
+                  Daarmee gaan jullie ongeveer twee uur aan de slag. De ervaring is dat er verrassend snel wordt
+                  doorgedrongen tot de kern. Op een prettige, actieve en positieve manier.</p>
 
-            {% include 'blocks/text.html.twig' with {
-              'title': 'Verbeter spelenderwijs je (digitale) dienstverlening',
-              'section_text' : text
-            } %}
+                <p>Het spel eindigt met concrete acties die de volgende dag kunnen worden opgepakt. Het verbeteren van
+                  je
+                  (digitale) dienstverlening start dus meteen. De bijvangst is een beter inzicht in wat je collega
+                  belangrijk vindt en de bereidheid elkaar te helpen.</p>
+              {% endset %}
 
-            {% include 'blocks/figures.html.twig' %}
+              {% include 'blocks/text.html.twig' with {
+                'title': 'Verbeter spelenderwijs je (digitale) dienstverlening',
+                'section_text' : text
+              } %}
 
-            {% set text %}
-              <p>Het spel eindigt met concrete acties die de volgende dag kunnen worden opgepakt. Het verbeteren van je
-                (digitale) dienstverlening start dus meteen. De bijvangst is een beter inzicht in wat je collega
-                belangrijk vindt en de bereidheid elkaar te helpen.</p>
+              {% include 'sections/section-pictures.html.twig' %}
 
-              <a href="#" class="btn btn--primary">Bekijk de handleiding</a>
-            {% endset %}
+              {% set text %}
+                <p>Het spel eindigt met concrete acties die de volgende dag kunnen worden opgepakt. Het verbeteren van
+                  je (digitale) dienstverlening start dus meteen. De bijvangst is een beter inzicht in wat je collega
+                  belangrijk vindt en de bereidheid elkaar te helpen.</p>
 
-            {% include 'blocks/text.html.twig' with {
-              'title': 'Hoe kan je het spelen?',
-              'section_text' : text
-            } %}
+                <a href="#" class="btn btn--primary">Bekijk de handleiding</a>
+              {% endset %}
 
-            {% set cards = {
-              '1': {
-                'title': 'Over het spel',
-                'descr': 'Wat is het spel eigenlijk, en hoe is het ontstaan? Wat levert het op als je het speelt? Lees er alles over.',
-              },
-              '2': {
-                'title': 'De handleiding',
-                'descr': 'Met de handleiding loop je stap voor stap het hele spel door. Je eindigt met een aantal concrete acties mét eigenaar.',
-                'url': 'handleiding.php',
-              }
-            } %}
+              {% include 'blocks/text.html.twig' with {
+                'title': 'Hoe kan je het spelen?',
+                'section_text' : text
+              } %}
 
-            {% include 'sections/section-related.html.twig' with {
-              'items': cards,
-              'modifier': 'bg-option'
-            } %}
+              {% set cards = {
+                '1': {
+                  'title': 'Over het spel',
+                  'descr': 'Wat is het spel eigenlijk, en hoe is het ontstaan? Wat levert het op als je het speelt? Lees er alles over.',
+                },
+                '2': {
+                  'title': 'De handleiding',
+                  'descr': 'Met de handleiding loop je stap voor stap het hele spel door. Je eindigt met een aantal concrete acties mét eigenaar.',
+                  'url': 'handleiding.php',
+                }
+              } %}
 
+              {% include 'sections/section-related.html.twig' with {
+                'items': cards,
+                'modifier': 'bg-option'
+              } %}
 
-            {# endif od #}
+              {# endif od #}
+
+              {# set body for landingpage "word spelleider" #}
+            {% elseif page == 'spelleider' %}
+
+              {# section text 1 #}
+
+              {% set text %}
+
+                <p>Je kan ook ons vragen of we het spel willen begeleiden of één van de gecertificeerde spelleiders die
+                  op de website staan. In een Spelleider sessie maak je als deelnemer kennis met het spel en leer je
+                  ondertussen de do’s en don’ts in de rol van spelleider. We gaan vol overgave en met veel plezier twee
+                  uur aan de slag met het spel, waarbij tussendoor steeds aandacht is voor de eigen ervaring. Daarbij
+                  worden tips en tricks gegeven hoe je het resultaat positief kunt beïnvloeden. Na afloop ontvangen alle
+                  deelnemers het Certificaat Spelleider Optimaal Digitaal.</p>
+
+                <h2>Train-de-Trainer</h2>
+
+                <p>In een Train-de-trainer Spelleider cursus maken de deelnemers kennis met het spel en leren
+                  ondertussen de do’s en don’ts in de rol van spelleider. We gaan vol overgave en met veel plezier twee
+                  uur aan de slag met het spel, waarbij tussendoor steeds aandacht is voor de eigen ervaring. Daarbij
+                  worden tips en tricks gegeven hoe je het resultaat positief kunt beïnvloeden. Na afloop ontvangen alle
+                  deelnemers het Certificaat Spelleider Optimaal Digitaal.</p>
+
+                <a href="#" class="btn btn--primary">Word zelf een spelleider</a>
+
+              {% endset %}
+
+              {% include 'blocks/text.html.twig' with {
+                'title': '',
+                'section_text' : text
+              } %}
+
+              {% set cards = {
+                '1': {
+                  'title': 'Tips voor spelleiders',
+                  'descr': 'In een Spelleider sessie maak je als deelnemer kennis met het spel en leer je ondertussen de do’s en don’ts in de rol van spelleider.',
+                  'img': 'img-16-9.jpg'
+                },
+                '2': {
+                  'title': 'Alle spelleiders',
+                  'descr': 'Met de handleiding loop je stap voor stap het hele spel door. Je eindigt met een aantal concrete acties mét eigenaar.',
+                  'url': 'handleiding.php',
+                  'img': 'img-16-9-od.jpg'
+                }
+              } %}
+
+              {% include 'sections/section-related.html.twig' with {
+                'items': cards,
+                'modifier': 'bg-option'
+              } %}
+              {# end od spelleider page #}
+            {% endif %}
+
+            {# end if theme = od #}
           {% endif %}
-
         </div>
+
+        {% endblock %}
 
       </article>
     </main>
 
-    {% if spotlight %}
+    {% block spotlight %}
 
-      {% if theme == 'od' %}
-        {% set spotlight = {
-          '1': {
-            'title': 'Ook het spel spelen?',
-            'descr': 'Met het spel wordt verassend snel doorgedrongen tot de kern. Het spel eindigt met concrete acties die de volgende dag kunnen worden opgepakt. Het verbeteren van je (digitale) dienstverlening start dus meteen.',
-            'img': 'img-16-9-od.jpg',
-            'cta': {
+      {% if spotlight %}
+
+        {% if theme == 'od' %}
+
+          {% if page is empty %}
+
+            {% set spotlight_item = {
               '1': {
-                'title': 'Bestellen'
-              },
-              '2': {
-                'title': 'Print & play',
+                'title': 'Ook het spel spelen?',
+                'descr': 'Met het spel wordt verassend snel doorgedrongen tot de kern. Het spel eindigt met concrete acties die de volgende dag kunnen worden opgepakt. Het verbeteren van je (digitale) dienstverlening start dus meteen.',
+                'img': 'img-16-9-od.jpg',
+                'cta': {
+                  '1': {
+                    'title': 'Bestellen'
+                  },
+                  '2': {
+                    'title': 'Print & play',
+                  }
+                }
               }
-            }
-          }
-        } %}
+            } %}
+
+            {% include 'sections/section-spotlight.html.twig' with {
+              'items': spotlight_item,
+              'modifier': 'bg-option'
+            } %}
+
+          {% elseif page == 'spelleider' %}
+
+            {# data from spelleider.php #}
+            {% include 'sections/section-spotlight.html.twig' with {
+              'items': spotlight,
+              'modifier': 'bg-option'
+            } %}
+
+          {% endif %}
+
+        {% endif %}
 
       {% endif %}
 
-      {% include 'sections/section-spotlight.html.twig' with {
-        'items': spotlight,
-        'modifier': 'bg-option'
-      } %}
-
-    {% endif %}
+    {% endblock %}
 
   </div>
 

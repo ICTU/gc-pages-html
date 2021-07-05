@@ -1,18 +1,22 @@
 
 .grid {
 
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -$gutter/2;
+  margin-right: -$gutter/2;
+
+
   > div,
   > section {
     margin-top: $gutter;
+    width: calc(100% - #{$gutter});
+    margin-left: $gutter / 2;
+    margin-right: $gutter /2;
 
     &.card--type-doelgroep {
       margin-top: 5rem;
     }
-  }
-
-  @include bp-up(sm) {
-    display: flex;
-    flex-wrap: wrap;
   }
 
   &--col-3 {
@@ -24,25 +28,16 @@
         &:first-child {
           width: 100%;
         }
-
-        &:nth-child(2) {
-          margin-right: $gutter;
-        }
       }
     }
 
-    @include bp-up(lg) {
+    @include bp-up(md) {
       > div,
       > section {
-        width: calc(33.3333% - #{$gutter});
-        margin-left: $gutter / 2;
-        margin-right: $gutter /2;
+        width: calc(33.333% - #{$gutter});
 
-        &:first-child,
-        &:nth-child(2) {
-          width: calc(33.3333% - #{$gutter});
-          margin-left: $gutter / 2;
-          margin-right: $gutter /2;
+        &:first-child {
+          width: calc(33.333% - #{$gutter});
         }
       }
     }
@@ -68,12 +63,21 @@
 
   &--col-2 {
     @include bp-up(sm) {
-
       > div,
       > section {
         width: calc(50% - #{$gutter});
         margin-left: ($gutter / 2);
         margin-right: ($gutter / 2);
+      }
+    }
+  }
+
+  &--gutter-wide {
+    > div,
+    > section {
+      @include bp-up(md) {
+        padding-left: 3%;
+        padding-right: 3%;
       }
     }
   }

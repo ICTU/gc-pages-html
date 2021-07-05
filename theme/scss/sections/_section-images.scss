@@ -1,0 +1,24 @@
+.section--image {
+  &:not(.l-item-count-1),
+  &:not(.l-display-grid){
+    @include bp-down(sm){
+      figure + figure {
+        margin-top: $gutter;
+      }
+    }
+
+    @include bp-up(sm){
+      .l-section-content {
+        margin-left: -$gutter / 2;
+        margin-right: -$gutter / 2;
+        display: flex;
+      }
+
+      figure {
+        margin-left: $gutter / 2;
+        margin-right: $gutter / 2;
+        flex: 1;
+      }
+    }
+  }
+}

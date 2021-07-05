@@ -7,16 +7,15 @@
 // @author  Tamara de Haas
 //
 
-  var filterLabel = $('.form-item--filter label');
+  var filterLabel = $('.filter__item label');
 
   filterLabel.click(function () {
-
     var formItem = $(this).parent();
 
     if (formItem.find('input:checked').length) {
-      formItem.removeClass('is-active');
+      formItem.removeClass('filter-active');
     } else {
-      formItem.addClass('is-active');
+      formItem.addClass('filter-active');
     }
 
   });

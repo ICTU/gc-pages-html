@@ -6,11 +6,25 @@
     "proxy": "gctheme.localhost",
     "dest": "./"
   },
+  "gc": {
+    "name": "GC Flavor",
+    "shortname": "gc_base",
+    "path": "../sites/gc/theme/",
+    "dest": "../sites/gc/theme/",
+    "proxy": "gctheme.localhost"
+  },
   "od": {
     "name": "Optimaal Digitaal",
     "shortname": "od",
     "path": "../sites/od/theme/",
     "dest": "../sites/od/theme/",
+    "proxy": "gctheme.localhost"
+  },
+  "nlds": {
+    "name": "NL Design System",
+    "shortname": "nlds",
+    "path": "../sites/nlds/theme/",
+    "dest": "../sites/nlds/theme/",
     "proxy": "gctheme.localhost"
   }
 }

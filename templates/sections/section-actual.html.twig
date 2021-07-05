@@ -10,27 +10,19 @@
 
         {% for event in items.events.items %}
 
-          <div class="teaser teaser--event teaser--small">
-            <div class="teaser__image">
-              <img src="/uploads/{{ event.img ? event.img : 'od-default.jpg' }}"/>
-
-              {% include 'components/date-badge.html.twig' with {
-                'post_date': event.date,
-                'modifier': 'date-badge--small'
-              } %}
-
-            </div>
-            <h3 class="teaser__title">
-              <a class="link link--arrow">{{ event.title }}</a>
-            </h3>
-          </div>
-
+          {% include 'components/card--small.html.twig' with {
+            'title': event.title,
+            'post_date': event.date,
+            'img': event.img,
+            'type': 'event'
+          } %}
         {% endfor %}
       </div>
 
       {% if items.events.cta %}
         <a class="btn btn--primary" href="#">{{ items.events.cta.title }}</a>
       {% endif %}
+
     </section>
 
     {# Blog / news col #}
@@ -38,18 +30,13 @@
       <h2 class="section__title">{{ items.blogs.title ? items.blogs.title : 'Blogs' }}</h2>
 
       <div class="grid grid--col-2">
-
         {% for blog in items.blogs.items %}
-          <div class="teaser teaser--event teaser--small">
-            <div class="teaser__image">
-              <img src="/uploads/{{ blog.img ? blog.img : 'od-default.jpg' }}"/>
-            </div>
-
-            <h3 class="teaser__title">
-              <a class="link link--arrow">{{ blog.title }}</a>
-            </h3>
-          </div>
-
+          {% include 'components/card--small.html.twig' with {
+            'title': blog.title,
+            'post_date': blog.date,
+            'img': blog.img,
+            'type': 'article'
+          } %}
         {% endfor %}
       </div>
 

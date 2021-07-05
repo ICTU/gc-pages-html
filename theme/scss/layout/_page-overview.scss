@@ -23,6 +23,15 @@
         margin-bottom: -8rem;
       }
     }
+
+    .grid {
+      max-width: calc(#{$max-width-container} + #{$gutter});
+      margin: $gutter auto 0;
+
+      @include bp-up(md){
+        margin-top: 8rem;
+      }
+    }
   }
 
 

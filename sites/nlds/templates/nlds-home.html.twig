@@ -1,0 +1,116 @@
+{% extends 'homepage.html.twig' %}
+
+
+{% block intro %}
+
+  <h1>{{ title }}</h1>
+
+  <p>{{ intro }}</p>
+
+
+  {% set stories  = {
+    '1': {
+      'img' : '/uploads/nlds/home-ms-1.png',
+      'title' : 'Uniforme code',
+      'descr': 'Alle code voldoet aan dezelfde standaarden'
+    },
+    '2': {
+      'img' : '/uploads/nlds/home-ms-2.png',
+      'title' : 'Vind niet het wiel opnieuw uit',
+      'descr': 'Waarom opnieuw maken wat al bestaat?'
+    },
+    '3': {
+      'img' : '/uploads/nlds/home-ms-3.png',
+      'title' : 'Alles is getest',
+      'descr': 'Webrichtlijnen, accessability en security - alle componenten zijn grondig getest.'
+    }
+  } %}
+
+  {% include 'sections/section-microstories.html.twig' with {
+    'items': stories
+  } %}
+
+
+{% endblock %}
+
+{% block content %}
+
+  {% set blocks = {
+    '1': {
+      'title': 'Wat is het?',
+      'url': 'wat-is-het.php',
+      'links': {
+        '1': {'url': '#', 'title': 'Waarom zou je het gebruiken?'},
+        '2': {'url': '#', 'title': 'Wanneer zet ik het in?'},
+        '3': {'url': '#', 'title': 'Goede voorbeelden'},
+        '4': {'url': '#', 'title': 'Wie doen er mee?'},
+      }
+    },
+    '2': {
+      'url': 'index.php',
+      'title': 'Voor wie?',
+      'links': {
+        '1': {'url': '#', 'title': 'Overheidsinstanties'},
+        '2': {'url': '#', 'title': 'Ontwerpers en developers'},
+        '3': {'url': '#', 'title': 'Draag zelf bij'},
+      }
+    },
+    '3': {
+      'title': 'Kwaliteit en testen',
+      'links': {
+        '1': {'url': '#', 'title': 'Kwaliteitseisen voor componenten'},
+        '2': {'url': '#', 'title': 'Richtlijnen voor testen'},
+        '3': {'url': '#', 'title': 'Hulp bij ontwikkeling'},
+      }
+    }
+  } %}
+
+  {% include 'sections/section-linkblocks.html.twig' with { 'type': 'link-blocks', 'section_title': '', 'items': blocks, 'bg': 'pantybrown-light' } %}
+
+  {% set text %}
+    <p>De Agenda Digitale Overheid stelt dat de overheid toegankelijk en begrijpelijk moet zijn voor iedereen. Mensen kunnen makkelijker gebruik maken van diensten en websites van de overheid als die consistent ontworpen zijn. Daarom gaan we tussen overheidsorganisaties principes, interactiepatronen, ontwerpen en code delen via een gezamenlijk design system.</p>
+  {% endset %}
+
+  {% include 'blocks/text.html.twig' with { 'title': 'Toegankelijk & begrijpelijk' ,'section_text': text, 'modifier': 'text-centered' } %}
+
+  {#actueel#}
+
+  {% set actueel = {
+    'events': {
+      'items': {
+        '1': {
+          'img': '/uploads/img-16-9.jpg',
+          'title' : 'Design systems in de overheid',
+          'date': '2020-07-08'
+        },
+        '2': {
+          'title': 'Conclusies uit onderzoeken en analyses | POC keuze',
+          'date' : '2020-08-24'
+        }
+      },
+      'cta': {
+        'title': 'Alle evenementen'
+      }
+    },
+    'blogs': {
+      'items': {
+        '1': {
+          'title' : 'De top 10 aan onderwerpen die waarde toevoegen aan een Design System',
+          'img': 'img-16-9.jpg'
+        },
+        '2': {
+          'title': 'NL Design System Update',
+          'img': 'img-16-9-letter.jpg'
+        }
+      },
+      'cta': {
+        'title': 'Alle blogs'
+      }
+    }
+  } %}
+
+  {% include 'sections/section-actual.html.twig' with {
+    'items': actueel
+  } %}
+
+{% endblock %}

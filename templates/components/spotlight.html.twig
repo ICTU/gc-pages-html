@@ -1,0 +1,18 @@
+{% set classes = [
+  'spotlight',
+  modifier ? 'spotlight--' ~ modifier
+] %}
+
+
+<div class="{{ classes|classlist }}">
+  <figure class="spotlight__image-wrapper">
+    <img class="spotlight__picture" src="{{ img }}" alt="{{ title }}">
+  </figure>
+
+  <div class="spotlight__content">
+    <h2 class="spotlight__title">{{ title }}</h2>
+    <p>{{ descr }}</p>
+
+    <a href="{{ cta.url ? cta.url : '#' }}" class="btn btn--primary">{{ cta.title }}</a>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+/* Actueel - events & blogs */
+
+.section--upcoming {
+  @include ho-padding;
+
+  @include bp-down(lg){
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .section__title {
+    border: none;
+  }
+
+  .btn {
+    margin-top: $gutter;
+  }
+
+  .item-list__item {
+    border-color: darken($gc-pantybrown, 5%);
+  }
+
+  @include bp-up(md) {
+    .l-section-content {
+      display: flex;
+
+      .col {
+        margin-left: $gutter / 2;
+        margin-right: $gutter / 2;
+
+        &--33-width {
+          width: calc(40% - #{$gutter});
+        }
+
+        &--66-width {
+          width: calc(60% - #{$gutter});
+        }
+      }
+    }
+
+    .item-list__item:first-child {
+      margin-top: 0;
+      padding-top: 0;
+      border: none;
+    }
+  }
+}

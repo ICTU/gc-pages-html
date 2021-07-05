@@ -17,6 +17,10 @@ $twig->addExtension(new DebugExtension);
 $twig->addExtension(new ClassList);
 
 
+// Set data
+$cards_data = file_get_contents("data/cards.json");
+
+
 echo $twig->render('od-overview-tips.html.twig', [
   'site_name' => 'Optimaal Digitaal',
   'site_slogan' => 'Verbeter spelenderwijs je (online) dienstverlening',
@@ -25,10 +29,19 @@ echo $twig->render('od-overview-tips.html.twig', [
   'title' => 'Alle tips',
   'overview' => 'tips',
   'modifier' => ' page--overview-archive',
+  'tipkaarts' => json_decode($cards_data, TRUE),
+  'type' => 'overview',
   'breadcrumb' => [
     'page_title' => 'Alle tips',
     'links' => [
-      'Home'
-    ]
-  ]
+      '1' => [
+        'url' => 'index.php',
+        'title' => 'Home',
+      ],
+      '2' => [
+        'url' => 'tips.php',
+        'title' => 'Tips',
+      ],
+    ],
+  ],
 ]);

@@ -1,0 +1,25 @@
+{% extends 'sections/section.html.twig' %}
+
+
+{% block content %}
+
+  {% for item in items %}
+    <div class="link-block">
+
+      <h2 class="link-block__title">
+        {% if item.url %}<a href="{{ item.url }}" class="link link--arrow">{% endif %}
+          {{ item.title }}
+          {% if item.url %}</a>{% endif %}
+      </h2>
+
+      <ul class="link-block__linklist">
+
+        {% for link in item.links %}
+          <li><a href="{{ link.url ? link.url : '#' }}" class="link link--linkblock">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,88 @@
+{% if template is empty %}
+  {% set template = 'card' %}
+{% endif %}
+
+
+{% set sectionClasses = [
+  'section',
+  'section--form',
+  modifier ? 'section--' ~ modifier,
+] %}
+
+
+<section class="{{ sectionClasses|classlist }}">
+
+  {# Wrapper for section intro #}
+  {% if title or description %}
+    <div class="l-section-top">
+
+      {% if title %}
+        <h2 class="section__title">
+          {{ title }}
+        </h2>
+      {% endif %}
+
+      {% if description %}
+        <p class="section__description">
+          {{ description }}
+        </p>
+      {% endif %}
+    </div>
+
+  {% endif %}
+
+  {# Wrapper for all section content #}
+  <div class="l-section-content">
+
+    <form id="{{ form.id }}">
+      {% for item in form.items %}
+
+        {% if item.type == 'group' %}
+
+          <fieldset class="{{ item.id }}">
+            {% if item.title %}
+              <legend>{{ item.title }}</legend>{% endif %}
+
+
+            {% for formitem in item.elements %}
+
+              {% include 'components/form-item.html.twig' with {
+                'label': formitem.label,
+                'type': formitem.type,
+                'descr': formitem.descr,
+                'required': formitem.required
+              } %}
+
+            {% endfor %}
+          </fieldset>
+
+        {% else %}
+
+          {% for formitem in form.items %}
+
+            {% include 'components/form-item.html.twig' with {
+              'label': formitem.label,
+              'type': formitem.type,
+              'descr': formitem.descr,
+              'required': formitem.required
+            } %}
+
+          {% endfor %}
+
+        {% endif %}
+      {% endfor %}
+
+
+      {# actions #}
+
+      <div class="form-actions">
+        {% for action in form.actions %}
+          <input type="submit" id="btn-{{ action|makeid }}" class="form-submit" value="{{ action }}">
+        {% endfor %}
+      </div>
+
+    </form>
+
+  </div>
+</section>
+

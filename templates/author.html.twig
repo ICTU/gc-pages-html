@@ -1,0 +1,109 @@
+{% if id is empty %}
+  {% set id = '1' %}
+{% endif %}
+
+<html lang="nl" dir="ltr">
+
+<head>
+  {% include 'includes/head.html.twig' %}
+</head>
+
+<body class="page page--type-author site-id-{{ id }}{{ modifier }}">
+
+<div class="site-container">
+
+  {% include 'includes/header.html.twig' %}
+
+  {% if breadcrumb is empty %}
+    {% set breadcrumb = {
+      'page_title': 'Instrumenten',
+      'links': ['Home']
+    } %}
+  {% endif %}
+
+  {% include 'includes/breadcrumb.html.twig' with {
+    'page_title': title,
+    'links': breadcrumb.links
+  } %}
+
+
+  <div class="page-content" id="maincontent" tabindex="-1">
+
+    <main class="content">
+      <section class="author author--full l-with-image" itemprop="author" itemtype="http://schema.org/Person">
+
+        <figure class="author__image">
+          <img src="/uploads/styles/author/author-1.jpg" class="author-photo photo avatar"
+               alt="Gebruiker Centraal Auteur">
+        </figure>
+
+        <div class="author__content">
+          <div class="l-author-header">
+            <h1 class="page__title">{{ title ? title : 'Gebruiker Centraal auteur' }}</h1>
+
+            {% include 'components/meta-data.html.twig' with {
+              'items': {
+                '1': {
+                  'title': 'Functie',
+                  'descr': 'Adviseur online communicatie en analyse'
+                }
+              }
+            } %}
+          </div>
+
+          {% if descr %}
+            {{ descr }}
+          {% endif %}
+
+          <div class="author__contact-info">
+            <a href="tel:123456789" class="link link--contact link--phone" title="Phone number van {{ title }}"
+               itemprop="phone">06-12345678</a>
+            <a href="mailto:info@gebruikercentraal.nl" class="link link--contact link--email"
+               title="E-mail adres van Mariska Woudenberg" itemprop="email">info@gebruikercentraal.nl</a>
+
+            <ul class="social-links">
+              <li class="social-links__item">
+                <a href="#" class="link link--social linkedin" title="Linked-In profiel van {{ title }}">Linked-In
+                  profiel van {{ title }}</a></li>
+              <li class="social-links__item">
+                <a href="#" class="link link--social twitter" title="Twitter van {{ title }}">Twitter
+                  van {{ title }}</a></li>
+              <li class="social-links__item">
+                <a href="#" class="link link--social facebook" title="Facebook van {{ title }}">Facebook
+                  van {{ title }}</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {% if body %}
+        <div class="author-content">
+          {{ body }}
+        </div>
+      {% endif %}
+
+
+
+      {% if data and theme is empty %}
+        {% include 'sections/section-overview.html.twig' with {
+          'title' : 'Artikelen van Gebruiker Centraal',
+          'items' : data,
+          'modifier': 'bg-option'
+        } %}
+      {% elseif data and theme == 'od' %}
+        {% include 'sections/section-overview.html.twig' with {
+          'title' : 'Meer tips van Gebruiker Centraal',
+          'items' : data,
+          'template': 'card--tipkaart',
+          'grid_modifier': '4col',
+          'modifier': 'bg-option'
+        } %}
+      {% endif %}
+
+
+    </main>
+
+  </div>
+
+  {% include 'includes/footer.html.twig' %}
+</div>

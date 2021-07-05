@@ -1,10 +1,14 @@
+
 {% set classes = [
   'section',
   'section--text-blocks',
-  'item-count-' ~ items|length,
-  modifier ? 'text-block--bg ' ~ modifier ] %}
+  'l-item-count-' ~ items|length,
+  bg ? 'section--text-block-bg',
+  bg ? 'section--text-block-bg-' ~ bg,
+  modifier ? 'section--' ~ modifier
+] %}
 
-<div class="section section--text-blocks l-item-count-{{ items|length }}{{ modifier? ' text-block--bg ' ~ modifier }}">
+<div class="{{ classes|classlist }}">
   <div class="l-section-content">
 
     {% for item in items %}

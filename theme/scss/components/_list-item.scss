@@ -1,0 +1,29 @@
+.list-item {
+  &--event {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    .l-content-wrapper {
+      flex: 1;
+    }
+
+    .date-badge {
+      margin-right: 2rem;
+
+      @include bp-up(md){
+        margin-right: 2.5rem;
+      }
+    }
+
+    @include bp-down(sm){
+      .list-item__title {
+        word-break: break-word;
+      }
+    }
+  }
+
+  .meta-data dd:before {
+    display: none;
+  }
+}

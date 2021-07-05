@@ -1,0 +1,214 @@
+{% extends 'page.html.twig' %}
+
+
+{% block entry_header %}
+  <header class="entry-header">
+    <h1 class="entry-title">{{ page_title }}</h1>
+
+    {% if intro %}
+      <p class="entry-intro">{{ intro }}</p>
+    {% endif %}
+  </header>
+{% endblock %}
+
+
+{% block entry_block %}
+  <div class="section section--paragraph">
+    <p>Je ontvangt hiervoor ook een certificaat. De mensen in de lijst op deze pagina hebben de Train-de trainer
+      Spelleider sessie gevolgd en kunnen jou begeleiden bij het spelen van het Optimaal Digitaal spel.</p>
+  </div>
+
+  {% set items = {
+    '1': {
+      'title': 'Gemeente Alkmaar',
+      'items': {
+        '1': 'Martijn Dekker'
+      }
+    },
+    '2': {
+      'title': 'Gemeente Almere',
+      'items': {
+        '1': 'Menno Kroesen'
+      }
+    },
+    '3': {
+      'title': 'Gemeente Alphen aan den Rijn',
+      'items': {
+        '1': 'Anke Seegers'
+      }
+    },
+    '4': {
+      'title': 'Gemeente Amsterdam',
+      'items': {
+        '1': 'Nico Druif'
+      }
+    },
+    '5': {
+      'title': 'Gemeente Assen',
+      'items': {
+        '1': 'Lambertus Luik'
+      }
+    },
+    '6': {
+      'title': 'Gemeente Bernheze',
+      'items': {
+        '1': 'Annet Abrahamse',
+        '2': 'Willeke Gielis'
+      }
+    },
+    '7': {
+      'title': 'Gemeente Best',
+      'items': {
+        '1': 'Magda Klomp',
+      }
+    },
+    '8': {
+      'title': 'Gemeente Beuningen',
+      'items': {
+        '1': 'Anita Klomp',
+      }
+    },
+    '9': {
+      'title': 'Gemeente Beuningen',
+      'items': {
+        '1': 'Laura van Winden',
+      }
+    },
+    '10': {
+      'title': 'Gemeente Deurne',
+      'items': {
+        '1': 'Annemarie Evers',
+        '2': 'Marion Berkers – van der Heijden',
+        '3': 'Marjan Driessen'
+      }
+    },
+    '11': {
+      'img': 'spelleiders-1.jpg',
+    },
+    '12': {
+      'title': 'Gemeente Den Haag',
+      'items': {
+        '1': 'Halima Bennouho',
+      }
+    },
+    '13': {
+      'title': 'Gemeente Ede',
+      'items': {
+        '1': 'Richard Michel',
+        '2':'Sanne Bruijn',
+        '3': 'Nico Pot',
+      }
+    },
+    '14': {
+      'title': 'Gemeente Eindhoven',
+      'items': {
+        '2': 'Monique van der Heijden',
+        '3': 'Mieke van Schaik',
+        '4':'Erik van der Heijden',
+      }
+    },
+    '15': {
+      'title': 'Gemeente Geldrop Mierlo',
+      'items': {
+        '1': 'Peter van der Zwan',
+        '2': 'Alex Been',
+      }
+    },
+    '16': {
+      'title': 'Gemeente Gennep',
+      'items': {
+        '1': 'Jossien Bouter',
+      }
+    },
+    '17': {
+      'title': 'Gemeente Gooise Meren',
+      'items': {
+        '1': 'Mieke Bos',
+      }
+    },
+    '18': {
+      'title': 'Gemeente Gouda',
+      'items': {
+        '1': 'Ruud Ravenhorst',
+      }
+    },
+    '19': {
+      'img': 'spelleiders-2.jpg',
+    },
+    '20': {
+      'title': 'Gemeente Haarlemmermeer',
+      'items': {
+        '1': 'Hans Peters',
+        '2': 'Lydia Lucke',
+        '3': 'Inge Helsloot',
+        '4': 'Suzanne van der Palen',
+      }
+    },
+    '21': {
+      'title': 'Gemeente Halderberge',
+      'items': {
+        '1': 'Teuntje Stoopen',
+      }
+    },
+    '22': {
+      'title': 'Gemeente Harderwijk',
+      'items': {
+        '1': 'Micheline Tasseron',
+      }
+    },
+    '22': {
+      'title': 'Gemeente Huizen',
+      'items': {
+        '1': 'Heleen van der Klink',
+        '2': 'Wilma Verwoerd',
+        '3': 'Stien Jonker',
+        '4': 'Koen Buikema',
+      },
+    },
+    '23': {
+      'title': 'Gemeente Krimpenerwaard',
+      'items': {
+        '1': 'Anita Dogterom',
+        '2': 'Marianne Klip',
+      }
+    }
+  } %}
+
+  <div class="section section--list-interlocked">
+
+    <div class="blocklist">
+
+      <ul class="blocklist__list">
+        {% for item in items %}
+
+          {% set blocklist_classes = [
+            'blocklist__item',
+            item.img ? 'blocklist__item--image'
+          ] %}
+
+          <li class="{{ blocklist_classes|classlist }}">
+            {% if item.img %}
+
+              <figure class="blocklist__image">
+                <img src="/uploads/od/{{ item.img }}" class="image image--blocklist-item">
+              </figure>
+
+            {% else %}
+              <h3 class="blocklist__title">{{ item.title }}</h3>
+
+              {% if item.items %}
+                <ul class="blocklist__sublist">
+                  {% for subitem in item.items %}
+                    <li class="blocklist__subitem">{{ subitem }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+
+            {% endif %}
+          </li>
+
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endblock %}

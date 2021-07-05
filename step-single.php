@@ -19,7 +19,7 @@ $twig->addFilter($filter);
 
 $intro = 'Ga in gesprek met alle (interne) belanghebbenden van de brief, folder of website die je wilt aanpakken – denk aan de proceseigenaar, communicatieadviseur, KCC’er, beleidsadviseur – over het idee van gebruik van beeldtaal.';
 
-echo $twig->render('step-single.html.twig', [
+echo $twig->render('single-step.html.twig', [
   'site_name' => 'Beeldbank',
   'site_slogan' => 'Maak begrijpelijke brieven',
   'logo' => 'img/logo/beeldbank.svg',

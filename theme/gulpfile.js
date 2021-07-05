@@ -58,7 +58,7 @@ function makeFont(done) {
 
   const handleFont = function (cb) {
     iconStream
-      .pipe(gulp.dest('fonts/iconfont/'))
+      .pipe(gulp.dest('dist/fonts/iconfont/'))
     cb();
   };
 
@@ -121,7 +121,7 @@ function makeSprites(done) {
 }
 
 function js(done) {
-  del(['dist/js/*.js'], {force: true});
+  //del(['dist/js/*.js'], {force: true});
 
   gulp.src('js/components/*.js')
     .pipe(concat('main.js'))

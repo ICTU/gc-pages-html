@@ -52,7 +52,7 @@ class GroupByMonth extends AbstractExtension {
         $template = $env->load('components/teaser.html.twig');
 
         $start_date = new \DateTime($event['start_date']);
-        $end_date = new \DateTime($event['end_date']);
+        $end_date = (isset($event['end_date']) ? new \DateTime($event['end_date']) : '');
 
         $meta_data = $event['meta'];
 
@@ -66,16 +66,19 @@ class GroupByMonth extends AbstractExtension {
           $meta_data['date']['descr'] = $start_date->format('d M, H:i') . ' tot ' . $end_date->format('d M, H:i');
         } */
 
+        $full = (isset($event['full']) ? $event['full'] : '');
+        $img = (isset($event['img']) ? $event['img'] : '');
+
 
         $output .= $template->render([
           'title' => $event['title'],
           'descr' => $event['descr'],
-          'img' => $event['img'],
+          'img' => (isset($event['img']) ? $event['img'] : ''),
           'meta' => $meta_data,
           'type' => $event['type'],
-          'full' => $event['full'],
+          'full' => $full,
           'start_date' => $event['start_date'],
-          'end_date' => $event['end_date'],
+          'end_date' => (isset($event['end_date']) ? $event['end_date'] : '')
         ]);
       }
 

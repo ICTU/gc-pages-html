@@ -1,0 +1,27 @@
+{% extends 'sections/section.html.twig' %}
+
+{% block content %}
+
+  <figure class="quote">
+    <blockquote class="quote__quote">
+      {% if quote %}
+        {{ quote }}
+      {% else %}
+        Naast dat Gebruiker Centraal ontzettend leuk is is het ook nog eens heel nuttig! Mensen van over de hele wereld delen veel kennis met elkaar. Daar heb ik heel veel van geleerd.
+      {% endif %}
+    </blockquote>
+
+    <div class="l-author-wrapper">
+
+    {% if img %}
+      <img class="quote__image" src="/uploads/{{ img }}" alt="{{ quotee ? quotee : 'Piet Pietersen' }}, {{ instance ? instance : 'Gebruiker Centraal' }}">
+    {% endif %}
+
+    <figcaption class="quote__quotee">{{ quotee ? quotee : 'Piet Pietersen' }},
+      <cite class="quote__instance">{{ instance ? instance : 'Gebruiker Centraal' }}</cite>
+    </figcaption>
+
+    </div>
+  </figure>
+
+{% endblock %}

@@ -59,7 +59,7 @@
     background: $gc_a11y_cyan_lg;
 
     &:before {
-      background: $gc_cyan;
+      background: $gc-a11y-cyan;
     }
 
     > a:hover, > a:focus, > a:active {
@@ -69,10 +69,21 @@
   }
 
   &--kanaalsturing {
-    background: $gc_a11y_orange_lg;
+    background: $gc_orange;
+    color: $base-font-color;
 
     &:before {
-      background: $gc_orange;
+      background: $gc_a11y-orange-lg;
+    }
+
+    .tipkaart__categorie,
+    h3,
+    .tipkaart__link {
+      color: $base-font-color;
+    }
+
+    .icon--tipkaart {
+      fill: $base-font-color;
     }
 
     > a:hover, > a:focus, > a:active {
@@ -158,6 +169,7 @@
     top: 0;
     left: 0;
     margin: -1rem 0 0 1rem;
+    border: .1rem solid $gc-pantybrown;
 
     .tipkaart--informatieveiligheid & {
       background: $gc_pink_darker;
@@ -168,7 +180,7 @@
     }
 
     .tipkaart--procesaanpak & {
-      background: $gc_cyan;
+      background: $gc-a11y-cyan;
     }
 
     .tipkaart--gebruiksgemak & {
@@ -176,7 +188,7 @@
     }
 
     .tipkaart--kanaalsturing & {
-      background: $gc_orange;
+      background: $gc_a11y-orange-lg;
     }
 
     .tipkaart--inclusie & {
@@ -184,19 +196,19 @@
     }
   }
 
-  &:after {
-    width: 3.8rem;
-    height: 3.8rem;
-    top: 0;
-    right: 0;
-    background: url('/theme/img/ico-star.svg') center center no-repeat;
+  .tipkaart__ster {
+    fill: #f4fa3e; // Yellow
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    @include square(19px);
   }
 }
 
 .tipkaart__nummer {
   font-family: $font_secondary;
   text-transform: uppercase;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
 
@@ -246,3 +258,4 @@
   width: 8rem;
   height: 7rem;
 }
+

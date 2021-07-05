@@ -359,6 +359,16 @@
   }
 }
 
+.main-menu__sublist {
+  &[aria-expanded="false"] {
+    @include visually-hidden;
+  }
+
+  &[aria-expanded="true"] {
+    display: block;
+  }
+}
+
 .main-menu__open-sub {
   width: 4rem;
   height: 4.2rem;

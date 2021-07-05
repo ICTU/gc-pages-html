@@ -1,164 +1,300 @@
-{% if id is empty %}
-  {% set id = '1' %}
-{% endif %}
+{% extends 'page.html.twig' %}
 
-<html lang="nl" dir="ltr">
+{# Filled out by other twig templates #}
+{% block header %}
+  <header class="page__intro">
+    <div class="l-inner">
+      <h1 class="page__title">{{ title ? title : 'Over Gebruiker Centraal' }}</h1>
 
-<head>
-  {% include 'includes/head.html.twig' %}
-</head>
+      {% if intro %}
+        <p class="text text--intro">{{ intro }}</p>
+        <a class="btn btn--white" href="#">Meer over Gebruiker Centraal</a>
+      {% endif %}
+    </div>
 
-<body class="page page--type-homepage site-id-{{ id }}">
+  </header>
+{% endblock %}
 
-<div class="site-container">
+{% block content %}
 
-  {% include 'includes/header.html.twig' %}
 
-  <div class="page-content" id="maincontent" tabindex="-1">
+  <div class="section section--spotlight section--main-instruments">
+    <div class="l-section-content">
+      {% include 'components/spotlight.html.twig' with {
+        'title': 'Direct Duidelijk Tour',
+        'descr': 'Online bijeenkomsten over duidelijke, inclusieve en bruikbare overheidscommunicatie',
+        'img': '/uploads/styles/spotlight/direct_duidelijk.png',
+        'cta': {
+          'title': 'Naar Direct Duidelijk Tour'
+        },
+        'modifier': 'instrument'
+      } %}
 
-    <main class="content">
+      {% include 'components/spotlight.html.twig' with {
+        'title': 'NL Design System',
+        'descr': 'Overheidsdiensten van betere kwaliteit door principes, interactiepatronen en code te delen.',
+        'img': '/uploads/styles/spotlight/nl_design_system.png',
+        'cta': {
+          'title': 'Naar NL Design System'
+        },
+        'modifier': 'instrument'
+      } %}
 
-      <article class="entry entry--type-home entry--full{{ stappenplan ? ' l-with-stepchart' }}">
+      {% include 'components/spotlight.html.twig' with {
+        'title': 'Optimaal Digitaal',
+        'descr': 'Verbeter spelenderwijs je dienstverlening..',
+        'img': '/uploads/styles/spotlight/od_kaartjes.png',
+        'cta': {
+          'title': 'Naar Optimaal Digitaal'
+        },
+        'modifier': 'instrument'
+      } %}
 
-        <div class="entry-content">
+      <div class="l-instrument-wrapper">
+        <h2>Kijk ook bij....</h2>
 
-          <div class="page__intro">
-            <header class="entry-header">
-              <h1 class="entry-title">{{ title ? title : 'Onze instrumenten' }}</h1>
+        {% set list = {
+          '1': {
+            'title': 'Expertpanel Gebruiksvriendelijkheid',
+            'descr': 'Test je product op gebruiksvriendelijkheid',
+            'url': 'https://expertpanel.gebruikercentraal.nl/'
+          },
+          '2': {
+            'title': 'Inclusie',
+            'descr': 'Ontwerp voor iedereen',
+            'url': 'https://inclusie.gebruikercentraal.nl/'
+          },
+          '3': {
+            'title': 'Kennisbank Beeldtaal',
+            'descr': 'Duidelijke, leesbare beeldbrieven',
+            'url': 'https://beeldbank.gebruikercentraal.nl/'
+          },
+          '4': {
+            'title': 'Volwassenheidsscan',
+            'descr': 'Hoe goed betrekt je organisatie gebruikers bij de ontwikkeling van je dienstverlening?',
+          }
+        } %}
 
-              {% if intro is empty %}
-                <p>Deze instrumenten helpen jou om de online dienstverlening van je organisatie te verbeteren. Voor en
-                  door de community van Gebruiker Centraal. Gebruik, deel en vul aan!</p>
-              {% else %}
-                {{ intro }}
-              {% endif %}
-            </header>
+        <ul class="item-list">
+          {% for item in list %}
+            <div class="item-list__item">
+              <a href="{{ item.url ? item.url : '#' }}" class="item-list__link">{{ item.title }}</a>
+              <p class="item-list__description">{{ item.descr }}</p>
+            </div>
+          {% endfor %}
+        </ul>
+      </div>
 
-            {% if stappenplan %}
-              {% include 'components/stepchart.html.twig' %}
-            {% endif %}
-
-          </div>
-          {# /page intro #}
-
-          {% if theme == 'beeldbank' %}
-
-            {% set tb_items = {
-              '1': {
-                'title': 'Wat is een beeldbrief?',
-                'descr': 'Een beeldbrief is een brief die in een korte, duidelijke tekst en door middel van ondersteunend beeld de inhoud van de brief aan een lezer overbrengt.',
-                'link_primary': 'Meer over beeldbrieven',
-              } ,
-              '2': {
-                'title': 'Hoe ziet een beeldbrief eruit?',
-                'descr': 'Een beeldbrief heeft een vaste opbouw.',
-                'link_primary': 'Bekijk de richtlijnen',
-              }
-            } %}
-
-            {% include 'sections/section-text-block.html.twig' with { 'items': tb_items, 'modifier': 'l-bg-primary' } %}
-
-            {%  set latest = {
-              '1': {
-                'title': 'Ook Eindhoven aan de slag met beeldbrieven',
-                'descr': 'Supertof dit',
-                'type': 'news',
-                'img': 'brand-beeldbank.jpg',
-                'meta': {
-                  '1': {
-                    'title': 'Datum geplaatst',
-                    'descr': '20 jan 2019',
-                  },
-                  '2': {
-                    'title': 'Auteur',
-                    'descr': 'Mariska Woudenberg'
-                  }
-                }
-              },
-              '2': {
-                'title': 'Dit was ook voor mijzelf een eyeopener',
-                'descr': 'Als je je teksten op niveau B1 schrijft, dan begrijpt 80 procent van de Nederlanders wat er staat. Maar daarmee sluit je 20 procent van de Nederlanders uit. Dat had ik me nog nooit gerealiseerd. Dit was ook voor mijzelf een eyeopener.',
-                'type': 'news',
-                'img': 'img-16-9.jpg',
-                'meta': {
-                  '1': {
-                    'title': 'Datum geplaatst',
-                    'descr': '20 jan 2019',
-                  },
-                  '2': {
-                    'title': 'Auteur',
-                    'descr': 'Mariska Woudenberg'
-                  }
-                }
-              },
-              '3': {
-                'title': 'Rotterdam was de eerste',
-                'descr': 'Als je je teksten op niveau B1 schrijft, dan begrijpt 80 procent van de Nederlanders wat er staat. Maar daarmee sluit je 20 procent van de Nederlanders uit. Dat had ik me nog nooit gerealiseerd. Dit was ook voor mijzelf een eyeopener.',
-                'type': 'news',
-                'img': 'styles/43-md/brand-rc.jpg',
-                'meta': {
-                  '1': {
-                    'title': 'Datum geplaatst',
-                    'descr': '20 jan 2019',
-                  },
-                  '2': {
-                    'title': 'Auteur',
-                    'descr': 'Mariska Woudenberg'
-                  }
-                }
-              }
-            } %}
-
-            {% include 'sections/section-overview.html.twig' with {
-              'items': latest,
-              'title' : 'Laatste nieuws en blogs',
-
-              'cta': {
-                'url': '#',
-                'title' : 'Meer nieuws en blogs'
-              }
-            } %}
-
-            {% set tb_items = {
-              '1': {
-                'title': 'Richtlijnen',
-                'descr': 'Bij het maken van een beeldbrief speelt de balans tussen vormgeving, tekst en beeld een belangrijke rol. Uit verschillende tests kwamen een aantal richtlijnen voort waarmee effectieve beeldbrieven gemaakt kunnen worden.',
-                'link_primary': 'Meer over beeldbrieven',
-              } ,
-              '2': {
-                'title': 'Over de Beeldbank',
-                'descr': 'De gemeente Rotterdam maakt sinds enkele jaren gebruik van goed geteste beeldbrieven. Geïnspireerd door het succes van Rotterdam zijn VNG Realisatie en Gebruiker Centraal in samenwerking met de gemeente Rotterdam gestart met deze kennisbank.',
-                'link_primary': 'Meer over de beeldbank',
-              }
-            } %}
-
-            {% include 'sections/section-text-block.html.twig' with { 'items': tb_items, 'modifier': 'l-bg-white' } %}
-
-            {% else %}
-
-              {#regular #}
-              {% set tb_items = {
-                '1': {
-                  'title': 'Onze instrumenten',
-                  'descr': 'De instrumenten helpen je om de online dienstverlening van je organisatie te verbeteren. Gebruik, deel en vul aan!',
-                  'link_primary': 'Alle instrumenten',
-                } ,
-                '2': {
-                  'title': 'Onze principes',
-                  'descr': 'ja principes',
-                  'link_primary': 'De ontwerpprincipes',
-                }
-              } %}
-
-              {% include 'sections/section-text-block.html.twig' with { 'items': tb_items, 'modifier': 'l-bg-primary' } %}
-
-          {% endif %}
-
-        </div>
-        {# /entry content #}
-      </article>
-    </main>
+    </div>
   </div>
 
-  {% include 'includes/footer.html.twig' %}
-</div>
+  {# 2x basic spotlight #}
+
+  <div class="section section--spotlight l-item-count-2">
+    <div class="l-section-content">
+      {% include 'components/spotlight.html.twig' with {
+        'title': 'Design Thinking bij de Overheid',
+        'descr': 'Op vrijdag 20 november vond de conferentie Design thinking bij de overheid plaats. Gemist of terugkijken?',
+        'img': '/uploads/styles/spotlight/design_thinking.jpg',
+        'cta': {
+          'title': 'Alles over de conferentie'
+        },
+        'modifier': 'white'
+      } %}
+
+      {% include 'components/spotlight.html.twig' with {
+        'title': 'Gebruiker Centraal Pubquiz',
+        'descr': 'Denk jij alles te weten over gebruiksvriendelijke dienstverlening? Toets je kennis en doe mee aan de Gebruiker Centraal Pubquiz!',
+        'img': '/uploads/styles/spotlight/pubquiz.jpg',
+        'cta': {
+          'title': 'Ik doe mee!'
+        },
+        'modifier': 'white'
+      } %}
+    </div>
+  </div>
+
+  {# 2x basic spotlight #}
+  <div class="section section--upcoming">
+
+    <div class="l-section-content">
+      <div class="col col--33-width col--descr">
+        <h2 class="section__title">Agenda</h2>
+
+        <p>We organiseren diverse evenementen die je helpenbij het verbeteren van je dienstverlening. Zowel online als
+          offline.
+        </p>
+
+        <a href="/overview-events.php" class="btn btn--primary">Naar de agenda</a>
+      </div>
+
+      {% set events = {
+        '1': {
+          'title': 'Inspiratiesessie begrijpelijke overheidscommunicatie',
+          'start_date': '24 September 2021',
+          'end_date': '28 September 2021',
+          'meta': {
+            '1': {
+              'title': 'Locatie',
+              'descr': 'Regio Gelderland'
+            },
+            '2': {
+              'title': 'Begin- en eindtijd',
+              'descr': '10:00 - 12:00'
+            }
+          }
+        },
+        '2': {
+          'title': 'Optimaal Digitaal Online Training',
+          'meta': {
+            '1': {
+              'title': 'Kanaal',
+              'classname': 'meta-data__item--channel meta-data__item--optimaal-digitaal',
+              'descr': 'Optimaal Digitaal'
+            },
+            '2': {
+              'title': 'Locatie',
+              'descr': 'Regio Gelderland'
+            },
+            '3': {
+              'title': 'Begin- en eindtijd',
+              'descr': '10:00 - 12:00'
+            }
+          },
+          'date': '24 September 2021',
+        },
+        '3': {
+          'title': 'Update NL Design System',
+          'meta': {
+            '1': {
+              'title': 'Kanaal',
+              'classname': 'meta-data__item--channel meta-data__item--nl-design-system',
+              'descr': 'NL Design System'
+            },
+            '2': {
+              'title': 'Locatie',
+              'descr': 'Online'
+            },
+            '3': {
+              'title': 'Begin- en eindtijd',
+              'descr': '10:00 - 12:00'
+            }
+          },
+          'date': '01 October 2021'
+        },
+        '4': {
+          'title': 'Inspiratiesessie begrijpelijke overheidscommunicatie',
+          'meta': {
+            '1': {
+              'title': 'Locatie',
+              'descr': 'Regio Gelderland'
+            },
+            '2': {
+              'title': 'Begin- en eindtijd',
+              'descr': '10:00 - 12:00'
+            }
+          },
+          'date': '08 October 2021'
+        },
+        '5': {
+          'title': 'Update NL Design System',
+          'meta': {
+            '1': {
+              'title': 'Kanaal',
+              'classname': 'meta-data__item--channel meta-data__item--nl-design-system',
+              'descr': 'NL Design System'
+            },
+            '2': {
+              'title': 'Locatie',
+              'descr': 'Online'
+            },
+            '3': {
+              'title': 'Begin- en eindtijd',
+              'descr': '10:00 - 12:00'
+            }
+          },
+          'date': '01 October 2021'
+        },
+      } %}
+
+      <div class="col col--66-width">
+        <ul class="item-list item-list--small">
+          {% for event in events %}
+            <li class="item-list__item">
+              {% include 'components/list-item.html.twig' with {
+                'title': event.title,
+                'start_date': event.start_date,
+                'end_date': event.end_date,
+                'post_date': event.date,
+                'meta': event.meta,
+                'type': 'event'
+              } %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  {% set blogs = {
+    '1': {
+      'title': 'Interessante weetjes uit de pubquiz',
+      'descr': 'Een verslag van de Winter Pubquiz van Gebruiker Centraal. Met een overzicht van links naar interessante weetjes over begrijpelijkheid en toegankelijkheid van informatie.',
+      'img': 'styles/spotlight/pubquiz.jpg',
+    },
+    '2': {
+      'title': 'Direct Duidelijk en een inclusief stembiljet bij de gemeente Enschede',
+      'descr': 'Waar begin je met Direct Duidelijk in je organisatie? Kirsten Wilde en Talissa Oude Bennink leggen het uit..',
+      'img': 'styles/43-md/img-43-1.jpg',
+      'meta': {
+        '1': {
+          'title': 'Kanaal',
+          'classname': 'meta-data__item--channel meta-data__item--nl-design-system',
+          'descr': 'NL Design System'
+        },
+      },
+    },
+    '3': {
+      'title': 'Optimaal Digitaal: van conversation starter tot waardevolle inzichten en concrete acties',
+      'descr': 'Ineke Graumans en Carolien Nicolai kijken terug op de ontwikkeling van Optimaal Digitaal.',
+      'img': 'styles/43-md/img-43-2.jpg',
+      'meta': {
+        '1': {
+          'title': 'Kanaal',
+          'classname': 'meta-data__item--channel meta-data__item--optimaal-digitaal',
+          'descr': 'Optimaal Digitaal'
+        },
+      },
+    }
+  } %}
+
+  {# blogs #}
+  {% include 'sections/section-overview.html.twig' with {
+    'items': blogs,
+    'title': 'Blogs',
+    'cta': {
+      'url': 'overview-blogs.php',
+      'title': 'Alle blogs'
+    }
+  } %}
+
+  {% set text_blocks = {
+    '1': {
+      'title': 'Nieuw - Handige lijstjes',
+      'descr': 'Op zoek naar ervaringsdeskundigen, handige apps en tools die jou helpen om duidelijker te communiceren of lees- en boekentips over content design? We hebben deze voor je verzameld in handige lijstjes en overzichten!'
+    },
+    '2': {
+      'title': 'Podcasts',
+      'descr': 'Beluister podcasts over onderwerpen als inclusiviteit, gebruiksvriendelijkheid, het ontwerpen van je overheidsdienstverlening en toegankelijkheid.',
+      'link_primary': 'Beluister podcasts'
+    }
+  } %}
+
+  {# text-blocks #}
+  {% include 'sections/section-text-block.html.twig' with {
+    'items': text_blocks,
+    'modifier': 'bg-option',
+    'bg': 'white',
+  } %}
+
+{% endblock %}

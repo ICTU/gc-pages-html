@@ -1,0 +1,15 @@
+{% extends 'sections/section.html.twig' %}
+
+{% block content %}
+
+  {% for item in items %}
+    <figure class="image">
+      <img class="image__image" src="/uploads/{{ item.url }}" alt="{{ item.alt }}">
+
+      {% if item.caption %}
+        <figcaption class="image__caption">{{ item.caption }}</figcaption>
+      {% endif %}
+    </figure>
+
+  {% endfor %}
+{% endblock %}

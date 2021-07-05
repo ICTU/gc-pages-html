@@ -1,0 +1,25 @@
+<div class="card card--small card-type--{{ type ? type : 'page' }}">
+  {% if type == 'event' %}
+
+    {% include 'components/date-badge.html.twig' with {
+      'start_date': start_date,
+      'end_date': end_date,
+    } %}
+
+  {% elseif post_date %}
+    {% include 'components/date-badge.html.twig' with {
+      'post_date': post_date,
+      'modifier': '',
+    } %}
+  {% endif %}
+
+  <h3 class="teaser__title">
+    <a class="link link--arrow" href="{{ url ? url : '#' }}">{{ title }}</a>
+  </h3>
+
+  {% if meta %}
+    {% include 'components/meta-data.html.twig' with {'items': meta} %}
+
+  {% endif %}
+
+</div>

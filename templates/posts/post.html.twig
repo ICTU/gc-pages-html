@@ -1,0 +1,108 @@
+{% extends "page.html.twig" %}
+
+{% block main %}
+  <article class="post post-type--{{ type ? type : 'post' }} post--full">
+
+
+    <header class="post__header">
+      <h1 class="post__title">{{ title ? title : 'Over Gebruiker Centraal' }}</h1>
+
+      {% if intro %}
+        <p class="text text--intro">{{ intro }}</p>
+      {% endif %}
+
+    </header>
+
+
+    <div class="post__content">
+
+      {% set text %}
+        <p>Gebruiker Centraal is onafhankelijk, non-profit en wordt voor het grootste deel gefinancierd door het
+          ministerie van Binnenlandse Zaken en Koninkrijksrelaties.
+        </p>
+        <h2>Actieteam</h2>
+        <p>Gebruiker Centraal werkt met een actieteam&nbsp;dat bestaat uit professionals die direct voor de overheid
+          werken. Dit team organiseert en faciliteert de activiteiten van de community en bepaalt grotendeels de koers
+          van de community.
+        </p>
+        <p><a href="#" class="btn btn--primary">Bekijk alle leden van het actieteam</a></p>
+      {% endset %}
+
+      {% include 'blocks/text.html.twig' with { 'section_text' : text } %}
+
+      {% include 'sections/section-pictures.html.twig' with { 'variant' : 'width-content'} %}
+
+      {% set textimage_text %}
+
+        <h2>Dit is een tekst en image</h2>
+        <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada
+          feugiat. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Proin eget tortor risus.
+        </p>
+      {% endset %}
+
+      {% include 'blocks/text-image.html.twig' with {
+        'img': {
+          'url': 'od-1.jpg',
+          'alt': 'Ben je met meer dan 6 personen?'
+        },
+        'text': textimage_text,
+      } %}
+
+      {# quote als sectie #}
+      {% include 'sections/section-quote.html.twig' with {
+        'type': 'quote',
+        'img' : 'styles/author/author-1.jpg'
+      } %}
+
+      {% set quote_text %}
+        {# uit de editor #}
+        <blockquote class="wp-block-quote is-style-large">
+          <p>Misschien werkt het zelfs wel beter dan het fysieke bordspel</p>
+          <cite>Tester online spel</cite>
+        </blockquote>
+      {% endset %}
+
+      {% include 'blocks/text.html.twig' with { 'section_text' : quote_text } %}
+
+      {% set cards = {
+        '1': {
+          'title' : 'Superleuke pagina',
+        },
+        '2': {
+          'title' : 'Optimaal Digitaal Workshopspel',
+          'descr' : 'Kaartje met een afbeelding. Wanneer de pagina waarnaar verwezen ook een platje heeft.',
+          'img' : 'img-16-9.jpg'
+        }
+      } %}
+
+      {% include 'sections/section-related.html.twig' with {
+        'title' : 'Kijk ook bij...',
+        'cards': cards,
+        'modifier': 'bg-option'
+      } %}
+
+      {% set links = {
+        '1': {
+          'title': 'Donec sollicitudin molestie malesuada',
+          'descr': 'Cras ultricies ligula sed magna dictum porta.',
+          'url': '#',
+        },
+        '2': {
+          'title': 'Vivamus suscipit tortor eget felis porttitor volutpat',
+          'descr': 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.',
+          'url': '#',
+        }
+      } %}
+
+      {% include 'sections/section-links.html.twig' with {
+        'title' : 'Kijk ook bij...',
+        'items' : links
+      } %}
+
+    </div>
+
+
+  </article>
+
+{% endblock %}
+

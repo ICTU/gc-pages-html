@@ -1,63 +1,108 @@
 <div class="l-page-footer-wrapper">
-  <footer class="page-footer">
+  {% block page_footer %}
+    <footer class="page-footer">
 
-    <div class="footer-col footer-col--1">
-      <section class="widget gc-site-footer-widget">
-        <h4 class="widget-title widgettitle">Over Gebruiker Centraal</h4>
-        <p>Gebruiker Centraal is een community voor professionals die bezig zijn met de online
-          dienstverlening van de overheid.</p>
-        <p>
 
-          <a href="#" class="btn btn--primary">Meer over Gebruiker Centraal</a></p>
+      <div class="footer-col footer-col--1">
 
-      </section>
+        <section class="widget gc-site-footer-widget">
+          <h2 class="widget-title widgettitle">Over Gebruiker Centraal</h2>
+          <p>Gebruiker Centraal is een community voor professionals die bezig zijn met de online
+            dienstverlening van de overheid.</p>
+          <p>
+
+            <a href="#" class="btn btn--primary">Meer over Gebruiker Centraal</a></p>
+
+        </section>
+      </div>
+
+      <div class="footer-col footer-col--2">
+
+        {% if theme == 'nlds' %}
+
+          <section id="text-1" class="widget widget_text">
+
+            <h4 class="widget-title widgettitle">Draag ook bij</h4>
+            <div class="textwidget">
+              <p>Heeft je bedrijf of heb jij iets bedacht, gemaakt of geschreven waarvan je denkt dat het Design Systeem
+                het kan gebruiken? Voeg het toe aan onze Github!</p>
+              <a href="#" class="btn btn--external">NL Design System Gitlab</a>
+            </div>
+          </section>
+
+          <section id="brands-1" class="widget widget--brands">
+
+            <figure class="brand__image">
+              <img class="image image--brand" src="/uploads/nlds/logo-1.png">
+            </figure>
+
+            <figure class="brand__image">
+              <img class="image image--brand" src="/uploads/nlds/logo-2.png">
+            </figure>
+
+          </section>
+
+        {% else %}
+
+          <section id="text-6" class="widget widget_text">
+
+            <h4 class="widget-title widgettitle">Nieuwsbrief</h4>
+            <div class="textwidget">
+              <p>Blijf op de hoogte</p>
+              <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-2231" method="post" data-id="2231"
+                    data-name="Gebruiker Centraal Mailing">
+                <div class="mc4wp-form-fields"><p>
+                    <label for="mc4emailaddress">Mailadres:</label>
+                    <input type="email" name="EMAIL" id="mc4emailaddress" placeholder="naam@domeinnaam.nl" required="">
+                  </p>
+                  <p>
+                    <label>
+                      <input name="AGREE_TO_TERMS" type="checkbox" value="1" required=""> <a
+                          href="https://www.gebruikercentraal.nl/over-gebruiker-centraal/privacyverklaring/"
+                          target="_blank"
+                          rel="noopener noreferrer" data-ol-has-click-handler="">Ik heb de algemene voorwaarden gelezen
+                        en
+                        ga hiermee akkoord</a>
+                    </label>
+                  </p>
+
+                  <p>
+                    <input type="submit" value="Schrijf je in">
+                  </p>
+
+                </div>
+              </form>
+            </div>
+          </section>
+
+        {% endif %}
+      </div>
+
+    </footer>
+  {% endblock %}
+
+  {% block page_bottom %}
+
+    {% set footer_menu = {
+      "1": { "title": "Contact" },
+      "2": { "title": "Privacyverklaring" },
+      "3": { "title": "Sitemap" },
+      "4": { "title": "Inloggen" },
+      "5": { "title": "About us" }
+    } %}
+
+    <div class="site-footer-menu">
+
+      <nav class="footer-menu">
+        <ul class="footer-menu__list menu">
+          {% for menu_item in footer_menu %}
+            <li class="footer-menu__list-item">
+              <a href="{{ menu_item.url ? menu_item.url : '#' }}" class="footer-menu__link">{{ menu_item.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
     </div>
-
-    <div class="footer-col footer-col--2">
-
-      <section id="text-6" class="widget widget_text">
-
-        <h4 class="widget-title widgettitle">Nieuwsbrief</h4>
-        <div class="textwidget"
-        <p>Blijf op de hoogte</p>
-        <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-2231" method="post" data-id="2231"
-              data-name="Gebruiker Centraal Mailing">
-          <div class="mc4wp-form-fields"><p>
-              <label for="mc4emailaddress">Mailadres:</label>
-              <input type="email" name="EMAIL" id="mc4emailaddress" placeholder="naam@domeinnaam.nl" required="">
-            </p>
-            <p>
-              <label>
-                <input name="AGREE_TO_TERMS" type="checkbox" value="1" required=""> <a
-                    href="https://www.gebruikercentraal.nl/over-gebruiker-centraal/privacyverklaring/" target="_blank"
-                    rel="noopener noreferrer" data-ol-has-click-handler="">Ik heb de algemene voorwaarden gelezen en
-                  ga hiermee akkoord</a>
-              </label>
-            </p>
-
-            <p>
-              <input type="submit" value="Schrijf je in">
-            </p>
-
-          </div>
-        </form>
-      </section>
-    </div>
-
-  </footer>
-
-  <div class="site-footer-menu">
-
-    <nav class="footer-menu">
-      <ul class="footer-menu__list menu">
-        <li class="footer-menu__list-item"><a href="#" class="footer-menu__link">Contact</a></li>
-        <li class="footer-menu__list-item"><a href="#" class="footer-menu__link">Privacyverklaring</a></li>
-        <li class="footer-menu__list-item"><a href="#" class="footer-menu__link">Sitemap</a></li>
-        <li class="footer-menu__list-item"><a href="#" class="footer-menu__link">Inloggen</a></li>
-        <li class="footer-menu__list-item"><a href="#" class="footer-menu__link">About us</a></li>
-      </ul>
-    </nav>
-  </div>
-
+  {% endblock %}
 
 </div>

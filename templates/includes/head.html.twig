@@ -2,14 +2,25 @@
   {% set theme = 'gc' %}
 {% endif %}
 
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{% if theme != 'od' %}
-  <link rel="stylesheet" id="gebruiker-centraal-css" href="./theme/fonts/fonts.css" type="text/css" media="all">
-  <link rel="stylesheet" id="gebruiker-centraal-css" href="./theme/dist/css/{{ theme }}-theme.css" type="text/css"
+<title>GC Frontend | {{ title }}</title>
+
+{% if theme == 'od' %}
+  <link rel="stylesheet" id="gebruiker-centraal-css" href="../../theme/fonts/fonts.css" type="text/css" media="all">
+  <link rel="stylesheet" id="optimaal-digitaal-css" href="/sites/od/theme/dist/css/{{ theme }}-theme.css"
+        type="text/css"
+        media="all">
+{% elseif theme == 'nlds' %}
+  <link rel="stylesheet" id="gebruiker-centraal-css" href="../../theme/fonts/fonts.css" type="text/css" media="all">
+  <link rel="stylesheet" id="optimaal-digitaal-css" href="/sites/nlds/theme/dist/css/{{ theme }}-theme.css"
+        type="text/css"
         media="all">
 {% else %}
-  <link rel="stylesheet" id="gebruiker-centraal-css" href="../../theme/fonts/fonts.css" type="text/css" media="all">
-  <link rel="stylesheet" id="optimaal-digitaal-css" href="/sites/od/theme/dist/css/{{ theme }}-theme.css" type="text/css"
+  <link rel="stylesheet" id="gebruiker-centraal-fonts" href="./theme/fonts/fonts.css" type="text/css" media="all">
+  <link rel="stylesheet" id="gebruiker-centraal-css" href="./theme/dist/css/{{ theme }}-theme.css" type="text/css"
         media="all">
 {% endif %}
 

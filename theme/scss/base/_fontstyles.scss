@@ -1,8 +1,16 @@
 
-.text--large {
-  font-size: 2.4rem;
-  line-height: 3.8rem;
-  font-weight: $font-primary;
+.text {
+  &--large,
+  &--intro {
+    font-size: 2.4rem;
+    line-height: 3.8rem;
+    font-family: $font-primary-semi;
+
+    @include bp-down(md){
+      font-size: 2rem;
+      line-height: 3.2rem;
+    }
+  }
 }
 
 
@@ -62,7 +70,8 @@
     font-style: italic;
   }
 
-  .btn {
+  .btn,
+  .link--read-more {
     margin-top: 2rem;
   }
 }

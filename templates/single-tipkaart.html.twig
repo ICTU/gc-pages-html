@@ -19,7 +19,21 @@
 
   {% include 'includes/breadcrumb.html.twig' with {
     'page_title': title,
-    'links': ['Home', 'Tips', 'Alle tips']} %}
+    'links': {
+      '1': {
+        'url': 'index.php',
+        'title': 'Home'
+      },
+      '2': {
+        'url': 'tips.php',
+        'title': 'Tips'
+      },
+      '3': {
+        'url': 'overview-tips.php',
+        'title': 'Alle tips'
+      }
+    }
+  } %}
 
 
   <div class="page-content" id="maincontent" tabindex="-1">
@@ -28,6 +42,11 @@
       <article class="tip tip--full tip--{{ category }}">
 
         <header class="entry-header">
+
+          {% if toptip %}
+            <span class="tipkaart__toptip">Is toptip</span>
+          {% endif %}
+
           <div class="tip__nr">Tip {{ nr }}</div>
           <h1 class="entry-title">{{ title }}</h1>
 
@@ -66,6 +85,7 @@
                     {% endif %}
                   </div>
                 </div>
+
 
                 {% if item.author %}
 
@@ -111,18 +131,25 @@
 
               <div class="l-inner">
                 <h2 class="research__title">Onderzoek</h2>
-                <p>KING heeft een catalogus gebruikersperspectief ontwikkeld waarmee je op basis van criteria een
-                  passend
-                  gebruikersonderzoek kunt vinden. Dit is gebaseerd op het onderzoek ‘Digitaal en Gebruikersperspectief’
-                  (PDF – 1,5 Mb) van het ministerie van BZK, uitgevoerd door Dialogic.</p>
+                {% if research.text %}
+                  {{ research.text|raw }}
+                {% else %}
+                  <p>KING heeft een catalogus gebruikersperspectief ontwikkeld waarmee je op basis van criteria een
+                    passend
+                    gebruikersonderzoek kunt vinden. Dit is gebaseerd op het onderzoek ‘Digitaal en
+                    Gebruikersperspectief’
+                    (PDF – 1,5 Mb) van het ministerie van BZK, uitgevoerd door Dialogic.</p>
 
-                <hr>
-                <p>Onderzoek <a href="#">‘Digitaal en Gebruikersperspectief’</a> (PDF – 1,5 Mb) van het ministerie van
-                  BZK, uitgevoerd door Dialogic.</p>
+                {% endif %}
+
+                {% if research.source  %}
+                  <hr>
+                  {{ research.source|raw }}
+                {% endif %}
 
 
                 <div class="l-research-blocks">
-                  {% for block in rblocks %}
+                  {% for block in rblocks.items %}
                     <div class="research-block">
                       <span class="research-block__title">{{ block.title }}</span>
                       <span class="research-block__nr">{{ block.nr }}</span>
@@ -130,12 +157,28 @@
                     </div>
                   {% endfor %}
                 </div>
+
+                {% if rblocks.conclusion %}
+                  <div class="research__conclusion">
+
+                    <h3>Conclusie</h3>
+                    {{ rblocks.conclusion|raw }}
+
+                  </div>
+                {% endif %}
               </div>
 
               {# /inner #}
 
             </div>
           </div>
+
+          {% if downloads %}
+            {% include 'sections/section-downloads.html.twig' with {
+              'title': 'Downloads',
+              'items': downloads
+            } %}
+          {% endif %}
 
           {% if links is empty %}
             {% set links = {
@@ -169,7 +212,7 @@
       'template': 'card--tipkaart',
       'modifier': 'bg-option',
       'cta': {
-        'title': 'Alle gebruiksgemak tips'
+        'title': 'Alle ' ~ category ~ ' tips'
       }
     } %}
   </div>

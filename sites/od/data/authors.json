@@ -1,4 +1,14 @@
 {
+  "arjen": {
+    "firstname" : "Arjen",
+    "lastname" : "van de Dool",
+    "img" : "person-1.jpg",
+    "function" : " Teamleider Kennis, Projecten en Domeinen, Koninklijke Horeca Nederland (KHN)",
+    "social": {
+      "twitter": "#",
+      "linkedin": "#"
+    }
+  },
   "wolfgang": {
     "firstname" : "Wolfgang",
     "lastname" : "Ebbers",
@@ -23,6 +33,12 @@
       "email": "nee@nee.nl"
     }
   },
+  "luc": {
+    "firstname" : "Luc",
+    "lastname" : "Boss",
+    "img" : "author-3.jpg",
+    "function" : "Relatiemanager Externe Betrekkingen, Sociale Verzekeringsbank"
+  },
   "iwan": {
     "firstname" : "Iwan",
     "lastname" : "van der Wolf",
@@ -33,5 +49,120 @@
     "lastname" : "Corporaal",
     "function" : "UX manager Coolblue",
     "img" : "person-3.jpg"
+  },
+  "tino": {
+    "firstname" : "Tino",
+    "lastname" : "de Velde",
+    "function" : "Adviseur Online Dienstverlening, gemeente Amsterdam",
+    "img" : "person-3.jpg",
+    "contact": {
+      "email": "T.de.Velde@amsterdam.nl"
+    }
+  },
+  "menno": {
+    "firstname" : "Menno",
+    "lastname" : "Maarsen",
+    "img" : "person-1.jpg",
+    "function" : "Product owner / business analist Het CAK",
+    "social": {
+      "twitter": "#",
+      "linkedin": "#"
+    },
+    "contact": {
+      "tel": "06-42146555",
+      "email": "mmaarsen@hetcak.nl"
+    }
+  },
+  "herman": {
+    "firstname" : "Herman",
+    "lastname" : "de Kievith",
+    "function" : "Manager Projecten, Klantcontact en Innovatie, Dienst Publiekszaken Gemeente Den Haag",
+    "img" : "author-2.jpg",
+    "contact": {
+      "email": "herman.dekievith@denhaag.nl",
+      "tel": "06-52672088"
+    }
+  },
+  "arjan": {
+    "firstname" : "Arjan",
+    "lastname" : "van de Dool",
+    "function" : "Teamleider Kennis, Projecten en Domeinen, Koninklijke Horeca Nederland (KHN)",
+    "img" : "author-2.jpg",
+    "contact": {
+      "email": "herman.dekievith@denhaag.nl",
+      "tel": "06-52672088"
+    }
+  },
+  "esmeralde": {
+    "firstname" : "Esmeralde",
+    "lastname" : "Marsman",
+    "function" : "Gemeente Rotterdam",
+    "img" : "author-4.jpg",
+    "contact": {
+      "email": "egm.marsman@rotterdam.nl",
+      "tel": "06-52672088"
+    }
+  },
+  "erwin": {
+    "firstname" : "Erwin",
+    "lastname" : "Koster",
+    "function": "Productmanager DigID",
+    "img" : "author-3.jpg"
+  },
+  "ed": {
+    "firstname" : "Ed",
+    "lastname" : "Sabel",
+    "function" : "Projectleider Mobiel Media Lab, Politie",
+    "img" : "person-4.jpg",
+    "contact": {
+      "email": "ed.sabel@politie.nl",
+      "tel": "0627020844"
+    }
+  },
+  "charlotte": {
+    "firstname" : "Charlotte",
+    "lastname" : "Holst",
+    "function" : "Adviseur dienstverlening & online media, Gemeente Haarlemmermeer",
+    "img" : "person-2.jpg",
+    "contact": {
+      "email": "C.Holst@Haarlemmermeer.nl",
+      "tel": "06-12966132"
+    }
+  },
+  "annet": {
+    "firstname" : "Annet",
+    "lastname" : "van Veen",
+    "function" : "Adviseur, Ministerie van Binnenlandse Zaken en Koninkrijksrelaties",
+    "img" : "person-3.jpg"
+  },
+  "rein": {
+    "firstname" : "Rein",
+    "lastname" : "Zijlstra",
+    "function" : "Wethouder gemeente Zeewolde",
+    "img" : "author-3.jpg",
+    "contact": {
+      "contact": {
+        "email": "r.zijlstra@zeewolde.nl",
+        "tel": "036-5229522"
+      }
+    }
+  },
+  "joab": {
+    "firstname" : "Joab",
+    "lastname" : "de Lang",
+    "function" : "Concern Information Security Officer, Gemeente Rotterdam",
+    "img" : "person-4.jpg",
+    "contact": {
+      "contact": {
+        "email": "r.zijlstra@zeewolde.nl",
+        "tel": "036-5229522"
+      }
+    }
+  },
+  "roy": {
+    "firstname" : "Roy",
+    "lastname" : "Tomeij",
+    "function" : "Aanjager digitale overheid",
+    "img" : "author-2.jpg"
   }
 }
