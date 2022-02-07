@@ -2,7 +2,7 @@
 
 const del = require('del'),
   gulp = require('gulp'),
-  sass = require('gulp-sass'),
+  sass = require('gulp-dart-sass'),
   autoprefixer = require('gulp-autoprefixer'),
   browserSync = require('browser-sync').create(),
   notify = require('gulp-notify'),
@@ -230,9 +230,9 @@ function watch() {
 
   if(!(siteConfig.shortname === 'gcbase')){
     gulp.watch('scss/**/*.scss', gulp.series(baseStyles, styles));
+  } else {
+    gulp.watch(siteConfig.path + 'scss/**/*.scss', styles);
   }
-
-  gulp.watch(siteConfig.path + 'scss/**/*.scss', styles);
   gulp.watch('js/components/*.js', js);
 
   gulp.watch('img/icons/*.svg', gulp.series(makeFont, styles));

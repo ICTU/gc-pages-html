@@ -29,11 +29,11 @@
         display: flex;
 
         .spotlight:nth-child(odd) {
-          margin-right: $gutter / 2;
+          margin-right: $gutter * 0.5;
         }
 
         .spotlight:nth-child(even) {
-          margin-left: $gutter / 2;
+          margin-left: $gutter * 0.5;
         }
       }
 
@@ -117,8 +117,8 @@
 
       .spotlight {
         margin-top: 0;
-        margin-left: $gutter / 2;
-        margin-right: $gutter / 2;
+        margin-left: $gutter * 0.5;
+        margin-right: $gutter * 0.5;
         width: calc(50% - #{$gutter});
 
         &:nth-child(n+3) {
@@ -129,7 +129,7 @@
       .l-instrument-wrapper {
         width: calc(50% - #{$gutter});
         margin-left: auto;
-        padding-right: $gutter / 2;
+        padding-right: $gutter * 0.5;
         margin-top: 6rem;
       }
     }

@@ -11,16 +11,16 @@
     margin: 5rem auto 0;
 
     .l-section-content {
-      margin-left: -$gutter / 2;
-      margin-right: -$gutter / 2;
+      margin-left: -$gutter * 0.5;
+      margin-right: -$gutter * 0.5;
     }
   }
 }
 
 .microstory {
   margin-top: $gutter;
-  margin-left: $gutter / 2;
-  margin-right: $gutter / 2;
+  margin-left: $gutter * 0.5;
+  margin-right: $gutter * 0.5;
 
   p {
     max-width: 80%;

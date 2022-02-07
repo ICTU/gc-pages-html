@@ -183,10 +183,10 @@
   }
 
   .pagination-previous {
-    padding-right: $gutter / 2;
+    padding-right: $gutter * 0.5;
   }
 
   .pagination-next {
-    padding-left: $gutter / 2;
+    padding-left: $gutter * 0.5;
   }
 }

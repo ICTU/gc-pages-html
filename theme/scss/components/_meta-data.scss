@@ -99,11 +99,9 @@
   }
 
   &--channel {
-    @include gc-box-shadow();
-
-    background: $gc-a11y-green;
-    color: $white;
+    border: .1rem solid $gc-green;
     padding: 0 0.8rem;
+    color: $gc-a11y-green;
     margin-right: 1.5rem;
     font-family: $font-primary-bold;
     font-size: 1.2rem;
@@ -114,11 +112,13 @@
   }
 
   &--nl-design-system {
-    background: $gc-a11y-blue;
+    border-color: $gc-a11y-blue;
+    color: $gc-a11y-blue;
   }
 
   &--optimaal-digitaal {
-    background: $gc-a11y-orange;
+    border-color: $gc-a11y-orange;
+    color: $gc-a11y-orange;
   }
 }
 
